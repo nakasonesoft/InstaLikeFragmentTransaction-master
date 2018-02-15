@@ -1,0 +1,418 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/textView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Termos de Uso"
+                    android:textAlignment="center"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Title" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="15dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/textView2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="De um lado, a NAKASONE SOFT LTDA, detentora do site de Controle Financeiro Pessoal Fácil Control, com sede na Avenida Andrômeda, nº 3.725 – 2º andar – Bosque dos Eucaliptos – São José dos Campos, SP e inscrita no CNPJ/MF sob o nº 24.505.120/0001-09, neste ato representada pelo seu sócio administrador Julio Nakasone e, de outro lado, o Usuário, já identificado em seu cadastro de login e senha, tem entre si justos e contratados os seguintes: "
+                    android:textAlignment="center" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="15dp"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/textView4"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="TERMOS E CONDIÇÕES DOS SERVIÇOS"
+                        android:textAlignment="center"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Body1" />
+
+                    <TextView
+                        android:id="@+id/textView3"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="15dp"
+                        android:text="1. Aceitação dos Termos de Serviço \n\n1.1. A NAKASONE SOFT, acima identificada, doravante denominada simplesmente de Nakasone Soft, fornece ao usuário, doravante denominado simplesmente de Usuário, a disponibilização do sistema de controle financeiro pessoal através do seu site www.facilcontrol.com.br, doravante simplesmente denominado de Serviço. "
+                        android:textAlignment="center"
+                        android:textAppearance="@style/TextAppearance.AppCompat" />
+
+                    <TextView
+                        android:id="@+id/textView5"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="15dp"
+                        android:textAlignment="center"
+                        android:textAppearance="@style/TextAppearance.AppCompat"
+                        tools:text="1.2. Ao utilizar o Serviço, o Usuário está ciente de que estará sujeito a quaisquer manuais, regras ou políticas vigentes que possam ser publicadas de tempos em tempos aplicáveis a tal serviço, estejam eles disponíveis ou não no momento. Todos os manuais, regras ou políticas, incluindo a Política de Privacidade passam, neste ato, a fazer parte integrante deste instrumento, como se nele estivesse transcrito." />
+                    <TextView
+                        android:id="@+id/textView6"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="15dp"
+                        android:textAlignment="center"
+                        android:textAppearance="@style/TextAppearance.AppCompat"
+                        tools:text="1.3. A contratação dos serviços se dará com a simples finalização do cadastro e a ação de clicar no botão “Cadastrar” na página http://www.facilcontrol.com.br" />
+                    <TextView
+                        android:id="@+id/textView8"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="15dp"
+                        android:textAlignment="center"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                        tools:text="2. Definição e Prestação dos Serviços da Nakasone Soft" />
+                    <TextView
+                        android:id="@+id/textView78"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="15dp"
+                        android:textAlignment="center"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                        tools:text="2.1. Os Serviços consistem na disponibilização de acesso a site voltado a finanças e economias pessoais que permitirão os seguintes benefícios em favor do usuário, durante todo o prazo de vigência deste Contrato:\n
+2.1.1) Acesso a ferramentas gerenciais que permitem ao Usuário efetuar controle das suas finanças pessoais, especificamente, do controle de despesas;\n
+2.1.2. Mecanismos para se efetuar projeções financeiras e econômicas com simulações dos resultados projetados;\n
+2.1.3. Armazenar conteúdo financeiro pessoal, relacionado aos resultados decorrentes da prestação e uso dos Serviços, para uso exclusivo do Usuário, totalmente criptografado, o que impede qualquer condição de acesso por terceiros ou pela própria Nakasone Soft.
+" />
+
+                    <TextView
+                        android:id="@+id/textView98"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="15dp"
+                        android:textAlignment="center"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                        tools:text="3. Suporte Técnico referente ao Serviço" />
+                    <TextView
+                        android:id="@+id/textView89"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="15dp"
+                        android:textAlignment="center"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                        tools:text="3.1. O Usuário entende e concorda que os Serviços objeto deste Contrato não dão ao Usuário direito a receber assessoria, assistência, atendimento ou qualquer forma de subsídio com relação ao Serviço.\n
+3.2. A utilização do Serviço será de inteiro risco do Usuário, sendo que a Nakasone Soft apenas concordou em fornecer o Serviço de acordo com as condições estabelecidas neste instrumento (‘Termos e Condições dos Serviços’), sendo que os únicos subsídios a que o Usuário terá acesso serão as instruções sobre como utilizar os Serviços, contidas nas páginas  de Perguntas Frequentes e também ao Fale Conosco, sem que isso gere qualquer ônus ou obrigações à Nakasone Soft e com o que o Usuário desde já expressamente concorda e anui.
+" />
+                    <TextView
+                        android:id="@+id/textView988"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="15dp"
+                        android:textAlignment="center"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                        tools:text="4. Cadastro, login e senha do Usuário" />
+                    <TextView
+                        android:id="@+id/textView889"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="15dp"
+                        android:textAlignment="center"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                        tools:text ="4.1. Para o regular uso dos Serviços, o Usuário deverá acessar a página de oferta dos Serviços localizada no endereço eletrônico www.facilcontrol.com.br e efetuar o seu cadastro, concedendo à Nakasone Soft os dados e informações que esta solicitar, cadastrando um e-mail válido do Usuário (login) e uma senha pessoal.\n
+ 4.2. O Usuário será integralmente responsável por manter suas informações atualizadas, comprometendo-se, ainda, a manter a Nakasone Soft livre e isenta de qualquer ônus, dever ou responsabilidade decorrentes ou de qualquer forma relacionados a qualquer imprecisão, inveracidade, ausência, incompleição ou desatualização destas informações e/ou dados.\n
+4.3. O login e a senha utilizados pelo Usuário para cada acesso ao sistema são de uso pessoal e intransferível de modo que a Nakasone Soft estará livre e isenta de qualquer ônus, dever ou responsabilidade relacionados com o uso de tais dados.\n
+4.4. O Usuário compromete-se a notificar imediatamente a Nakasone Soft sobre qualquer uso não autorizado da sua senha ou conta ou qualquer outra quebra de segurança de que tome conhecimento, através do endereço www.facilcontrol.com.br ou através do e-mail contato@nakasonesoft.com.br.\n
+4.5. O Usuário aceita não acessar ou sequer tentar acessar o Serviço por quaisquer meios que não através da interface que é fornecida pela Nakasone Soft, exceto se para tal for especificamente autorizado num acordo separado celebrado entre si.\n
+4.6. O Usuário sairá de sua conta ao final de cada sessão, efetuando a finalização da mesma através das ferramentas de logout disponibilizadas pela Nakasone Soft na página de prestação dos Serviços. A perda ou dano decorrente do descumprimento de tal procedimento pelo Usuário será de sua exclusiva responsabilidade.\n
+"/>
+                    <TextView
+                        android:id="@+id/textView9888"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="15dp"
+                        android:textAlignment="center"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                        tools:text="5. Prazo e Cancelamento dos Serviços" />
+                    <TextView
+                        android:id="@+id/textView8989"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="15dp"
+                        android:textAlignment="center"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                        tools:text ="5.1. O presente Contrato é celebrado, primeiro, por prazo determinado, em caso de assinatura do Plano Completo, a partir da opção do Usuário pelo prazo escolhido na Tabela de Preços e, não ocorrendo pagamento de assinatura do Contrato inicial ou de renovação, o Contrato será imediatamente encerrado. Desta forma, os Serviços também ficarão disponíveis ao Usuário por prazo determinado.E, segundo, por prazo indeterminado, em caso de assinatura do Plano Básico, porém, com utilização pelo usuário ininterruptamente, ou seja, ocorrendo desuso pelo Usuário por um período de 6 (seis) meses ou mais, reserva-se o direito da Nakasone Soft cancelar a assinatura do Usuário, com o cancelamento total de todos os Serviços e dos seus dados armazenados até então.\n
+5.2. Independente dos acima dispostos, a Nakasone Soft reserva-se também o direito de rescindir o presente Contrato, a seu exclusivo critério, cancelando imediatamente a conta do Usuário e o seu acesso aos serviços, bem como de rescindir quaisquer outros acordos e cancelar outros serviços que tenham sido contratados pelo Usuário da Nakasone Soft, nos seguintes casos:\n
+5.2.1. Se a Nakasone Soft constatar indícios de que o Usuário esteja violando ou agindo de forma contrária a qualquer das disposições dos presentes Termos de Uso, a qualquer legislação ou norma vigente ou ainda aos termos de privacidade prevista na cláusula 6;\n
+5.2.2. Se o Usuário, por qualquer razão e sob o entendimento da Nakasone Soft, utilizar os Serviços indevidamente ou de forma que venha a denegrir a imagem da Nakasone Soft.\n
+5.3 Além disso, a Nakasone Soft terá o direito de excluir, no todo ou em parte, qualquer conteúdo eventualmente inserido pelo Usuário em páginas ou equipamentos da Nakasone Soft que esta última venha a entender contrários às disposições deste instrumento ou a quaisquer outras regras da Nakasone Soft, ressalvado ainda o direito da Nakasone Soft de pleitear indenização do Usuário.\n
+5.4 O Usuário reconhece e aceita que, caso o presente contrato tenha terminado e sua conta de serviços cancelada, por qualquer motivo, ficará automaticamente impossibilitado de acessar sua conta e utilizar os Serviços, bem como visualizar arquivos ou outros conteúdos relacionados.\n
+5.5 Além disso, conforme já especificado no item 2.1.2, a Nakasone Soft não terá nenhuma obrigação, mediante o término do presente Contrato, de armazenar qualquer conteúdo da conta do Usuário, de modo que poderá, a qualquer momento, apagar de seus servidores, de forma definitiva, automática e independente de notificação ao Usuário, todo ou parte do conteúdo de propriedade deste último que esteja de alguma forma armazenada em seus equipamentos, sem que isto gere direito ao Usuário ou ônus à Nakasone Soft.\n
+"/>
+                    <TextView
+                        android:id="@+id/textView89888"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="15dp"
+                        android:textAlignment="center"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                        tools:text="6. Política de Privacidade" />
+
+                    <TextView
+                        android:id="@+id/textView89989"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="15dp"
+                        android:textAlignment="center"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                        tools:text ="6.1. O Usuário declara expressamente estar ciente e de acordo de que a prestação dos Serviços, bem como o presente Contrato, se sujeita, ainda, aos termos e condições da política de privacidade da Nakasone Soft e é parte integrante dos ‘Termos e Condições dos Serviços’ tanto quanto qualquer outro conjunto de regras ou normativos indicados pela Nakasone Soft como aplicáveis aos mesmos. Tal documento deverá ser lido atentamente pelo Usuário antes da aceitação e utilização.
+
+"/>
+                    <TextView
+                        android:id="@+id/textView898888"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="15dp"
+                        android:textAlignment="center"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                        tools:text="7. Declarações do Usuário" />
+                    <TextView
+                        android:id="@+id/textView899869"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="15dp"
+                        android:textAlignment="center"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                        tools:text ="7.1. O Usuário reconhece que o Serviço é fornecido na forma como está disponibilizado e que a Nakasone Soft não é e nem será responsável por exclusão, não entrega ou falha no arquivamento de qualquer dado ou informação cadastrado pelo Usuário.\n
+7.2. Do mesmo modo, o Usuário reconhece que o Serviço, pela sua própria natureza, é fornecido da forma em que estiver disponível, sem qualquer garantia de desempenho ou alcance de resultados específicos. Não obstante, a Nakasone Soft envidará os melhores esforços para que o Serviço funcione adequadamente.\n
+7.3. O Usuário expressamente se compromete a não levar a cabo qualquer atividade que interfira, interrompa ou danifique o Serviço ou os servidores, equipamentos e as redes que estejam relacionados com o Serviço, sejam da Nakasone Soft ou de terceiros, assim como os documentos, arquivos e toda classe de conteúdos armazenados nos seus equipamentos informáticos.\n
+7.4. O Usuário reconhece e aceita que não poderá reproduzir, duplicar, copiar, vender, comercializar ou revender o Serviço para qualquer efeito.\n
+7.5. O Usuário declara expressamente e garante que utilizará os serviços em conformidade com a lei, a moral e os bons costumes, e em especial, que:\n
+7.5.1.É maior de 18 (dezoito) anos de idade ou emancipado e possui capacidade jurídica para celebrar e utilizar os Serviços objeto deste contrato, ou é menor de idade devidamente assistido ou representado por seus pais ou representantes legais. Os pais ou os representantes legais do menor de idade responderão pelos atos por ele praticados na utilização dos Serviços objeto deste instrumento, dentre os quais eventuais danos causados a terceiros, práticas de atos vedados pela lei e pelas disposições deste Contrato;\n
+7.5.2.Não utilizará os Serviços para se engajar em atividade comercial, o que inclui, mas não se limita a, oferecer qualquer tipo de produto para venda, procurar anunciantes e patrocinadores, e inserir banners de qualquer tipo;\n
+7.5.3.Não veiculará informação ou divulgará material sobre atividades ilegais ou ainda sobre atividades que ponham em risco a saúde, a integridade física, ou a privacidade do Usuário ou de terceiro(s);\n
+7.5.4.Não divulgará mensagens ou páginas criptografadas ou protegidas por senhas;\n
+7.5.5.Não veiculará informação relativa à pirataria de software;\n
+7.5.6.Não poderá usar os Serviços como local de armazenamento para download remoto de arquivos por múltiplos usuários;\n
+7.5.7.Não divulgará material protegido por propriedade intelectual, direitos autorais ou por confidencialidade sem a autorização dos seus titulares;\n
+7.5.8.Não se fará passar por outra pessoa, empresa ou instituição;\n
+7.5.9.Não coletará ou divulgará dados pessoais de usuários;\n
+7.5.10.Não veiculará páginas ocultas ou imagens ocultas;\n
+7.5.11.Não modificará, adaptará, traduzirá ou fará engenharia reversa, no todo ou em parte, de qualquer Software utilizado pela Nakasone Soft ou por qualquer parceiro na prestação dos Serviços;\n
+7.5.12.Não enviará mensagens não solicitadas, reconhecidas como “spam”, “junk mail” ou correntes de correspondência (“chain letters”);\n
+7.5.13.Não utilizará tais Serviços para enviar quaisquer tipos de vírus ou arquivos contendo quaisquer tipos de vírus (“Cavalos de Tróia”) que possam causar danos ao seu destinatário ou a terceiros;\n
+7.5.14.Não praticará quaisquer atos que violem qualquer lei ou regulamento local, estadual, nacional ou internacional aplicável;\n
+7.5.15.Cumprirá todas as leis aplicáveis com relação à transmissão de dados do Brasil e/ou do território onde o Usuário resida;\n
+7.5.16. Não obterá ou tentará obter acesso não autorizado a outros sistemas ou redes de computadores conectados ao Serviço;\n
+7.5.17. Será o único responsável pelo conteúdo que vier a transmitir ou retransmitir, bem como pelo conteúdo e informações que vier a disponibilizar no site relacionado aos Serviços;\n
+7.5.18.Não interferirá ou interromperá os Serviços ou os servidores ou redes a eles conectados;\n
+7.5.19.Cumprirá todos os requerimentos, procedimentos, políticas e regulamentos de redes conectadas aos Serviços;\n
+7.5.20.Reconhece que o presente contrato se formaliza, vinculando as partes, através da assinatura eletrônica do mesmo, que se dará através do clique no checkbox com o texto “Eu estou de acordo com os termos de uso do nakasonesoft.com.br”, disponível na página de cadastro dos Serviços ou, simplesmente, ao finalizar o seu cadastro de login e senha;\n
+7.6. O Usuário reconhece e concorda que a Nakasone Soft não endossa o conteúdo de quaisquer comunicações veiculadas pelos seus Usuários, constantes nos servidores ou equipamentos da Nakasone Soft e/ou de seus parceiros e, conforme disposto acima, não é responsável por qualquer material ilegal, difamatório, que viole direitos de privacidade, ou que seja abusivo, ameaçador, discriminatório, obsceno, injurioso ou censurável de qualquer forma ou que infrinja ou possa infringir direitos de propriedade intelectual ou outros direitos de terceiros. Nesse caso, o Usuário ficará sujeito às penalidades previstas nos itens 5.4 e 5.5 acima.\n
+"/>
+                    <TextView
+                        android:id="@+id/textView8a98888"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="15dp"
+                        android:textAlignment="center"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                        tools:text="8. Softwares utilizados no Serviço" />
+                    <TextView
+                        android:id="@+id/textViewaa89989"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="15dp"
+                        android:textAlignment="center"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                        tools:text ="8.1. O Usuário reconhece e concorda que o Serviço, bem como qualquer software necessário na utilização dos Serviços, doravante denominado “Software”, são e serão, a qualquer tempo, de propriedade da Nakasone Soft ou de seus parceiros comerciais.\n
+8.2. O uso do Software pelo Usuário, para acesso aos Serviços, não significa ou significará, a qualquer tempo, que o Usuário adquiriu ou adquirirá qualquer direito não expressamente previsto no presente instrumento, em especial, mas sem se limitar, o direito de comercializar ou explorar comercialmente o Software, efetuar qualquer tipo de decompilarão, descompressão, engenharia reversa ou acesso ao código fonte do Software. Assim, qualquer uso não autorizado dos Softwares dará à Nakasone Soft o direito de cancelar imediatamente a conta de serviços do Usuário e o seu acesso aos Softwares, independente de aviso prévio.\n
+8.3. O Usuário declara-se ciente, ainda, de que o referido Software contém informações confidenciais de acordo com a Lei sobre Proteção à Propriedade Intelectual e normas correlatas, as quais devem ser respeitadas e mantidas em sigilo de forma integral e absoluta pelo Usuário.\n
+8.4. A Nakasone Soft garante ao Usuário uma licença simples de acesso e uso do Software, a qual será pessoal, intransferível e não exclusiva para acessar os Serviços na forma prevista neste instrumento, sendo que a licença ora garantida não permite que o Usuário, ou que este permita que terceiros copiem, modifiquem, criem obras derivadas, efetuem engenharia reversa ou desmontagem do Software ou qualquer ato para descobrir seu código fonte, bem como vender, consignar, sublicenciar, conceder em garantia ou de qualquer outra forma transferir qualquer direito com relação ao Software.\n
+8.5. O Usuário também não poderá modificar o Software de qualquer maneira ou utilizar versões modificadas do Software, inclusive, sem limitação, com a finalidade de obter acesso não autorizado ao Serviço.\n
+"/>
+                    <TextView
+                        android:id="@+id/textView8a988s88"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="15dp"
+                        android:textAlignment="center"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                        tools:text="9. Conteúdos do Usuário decorrentes do uso dos Serviços." />
+
+                    <TextView
+                        android:id="@+id/textViewaaa89989"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="15dp"
+                        android:textAlignment="center"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                        tools:text ="9.1. Em razão do uso dos Serviços, nos termos do presente instrumento, o Usuário, ciente de que as informações pessoais por ele prestadas e o conteúdo armazenado no site através da utilização dos Serviços serão mantidos em absoluto sigilo e confidencialidade – salvo pelas hipóteses previstas no item 4.5 acima, concorda que:\n
+9.1.1. Ao acessar, utilizar, visualizar o conteúdo referente ao Serviço, ou ainda armazenar conteúdo pessoal nos equipamentos da Nakasone Soft, está concedendo a esta uma licença perpétua, irrevogável, mundial, isenta de direitos, e não exclusiva destas informações e conteúdos, que poderão ser utilizados tão somente de forma conjunta e coletiva com àqueles submetidos por outros Usuários, não existindo possibilidade de “identificação individual”;\n
+9.1.2. Que a Nakasone Soft tem todos os direitos, poderes e autoridade necessária para outorgar a licença supra, bem como para celebrar o presente instrumento e executar todas as obrigações aqui previstas.\n
+"/>
+
+
+                    <TextView
+                        android:id="@+id/textView8a988s88a"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="15dp"
+                        android:textAlignment="center"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                        tools:text="10. Exclusão da Garantia" />
+
+                    <TextView
+                        android:id="@+id/textViewaaa89989a"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="15dp"
+                        android:textAlignment="center"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                        tools:text ="10.1. Os serviços são proporcionados “como estão”, ou seja, tal como estiverem disponíveis e a Nakasone Soft não dará qualquer garantia em respeito a eles, tal como já mencionado no item 2. Em particular, a Nakasone Soft não garantirá que:\n
+10.1.1.O uso do serviço vá de encontro às suas exigências, necessidades ou expectativas, ou mesmo que será ininterrupto;\n
+10.1.2.Qualquer informação obtida em resultado do uso do Serviço será precisa ou isenta da verificação de erros ou falhas;\n
+10.1.3.Quaisquer defeitos na operação ou na funcionalidade de qualquer software que lhe seja fornecido, como parte do Serviço, sejam corrigidos.\n
+10.2. Nenhuma condição, garantia ou outros termos, incluindo quaisquer termos implícitos relativos à qualidade satisfatória, adequação para o fim ou conformidade com a descrição é aplicável ao Serviço.\n
+10.3. A utilização dos serviços é feita sob inteira responsabilidade do usuário e a sua prestação depende da funcionalidade de vários fatores, tais como: disponibilidade de acesso à internet, interação de servidores e serviços de telecomunicações de terceiros, adequação dos equipamentos do usuário, dentre outros.\n
+10.4. O usuário reconhece e concorda que qualquer material e/ou informação obtido através dos serviços ou de sua utilização será de sua exclusiva responsabilidade, especialmente no tocante a quaisquer danos que lhe venham a ser causados.\n
+10.5. A nakasone soft não é e nem será responsável:\n
+10.5.1.Pela impossibilidade de utilização de quaisquer dos serviços acima mencionados em razão da incompatibilidade destes com a configuração do computador do usuário;\n
+10.5.2.Pela desobediência, por parte do usuário, das regras e condições de uso estabelecidas por cada um dos provedores de acesso aos quais venha a se conectar;\n
+10.5.3.Por quaisquer danos sofridos pelo usuário em razão da incorreta utilização dos serviços;\n
+10.5.4.Pela reparação de danos de qualquer natureza causados pela quebra de privacidade ou segurança de dados do usuário durante a conexão de seu computador à internet através de terceiros;\n
+10.5.5.Por qualquer conteúdo, propaganda, anúncio, promoção, chamada ou promessa feita e/ou recebida através do site disponibilizado pela nakasone soft;\n
+10.5.6.Por qualquer falha no sistema de e-mail, ainda que por motivo que lhe seja atribuível, ficando estabelecido que o acesso ao serviço de e-mail, quando disponível, será fornecido da forma como se encontra;\n
+10.5.7.Por atos de qualquer natureza praticados pelo usuário na internet;\n
+10.5.8.Por prejuízos, perdas e danos causados ao usuário ou a qualquer terceiro, incluindo, mas sem se limitar, a perda de receitas, lucros cessantes, interrupção ou não realização de negócios, perda de informação e segredos comerciais e de indústria, em decorrência de qualquer falha nos serviços;\n
+10.5.9.Por prejuízos causados por programas nocivos ao equipamento do usuário, sem se limitar a vírus e trojans, ainda que tais arquivos e programas tenham sido recebidos por uma conta de e-mail do usuário cadastrada nos termos deste instrumento.\n
+"/>
+
+                    <TextView
+                        android:id="@+id/textView8a9a88s8a8a"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="15dp"
+                        android:textAlignment="center"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                        tools:text="11. Limitação da Responsabilidade" />
+
+                    <TextView
+                        android:id="@+id/textViewaaa8a9989a"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="15dp"
+                        android:textAlignment="center"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                        tools:text ="11.1. O Usuário concorda expressamente e está ciente de que a Nakasone Soft não terá responsabilidade, seja contratual ou extracontratual, por quaisquer danos materiais ou morais, incluindo, sem limitação, danos por lucros cessantes, perda de fundo de comércio ou de informações ou outras perdas intangíveis resultantes do:\n
+11.1.1 uso ou incapacidade de usar o Serviço;\n
+11.1.2 custo de aquisição de bens ou de outros serviços decorrentes da compra de bens, informações e dados pelo ou através do serviço ou mensagens de recebimento ou transações estabelecidas no ou através do Serviço;\n
+11.1.3 acesso não autorizado às transmissões ou informações do Usuário, bem como da alteração destes;\n
+11.1.4 orientações ou condutas de terceiros sobre o Serviço;\n
+11.1.5 por motivos de força maior ou caso fortuito e atos praticados pelo próprio Usuário;\n
+11.1.6 pelo uso indevido ou inapropriado dos Serviços;\n
+11.1.7 pela violação de qualquer regra ou condição aplicável ao uso dos Serviços.\n
+11.2. A Nakasone Soft não será responsável pela transmissão ou acessibilidade de informações exatas, úteis ou disponíveis através do Serviço e não será, também, responsável ou obrigado por qualquer transação ou decisões de investimentos ou gastos feitos com base em tais informações.\n
+"/>
+
+                                      <TextView
+                        android:id="@+id/textView8a9a88s8a89a"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="15dp"
+                        android:textAlignment="center"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                        tools:text="12. Propriedade Intelectual" />
+
+                    <TextView
+                        android:id="@+id/textViewaa9a8a9989a"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="15dp"
+                        android:textAlignment="center"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                        tools:text ="12.1. O Usuário reconhece e concorda que todo e qualquer conteúdo relacionado aos Serviços, incluindo, mas sem se limitar, a conteúdo publicitário, informações editoriais contidas no Serviço ou ainda qualquer conteúdo ou código fonte do Software, bem como quaisquer marcas, nomes comerciais e logotipos a eles relacionados, são protegidos por direitos autorais, outros direitos de propriedade intelectual ou ainda eventual legislação aplicável."/>
+
+                    <TextView
+                        android:id="@+id/texaView8a9a88s8a89a"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="15dp"
+                        android:textAlignment="center"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                        tools:text="13. Anúncios Publicitários" />
+
+                    <TextView
+                        android:id="@+id/textaViewaa9a8a9989a"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="15dp"
+                        android:textAlignment="center"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                        tools:text ="13.1. O Usuário expressamente declara ciente e de acordo que alguns dos Serviços poderão ser suportados por rendimentos resultantes de veiculação de publicidade no site que suporta e oferece os Serviços ou ainda a realização de anúncios, parcerias, promoções publicitárias ou qualquer outra forma de exploração comercial do site que suporta o Serviço ou dos Serviços em si e sem que o Usuário tenha direito a qualquer participação sobre a receita advinda destes recursos.\n
+13.2. A forma, o modo e a extensão dos conteúdos comerciais incluídos nos Serviços poderão estar sujeitos a alterações, modificações ou adaptações por parte da NakasoneSofte seus parceiros, independentemente de qualquer notificação ao Usuário a qualquer tempo.\n
+
+"/>
+
+                    <TextView
+                        android:id="@+id/texaaView8a9a88s8a89a"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="15dp"
+                        android:textAlignment="center"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                        tools:text="14. Disposições Gerais." />
+
+                    <TextView
+                        android:id="@+id/teaxtaViewaa9a8a9989a"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="15dp"
+                        android:textAlignment="center"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                        tools:text ="14.1. O Usuário poderá, a qualquer momento, optar por não receber e-mails enviados pela Nakasone Softao correio eletrônico (e-mail) informado em seu cadastro, sendo que, caso não o faça, concorda em receber mensagens de caráter comercial, informativo ou publicitário, com finalidade de comunicação e/ou divulgação de qualquer assunto que se refira aos serviços objeto deste Contrato ou a conteúdos, comerciais ou não, de parceiros da NakasoneSoft.\n
+14.2. O presente instrumento não poderá ser, de nenhuma forma e em nenhuma hipótese, cedido pelo Usuário a qualquer terceiro sem a prévia e expressa anuência da NakasoneSoft.\n
+14.3. Os termos e condições constantes dos presentes Termos de Uso do Serviço poderão ser atualizados ou modificados, a qualquer tempo, a critério da NakasoneSoft, independentemente de qualquer notificação prévia ao Usuário, sendo que caberá a este manter-se constantemente atualizado dos presentes Termos de Uso. Não obstante, sempre que as alterações nas condições dos presentes Termos de Uso indicar limitações do uso dos Serviços, a NakasoneSoftse compromete a informar, via e-mail, ao Usuário, a respeito de tais modificações, de modo que, em caso de discordância, terá assegurado o direito de cancelar sua conta de serviços.\n
+14.4. O Usuário reconhece e aceita que NakasoneSoftpoderá, a seu exclusivo critério, parar permanente ou temporariamente de prestar o Serviço ou qualquer parte do Serviço a si ou à generalidade dos utilizadores, sem aviso prévio.\n
+"/>
+                    <TextView
+                        android:id="@+id/texaaView8a9aa8a8s8a89a"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="15dp"
+                        android:textAlignment="center"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                        tools:text="15. Foro" />
+
+                    <TextView
+                        android:id="@+id/teaxtaVieawaa9a8aa9989a"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="15dp"
+                        android:textAlignment="center"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                        tools:text ="15.1. As partes elegem o Foro da Comarca de São José dos Campos, SP, para dirimir eventuais dúvidas e demandas emergentes do presente termo, com renúncia a qualquer outro, por mais privilegiado que seja."/>
+
+
+
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

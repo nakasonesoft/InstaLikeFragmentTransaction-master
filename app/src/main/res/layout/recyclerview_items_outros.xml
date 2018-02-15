@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/cardview1"
+    android:layout_width="match_parent"
+    android:layout_height="85dp"
+    card_view:cardElevation="3dp"
+    card_view:contentPadding="3dp"
+    card_view:cardCornerRadius="3dp"
+    card_view:cardMaxElevation="3dp">
+
+
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/cdll2">
+
+        <LinearLayout
+            android:id="@+id/cdll_outros"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentTop="true"
+            android:layout_toEndOf="@+id/VollyNetworkImageView1"
+            android:orientation="vertical"
+            tools:ignore="UnknownId">
+
+            <TextView
+                android:id="@+id/descricao_outros"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_marginLeft="7dp"
+                android:layout_toEndOf="@+id/VollyNetworkImageView1"
+                android:text="Nome Evento"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:textColor="#3c4045"
+                android:textSize="12dp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="19dp"
+                android:layout_alignBottom="@+id/VollyNetworkImageView1"
+                android:layout_marginTop="25dp"
+                android:layout_toEndOf="@+id/VollyNetworkImageView1"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/textView5_outros"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_weight="0"
+                    android:text="Data:"
+                    android:textSize="10dp" />
+
+                <TextView
+                    android:id="@+id/data_outros"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="3dp"
+                    android:background="#ffffff"
+                    android:text="12/12/2016"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:textColor="#3c4045"
+                    android:textIsSelectable="false"
+                    android:textSize="10dp" />
+
+                <TextView
+                    android:id="@+id/textView4_outros"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_weight="0"
+                    android:text="Destino"
+                    android:textSize="10dp" />
+
+                <TextView
+                    android:id="@+id/id_grupo2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="3dp"
+                    android:text="19:00PM"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:textColor="#3c4045"
+                    android:textSize="10dp" />
+
+                <TextView
+                    android:id="@+id/textView2_outros"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:text="Origem"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:textColor="#3c4045"
+                    android:textSize="10dp"
+                    android:visibility="visible" />
+
+                <TextView
+                    android:id="@+id/id_grupo"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="3dp"
+                    android:text="00,00"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:textColor="#3c4045"
+                    android:textSize="10dp" />
+
+                <TextView
+                    android:id="@+id/textView6_outros"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_weight="0"
+                    android:text="Valor: R$"
+                    android:textSize="10dp" />
+
+                <TextView
+                    android:id="@+id/valor_outros"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="3dp"
+                    android:text="5km"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:textColor="#3c4045"
+                    android:textSize="10dp" />
+
+                <TextView
+                    android:id="@+id/id_outros"
+                    android:layout_width="16dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="4dp"
+                    android:text="19:00PM"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:textColor="#000000"
+                    android:visibility="invisible" />
+
+                <ProgressBar
+                    android:id="@+id/progressBar"
+                    style="?android:attr/progressBarStyleSmall"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:visibility="gone" />
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+    </RelativeLayout>
+
+</android.support.v7.widget.CardView>

@@ -1,0 +1,390 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.f22labs.instalikefragmenttransaction.fragments.HomeNakasone">
+
+    <!-- TODO: Update blank fragment layout -->
+    <android.support.v4.widget.SwipeRefreshLayout
+        android:id="@+id/swifeRefreshaltexcconsorcio"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="50dp"
+            android:gravity="center_vertical"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/textView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:gravity="left"
+                android:text="Receitas e Despesas Deste Mês"
+                android:textSize="25sp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginTop="10dp"
+                android:background="@color/colorNakasoneGreenBackgroundText"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/lblReceitas"
+                    android:layout_width="85dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:text="Receitas"
+                    android:textColor="@color/colorNakasoneGreenText"
+                    android:textSize="18dp" />
+
+
+                <TextView
+                    android:id="@+id/getreceita"
+                    android:layout_width="215dp"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:textColor="@color/colorNakasoneGreenText"
+                    android:textSize="18dp" />
+
+                <ImageView
+                    android:id="@+id/imgreceita_visao"
+                    android:layout_width="50dp"
+                    android:layout_height="20dp"
+                    android:src="@drawable/seta" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginTop="10dp"
+                android:background="@color/colorNakasoneRedBackgroundText"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/lblDespesas"
+                    android:layout_width="85dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:text="Despesas"
+                    android:textColor="@color/colorNakasoneRedText"
+                    android:textSize="18dp" />
+
+
+                <TextView
+                    android:id="@+id/getdespesa"
+                    android:layout_width="215dp"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:textColor="@color/colorNakasoneRedText"
+                    android:textSize="18dp" />
+
+                <ImageView
+                    android:id="@+id/imgdespesa_visao"
+                    android:layout_width="50dp"
+                    android:layout_height="20dp"
+                    android:src="@drawable/seta" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginTop="10dp"
+                android:background="@color/colorNakasoneBlueBackgroundText"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/lblTotal"
+                    android:layout_width="85dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:text="Resultado"
+                    android:textColor="@color/colorNakasoneBlueText"
+                    android:textSize="18dp" />
+
+
+                <TextView
+                    android:id="@+id/getresultado"
+                    android:layout_width="215dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:gravity="center"
+                    android:textColor="@color/colorNakasoneBlueText"
+                    android:textSize="18dp" />
+
+
+            </LinearLayout>
+
+            <!-- ######################### -->
+            <!-- Inicio Posição Financeira -->
+            <TextView
+                android:id="@+id/PosicaoF"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="40dp"
+                android:gravity="left"
+                android:text="Posição Financeira"
+                android:textSize="25sp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginTop="10dp"
+                android:background="@color/colorNakasoneGreenBackgroundText"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/lblSaldotext"
+                    android:layout_width="85dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:text="Saldo Caixa e Bancos"
+                    android:textColor="@color/colorNakasoneGreenText"
+                    android:textSize="15dp" />
+
+
+                <TextView
+                    android:id="@+id/getsaldo"
+                    android:layout_width="215dp"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:textColor="@color/colorNakasoneGreenText"
+                    android:textSize="18dp" />
+
+                <ImageView
+                    android:id="@+id/imgsaldo_visao"
+                    android:layout_width="50dp"
+                    android:layout_height="20dp"
+                    android:src="@drawable/seta" />
+
+            </LinearLayout>
+
+            <!-- Inicio Tabela posicao financeira-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginTop="30dp"
+                android:background="@color/colorNakasoneGreenBackgroundNavBar"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/lblDividasFMtext"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:text="Dívidas a Vencer Até o Final do Mês"
+                    android:textColor="#fff"
+                    android:textSize="18dp" />
+
+                <TextView
+                    android:id="@+id/lblSaldotext1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:text="Dívidas a Vencer Até o Final do Mês"
+                    android:textColor="#fff"
+                    android:textSize="18dp" />
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:background="#fff"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/cartaotext"
+                    android:layout_width="85dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:text="Cartão de Crédito"
+                    android:textColor="#000"
+                    android:textSize="15dp" />
+
+
+                <TextView
+                    android:id="@+id/getcartao"
+                    android:layout_width="215dp"
+                    android:layout_height="wrap_content"
+                    android:gravity="right"
+                    android:textColor="#000"
+                    android:textSize="18dp" />
+
+                <ImageView
+                    android:id="@+id/imgcartao_visao"
+                    android:layout_width="50dp"
+                    android:layout_height="20dp"
+                    android:src="@drawable/seta" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:background="#fff"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/OutrasDividastext"
+                    android:layout_width="85dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:text="Outras Dívidas"
+                    android:textColor="#000"
+                    android:textSize="15dp" />
+
+
+                <TextView
+                    android:id="@+id/getdividas"
+                    android:layout_width="215dp"
+                    android:layout_height="wrap_content"
+                    android:gravity="right"
+                    android:textColor="#000"
+                    android:textSize="18dp" />
+
+                <ImageView
+                    android:id="@+id/imgdividas_visao"
+                    android:layout_width="50dp"
+                    android:layout_height="20dp"
+                    android:src="@drawable/seta" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:background="#fff"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/prestacaoconsorciotext"
+                    android:layout_width="85dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:text="Prestação Consórcio"
+                    android:textColor="#000"
+                    android:textSize="15dp" />
+
+                <EditText
+                    android:id="@+id/setconsorcio"
+                    android:layout_width="215dp"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:gravity="right"
+                    android:hint="0,00"
+                    android:inputType="numberDecimal"
+                    android:textColor="#000"
+                    android:textSize="18dp" />
+
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:background="#fff"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/prestacaofinanciamentotext"
+                    android:layout_width="85dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:text="Prestação Financiamento de Imóvel"
+                    android:textColor="#000"
+                    android:textSize="12dp" />
+
+
+                <EditText
+                    android:id="@+id/setprestacao"
+                    android:layout_width="215dp"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:gravity="right"
+                    android:hint="0,00"
+                    android:inputType="numberDecimal"
+                    android:textColor="#000"
+                    android:textSize="18dp" />
+
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:background="#fff"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/totaltext"
+                    android:layout_width="85dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:text="Total"
+                    android:textColor="#000"
+                    android:textSize="15dp" />
+
+
+                <TextView
+                    android:id="@+id/settotal"
+                    android:layout_width="215dp"
+                    android:layout_height="wrap_content"
+                    android:gravity="right"
+                    android:textColor="#000"
+                    android:textSize="18dp" />
+
+                <ImageView
+                    android:id="@+id/imgtotal_visao"
+                    android:layout_width="50dp"
+                    android:layout_height="20dp"
+                    android:src="@drawable/seta" />
+
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/salvar_visao"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/colorNakasoneGreenBackgroundNavBar"
+                android:text="Salvar"
+                android:textColor="#fff" />
+
+            <TextView
+                android:id="@+id/textView3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="50dp"
+                android:text="" />
+
+
+        </LinearLayout>
+
+
+    </ScrollView>
+    </android.support.v4.widget.SwipeRefreshLayout>
+</LinearLayout>

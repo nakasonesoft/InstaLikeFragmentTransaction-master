@@ -1,0 +1,303 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center_vertical"
+    android:orientation="vertical"
+    tools:context="com.f22labs.instalikefragmenttransaction.fragments.LancamentoNakasone">
+
+    <!-- TODO: Update blank fragment layout -->
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginTop="10dp"
+                android:background="@color/colorNakasoneGreenBackgroundText"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/despesaText"
+                    android:layout_width="280dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:gravity="left"
+
+                    android:text="Despesa"
+                    android:textColor="@color/colorNakasoneGreenText"
+                    android:textSize="18dp" />
+
+                <ImageView
+                    android:id="@+id/imgdespesalancamento"
+                    android:layout_width="50dp"
+                    android:layout_height="20dp"
+                    android:layout_marginLeft="40dp"
+                    android:src="@drawable/seta" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginTop="10dp"
+                android:background="@color/colorNakasoneGreenBackgroundText"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/lbldiario"
+                    android:layout_width="280dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:gravity="left"
+
+                    android:text="Receita"
+                    android:textColor="@color/colorNakasoneGreenText"
+                    android:textSize="18dp" />
+
+                <ImageView
+                    android:id="@+id/imgreceitalancamento"
+                    android:layout_width="50dp"
+                    android:layout_height="20dp"
+                    android:layout_marginLeft="40dp"
+                    android:src="@drawable/seta" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginTop="10dp"
+                android:background="@color/colorNakasoneGreenBackgroundText"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/lbldividasrelatorios"
+                    android:layout_width="280dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:gravity="left"
+
+                    android:text="Transferência"
+                    android:textColor="@color/colorNakasoneGreenText"
+                    android:textSize="18dp" />
+
+                <ImageView
+                    android:id="@+id/imgtranslancamento"
+                    android:layout_width="50dp"
+                    android:layout_height="20dp"
+                    android:layout_marginLeft="40dp"
+                    android:src="@drawable/seta" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginTop="10dp"
+                android:background="@color/colorNakasoneGreenBackgroundText"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/lblmensal"
+                    android:layout_width="280dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:gravity="left"
+
+                    android:text="Saque"
+                    android:textColor="@color/colorNakasoneGreenText"
+                    android:textSize="18dp" />
+
+                <ImageView
+                    android:id="@+id/imgsaquelancamento"
+                    android:layout_width="50dp"
+                    android:layout_height="20dp"
+                    android:layout_marginLeft="40dp"
+                    android:src="@drawable/seta" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginTop="10dp"
+                android:background="@color/colorNakasoneGreenBackgroundText"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/lbldesempenho"
+                    android:layout_width="280dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:gravity="left"
+
+                    android:text="Depósito"
+                    android:textColor="@color/colorNakasoneGreenText"
+                    android:textSize="18dp" />
+
+                <ImageView
+                    android:id="@+id/imgdepositolancamento"
+                    android:layout_width="50dp"
+                    android:layout_height="20dp"
+                    android:layout_marginLeft="40dp"
+                    android:src="@drawable/seta" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginTop="10dp"
+                android:background="@color/colorNakasoneGreenBackgroundText"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/lblprevisao"
+                    android:layout_width="280dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+
+                    android:gravity="left"
+                    android:text="Pagamento Fatura Cartão de crédito"
+                    android:textColor="@color/colorNakasoneGreenText"
+                    android:textSize="18dp" />
+
+                <ImageView
+                    android:id="@+id/imgcartaolancamento"
+                    android:layout_width="50dp"
+                    android:layout_height="20dp"
+                    android:layout_marginLeft="40dp"
+                    android:src="@drawable/seta" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginTop="10dp"
+                android:background="@color/colorNakasoneGreenBackgroundText"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/lblacompanhamento"
+                    android:layout_width="280dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:gravity="left"
+
+                    android:text="Pagamento prestação de carnês"
+                    android:textColor="@color/colorNakasoneGreenText"
+                    android:textSize="18dp" />
+
+                <ImageView
+                    android:id="@+id/imgcarneslancamento"
+                    android:layout_width="50dp"
+                    android:layout_height="20dp"
+                    android:layout_marginLeft="40dp"
+                    android:src="@drawable/seta" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginTop="10dp"
+                android:background="@color/colorNakasoneGreenBackgroundText"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/lblacompanhamento"
+                    android:layout_width="280dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:gravity="left"
+
+                    android:text="Pagamento prestação de imóveis"
+                    android:textColor="@color/colorNakasoneGreenText"
+                    android:textSize="18dp" />
+
+                <ImageView
+                    android:id="@+id/imgimoveislancamento"
+                    android:layout_width="50dp"
+                    android:layout_height="20dp"
+                    android:layout_marginLeft="40dp"
+                    android:src="@drawable/seta" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginTop="10dp"
+                android:background="@color/colorNakasoneGreenBackgroundText"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/lblacompanhamento"
+                    android:layout_width="280dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:gravity="left"
+
+                    android:text="Pagamento de consórcio"
+                    android:textColor="@color/colorNakasoneGreenText"
+                    android:textSize="18dp" />
+
+                <ImageView
+                    android:id="@+id/imgconsorciolancamento"
+                    android:layout_width="50dp"
+                    android:layout_height="20dp"
+                    android:layout_marginLeft="40dp"
+                    android:src="@drawable/seta" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                android:background="@color/colorNakasoneGreenBackgroundText"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/lblacompanhamento"
+                    android:layout_width="280dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:gravity="left"
+
+                    android:text="Outros"
+                    android:textColor="@color/colorNakasoneGreenText"
+                    android:textSize="18dp" />
+
+                <ImageView
+                    android:id="@+id/imgoutroslancamento"
+                    android:layout_width="50dp"
+                    android:layout_height="20dp"
+                    android:layout_marginLeft="40dp"
+                    android:src="@drawable/seta" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+    </ScrollView>
+
+    </LinearLayout>

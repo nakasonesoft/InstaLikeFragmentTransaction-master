@@ -1,0 +1,148 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center_vertical"
+    android:orientation="vertical"
+    tools:context="com.f22labs.instalikefragmenttransaction.fragments.LancamentoNakasone">
+
+    <!-- TODO: Update blank fragment layout -->
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="@color/colorNakasoneGreenBackgroundText"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/fzlancamentoText"
+            android:layout_width="280dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:gravity="left"
+
+            android:text="Fazer Lançamento"
+            android:textColor="@color/colorNakasoneGreenText"
+            android:textSize="18dp" />
+
+        <ImageView
+            android:id="@+id/imgfazerlancamento"
+            android:layout_width="50dp"
+            android:layout_height="20dp"
+            android:layout_marginLeft="40dp"
+            android:src="@drawable/seta" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginTop="10dp"
+        android:background="@color/colorNakasoneGreenBackgroundText"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/lblAltExcLancamento"
+            android:layout_width="280dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:gravity="left"
+
+            android:text="Alterar/Excluir Lançamento"
+            android:textColor="@color/colorNakasoneGreenText"
+            android:textSize="18dp" />
+
+        <ImageView
+            android:id="@+id/imgAltExcLancamento"
+            android:layout_width="50dp"
+            android:layout_height="20dp"
+            android:layout_marginLeft="40dp"
+            android:src="@drawable/seta" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginTop="10dp"
+        android:background="@color/colorNakasoneGreenBackgroundText"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/lblcadastrarcontas"
+            android:layout_width="280dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:gravity="left"
+
+            android:text="Cadastrar Contas"
+            android:textColor="@color/colorNakasoneGreenText"
+            android:textSize="18dp" />
+
+        <ImageView
+            android:id="@+id/imgcadastrarcontas"
+            android:layout_width="50dp"
+            android:layout_height="20dp"
+            android:layout_marginLeft="40dp"
+            android:src="@drawable/seta" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginTop="10dp"
+        android:background="@color/colorNakasoneGreenBackgroundText"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/lblcadastrarsaldo"
+            android:layout_width="280dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:gravity="left"
+
+            android:text="Colocar/Alterar Saldo inicial"
+            android:textColor="@color/colorNakasoneGreenText"
+            android:textSize="18dp" />
+
+        <ImageView
+            android:id="@+id/imgcadastrarsaldo"
+            android:layout_width="50dp"
+            android:layout_height="20dp"
+            android:layout_marginLeft="40dp"
+            android:src="@drawable/seta" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginTop="10dp"
+        android:background="@color/colorNakasoneGreenBackgroundText"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/lblapoio"
+            android:layout_width="280dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:gravity="left"
+            android:text="Apoio"
+            android:textColor="@color/colorNakasoneGreenText"
+            android:textSize="18dp" />
+
+        <ImageView
+            android:id="@+id/imgapoio"
+            android:layout_width="50dp"
+            android:layout_height="20dp"
+            android:layout_marginLeft="40dp"
+            android:src="@drawable/seta" />
+
+    </LinearLayout>
+</LinearLayout>

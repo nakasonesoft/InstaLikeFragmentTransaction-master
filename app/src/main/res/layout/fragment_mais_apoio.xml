@@ -1,0 +1,154 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center_vertical"
+    android:orientation="vertical"
+    tools:context="com.f22labs.instalikefragmenttransaction.fragments.LancamentoNakasone">
+
+    <!-- TODO: Update blank fragment layout -->
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="@color/colorNakasoneGreenBackgroundText"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/fzperguntasText"
+            android:layout_width="280dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:gravity="left"
+
+            android:text="Perguntas frequentes"
+            android:textColor="@color/colorNakasoneGreenText"
+            android:textSize="18dp" />
+
+        <ImageView
+            android:id="@+id/imgperguntas"
+            android:layout_width="50dp"
+            android:layout_height="20dp"
+            android:layout_marginLeft="40dp"
+            android:src="@drawable/seta" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginTop="10dp"
+        android:background="@color/colorNakasoneGreenBackgroundText"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/lblpassopasso"
+            android:layout_width="280dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:gravity="left"
+
+            android:text="Passo a Passo"
+            android:textColor="@color/colorNakasoneGreenText"
+            android:textSize="18dp" />
+
+        <ImageView
+            android:id="@+id/imgpasso"
+            android:layout_width="50dp"
+            android:layout_height="20dp"
+            android:layout_marginLeft="40dp"
+            android:src="@drawable/seta" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginTop="10dp"
+        android:background="@color/colorNakasoneGreenBackgroundText"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/lblimplantacao"
+            android:layout_width="280dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:gravity="left"
+
+            android:text="Implantação e rotina"
+            android:textColor="@color/colorNakasoneGreenText"
+            android:textSize="18dp" />
+
+        <ImageView
+            android:id="@+id/imgimplantacao"
+            android:layout_width="50dp"
+            android:layout_height="20dp"
+            android:layout_marginLeft="40dp"
+            android:src="@drawable/seta" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginTop="10dp"
+        android:background="@color/colorNakasoneGreenBackgroundText"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/lbldicaseconomia"
+            android:layout_width="280dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:gravity="left"
+
+            android:text="Dicas de economia"
+            android:textColor="@color/colorNakasoneGreenText"
+            android:textSize="18dp" />
+
+        <ImageView
+            android:id="@+id/imgdicaseconomia"
+            android:layout_width="50dp"
+            android:layout_height="20dp"
+            android:layout_marginLeft="40dp"
+            android:src="@drawable/seta" />
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginTop="10dp"
+        android:background="@color/colorNakasoneGreenBackgroundText"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/lblfaleconosco"
+            android:layout_width="280dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:gravity="left"
+
+            android:text="Fale conosco"
+            android:textColor="@color/colorNakasoneGreenText"
+            android:textSize="18dp" />
+
+        <ImageView
+            android:id="@+id/imgfaleconosco"
+            android:layout_width="50dp"
+            android:layout_height="20dp"
+            android:layout_marginLeft="40dp"
+            android:src="@drawable/seta" />
+
+    </LinearLayout>
+
+
+
+
+</LinearLayout>

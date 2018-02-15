@@ -1,0 +1,419 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center">
+
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/textView8"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="10dp"
+                    android:text="REGISTRE TODOS OS SEUS GASTOS"
+                    android:textColor="#000" />
+
+                <TextView
+                    android:id="@+id/textView7"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="5dp"
+                    android:text="          A primeira recomendação dos especialistas para quem quer economizar é anotar todos os gastos e de acordo com os tipos de gastos. É verdade que isso era um tanto maçante e difícil para se fazer. Era, por que agora você tem a melhor ferramenta para fazer isso - o controle financeiro pessoal Fácil Control que tornou o controle financeiro extremamente fácil, simples, prático e, acredite, muito divertido. Como asseverou o físico William Thonsom: “Aquilo que não se pode medir, não se pode melhorar”. E se você estiver em situação difícil, a nossa Previsão Financeira vai fazer transparecer com nitidez a sua real situação e te ajudará a traçar planos seguros para sair do sufoco, evitando que você continue caminhando no escuro e sem direção."
+                    android:textColor="#778899" />
+
+                <TextView
+                    android:id="@+id/textView9"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="10dp"
+                    android:text="O IMPORTANTE NÃO É GANHAR MUITO"
+                    android:textColor="#000" />
+
+                <TextView
+                    android:id="@+id/textView10"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:text="          Não importa quanto se ganha, mas, sim, quanto e como se gasta. Tem gente que ganha pouco e poupa mais do que aquelas que ganham muito. Então, a preocupação principal não é ganhar bastante e nem deixar de gastar, mas, sim, gastar de uma maneira correta. Por isso, principalmente antes de se fazer gasto extra, pergunte a si próprio, se este gasto é realmente necessário, se não há como evitar e se não pode pelo menos ser adiado.  E, ao fazer gasto extra, sempre antes simule na Previsão Financeira, para se certificar tanto a sua capacidade financeira, como também o período adequado para o desembolso do valor total ou da entrada e das prestações."
+                    android:textColor="#778899" />
+
+                <TextView
+                    android:id="@+id/textView11"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="10dp"
+                    android:text="ECONOMIZAR É COMO FAZER UM BOM REGIME"
+                    android:textColor="#000" />
+
+                <TextView
+                    android:id="@+id/textView12"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:text="          O melhor regime, que realmente dá resultado duradouro, é aquele em que você não sofre, não passa fome. Segundo a recomendação dos especialistas, genericamente falando, você deve começar diminuindo (frise-se, diminuindo e não excluindo) os alimentos excessivamente calóricos, gordurosos, carregados de carboidratos, ou seja, continue mantendo-os no seu cardápio só que em quantidade menor e com menos frequência e substitua o restante dos alimentos pelos mais saudáveis, principalmente que sofreram menos processos de industrialização. Para economizar é exatamente igual. Você não precisa cortar de vez todas as suas despesas de segunda necessidade e as supérfluas. Você precisa apenas reeducar esses gastos de acordo com o seu orçamento, minimizando a quantidade e a frequência e substituindo o restante, inclusive os gastos de 1ª necessidade, pelos produtos ou serviços mais em conta e, claro, sem desfazer-se da qualidade."
+                    android:textColor="#778899" />
+
+                <TextView
+                    android:id="@+id/textView13"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="10dp"
+                    android:text="ECONOMIZAR É TAMBÉM A SOMA DE PEQUENAS ATITUDES"
+                    android:textColor="#000" />
+
+                <TextView
+                    android:id="@+id/textView14"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:text="          Certo dia, na hora do almoço, um casal e seus dois filhos entraram numa padaria e se sentaram à uma mesa e o marido se dirigiu ao balconista perguntando em quanto ficaria quatro sanduíches misto frio. Frustrado, voltou-se à mesa, confabulou com a esposa e retornou ao balconista pedindo-lhe 4 pães franceses cortados ao meio, mais 8 fatias de apresuntado e 8 fatias de queijo mussarela. Conclusão: o gasto da família se reduziu para menos da metade que os mesmos lanches que seriam feitos pela padaria. Por isso, quando, por exemplo, estiver com vontade de comer uma pizza ou um nhoque, compre a massa e os ingredientes no supermercado e prepare-os em casa você mesmo. Nem precisa dizer quanto você pode economizar só com esse pequeno gesto, não é mesmo? Outra dica – não tenha vergonha de levar marmita para o trabalho. Vergonhoso é ir a um restaurante self-service e ficar agoniado com a balança. A marmita, além de sair mais em conta, a comida é mais saudável, pois é você quem escolhe o que comer e como se elaborar a comida, zelando principalmente na quantidade de gordura, óleo, sal, entre outros que, sorrateiramente, dia a dia, vai prejudicando a sua saúde. E se no trabalho, no meio do período da manhã e da tarde, você tem costume de lanchar, prepare-os igualmente na sua casa.  E nunca compre água mineral no restaurante. Peça água filtrada que todo estabelecimento que servem alimentos é obrigado a fornecer gratuitamente. Você economiza e ainda ajuda o planeta com menos embalagem descartada."
+                    android:textColor="#778899" />
+
+                <TextView
+                    android:id="@+id/textView15"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="10dp"
+                    android:text="FAZER PEQUENAS ECONOMIAS NÃO É VERGONHOSO E NEM COISA DE POBRE. ATÉ OS RICOS O FAZEM."
+                    android:textColor="#000" />
+
+                <TextView
+                    android:id="@+id/textView16"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:text="          August Turak, fundador de duas grandes empresas bem sucedidas de software e escritor de best-seller, confessa que guarda todos os pedacinhos de sabonete e os junta para formar um novo sabonete. E que também espreme o tubo de pasta de dente até o fim, pressionando todo o conteúdo até não poder mais. Um outro milionário americano, cirurgião plástico, nunca voa em primeira classe, com o objetivo de poupar a diferença do valor. Jean Paul Getty, bilionário americano já falecido, uma vez mandou instalar “orelhões” em sua mansão, para que os hóspedes não sobrecarregassem a sua conta telefônica.  Um certo milionário brasileiro faz questão de anotar todos os valores, por mínimo que seja, que os filhos lhe pedem adiantado durante o mês e os desconta das mesadas que lhes paga no final do mês. Um outro ricaço brasileiro fica furioso toda vez que encontra uma sala vazia com as luzes acesas. E você também deve conhecer outros casos semelhantes. Então, não se acanhe em lutar pelas mínimas economias, pois, não é vergonhoso, aliás, é até chique. "
+                    android:textColor="#778899" />
+
+                <TextView
+                    android:id="@+id/textView17"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="10dp"
+                    android:text="NÃO CONTINUE PAGANDO PELO QUE VOCÊ NÃO CONSOME OU NÃO USA"
+                    android:textColor="#000" />
+
+                <TextView
+                    android:id="@+id/textView18"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:text="          Para que pagar um rodízio de pizza se você não consegue ingerir mais que 2 ou 3 pedaços? Para que pagar mensalidade da academia se você não a frequenta com assiduidade? Para que pagar diária para uma diarista se ela faz os serviços em algumas horas? Pague-a por hora ou contrate-a por tarefa. Sai muito mais em conta."
+                    android:textColor="#778899" />
+
+                <TextView
+                    android:id="@+id/textView19"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="10dp"
+                    android:text="VIAGEM GRATUITA PARA JOVENS DE BAIXA RENDA"
+                    android:textColor="#000" />
+
+                <TextView
+                    android:id="@+id/textViergew20"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:text="          Além dos idosos, os jovens de baixa renda tem também direito de vagas gratuitas em viagens de ônibus e trens interestaduais. As empresas de ônibus devem dispor de duas vagas gratuitas e duas com descontos de até 50% por veículo, para jovens entre 15 e 29 anos, com renda familiar de até dois salários-mínimos e inscrito no CadÚnico. "
+                    android:textColor="#778899" />
+
+                <TextView
+                    android:id="@+id/textVfgiew"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="10dp"
+                    android:text="REFEIÇÕES NAS ESTRADAS"
+                    android:textColor="#000" />
+
+                <TextView
+                    android:id="@+id/textVrewgiew2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:text="          Falando em viagem, tem um cidadão que, quando viaja com a família de carro, tem o costume de fazer as refeições nas cidades, evitando os restaurantes de beira de estrada. Mas, quando não aparece nenhuma cidade no trajeto, ele seleciona os restaurantes descartando, logo de início, os que tem só veículos de passeio e ônibus no estacionamento, dando preferência àqueles em que há caminhões estacionados, pois ele sabe que os caminhoneiros, melhor que ninguém, conhecem os restaurantes em que se come bem e barato. E, ainda, quando o restaurante não é self-service, mas aquele que fornece apenas prato feito (sortido) ou comercial, em que sempre acabam sobrando misturas, ele coloca essas misturas no meio de pães, formando-se belos sanduíches que servem para o lanche da tarde e, às vezes, até para o jantar. E isso ele faz sem nenhum constrangimento, pois ele sabe que tudo já está embutido na conta que irá pagar, quer dizer, ele não está surrupiando. Outra dica – evite comprar petiscos nos restaurantes e lanchonetes de beira de estrada. Abasteça-se antes de pegar estrada."
+                    android:textColor="#778899" />
+                <TextView
+                    android:id="@+id/textewrfView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="10dp"
+                    android:text="DINHEIRO NÃO TRAZ FELICIDADE?"
+                    android:textColor="#000" />
+
+                <TextView
+                    android:id="@+id/textewfView2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:text="          É discutível essa teoria de que dinheiro não traz felicidade, porém, é indiscutível de que a falta dele traz infelicidade e muita e, muitas vezes, até desunião. Muitas discussões entre casais, se analisarmos a fundo, verificar-se- á que sempre tem origem ou agravamento nas questões de ordem financeira. Recomendamos, pois, que a elaboração e o acompanhamento do Controle Financeiro não fiquem restrito ao (à) cabeça do casal. É muitíssimo importante que haja a participação de ambos, unindo forças em torno de um objetivo comum. Além de se evitar desavenças, solidificará mais ainda o casamento. Pois é sabido que para um casal se dar bem, não é necessário que ambos tenham os mesmos pensamentos, mas que pensem juntos."
+                    android:textColor="#778899" />
+                <TextView
+                    android:id="@+id/tessdedxtView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="10dp"
+                    android:text="ENVOLVA TAMBÉM AS CRIANÇAS"
+                    android:textColor="#000" />
+
+                <TextView
+                    android:id="@+id/texdsftView2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:text="          Não só em casos de morte, separação ou doenças graves, mas também em situação de crise financeira, devemos envolver toda a família, inclusive as crianças. E na tomada de decisões, deve-se dar incumbência a cada membro da família para se enfrentar a crise, de acordo com a capacidade e idade de cada um, fazendo com que todos se sintam que vão contribuir com os resultados. Com isso, além da adesão das crianças, vai-se evitar que elas fiquem exigindo coisas que a situação não permita. Então, jamais subestime a cooperação e o espírito compreensivo das crianças. Você vai ter uma agradável surpresa. E o maior fruto disso tudo é que, ultrapassada a crise, as crianças vão estar mais amadurecidas com a experiência adquirida, mais fortes e preparadas para enfrentar outras crises e, principalmente, toda a família vai estar com um laço mais forte de união. Diferentemente seria se se ficar amaldiçoando a sorte, procurando culpados, acusando um ou outro e infernizando a vida do provável culpado que levou a família àquela situação. Procedendo-se erradamente assim, no final da crise, vão estar todos arrasados, estressados e, principalmente, desunidos, debilitados e despreparados para enfrentar uma nova crise, tendo perdido uma grande oportunidade para se amadurecerem - particularmente as crianças."
+                    android:textColor="#778899" />
+                <TextView
+                    android:id="@+id/tedsfxtView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="10dp"
+                    android:text="RECEITAS DA VOVÓ"
+                    android:textColor="#000" />
+
+                <TextView
+                    android:id="@+id/texsdftView2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:text="          Às vezes, são as próprias crianças que exigem das mães que façam refeições, inclusive os lanches da tarde, “como da vovó”, que acabam ficando bem mais em conta e, principalmente, mais saudáveis. Pois coloque isso em prática. Quem não gosta de comida caseira, ou da roça, tais como, bolos de cascas de banana, de laranja, de abacaxi, bolo de fubá cremoso, ... E convide as crianças para participarem do preparo. Claro, só evite que elas manuseiem o fogão e outros aparelhos e utensílios perigosos. Tem ainda a receita daquela avó que faz um bife virar três bifes à milanesa. Como? Ela pega um bife de carne de segunda, corta em três pedaços, deita cada pedaço em cima da farinha de rosca e vai massageando e pressionando com as pontas  dos dedos até o tamanho se triplicar. E, depois, é só seguir a receita de se preparar um bife à milanesa. Note-se, então, que os meios para se economizar são incontáveis e cada um pode ir incrementando e aperfeiçoando as suas próprias receitas e criatividades."
+                    android:textColor="#778899" />
+                <TextView
+                    android:id="@+id/textsdfsdfView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="10dp"
+                    android:text="AO SUPERMERCADO, VÁ SEM FOME E SEM AS CRIANÇAS"
+                    android:textColor="#000" />
+
+                <TextView
+                    android:id="@+id/tesdfxtView2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:text="          Ao ir ao supermercado, faça antes uma lista dos produtos essenciais que estão faltando e vá - sem fome e, desta vez, sem as crianças – restringindo-se aos produtos estritamente necessários, evitando-se ficar “paquerando” os produtos das prateleiras e em promoção que não estão na sua lista, cilada esta que sempre acaba te induzindo a comprar produtos desnecessários. Então, no supermercado, seja direto e objetivo e venha embora o quanto antes. E, se a condição financeira permitir, procure comprar em quantidade que torne o preço ao de atacado, tomando-se o cuidado de calcular se até o final da validade é possível o uso ou o consumo de toda a quantidade. E assim que puder, procure comprar tudo em dinheiro ou com cartão de débito. E enquanto estiver dependendo de cartões de crédito, vá, paulatinamente, diminuindo tanto o uso como a quantidade de cartões até se restringir a um único e que deverá ser mantido apenas para necessidade emergencial. Outra boa ideia é formar grupos de amigos para compartilhar promoções, como material escolar, roupas infantis, de bebês, etc."
+                    android:textColor="#778899" />
+                <TextView
+                    android:id="@+id/texdsfsdftView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="10dp"
+                    android:text="COMPRAR EM VOLUME MAIOR NEM SEMPRE É VANTAJOSO"
+                    android:textColor="#000" />
+
+                <TextView
+                    android:id="@+id/textVisdfew2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:text="          Existem muitos anúncios enganosos induzindo o consumidor a adquirir produtos em volume maior, o que não passa de uma verdadeira trapaça. Por exemplo, em uma determinada loja atacarejo (varejista-atacadista), uma certa marca de detergente em pó estava exposto em 3 volumes: de 0,500 kg ao preço de R$ 3,98, de 1 kg por R$ 8,29 e de 2 kg por R$ 17,61, sendo que 4 pacotes de 0,500 kg, que totaliza 2 kg, daria um total de R$ 15,92, ou seja, sairia R$ 1,69 mais barato que o pacote de 2 kg ou, em porcentagem, 9,6% a menos – QUASE DEZ POR CENTO A MENOS!  E uma outra marca de detergente em pó apresentava também a mesma cilada. O pacote de 1 kg estava com o preço de R$ 4,98 e o de 2 kg ao preço de R$ 10,58, sendo que 2 pacotes de 1 kg totalizariam R$ 9,96, ou seja, 4,9% a menos. Acontece isso também e de uma maneira permanente, com uma determinada marca de sardinha. E constatamos isso nesse mesmo supermercado em que na embalagem de 125 g estava ao preço de R$ 2,29 e a de 250 g, praticamente o dobro de volume, estava a R$ 4,98, sendo que duas latas de 125 g totalizariam R$ 4,58, ou seja, R$ 0,40 a menos, resultando 8% a menos em relação ao volume maior. Flagra-se também essa armadilha em produto lácteo exposto em bandeja que em bandeja com 6 potinhos é vendido a R$ 5,40 e com 8 potinhos, dito como Econômico, a R$ 7,60. Dividindo-se os preços pelas unidades, cada potinho custaria, respectivamente, R$ 0,90 e R$ 0,95, ou seja, sai mais barato levar a bandeja de 6 potinhos. Para visualizar melhor, resumimos em uma planilha, assim:  PRODUTO VOLUME VALOR R$  PREÇO UNITÁRIO  DETERGENTE EM PÓ MARCA A  0,500 kg 3,98 7,96 1 kg 8,29 8,29 2 kg 17,61 8,81  DETERGENTE EM PÓ MARCA B  1 kg 4,98 4,98 2 kg 10,58 5,29  SARDINHA EM LATA  125 g 2,29 2,29 250 g 4,98 2,49  PRODUTO LÁCTEO EM BANDEJA  6 u 5,39 0,90 8 u 7,59 0,95  Note-se em que em todos os casos acima, o volume em menor quantidade está sempre com o melhor custo unitário. Então, tome muito cuidado!"
+                    android:textColor="#778899" />
+
+                <TextView
+                    android:id="@+id/textVieewrw3"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="10dp"
+                    android:textColor="#000"
+                    android:text="SUPERMERCADO – PROMOÇÕES" />
+
+                <TextView
+                    android:id="@+id/textViewagreg2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:text="          Tome muito cuidado com os produtos que os supermercados colocam em promoção, pois, muitas vezes, é a validade que está por vencer. Existem supermercados que cobrem as promoções de outros supermercados. Então, ao invés de você ficar correndo os supermercados para aproveitar as promoções, cujo tempo e condução podem acabar anulando as vantagens, leve os panfletos nesse supermercado e exija que equipare os preços às ofertas dos outros supermercados."
+                    android:textColor="#778899" />
+                <TextView
+                    android:id="@+id/textVregiewdf3"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="10dp"
+                    android:textColor="#000"
+                    android:text="SEJA VOCÊ MESMO, SEM OSTENTAÇÃO" />
+
+                <TextView
+                    android:id="@+id/textVisdfewa2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:text=""
+                    android:textColor="#778899"
+                    tools:text="            Certo dia, um rapaz estacionou o seu belo carro de luxo em frente à uma lanchonete. Ao entrar, cumprimentou a todos e tomou o seu uísque importado. E assim que ele partiu, o comentário foi geral: “Ele vive nessa pomposidade, mas anda com a corda no pescoço ... “ Se você quer provocar admiração, seja humilde, respeitando todas as pessoas que te rodeiam. Pois, para ser aceito, não precisamos fingir que estamos bem. Viva de acordo com a sua renda e não tente ter a vida que os outros esperam de você ou a que você acha que vai impressionar os outros. E nunca seja contaminado pela ostentação das pessoas. Portanto, seja corajoso e tome atitudes heroicas. Se o seu carro é de luxo, troque-o por um popular. Se o seu carro já é popular, troque-o por transporte coletivo, pelo menos em dias alternados, mas, a princípio, sem desfazer do seu veículo atual, exceto se a situação assim o exigir. E se o seu veículo é um “Pois É” e você necessita dele para o seu serviço, faça as contas das despesas de manutenção para ver se não daria para pagar, pelo menos uma boa parte, da prestação de um carro mais novo. E estude isso projetando no Controle Financeiro." />
+
+                <TextView
+                    android:id="@+id/textsdfVregergiew3"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="10dp"
+                    android:text="FAÇA FINANCIAMENTO E NÃO EMPRÉSTIMO"
+                    android:textColor="#000" />
+
+                <TextView
+                    android:id="@+id/textsergedfViewa2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:text="          Tem pessoas que fazem empréstimo pessoal para adquirir veículo à vista, achando que vai ganhar no preço. Puro engano. O juro de empréstimo pessoal é bem maior  que os juros de financiamento do veículo, que não compensa o ganho obtido na compra à vista, se é que esse ganho possa realmente existir. Por isso, opte pelo financiamento, dando o veículo como garantia. E se necessitar de empréstimo para outra finalidade, para pagamento a longo prazo, uma das alternativas é fazer o refinanciamento do seu veículo, se o mesmo já estiver quitado."
+                    android:textColor="#778899" />
+                <TextView
+                    android:id="@+id/textsdfweeefView3"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="10dp"
+                    android:text="AO FAZER SEGURO, CONSULTE TAMBÉM UMA CORRETORA"
+                    android:textColor="#000" />
+
+                <TextView
+                    android:id="@+id/tedfxtsdfViewa2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:text="          Ao fazer seguro, não se prenda à seguradora do banco ou da concessionária. Mas procure também uma corretora credenciada, pois ela tem uma enorme carteira de seguradoras, que concorrem entre si, quando então você pode acabar conseguindo o melhor preço do mercado."
+                    android:textColor="#778899" />
+                <TextView
+                    android:id="@+id/textsdsdfffView3"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="10dp"
+                    android:text="AUMENTO DE SALÁRIO, SERVIÇOS EXTRAS, BICOS"
+                    android:textColor="#000" />
+
+                <TextView
+                    android:id="@+id/textsdwefweffViewa2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:text="          Uma vez, um funcionário muito tímido, após muito relutar, resolveu finalmente pedir aumento ao carrancudo patrão: “Senhor Bonifácio, o senhor me desculpe, mas estou ganhando muito pouco”. “Está desculpado, e volte para o seu serviço” - respondeu-lhe rispidamente o patrão. Na época atual, pedir aumento seria a última opção. A melhor recomendação é fazer serviços extras, fazer bico. Por exemplo, se você trabalha de dia, procure um serviço, por exemplo, num delivery para trabalhar à noite ou vice-versa ou, ainda, nos finais de semana e assim por diante. Teste também as suas habilidades, inclusive, para o artesanato, culinária, que podem resultar em uma boa renda extra. Por exemplo, há uma professora que leciona durante o dia e, à noite, elabora bolos e cup cakes e o marido, professor de jiu-jitsu à noite, trabalha de vendedor durante uma parte do dia."
+                    android:textColor="#778899" />
+                <TextView
+                    android:id="@+id/textswerewdfVeriew3"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="10dp"
+                    android:text="NÃO FUJA DAS DÍVIDAS"
+                    android:textColor="#000" />
+                <TextView
+                    android:id="@+id/textsdegfViegwewa2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:text="          Já se disse que nas 24:00 horas do dia, as pessoas passam 8:00 horas ganhando dinheiro, mais 8:00 horas gastando o dobro do que ganhou e as 8:00 horas restantes tentando descobrir por que não consegue dormir. Vamos contar um “causo”. Já altas horas da noite, um cidadão não parava de se mexer na cama, sem conseguir pegar no sono. Daí, a esposa lhe perguntou o que lhe afligia. Ele, então, disse que na próxima segunda-feira teria que pagar uma dívida ao senhor Salim, mas que não ia ter condições de pagá-lo. A esposa, então, pegou o telefone e discou para o senhor Salim: “senhor Salim, boa noite, estou telefonando só para te avisar que aquela dívida que o meu marido tem para te pagar na segunda-feira, ele não vai poder pagar não, tá ? Boa noite !”. Ela desligou o telefone, voltou-se ao marido e lhe disse: “Agora você pode dormir tranquilo, por que quem não vai conseguir mais dormir é o senhor Salim”. Não, não estamos te insinuando a dar calotes. Estamos apenas aconselhando a não fugir delas – de todas as soluções, fugir é a pior. Você não vai conseguir dormir, vai ficar com vergonha de até andar pelas ruas e talvez até acabe herdando uma úlcera. O melhor mesmo é encarar os credores. Confesse-lhes, sem rodeios, que não tem condições de pagá-los e, então, peça que expurguem todas as multas, juros e lucros embutidos no valor das mercadorias ou dos serviços. E faça isso sem nenhuma relutância, pois, assim como você quer pagá-los, eles também querem resolver as pendências. Então, não tenha vergonha de ser claro e aberto com eles. E se o valor que te propuserem você não tiver condições de pagar, peça-lhes que parcelem em quantas vezes que for necessário. Claro, antes de procurá-los, faça um planejamento em cima da Previsão Financeira, para não ter o perigo de você tapar um buraco abrindo outro. Como disse Joelmir Beting: “Não se mata a vaca só para se acabar com os carrapatos dela”. E se você tiver dívidas de impostos, irrecorríveis, faça parcelamento, que muitas vezes pode ser feito pela internet. Se for tributos federais (imposto de renda, por exemplo), acesse o site www.receita.fazenda.gov.br ou dirija-se diretamente à Receita Federal. Se for tributos estaduais (ICMS, IPVA), dirija-se ao Posto Fiscal Estadual. E, se for tributos municipais (IPTU, ISSQN, taxa de licença), dirija-se à Prefeitura Municipal da sua cidade. E faça o parcelamento em quantas parcelas lhe for conveniente, baseando-se sempre na Previsão Financeira."
+                    android:textColor="#778899" />
+                <TextView
+                    android:id="@+id/textssfwefdfView3"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="10dp"
+                    android:text="DEVEDORES ANÔNIMOS E PROCON"
+                    android:textColor="#000" />
+                <TextView
+                    android:id="@+id/textsdfsdfViewa2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:text="          Frise-se que Fácil Control é uma ferramenta eficaz para te auxiliar e monitorar os seus gastos e, através da sua própria análise e acompanhamento, para transpor uma situação financeira difícil. Entretanto, não se conseguindo a solução assim mesmo, principalmente em virtude de seu alto endividamento, procure ajuda de uma consultoria financeira. Pode-se, entre outras, procurar a Associação dos Devedores Anônimos da sua cidade. Geralmente essa associação é gratuita. Ou o Procon que também possui um programa para auxiliar as pessoas endividadas e esse órgão pode fazer também uma intermediação junto aos credores. E sempre vá munido da Previsão Financeira."
+                    android:textColor="#778899" />
+                <TextView
+                    android:id="@+id/textsdssfVihghew3"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="10dp"
+                    android:text="CONTROLE FINANCEIRO É PARA SEMPRE"
+                    android:textColor="#000" />
+                <TextView
+                    android:id="@+id/textsdfVijhgjewa2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:text="          Enganam-se aqueles que acham que o controle financeiro é só para quem está em dificuldade financeira. Não, puro engano. Mesmo que você financeiramente se equilibre, é importantíssimo continuar-se com o controle de suas finanças. Tem, por exemplo, pessoas que se dizem “controladas” e que afirmam seguramente que nunca precisará utilizar um controle financeiro. Puro engano, repetimos. Algumas dessas pessoas que, por curiosidade, passou a utilizar o controle financeiro, hoje estão em melhor situação financeira que antes, pois se antes mensalmente poupavam um certo valor, agora, com o controle financeiro, passaram a poupar bem mais. E outra coisa – conforme já afirmamos que economizar é como fazer regime, após você perder peso e não continuar vigilante, você corre sério risco de em pouco tempo voltar ao peso anterior ou até mais. “Despesas são como cabelos. Quando você menos espera, eles já cresceram”, alerta Diego Baez, executivo da DGB Consultores."
+                    android:textColor="#778899" />
+                <TextView
+                    android:id="@+id/textsdfVkghkiew3"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="10dp"
+                    android:text="CONTROLE FINANCEIRO É PARA SEMPRE"
+                    android:textColor="#000" />
+                <TextView
+                    android:id="@+id/textsdfVidfgewa2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:text="          Enganam-se aqueles que acham que o controle financeiro é só para quem está em dificuldade financeira. Não, puro engano. Mesmo que você financeiramente se equilibre, é importantíssimo continuar-se com o controle de suas finanças. Tem, por exemplo, pessoas que se dizem “controladas” e que afirmam seguramente que nunca precisará utilizar um controle financeiro. Puro engano, repetimos. Algumas dessas pessoas que, por curiosidade, passou a utilizar o controle financeiro, hoje estão em melhor situação financeira que antes, pois se antes mensalmente poupavam um certo valor, agora, com o controle financeiro, passaram a poupar bem mais. E outra coisa – conforme já afirmamos que economizar é como fazer regime, após você perder peso e não continuar vigilante, você corre sério risco de em pouco tempo voltar ao peso anterior ou até mais. “Despesas são como cabelos. Quando você menos espera, eles já cresceram”, alerta Diego Baez, executivo da DGB Consultores."
+                    android:textColor="#778899" />
+                <TextView
+                    android:id="@+id/textsdfVidfgew3"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="10dp"
+                    android:text="SOBRE INVESTIMENTOS"
+                    android:textColor="#000" />
+
+                <TextView
+                    android:id="@+id/textsdfViewhja2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:text="          Assim que a situação melhorar e começar a sobrar uns trocados, lembre-se que tanto quanto ganhar dinheiro é tão quão importante saber investir. Então, quando começar a pensar em investimento, siga os conselhos de um bem sucedido empresário americano:  “Quando alguém te oferecer algo por 10, na verdade ele quer 9, mas que este algo vale 8, então, ofereça 7 e pague 6”. Isso significa que você sempre tem que procurar comprar por um valor abaixo do mercado – pois, essa diferença vai se acrescentar aos seus ganhos."
+                    android:textColor="#778899" />
+                <TextView
+                    android:id="@+id/thgjextsdfView3"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="10dp"
+                    android:text="VOCÊ É UMA EMPRESA"
+                    android:textColor="#000" />
+
+                <TextView
+                    android:id="@+id/textsdghjfViewa2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:text="          Doravante, considere-se uma empresa. Sim, faça de conta que você é uma empresa e, como tal, tem que apresentar resultados e você é o dirigente que vai se autofiscalizar e exigir isso de você-empresa. E agora que você se tornou uma empresa e, ao mesmo tempo, dirigente, vamos citar os dizeres que uma multinacional tem afixados na porta da sala de cada seu gerente:  “Você está no comando Conserte o que está errado Conserve o que está certo E siga adiante”  Uma boa sorte para você."
+                    android:textColor="#778899" />
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

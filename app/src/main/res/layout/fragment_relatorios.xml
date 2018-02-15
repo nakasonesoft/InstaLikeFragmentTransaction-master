@@ -1,0 +1,206 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center_vertical"
+    android:orientation="vertical"
+    tools:context="com.f22labs.instalikefragmenttransaction.fragments.LancamentoNakasone">
+
+    <!-- TODO: Update blank fragment layout -->
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="@color/colorNakasoneGreenBackgroundText"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/fichaindivText"
+            android:layout_width="280dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:gravity="left"
+
+            android:text="Ficha Individual"
+            android:textColor="@color/colorNakasoneGreenText"
+            android:textSize="18dp" />
+
+        <ImageView
+            android:id="@+id/imgfichaindividual"
+            android:layout_width="50dp"
+            android:layout_height="20dp"
+            android:layout_marginLeft="40dp"
+            android:src="@drawable/seta" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginTop="10dp"
+        android:background="@color/colorNakasoneGreenBackgroundText"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/lbldiario"
+            android:layout_width="280dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:gravity="left"
+
+            android:text="Diário"
+            android:textColor="@color/colorNakasoneGreenText"
+            android:textSize="18dp" />
+
+        <ImageView
+            android:id="@+id/imgdiario"
+            android:layout_width="50dp"
+            android:layout_height="20dp"
+            android:layout_marginLeft="40dp"
+            android:src="@drawable/seta" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginTop="10dp"
+        android:background="@color/colorNakasoneGreenBackgroundText"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/lbldividasrelatorios"
+            android:layout_width="280dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:gravity="left"
+
+            android:text="Dívidas - Cartão de Crédito"
+            android:textColor="@color/colorNakasoneGreenText"
+            android:textSize="18dp" />
+
+        <ImageView
+            android:id="@+id/imgdividasrelatorio"
+            android:layout_width="50dp"
+            android:layout_height="20dp"
+            android:layout_marginLeft="40dp"
+            android:src="@drawable/seta" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginTop="10dp"
+        android:background="@color/colorNakasoneGreenBackgroundText"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/lblmensal"
+            android:layout_width="280dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:gravity="left"
+
+            android:text="Mensal e Anual"
+            android:textColor="@color/colorNakasoneGreenText"
+            android:textSize="18dp" />
+
+        <ImageView
+            android:id="@+id/imgmensal"
+            android:layout_width="50dp"
+            android:layout_height="20dp"
+            android:layout_marginLeft="40dp"
+            android:src="@drawable/seta" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginTop="10dp"
+        android:background="@color/colorNakasoneGreenBackgroundText"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/lbldesempenho"
+            android:layout_width="280dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:gravity="left"
+
+            android:text="Desempenho"
+            android:textColor="@color/colorNakasoneGreenText"
+            android:textSize="18dp" />
+
+        <ImageView
+            android:id="@+id/imgdesempenho"
+            android:layout_width="50dp"
+            android:layout_height="20dp"
+            android:layout_marginLeft="40dp"
+            android:src="@drawable/seta" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginTop="10dp"
+        android:background="@color/colorNakasoneGreenBackgroundText"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/lblprevisao"
+            android:layout_width="280dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+
+            android:gravity="left"
+            android:text="Previsão Financeira"
+            android:textColor="@color/colorNakasoneGreenText"
+            android:textSize="18dp" />
+
+        <ImageView
+            android:id="@+id/imgprevisao"
+            android:layout_width="50dp"
+            android:layout_height="20dp"
+            android:layout_marginLeft="40dp"
+            android:src="@drawable/seta" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginTop="10dp"
+        android:background="@color/colorNakasoneGreenBackgroundText"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/lblacompanhamento"
+            android:layout_width="280dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:gravity="left"
+
+            android:text="Acompanhamento da meta"
+            android:textColor="@color/colorNakasoneGreenText"
+            android:textSize="18dp" />
+
+        <ImageView
+            android:id="@+id/imgacompanhamento"
+            android:layout_width="50dp"
+            android:layout_height="20dp"
+            android:layout_marginLeft="40dp"
+            android:src="@drawable/seta" />
+
+    </LinearLayout>
+
+</LinearLayout>
