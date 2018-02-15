@@ -5,6 +5,10 @@ public class GetDataAdapter
     //Geral-----------------------------------------------------------------------------------------
     private String id_cliente;
 
+
+
+
+
     //Despesas--------------------------------------------------------------------------------------
     private String id_despesas;
     private String descricao_despesas;

@@ -334,7 +334,7 @@ public class activity_cadastro extends AppCompatActivity {
                 else
                 {
                     Toast.makeText(getApplicationContext(), "Cadastrado com sucesso", Toast.LENGTH_LONG).show();
-                    Intent intent = new Intent(getApplicationContext(), activity_login.class );
+                    Intent intent = new Intent(getApplicationContext(), pesquisa_rapida.class );
                     startActivity(intent);
                 }
 

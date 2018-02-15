@@ -91,7 +91,7 @@ public class activity_login extends AppCompatActivity {
         recuperar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(getApplicationContext(), pesquisa_rapida.class );
+                Intent intent = new Intent(getApplicationContext(), activity_senha.class );
                 startActivity(intent);
             }
         });

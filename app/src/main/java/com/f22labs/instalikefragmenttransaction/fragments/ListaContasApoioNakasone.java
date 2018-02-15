@@ -14,8 +14,8 @@ import butterknife.ButterKnife;
 
 public class ListaContasApoioNakasone extends BaseFragment{
 
-    ImageView imglistacontas;
-    ImageView imgminidic;
+    ImageView imgativas;
+    ImageView imgdesativadas;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -28,6 +28,27 @@ public class ListaContasApoioNakasone extends BaseFragment{
         // Inflate the layout for this fragment
 
         View view = inflater.inflate(R.layout.fragment_lista_contas, container, false);
+
+        imgativas = (ImageView)view.findViewById(R.id.imgativas);
+        imgdesativadas = (ImageView)view.findViewById(R.id.imgdesativadas);
+
+
+        imgdesativadas.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                mFragmentNavigation.pushFragment(new RecyclerContasDesativadas());
+            }
+        });
+
+
+        imgativas.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                mFragmentNavigation.pushFragment(new RecyclerContasAtivadas());
+            }
+        });
+
+
 
         ButterKnife.bind(this, view);
 
