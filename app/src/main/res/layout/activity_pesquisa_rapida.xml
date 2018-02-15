@@ -26,7 +26,7 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="15dp"
+                android:layout_marginTop="10dp"
                 android:gravity="center"
                 android:orientation="horizontal">
 
@@ -54,7 +54,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:gravity="center"
-                    android:text="Por onde conheceu a PremiumControl?"
+                    android:text="Por qual meio você encontrou nosso Site?"
                     android:textColor="#000" />
             </LinearLayout>
 
@@ -63,7 +63,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="30dp"
                 android:layout_marginRight="30dp"
-                android:layout_marginTop="20dp"
+                android:layout_marginTop="15dp"
                 android:orientation="vertical">
 
                 <Button
@@ -87,7 +87,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="10dp"
                     android:background="@drawable/rounded1"
-                    android:text="GOOGLE" />
+                    android:text="Outras redes sociais" />
 
                 <Button
                     android:id="@+id/email_convite"
@@ -95,7 +95,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="10dp"
                     android:background="@drawable/rounded1"
-                    android:text="e-mail de convite" />
+                    android:text="Google" />
 
                 <Button
                     android:id="@+id/button6"
@@ -103,7 +103,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="10dp"
                     android:background="@drawable/rounded1"
-                    android:text="Indicação" />
+                    android:text="e-mail de convite" />
 
                 <Button
                     android:id="@+id/button7"
@@ -111,7 +111,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="10dp"
                     android:background="@drawable/rounded1"
-                    android:text="Outras redes sociais" />
+                    android:text="Indicação de amigo ou parente" />
 
                 <Button
                     android:id="@+id/button8"
