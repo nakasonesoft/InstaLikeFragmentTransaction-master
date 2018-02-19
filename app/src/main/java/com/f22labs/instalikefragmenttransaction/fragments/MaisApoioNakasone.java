@@ -49,6 +49,13 @@ public class MaisApoioNakasone extends BaseFragment{
             }
         });
 
+        imgperguntas.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v)
+            {
+                mFragmentNavigation.pushFragment(new PerguntasFrequentes());
+            }
+        });
         ButterKnife.bind(this, view);
 
         ( (MainActivity)getActivity()).updateToolbarTitle("Mais Apoio");

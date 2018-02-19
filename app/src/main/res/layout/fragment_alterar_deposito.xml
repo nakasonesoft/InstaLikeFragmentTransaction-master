@@ -182,14 +182,29 @@
 
                 </LinearLayout>
             </LinearLayout>
-
-            <Button
-                android:id="@+id/alterarsalvardeposito"
+            <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="80dp"
-                android:background="@color/colorNakasoneGreenBackgroundNavBar"
-                android:text="Salvar" />
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/alterarsalvardeposito"
+                    android:layout_width="50dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="80dp"
+                    android:layout_weight="1"
+                    android:background="@color/colorNakasoneGreenBackgroundNavBar"
+                    android:text="Salvar" />
+
+                <Button
+                    android:id="@+id/alterarexcluirdeposito"
+                    android:layout_width="50dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="80dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/buttonexcluir"
+                    android:text="Excluir" />
+            </LinearLayout>
         </LinearLayout>
     </ScrollView>
 

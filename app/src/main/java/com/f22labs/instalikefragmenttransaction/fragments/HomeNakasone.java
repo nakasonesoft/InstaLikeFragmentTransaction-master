@@ -221,22 +221,25 @@ public class HomeNakasone extends BaseFragment {
             protected void onPostExecute(String result)
             {
                 super.onPostExecute(result);
-                String ronaldo = result.substring(0,result.indexOf("<br>"));
-                String felipe = result.replace(ronaldo,"");
-                String alexandre = felipe.replace("<br>", "");
-                String Pablo = alexandre.substring(0,alexandre.indexOf("/"));
-                String Vittar = result.replace(ronaldo,"");
-                String Gabriel = Vittar.replace(Pablo,"");
-                String Guilherme = Gabriel.replace("<br>/","");
-                String Reginaldo = resposta.substring(resposta.lastIndexOf("/")+1);
-                Log.d("FOI LEK", ronaldo);
-                Log.d("FOI LEK", Pablo);
-                Log.d("Resultado",Guilherme);
-                Log.d("A", resposta.substring(resposta.lastIndexOf("/")+1));
-                getreceita.setText("R$  " + Pablo);
-                getdespesa.setText("R$  " + ronaldo);
-                getresultado.setText("R$  " + Reginaldo);
-                mSwipeRefreshLayout.setRefreshing(false);
+                try {
+                    String ronaldo = result.substring(0, result.indexOf("<br>"));
+                    String felipe = result.replace(ronaldo, "");
+                    String alexandre = felipe.replace("<br>", "");
+                    String Pablo = alexandre.substring(0, alexandre.indexOf("/"));
+                    String Vittar = result.replace(ronaldo, "");
+                    String Gabriel = Vittar.replace(Pablo, "");
+                    String Guilherme = Gabriel.replace("<br>/", "");
+                    String Reginaldo = resposta.substring(resposta.lastIndexOf("/") + 1);
+                    Log.d("FOI LEK", ronaldo);
+                    Log.d("FOI LEK", Pablo);
+                    Log.d("Resultado", Guilherme);
+                    Log.d("A", resposta.substring(resposta.lastIndexOf("/") + 1));
+                    getreceita.setText("R$  " + Pablo);
+                    getdespesa.setText("R$  " + ronaldo);
+                    getresultado.setText("R$  " + Reginaldo);
+                    mSwipeRefreshLayout.setRefreshing(false);
+                }
+                catch (Exception e){Toast.makeText(getActivity(),"Por favor, recarregue a página para calcular seus dados", Toast.LENGTH_LONG);}
 
             }
 

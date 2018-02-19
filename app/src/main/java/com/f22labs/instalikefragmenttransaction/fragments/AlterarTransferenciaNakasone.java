@@ -3,6 +3,7 @@ package com.f22labs.instalikefragmenttransaction.fragments;
 import android.app.ProgressDialog;
 import android.os.AsyncTask;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -38,7 +39,9 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.io.BufferedReader;
 import java.io.IOException;
+import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -50,9 +53,11 @@ public class AlterarTransferenciaNakasone extends BaseFragment implements Spinne
 
     EditText alterardescricaotransferencia,alterarondefoitransferencia,alterarvalortransferencia,alterarondeveiotransferencia,alterardatatransferencia;
 
-    Button alterarsalvartransferencia;
+    Button alterarsalvartransferencia, alterarexcluirtransferencia;
 
     ProgressDialog loading;
+
+    String resposta;
 
     //region Spinner Variaveis
     private Spinner spinner;
@@ -62,6 +67,106 @@ public class AlterarTransferenciaNakasone extends BaseFragment implements Spinne
     private JSONArray result;
     static String id_spinner;
     //endregion
+
+
+
+
+
+
+
+
+    public void insert(){
+
+        String  id_transferencia = String.valueOf(Static.getId_transferencia());
+        insertToDatabase(id_transferencia);
+
+    }
+
+    private void insertToDatabase(String id_transferencia){
+        class SendPostReqAsyncTask extends AsyncTask<String, Void, String> {
+            @Override
+            protected String doInBackground(String... params) {
+                String paramid_transferencia = params[0];
+
+                //InputStream is = null;
+
+                String  id_transferencia = String.valueOf(Static.getId_transferencia());
+
+                List<NameValuePair> nameValuePairs = new ArrayList<NameValuePair>();
+                nameValuePairs.add(new BasicNameValuePair("id_transferencia", id_transferencia));
+
+
+                try {
+                    HttpClient httpClient = new DefaultHttpClient();
+                    HttpPost httpPost = new HttpPost(
+                            "http://premiumcontrol.com.br/NakasoneSoftapp/delete/delete_transferencia.php");
+                    httpPost.setEntity(new UrlEncodedFormEntity(nameValuePairs));
+
+                    HttpResponse response = httpClient.execute(httpPost);
+
+                    HttpEntity entity = response.getEntity();
+
+                    BufferedReader in = new BufferedReader(new InputStreamReader(response.getEntity().getContent()));
+
+                    StringBuffer sb = new StringBuffer("");
+                    String line="";
+
+                    while ((line = in.readLine()) != null) {
+                        sb.append(line);
+                        break;
+                    }
+                    in.close();
+                    resposta = sb.toString();
+
+                    Log.d("TAG", resposta);
+                    return sb.toString();
+
+                    //is = entity.getContent();
+
+                } catch (ClientProtocolException e) {
+
+                } catch (IOException e) {
+
+                }
+                return "success";
+            }
+
+            @Override
+            protected void onPostExecute(String result) {
+                super.onPostExecute(result);
+
+                Toast.makeText(getActivity(), result, Toast.LENGTH_LONG).show();
+
+                if(Integer.parseInt(resposta) == 1)
+                {
+                    mFragmentNavigation.pushFragment(new AltExcLancamentoNakasone());
+                    Toast.makeText(getActivity(), "Conta apagada com sucesso", Toast.LENGTH_LONG).show();
+                }
+                else
+                {
+                    Toast.makeText(getActivity(), "Falha ao apagar conta", Toast.LENGTH_LONG).show();
+                }
+
+
+
+
+            }
+
+
+
+        }
+        SendPostReqAsyncTask sendPostReqAsyncTask = new SendPostReqAsyncTask();
+        sendPostReqAsyncTask.execute(id_transferencia);
+    }
+
+
+
+
+
+
+
+
+
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -79,6 +184,7 @@ public class AlterarTransferenciaNakasone extends BaseFragment implements Spinne
         alterarondeveiotransferencia = (EditText) view.findViewById(R.id.alterarondeveiotransferencia);
         alterardatatransferencia = (EditText) view.findViewById(R.id.alterardatatransferencia);
         alterarsalvartransferencia = (Button) view.findViewById(R.id.alterarsalvartransferencia);
+        alterarexcluirtransferencia = (Button) view.findViewById(R.id.alterarexcluirtransferencia);
         alterarvalortransferencia.addTextChangedListener(new MoneyTextWatcher(alterarvalortransferencia));
 
 
@@ -91,6 +197,16 @@ public class AlterarTransferenciaNakasone extends BaseFragment implements Spinne
 
         //endregion
         //region Máscara da data
+        alterarexcluirtransferencia.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                insert();
+            }
+        });
+
+
+
+
         alterardatatransferencia.addTextChangedListener(MaskEditUtil.mask(alterardatatransferencia, MaskEditUtil.FORMAT_DATE));
         //endregion
         //region Clique do Botão

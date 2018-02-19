@@ -13,6 +13,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name=".activities.MainActivity" />
+        <activity android:name=".activities.AdminActivity" />
         <activity android:name=".activities.activity_cadastro" />
         <activity android:name=".activities.activity_login">
             <intent-filter>

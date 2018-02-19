@@ -12,5 +12,276 @@
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
 
+    <string name="perg1">Acompanhamento da Meta – Para que serve?</string>
+    <string name="resp1">É muitissimamente importante fazer a Previsão Financeira, mas também é importantíssimo fazer o Acompanhamento da Meta. É nesse acompanhamento que você vai “fiscalizar-se” para que a meta traçada seja cumprida, ou seja, para que as despesas e as receitas fiquem dentro do que foi delineado, para que o objetivo final seja atingido.
+A primeira coluna do mapa retrata o que foi previsto ganhar e gastar e, a segunda coluna, do Real, retrata o que realmente aconteceu ou está acontecendo com as suas receitas e despesas. Todas as receitas e as despesas que você for tendo e lançando no decorrer do mês, os valores vão se acumulando nessa coluna. E o sistema vai também calculando as diferenças entre o previsto e o real e as porcentagens do real em relação ao previsto.
+E se você estranhar algum valor nessa coluna do Real, basta clicar em cima da conta que o sistema te conduz à Ficha Individual, aonde você poderá verificar os detalhes das receitas ou despesas lançadas nessa conta até então.</string>
+
+    <string name="perg2">Acréscimos por atraso – como lançar</string>
+    <string name="resp2">Primeiramente, o valor sem os acréscimos você lança normalmente na conta correspondente e os acréscimos na conta Outras Despesas Financeiras.
+Exemplo:
+Pagamento de aluguel no valor de R$ 700,00
+Acréscimo por atraso: R$ 15,00
+Valor total pago, suponhamos, com cartão de débito do Banco A: R$ 715,00
+</string>
+
+    <string name="perg3">Acréscimos por atraso no caso de pagamento de prestação de imóvel financiado ou de consórcio</string>
+    <string name="resp3">O valor da prestação – atualizado e sem os acréscimos por atraso - você lança na respetiva conta – Apartamento ou Casa ou Consórcio – e os acréscimos por atraso de pagamento você lança em Outras Despesas Financeiras.
+
+
+Alteração de Plano Completo para o Plano Básico
+Resposta – Antes de tudo, lembramos que no Plano Básico, você não terá direito aos Relatórios Resultados Mensal e Anual, Desempenho, Previsão Financeira e Acompanhamento da Meta.
+Para alterar, envie uma solicitação para o nosso Suporte Técnico que a alteração será
+</string>
+
+    <string name="perg4">Animal de Estimação e Gastos com o mesmo - Despesas Supérfluas versus Despesas Necessárias</string>
+    <string name="resp4">Resposta: Nota-se que a aquisição de um animal de estimação, no Minidicionário configura como Despesas Supérfluas, porém, os gastos com o mesmo, ou seja, com ração, banho, tosa, veterinário, configuram como Despesas Necessárias. Isto porque entendemos que a aquisição de animal de estimação não é uma despesa necessária, nem de 1ª e nem de 2ª necessidades, pois é um gasto totalmente evitável. Porém, depois de adquirido, não há como se desfazê-lo, há que se ficar e tratar do animal, como se fosse, e verdadeiramente passa a ser, um membro da família, por isso, os gastos com o mesmo passarão a ser classificados como Despesas Necessárias, lançando-se na conta Despesas com Animal Doméstico.</string>
+
+    <string name="perg5">Apartamento Financiado – como lançar uma aquisição	</string>
+    <string name="resp5">Vamos responder com um exemplo:
+	1º)Valor do apartamento: R$ 150.000,00
+	2º)Pagamento com FGTS: R$ 30.000,00
+	3º)Pagamento com caderneta de poupança do Banco A: R$ 10.000,00
+	4º)Pagamento com dinheiro em contas-corrente do Banco A: R$ 8.000,00
+	5º)Pagamento em dinheiro das despesas com documentação: R$ 2.000,00
+
+(demonstrar com lançamento)
+DESTINO:
+Apartamento: 30.000,00 + 10.000,00 + 8.000,00 (Valor: R$ 48.000,00)
+Histórico: Valor da entrada em um apartamento, sendo R$ 30.000,00 com FGTS, R$ 10.000,00 com caderneta de poupança e R$ 8.000,00 com contas corrente do Banco A e despesas com documentação no valor de R$ 2.000,00
+ORIGEM:
+Caderneta de Poupança – Banco A: 10.000,00
+Banco A: 8.000,00
+Caixa: 2.000,00
+
+E por ocasião do pagamento das prestações você deve lançá-las diretamente na conta Apartamento. </string>
+
+    <string name="perg6">Baixa de Bens – como lançar</string>
+    <string name="resp6">Se você desfizer de algum bem, seja pela venda, inutilização, furto ou qualquer outro motivo, é só fazer o seguinte lançamento:
+Supondo o furto de um celular adquirido por R$ 600,00</string>
+
+    <string name="perg7">Bens – pode-se atualizar o saldo das contas? </string>
+    <string name="resp7">Sim, principalmente em virtude de inflação, você pode fazer a atualização, porém, faça-a no saldo inicial, para não influir no cálculo do Desempenho. Assim como, você pode fazer a desvalorização. Para um ou outro caso, siga os mesmos passos. Acesse a aba Apoio, clique na Lista de Contas Ativas, localize a conta, clique no botão com o símbolo $ e, em seguida, digite o novo valor e, depois, é só clicar Salvar.
+</string>
+
+    <string name="perg8">Bens e Despesas – Quais são as diferenças?</string>
+    <string name="resp8">Essa dúvida é normal e vamos elucidar de uma maneira bem simples:
+          BENS – para um objeto ser lançado nas contas de Bens, tem que atender três itens
+	ao mesmo tempo: ser durável, ser de fácil controle e ter um valor razoável.
+	Durável subentende-se que tenha vida útil no mínimo de 5 anos e ser de fácil
+	controle quando sempre se sabe aonde esse objeto se encontra e ser
+	de valor razoável, que corresponda mais ou menos uns 3% do salário mínimo.
+
+	Exemplos de Bens: móveis, eletrodomésticos, ferramentas, bicicleta,
+	veículo, casa, apartamento, terreno, etc.  São Bens por que atendem
+	esses três itens ao mesmo tempo: são duráveis, de fácil localização e de valor
+	razoável.
+DESPESAS – são produtos de consumo imediato ou de difícil controle e/ou de
+		   pequeno valor.
+	Exemplos de Despesas: alimento, talher, copo, sabão, prato, toalha, roupas, etc.
+Alguns desses produtos podem até serem duráveis, porém, é de difícil
+	controle e/ou de preço ínfimo, então, é melhor lançá-los diretamente em Despesas.
+          Se ainda persistir dúvidas, consulte o nosso Minidicionário de Despesas, aonde,
+          na coluna de Conta Sugerida, vai recomendar em que conta lançar.
+</string>
+
+    <string name="perg9">Conta Desativada – como reativar</string>
+    <string name="resp9">Abra a aba Apoio, selecione a Lista de Contas Desativadas, localize a conta que você quer reativar, clique no botão Reativar conta e, pronto – a conta já estará de novo na Lista de Contas Ativas.</string>
+
+    <string name="perg10">Conta nova – como abrir e colocar saldo inicial</string>
+    <string name="resp10">Siga os seguintes passos:
+-Na aba de Lançamentos, selecione Cadastrar Contas
+-Em seguida, selecione o grupo
+-Depois, digite o nome da conta
+-Quanto ao Saldo Inicial, siga os seguintes passos:
+a) Nas contas do grupo Caixa e Bancos, Investimentos, Outros e Bens, basta informar o
+    saldo atual.
+b) Nas contas do grupo Cartão de Crédito:
+b.1 - informe o dia do vencimento da fatura
+b.2 - depois, clique em Cadastrar Saldo Inicial e, no próximo quadro, informe o
+        saldo da última Fatura (resto do valor não pago e transferido para o
+         próximo mês)
+b.3 - e, baseado também nessa Fatura, informe as dívidas parceladas no cartão,
+         tais como, a data da compra, o nome do Estabelecimento, a quantidade de
+         parcelas restantes a pagar e o valor de cada parcela.
+c) Nas contas do grupo de Outras Dívidas, se tiver débitos anteriores, clique em
+    Cadastrar Saldo Inicial e, no próximo quadro, informe a quantidade das prestações
+     restantes a pagar e, em seguida, o valor de cada prestação.
+Feito isso, você vai notar como as dívidas, inclusive as de cartões de crédito lhe ficarão bem mais transparentes e fáceis de entender e de controlar. E os totais mensais a pagar se espelharão nos meses futuros na Previsão Financeira e nos Resultados Mensal e Anual, dando uma visão clara dos futuros compromissos.
+d) Nas contas dos grupos de Receitas, Despesas Necessárias e Despesas Supérfluas,
+    não precisa colocar o saldo inicial.
+Finalizando, clique Salvar. </string>
+
+    <string name="perg11">Conta sem uso – como desativar</string>
+    <string name="resp11">Primeiro, abra a aba Apoio, selecione a Lista de Contas Ativas, localize a conta que você não vai usar, clique no botão Desativar conta e pronto – a conta já estará na Lista de Contas Desativadas.</string>
+
+    <string name="perg12">Desconto por pagamento antecipado - Como lançar</string>
+    <string name="resp12">Há que se fazer 2 lançamentos. Primeiro, no grupo de Outras Dívidas, na conta correspondente, você lança o valor total sem o desconto e, no segundo, você lança o desconto na conta de Outras Receitas.
+Exemplo:
+Pagamento de um carnê no valor de R$ 50,00
+Desconto obtido por pagamento antecipado: R$ 2,00
+Valor líquido pago em dinheiro: R$ 48,00
+</string>
+
+    <string name="perg13">Despesas Necessárias e Supérfluas – tem que lançar separadas mesmo?</string>
+    <string name="resp13">Sim. É verdade que o nosso site é o único site de controle financeiro que aconselha essa separação, mas você vai ver que não é difícil lançá-las separadas e, no resultado, vai notar que isso é muitíssimo importante. </string>
+
+    <string name="perg14">Diário – Para que serve ?</string>
+    <string name="resp14">omo o próprio nome diz - esse Relatório é o diário da sua vida financeira. Nele vão estar historiados (ou registrados) todos os fatos ocorridos no dia a dia da sua vida financeira. E nessa mesma página do Diário se, porventura, você constatar que algum lançamento não está de acordo, é só clicar em cima do mesmo que o sistema te conduzirá ao lançamento, aonde você poderá fazer as alterações necessárias e, até mesmo, excluí-lo.</string>
+
+    <string name="perg15">Diferença entre a Conta Individual e o Extrato Bancário – Como Corrigir</string>
+    <string name="resp15">Quando você fizer a checagem da sua Ficha Individual de Banco com o extrato bancário e ficar uma pequena diferença que não consiga elucidar,
+a - Se o saldo do extrato estiver menor que o saldo da conta individual, faça o lançamento
+      da diferença como segue:
+
+
+
+b - Agora, se for o inverso, isto é, se o saldo do extrato estiver maior que o saldo da Ficha
+     Individual, faça o lançamento da diferença, como segue:
+
+
+</string>
+
+    <string name="perg16">Empréstimo - Como lançar </string>
+    <string name="resp16">Vamos responder com um exemplo:
+Valor do empréstimo – R$ 5.000,00
+Prestações a pagar – 36 prestações de R$ 330,00, totalizando R$ 11.880,00
+Juros – R$ 6.880,00– Não lançar (R$ 11.880,00 menos R$ 5.000,00): EXCLUIR
+Banco: Banco </string>
+
+    <string name="perg17">Ficha Individual – Para que serve?</string>
+    <string name="resp17">A Ficha Individual detalha a movimentação feita em cada conta e que serve para você analisar os fatos ocorridos individualmente. Por exemplo, se você notou em algum dos Relatórios que houve um gasto muito grande com um certo tipo de despesa, é só clicar em cima dessa conta que vai aparecer a Ficha Individual detalhando os dias em que se gastou, para quem foi pago, o que foi gasto e qual o valor de cada gasto. </string>
+
+    <string name="perg18">Imóvel Financiado e Veículo Financiado – os lançamentos são diferentes</string>
+    <string name="resp18">Sim, porque o veículo, a tendência é de se depreciar pelo uso e pela idade e sofrer desvalorização de mercado, enquanto que o imóvel só tende a aumentar de valor, tanto pela inflação, como pelas benfeitorias realizadas e melhorias que ocorrerem na redondeza.
+Além disso, se você quiser liquidar as dívidas do veículo antecipadamente, o desconto
+será exíguo, enquanto que na liquidação antecipada das dívidas de um imóvel, você
+pagará somente o valor principal, expurgando-se todos os juros e correção monetária projetados.</string>
+
+    <string name="perg19">Mini Dicionário - Discordância de Conta Indicada</string>
+    <string name="resp19">A classificação das contas indicadas no Mini Dicionário é apenas uma sugestão e não uma regra, então, cada usuário pode fazê-la de acordo com o seu pensamento ou, mesmo, de acordo com o verdadeiro destino final do produto. Por exemplo, o nosso Mini Dicionário sugere que você lance o chocolate na conta de Despesas Supérfluas, porém, se o seu médico te receitou chocolate amargo com alto teor de cacau, daí, você naturalmente deverá lançá-lo no grupo de Despesas Necessárias, na conta Alimentação e Despesas do Lar.</string>
+
+    <string name="perg20">Mini Dicionário – Pode-se realmente discordar de Conta Indicada no Mini Dicionário ?</string>
+    <string name="perg21">Pagamento de Boleto pela compra de peça para veículo – como lançar</string>
+    <string name="resp21">Se você já lançou a compra, você deve ter lançado na conta de Despesas com Veículo e na segunda conta em Outras Dívidas na conta do Fornecedor. Então, agora, no pagamento do boleto, você seleciona Fazer Lançamento de e depois seleciona Outros, onde, no grupo de Outras Dívidas, você seleciona esse Fornecedor e depois, na segunda conta, você seleciona a conta de onde saiu o dinheiro ou o recurso (grupo Caixa e Bancos ou Cartão de Crédito).
+      Mas se você não fez nenhum lançamento na ocasião da compra e só agora é que você está lançando, lance este pagamento diretamente na conta de Despesas com Veículo e, na segunda conta, selecione a conta de onde saiu o dinheiro ou o recurso (grupo Caixa e Bancos ou Cartão de Crédito).</string>
+
+    <string name="perg22">Pagamento de Consórcio e de prestação de Imóvel Financiado – como lançar a correção monetária</string>
+    <string name="resp22">Muito fácil. Você deve lançar o valor total com a correção monetária nas respectivas contas (Consórcio, Apartamento, Casa), ou seja, sem separar o valor da correção monetária.
+</string>
+
+    <string name="perg23">Pagamento de prestação de dívidas em que mensalmente há correção monetária – como lançar</string>
+    <string name="resp23">Como na conta de Dívidas está registrado o valor sem a correção monetária, então, essa correção mensal deverá ser lançada separadamente na conta de Outras Despesas Financeiras. Exemplo:
+Valor original da prestação: R$ 330,00
+Valor da prestação paga neste mês: R$ 335,00
+
+ATENÇÃO: No caso de Financiamento de imóvel e de Consórcio, ver a resposta da pergunta: Pagamento de Consórcio e de prestação de Imóvel Financiado – como lançar a correção monetária</string>
+
+    <string name="perg24">Patrimônio e Desempenho – Para que servem?</string>
+    <string name="resp24">No quadro de PATRIMÔNIO E DESEMPENHO, aparecem os saldos das contas do patrimônio e das dívidas. Se pegarmos o Patrimônio e subtrairmos as dívidas, resultará no Patrimônio Líquido. E a variação do Patrimônio Líquido de um mês para o outro será o Desempenho e que, por sua vez, poderá ser positivo ou negativo. Se resultar positivo, significa que a diferença entre o Patrimônio e as dívidas aumentou, ou seja, quanto maior for o seu Patrimônio em relação às dívidas maior será o seu Patrimônio Líquido e, consequentemente, melhor será o seu Desempenho.
+Se precisar verificar alguma conta do Patrimônio ou das Dívidas, basta clicar nessa conta que o sistema te conduzirá à Ficha Individual.
+</string>
+
+    <string name="perg25">Patrimônio e Patrimônio Líquido</string>
+    <string name="resp25">O Patrimônio é tudo o que você possui, ou seja, é a soma do saldo das contas de Caixa e Bancos, Investimentos e Bens (ver a Lista de Contas)
+E o Patrimônio Líquido é o Patrimônio menos as Dividas.
+Mas não se preocupe, no quadro de PATRIMÔNIO e DESEMPENHO, o sistema realiza esses cálculos automaticamente. </string>
+
+    <string name="perg26">Patrimônio Líquido Negativo - Dívida Maior que o Patrimônio</string>
+    <string name="resp26">Caso você tenha pouco patrimônio e muitas dívidas, o seu Patrimônio Líquido ficará negativo e isso é normal. O importante é que, com o nosso controle financeiro, você vai passar a controlar esse negativo e, aos pouco, se tornará positivo.
+E para acompanhar o seu desempenho, observe que se o saldo negativo for mensalmente diminuindo, significa que o seu Patrimônio estará aumentando, ou seja, você estará devendo cada vez menos, ou ainda, você estará caminhando para se sair do sufoco.</string>
+
+    <string name="perg27">Pizza em Substituição à Refeição – pode ser lançada em Despesas Necessárias?</string>
+    <string name="resp27">Sim, com certeza, uma vez que sendo a pizza elaborada em casa, o custo será equivalente á uma refeição normal.</string>
+
+    <string name="perg28">Previsão Financeira – Para que serve?</string>
+    <string name="resp28">É durante o preenchimento e manuseio que você vai ter realmente uma melhor noção da Previsão Financeira. E não se assuste com a quantidade de informações, pois você vai preencher apenas a primeira coluna e o sistema preenche automaticamente as colunas dos meses restantes.
+Mas, vamos dar uma pincelada geral. Na primeira parte, a Previsão Financeira apresenta - por um período de 6 ou 12 meses – o que você vai ter de Receita e Despesa. E, a princípio, você lança as receitas e as despesas atuais, para se ter uma visão clara do rumo que você estaria seguindo – para uma situação melhor, igual ou pior.
+As dívidas, inclusive com Cartão de Crédito, já vêm lançadas automaticamente, exceto as prestações de financiamento de imóvel e consórcio que você deve lançar manualmente.
+E o resultado de tudo aparece na penúltima linha - Resultado Final.
+Havendo necessidade de melhorar a situação, estude alternativas que estiverem ao seu alcance, entre as quais, aumentar a receita, renegociar as dívidas, cortar as despesas, parcelar o (s) cartão (ões) de crédito, contrair empréstimo, etc. E faça todas as simulações na própria Previsão Financeira antes de optar por uma ou algumas alternativas.
+Se, no final, concluir-se da necessidade de parcelar o (s) cartão (ões) de crédito ou fazer empréstimo, faça apenas do valor necessário, baseando-se no Saldo de Caixa e Bancos. Depois, simule lançando esse valor em Outras Entradas e veja qual o valor que passará a sobrar mensalmente no Resultado Final. Baseado nessa sobra, você decide em quantas parcelas deverá fazer o parcelamento do (s) cartão (ões) de crédito ou do empréstimo.
+Agora, se no Resultado Final não aparecer sobras, então, pode significar que você, infelizmente, não cortou os gastos o suficiente. Então, volte a debruçar sobre as despesas, principalmente nas Supérfluas e nas despesas adiáveis, como Vestuário e Acessórios.</string>
+
+    <string name="perg29">Resultados Mensal e Anual – Para que servem?</string>
+    <string name="resp29">No quadro de RESULTADOS MENSAL E ANUAL, aparecem as receitas e as despesas mensais e na última coluna os totais do ano. Esses dados refletem os resultados das suas atividades. E o resultado mensal final terá que ser necessariamente positivo e com valor suficiente para cobrir as dívidas do mês, tais como, cartão de crédito, prestações, etc. Caso isso não ocorra, recomendamos atentar melhor o Acompanhamento da Meta.</string>
+
+    <string name="perg30">Salário, hora extra, adicionais, adiantamento, INSS, FGTS, Contribuição Sindical e Assistencial, etc. – Como lançar os pagamentos e recolhimentos?</string>
+    <string name="resp30">Todos os pagamentos feitos aos empregados, você deve lançá-los unicamente na conta Empregado (s). A nossa sugestão, portanto, é que não se faça, como nas empresas, em que se lança cada evento em cada conta, pois isso seria muitíssimo complicado e que, no final, vai-se chegar ao mesmo resultado.
+Então, quando se fizer o pagamento do salário líquido, lance só esse valor líquido na conta de Empregado (s), assim como, lance os outros encargos, na medida que forem pagos, nessa mesma conta, tais como, o FGTS, o INSS descontado do empregado, o INSS da parte patronal, o vale transporte, a cesta básica, o adiantamento quinzenal, o 13º salário, as férias, etc. Porém, essas são apenas nossas sugestões, ficando a critério de cada um.</string>
+
+    <string name="perg31">Saldo inicial – como alterar ou zerar</string>
+    <string name="resp31">É o mesmo procedimento para colocar saldo. Acesse a aba Apoio, clique na Lista de Contas Ativas, localize a conta, clique no botão com o símbolo $ e, em seguida, digite zero ou o novo valor e, depois, é só clicar Salvar.</string>
+
+    <string name="perg32">Saldo inicial – como colocar</string>
+    <string name="resp32">– Veja a resposta na questão Conta nova – como abrir e colocar saldo inicial</string>
+
+    <string name="perg33">Saldo Inicial – como registrar os saldos das contas de Consórcio e Imóvel Financiado</string>
+    <string name="resp33">O saldo a colocar em cada conta de Consórcio ou de imóvel financiado será o valor total desembolsado até hoje. Soma-se o valor da entrada, das parcelas e das prestações pagas e outros valores correlatos.
+E as dívidas de consórcio e de imóvel financiado não se lançam no grupo de
+Dívidas. Somente quando do pagamento da prestação ou parcela é que se lança no grupo de Bens e diretamente nas respectivas contas, quais sejam, de Consórcio, Apartamento,  Casa ou Terreno.
+Agora, se você elabora a Previsão Financeira, você deve lançar as prestações ou parcelas a pagar no (s) quadro (s) seguintes aos de de Outras Dívidas.</string>
+
+    <string name="perg34">Saldo Inicial – pode ser alterado tempos depois</string>
+    <string name="resp34">Sim, claro, você pode fazer a alteração do saldo inicial toda vez que precisar, clicando na aba Lançamento, depois, Colocar/Alterar Saldo Inicial e aí é só digitar o novo valor.
+</string>
+
+    <string name="perg35">Saque Bancário Maior Que as Despesas – como lançar</string>
+    <string name="resp35">Vamos responder com um exemplo. Suponhamos os seguintes:
+                            Valor da conta de água 	R$ 50,00
+                            Valor da conta de luz             R$ 70,00
+                            Valor do saque			R$ 200,00
+
+</string>
+
+    <string name="perg36">Supermercado – nem tudo o que se compra no Supermercado são Despesas Necessárias?</string>
+    <string name="resp36">Sim. Nos supermercados existe um contingente de produtossupérfluos, tais como, bebidas alcoólicas, refrigerantes, doces, chocolates, salgados, etc., os quais recomendamos lançar na conta de Despesas Supérfluas.
+
+</string>
+
+    <string name="perg37">
+Veículo – aquisição em que foi dado um outro veículo como parte de pagamento e o restante financiado – como lançar
+</string>
+    <string name="resp37">Vamos responder com um exemplo:
+	           Valor do veículo adquirido – R$ 15.000,00
+	           Valor do seu veículo que estava lançado no seu Controle Financeiro – R$
+	           12.000,00
+	           O seu veículo foi aceito no negócio pelo valor de R$ 8.000,00
+	           Ou seja, houve um prejuízo de R$ 4.000,00
+	           Valor restante financiado – R$ 7.000,00
+	           Total do financiamento a pagar – R$ 13.000,00
+</string>
+
+    <string name="perg38">Veículo – aquisição em que foi dado um outro veículo como parte de pagamento e o restante pago à vista – como lançar</string>
+    <string name="resp38">Vamos responder com um exemplo:
+	           Valor do veículo adquirido – R$ 15.000,00
+	           Valor do seu veículo que estava lançado no seu Controle Financeiro R$
+	           12.000,00
+	           O seu veículo foi aceito no negócio pelo valor de R$ 8.000,00
+	           Ou seja, houve um prejuízo de R$ 4.000,00
+	           Valor que você pagou com dinheiro que estava no Banco – R$ 7.000,00
+</string>
+
+    <string name="perg39">Veículo Financiado – como lançar</string>
+    <string name="resp39">Resposta: Na aquisição de veículo financiado, você deve lançar na conta Veículo só o valor do veículo e na conta de Dívidas você lança o total da dívida.
+Exemplo:
+	Valor do veículo: R$ 15.000,00
+	Valor da entrada: R$ 5.000,00
+	Valor financiado com juros: R$ 20.000,00
+</string>
+
+    <string name="perg40">Veículo Financiado – Os Juros Distorcem o Patrimônio Líquido</string>
+    <string name="resp40">Sim, é a realidade. Utilizando o exemplo anterior, foi comprado um veículo no valor de R$ 15.000,00, dando de entrada R$ 5.000,00 e o saldo a pagar de R$ 10.000,00 que financiado ficou em R$ 20.000,00, quer dizer que o seu Patrimônio diminuirá R$ 10.000,00 – exatamente o valor dos juros. E isso tem lógica, pois, quando você acabar de pagar as prestações, o seu veículo continuará valendo no mercado mais ou menos esses R$ 15.000,00 ou até menos e, por outro lado, você vai ter desembolsado nesse período um total de R$ 25.000,00 – os R$ 5.000,00 de entrada e mais o total das prestações pagas de R$ 20.000,00.
+
+</string>
+
+    <string name="perg41"></string>
+    <string name="resp41"></string>
+
+    <string formatted="false" name="resp20">Sim, pois nem que você queira, você não vai conseguir lançar todas as despesas exatamente nas respectivas contas. Por exemplo, você faz uma viagem de lazer e o que você gastar com o seu veículo – combustível, pedágio, lavagem – logicamente você vai lançar em Despesas Supérfluas, porém, não há necessidade, por exemplo, de se calcular o desgaste dos pneus do veículo ocorrida nessa viagem para se lançar também em Despesas Supérfluas. Isso seria perfeccionismo e nós não queremos perfeccionismo. O que não queremos é ficar longe da realidade, então procuramos lançar o que se puder na sua devida conta. Pois é bem melhor ter um controle financeiro com 95% de exatidão do que não se ter nenhum controle.
+E, para você ficar mais tranquilo, saiba que, no mundo inteiro, não existe nenhum controle financeiro com lançamentos de despesas 100% exato e nem nas empresas.</string>
+
+
+
 
 </resources>

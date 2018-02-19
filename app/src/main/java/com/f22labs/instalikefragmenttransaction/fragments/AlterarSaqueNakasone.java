@@ -3,6 +3,7 @@ package com.f22labs.instalikefragmenttransaction.fragments;
 import android.app.ProgressDialog;
 import android.os.AsyncTask;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -38,7 +39,9 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.io.BufferedReader;
 import java.io.IOException;
+import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -50,9 +53,11 @@ public class AlterarSaqueNakasone extends BaseFragment implements Spinner.OnItem
 
     EditText alterardescricaosaque,alterarondefoisaque,alterarvalorsaque,alterarondeveiosaque,alterardatasaque;
 
-    Button altersalvarsaque;
+    Button alterarsalvarsaque, alterarexcluirsaque;
 
     ProgressDialog loading;
+
+    String resposta;
 
     //region Spinner Variaveis
     private Spinner spinner;
@@ -63,11 +68,95 @@ public class AlterarSaqueNakasone extends BaseFragment implements Spinner.OnItem
     static String id_spinner;
     //endregion
 
+
+    public void insert(){
+
+        String  id_saque = String.valueOf(Static.getId_saque());
+        insertToDatabase(id_saque);
+
+    }
+
+    private void insertToDatabase(String id_saque){
+        class SendPostReqAsyncTask extends AsyncTask<String, Void, String> {
+            @Override
+            protected String doInBackground(String... params) {
+                String paramid_saque = params[0];
+
+                //InputStream is = null;
+
+                String  id_saque = String.valueOf(Static.getId_saque());
+
+                List<NameValuePair> nameValuePairs = new ArrayList<NameValuePair>();
+                nameValuePairs.add(new BasicNameValuePair("id_saque", id_saque));
+
+
+                try {
+                    HttpClient httpClient = new DefaultHttpClient();
+                    HttpPost httpPost = new HttpPost(
+                            "http://premiumcontrol.com.br/NakasoneSoftapp/delete/delete_saque.php");
+                    httpPost.setEntity(new UrlEncodedFormEntity(nameValuePairs));
+
+                    HttpResponse response = httpClient.execute(httpPost);
+
+                    HttpEntity entity = response.getEntity();
+
+                    BufferedReader in = new BufferedReader(new InputStreamReader(response.getEntity().getContent()));
+
+                    StringBuffer sb = new StringBuffer("");
+                    String line="";
+
+                    while ((line = in.readLine()) != null) {
+                        sb.append(line);
+                        break;
+                    }
+                    in.close();
+                    resposta = sb.toString();
+
+                    Log.d("TAG", resposta);
+                    return sb.toString();
+
+                    //is = entity.getContent();
+
+                } catch (ClientProtocolException e) {
+
+                } catch (IOException e) {
+
+                }
+                return "success";
+            }
+
+            @Override
+            protected void onPostExecute(String result) {
+                super.onPostExecute(result);
+
+                Toast.makeText(getActivity(), result, Toast.LENGTH_LONG).show();
+
+                if(Integer.parseInt(resposta) == 1)
+                {
+                    mFragmentNavigation.pushFragment(new AltExcLancamentoNakasone());
+                    Toast.makeText(getActivity(), "Conta apagada com sucesso", Toast.LENGTH_LONG).show();
+                }
+                else
+                {
+                    Toast.makeText(getActivity(), "Falha ao apagar conta", Toast.LENGTH_LONG).show();
+                }
+
+
+
+
+            }
+
+
+
+        }
+        SendPostReqAsyncTask sendPostReqAsyncTask = new SendPostReqAsyncTask();
+        sendPostReqAsyncTask.execute(id_saque);
+    }
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
     }
-
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,Bundle savedInstanceState)
@@ -79,7 +168,8 @@ public class AlterarSaqueNakasone extends BaseFragment implements Spinner.OnItem
         alterarvalorsaque = (EditText) view.findViewById(R.id.alterarvalorsaque);
         alterarondeveiosaque = (EditText) view.findViewById(R.id.alterarondeveiosaque);
         alterardatasaque = (EditText) view.findViewById(R.id.alterardatasaque);
-        altersalvarsaque = (Button) view.findViewById(R.id.alterarsalvarsaque);
+        alterarsalvarsaque = (Button) view.findViewById(R.id.alterarsalvarsaque);
+        alterarexcluirsaque = (Button) view.findViewById(R.id.alterarexcluirsaque);
         alterarvalorsaque.addTextChangedListener(new MoneyTextWatcher(alterarvalorsaque));
 
         students = new ArrayList<String>();
@@ -93,7 +183,19 @@ public class AlterarSaqueNakasone extends BaseFragment implements Spinner.OnItem
         alterardatasaque.addTextChangedListener(MaskEditUtil.mask(alterardatasaque, MaskEditUtil.FORMAT_DATE));
         //endregion
         //region Clique do Botão
-        altersalvarsaque.setOnClickListener(new View.OnClickListener()
+
+
+
+        alterarexcluirsaque.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                insert();
+            }
+        });
+
+
+
+        alterarsalvarsaque.setOnClickListener(new View.OnClickListener()
         {
             @Override
             public void onClick(View v)
@@ -258,7 +360,6 @@ public class AlterarSaqueNakasone extends BaseFragment implements Spinner.OnItem
     }
     //endregion
 
-
     //region Spinner
     private void getData(){
         StringRequest stringRequest = new StringRequest("http://premiumcontrol.com.br/NakasoneSoftapp/teste.php",
@@ -321,5 +422,4 @@ public class AlterarSaqueNakasone extends BaseFragment implements Spinner.OnItem
         ids.get(spinner.getSelectedItemPosition());
     }
     //endregion
-
 }

@@ -164,6 +164,20 @@ public class opcoes extends BaseFragment{
         sair = (Button)view.findViewById(R.id.sair);
         apagar_conta = (Button)view.findViewById(R.id.apagar_conta);
         quemsomos = (TextView)view.findViewById(R.id.quemsomos);
+        licencas = (TextView)view.findViewById(R.id.licencas);
+
+        //region Licenças
+
+        licencas.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                mFragmentNavigation.pushFragment(new admin());
+            }
+        });
+
+
+
+        //endregion
 
         //region SAIR
         sair.setOnClickListener(new View.OnClickListener() {

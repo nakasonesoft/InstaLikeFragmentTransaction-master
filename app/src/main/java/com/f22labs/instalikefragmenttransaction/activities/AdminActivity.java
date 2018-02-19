@@ -1,86 +1,70 @@
-package com.f22labs.instalikefragmenttransaction.fragments;
+package com.f22labs.instalikefragmenttransaction.activities;
 
 import android.app.ProgressDialog;
+import android.content.Intent;
 import android.os.AsyncTask;
+import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.android.volley.RequestQueue;
-import com.android.volley.Response;
-import com.android.volley.VolleyError;
-import com.android.volley.toolbox.StringRequest;
-import com.android.volley.toolbox.Volley;
 import com.f22labs.instalikefragmenttransaction.R;
-import com.f22labs.instalikefragmenttransaction.activities.MainActivity;
-import com.f22labs.instalikefragmenttransaction.adapters.ConfigRetrieve;
 import com.f22labs.instalikefragmenttransaction.utils.Static;
 
 import org.apache.http.HttpEntity;
 import org.apache.http.HttpResponse;
+import org.apache.http.NameValuePair;
 import org.apache.http.client.ClientProtocolException;
 import org.apache.http.client.HttpClient;
+import org.apache.http.client.entity.UrlEncodedFormEntity;
 import org.apache.http.client.methods.HttpPost;
 import org.apache.http.impl.client.DefaultHttpClient;
-import org.json.JSONArray;
-import org.json.JSONException;
-import org.json.JSONObject;
-import org.w3c.dom.Text;
+import org.apache.http.message.BasicNameValuePair;
 
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.util.ArrayList;
+import java.util.List;
 
 import butterknife.ButterKnife;
 
-
-public class admin extends BaseFragment{
+public class AdminActivity extends AppCompatActivity {
 
     ProgressDialog loading;
     TextView usuarios, facebook, instagram, redes, google, email, indicacao, outros;
     String resposta1,resposta2,resposta3,resposta4,resposta5,resposta6,resposta7,resposta8;
 
+
     @Override
-    public void onCreate(Bundle savedInstanceState) {
+    protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        setContentView(R.layout.fragment_admin);
+
+            usuarios = (TextView)findViewById(R.id.usuarios);
+            facebook = (TextView)findViewById(R.id.facebook);
+            instagram = (TextView)findViewById(R.id.instagram);
+            redes = (TextView)findViewById(R.id.redes);
+            google = (TextView)findViewById(R.id.google);
+            email = (TextView)findViewById(R.id.email);
+            indicacao = (TextView)findViewById(R.id.indicacao);
+            outros = (TextView)findViewById(R.id.outros);
+
+            LogpesToDatabase();
+            LogpesToDatabase1();
+            LogpesToDatabase3();
+            LogpesToDatabase4();
+            LogpesToDatabase5();
+            LogpesToDatabase6();
+            LogpesToDatabase7();
+            LogpesToDatabase8();
     }
-
-    @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-
-        View view = inflater.inflate(R.layout.fragment_admin, container, false);
-
-        usuarios = (TextView)view.findViewById(R.id.usuarios);
-        facebook = (TextView)view.findViewById(R.id.facebook);
-        instagram = (TextView)view.findViewById(R.id.instagram);
-        redes = (TextView)view.findViewById(R.id.redes);
-        google = (TextView)view.findViewById(R.id.google);
-        email = (TextView)view.findViewById(R.id.email);
-        indicacao = (TextView)view.findViewById(R.id.indicacao);
-        outros = (TextView)view.findViewById(R.id.outros);
-
-
-        ButterKnife.bind(this, view);
-
-        ( (MainActivity)getActivity()).updateToolbarTitle("Administração");
-        LogpesToDatabase();
-        LogpesToDatabase1();
-        LogpesToDatabase3();
-        LogpesToDatabase4();
-        LogpesToDatabase5();
-        LogpesToDatabase6();
-        LogpesToDatabase7();
-        LogpesToDatabase8();
-        return view;
-    }
-
-
     //region USUARIOS
     private void LogpesToDatabase(){
         class SendPostReqAsyncTask extends AsyncTask<String, Void, String> {
@@ -133,7 +117,7 @@ public class admin extends BaseFragment{
 
 
                 }
-                catch (Exception e){Toast.makeText(getActivity(),"Por favor, recarregue a página para calcular seus dados", Toast.LENGTH_LONG);}
+                catch (Exception e){Toast.makeText(AdminActivity.this,"Por favor, recarregue a página para calcular seus dados", Toast.LENGTH_LONG);}
 
             }
 
@@ -197,7 +181,7 @@ public class admin extends BaseFragment{
 
 
                 }
-                catch (Exception e){Toast.makeText(getActivity(),"Por favor, recarregue a página para calcular seus dados", Toast.LENGTH_LONG);}
+                catch (Exception e){Toast.makeText(AdminActivity.this,"Por favor, recarregue a página para calcular seus dados", Toast.LENGTH_LONG);}
 
             }
 
@@ -261,7 +245,7 @@ public class admin extends BaseFragment{
 
 
                 }
-                catch (Exception e){Toast.makeText(getActivity(),"Por favor, recarregue a página para calcular seus dados", Toast.LENGTH_LONG);}
+                catch (Exception e){Toast.makeText(AdminActivity.this,"Por favor, recarregue a página para calcular seus dados", Toast.LENGTH_LONG);}
 
             }
 
@@ -325,7 +309,7 @@ public class admin extends BaseFragment{
 
 
                 }
-                catch (Exception e){Toast.makeText(getActivity(),"Por favor, recarregue a página para calcular seus dados", Toast.LENGTH_LONG);}
+                catch (Exception e){Toast.makeText(AdminActivity.this,"Por favor, recarregue a página para calcular seus dados", Toast.LENGTH_LONG);}
 
             }
 
@@ -389,7 +373,7 @@ public class admin extends BaseFragment{
 
 
                 }
-                catch (Exception e){Toast.makeText(getActivity(),"Por favor, recarregue a página para calcular seus dados", Toast.LENGTH_LONG);}
+                catch (Exception e){Toast.makeText(AdminActivity.this,"Por favor, recarregue a página para calcular seus dados", Toast.LENGTH_LONG);}
 
             }
 
@@ -453,7 +437,7 @@ public class admin extends BaseFragment{
 
 
                 }
-                catch (Exception e){Toast.makeText(getActivity(),"Por favor, recarregue a página para calcular seus dados", Toast.LENGTH_LONG);}
+                catch (Exception e){Toast.makeText(AdminActivity.this,"Por favor, recarregue a página para calcular seus dados", Toast.LENGTH_LONG);}
 
             }
 
@@ -517,7 +501,7 @@ public class admin extends BaseFragment{
 
 
                 }
-                catch (Exception e){Toast.makeText(getActivity(),"Por favor, recarregue a página para calcular seus dados", Toast.LENGTH_LONG);}
+                catch (Exception e){Toast.makeText(AdminActivity.this,"Por favor, recarregue a página para calcular seus dados", Toast.LENGTH_LONG);}
 
             }
 
@@ -581,7 +565,7 @@ public class admin extends BaseFragment{
 
 
                 }
-                catch (Exception e){Toast.makeText(getActivity(),"Por favor, recarregue a página para calcular seus dados", Toast.LENGTH_LONG);}
+                catch (Exception e){Toast.makeText(AdminActivity.this,"Por favor, recarregue a página para calcular seus dados", Toast.LENGTH_LONG);}
 
             }
 
@@ -592,6 +576,4 @@ public class admin extends BaseFragment{
 
     }
     //endregion
-
-
 }

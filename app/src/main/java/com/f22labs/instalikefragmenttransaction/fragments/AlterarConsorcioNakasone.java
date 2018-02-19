@@ -1,8 +1,12 @@
 package com.f22labs.instalikefragmenttransaction.fragments;
 
 import android.app.ProgressDialog;
+import android.content.Context;
+import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.AsyncTask;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -20,6 +24,7 @@ import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 import com.f22labs.instalikefragmenttransaction.R;
 import com.f22labs.instalikefragmenttransaction.activities.MainActivity;
+import com.f22labs.instalikefragmenttransaction.activities.activity_login;
 import com.f22labs.instalikefragmenttransaction.adapters.ConfigRetrieve;
 import com.f22labs.instalikefragmenttransaction.utils.MaskEditUtil;
 import com.f22labs.instalikefragmenttransaction.utils.MoneyTextWatcher;
@@ -38,11 +43,15 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.io.BufferedReader;
 import java.io.IOException;
+import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.List;
 
 import butterknife.ButterKnife;
+
+import static com.f22labs.instalikefragmenttransaction.activities.activity_login.PREFS_NAME;
 
 
 public class AlterarConsorcioNakasone extends BaseFragment implements Spinner.OnItemSelectedListener
@@ -50,9 +59,11 @@ public class AlterarConsorcioNakasone extends BaseFragment implements Spinner.On
 
     EditText alterardescricaoconsorcio,alterarcontadoconsorcio,alterarvalorconsorcio,alterarpagamentoconsorcio,alterardataconsorcio;
 
-    Button alterarsalvarconsorcio;
+    Button alterarsalvarconsorcio, alterarexcluirconsorcio;
 
     ProgressDialog loading;
+
+    String resposta;
 
     //region Spinner Variaveis
     private Spinner spinner;
@@ -64,6 +75,90 @@ public class AlterarConsorcioNakasone extends BaseFragment implements Spinner.On
     //endregion
 
     private String current = "";
+
+    public void insert(){
+
+        String  id_consorcio = String.valueOf(Static.getId_consorcio());
+        insertToDatabase(id_consorcio);
+
+    }
+
+    private void insertToDatabase(String id_consorcio){
+        class SendPostReqAsyncTask extends AsyncTask<String, Void, String> {
+            @Override
+            protected String doInBackground(String... params) {
+                String paramid_consorc = params[0];
+
+                //InputStream is = null;
+
+                String  id_consorcio = String.valueOf(Static.getId_consorcio());
+
+                List<NameValuePair> nameValuePairs = new ArrayList<NameValuePair>();
+                nameValuePairs.add(new BasicNameValuePair("id_consorcio", id_consorcio));
+
+
+                try {
+                    HttpClient httpClient = new DefaultHttpClient();
+                    HttpPost httpPost = new HttpPost(
+                            "http://premiumcontrol.com.br/NakasoneSoftapp/delete/delete_consorcio.php");
+                    httpPost.setEntity(new UrlEncodedFormEntity(nameValuePairs));
+
+                    HttpResponse response = httpClient.execute(httpPost);
+
+                    HttpEntity entity = response.getEntity();
+
+                    BufferedReader in = new BufferedReader(new InputStreamReader(response.getEntity().getContent()));
+
+                    StringBuffer sb = new StringBuffer("");
+                    String line="";
+
+                    while ((line = in.readLine()) != null) {
+                        sb.append(line);
+                        break;
+                    }
+                    in.close();
+                    resposta = sb.toString();
+
+                    Log.d("TAG", resposta);
+                    return sb.toString();
+
+                    //is = entity.getContent();
+
+                } catch (ClientProtocolException e) {
+
+                } catch (IOException e) {
+
+                }
+                return "success";
+            }
+
+            @Override
+            protected void onPostExecute(String result) {
+                super.onPostExecute(result);
+
+                Toast.makeText(getActivity(), result, Toast.LENGTH_LONG).show();
+
+                if(Integer.parseInt(resposta) == 1)
+                {
+                    mFragmentNavigation.pushFragment(new RecyclerAltExcConsorcio());
+                    Toast.makeText(getActivity(), "Conta apagada com sucesso", Toast.LENGTH_LONG).show();
+                }
+                else
+                {
+                    Toast.makeText(getActivity(), "Falha ao apagar conta", Toast.LENGTH_LONG).show();
+                }
+
+
+
+
+            }
+
+
+
+        }
+        SendPostReqAsyncTask sendPostReqAsyncTask = new SendPostReqAsyncTask();
+        sendPostReqAsyncTask.execute(id_consorcio);
+    }
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -81,6 +176,7 @@ public class AlterarConsorcioNakasone extends BaseFragment implements Spinner.On
         alterarpagamentoconsorcio = (EditText) view.findViewById(R.id.alterarpagamentoconsorcio);
         alterardataconsorcio = (EditText) view.findViewById(R.id.alterardataconsorcio);
         alterarsalvarconsorcio = (Button) view.findViewById(R.id.alterarsalvarconsorcio);
+        alterarexcluirconsorcio = (Button) view.findViewById(R.id.alterarexcluirconsorcio);
 
 
 
@@ -97,6 +193,13 @@ public class AlterarConsorcioNakasone extends BaseFragment implements Spinner.On
         alterarvalorconsorcio.addTextChangedListener(new MoneyTextWatcher(alterarvalorconsorcio));
         //endregion
         //region Clique do Botão
+        alterarexcluirconsorcio.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                insert();
+            }
+        });
+
         alterarsalvarconsorcio.setOnClickListener(new View.OnClickListener()
         {
             @Override
@@ -337,5 +440,4 @@ public class AlterarConsorcioNakasone extends BaseFragment implements Spinner.On
         ids.get(spinner.getSelectedItemPosition());
     }
     //endregion
-
 }

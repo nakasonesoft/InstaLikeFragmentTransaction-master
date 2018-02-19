@@ -7,6 +7,7 @@ package com.f22labs.instalikefragmenttransaction.utils;
 public class Static
 {
     private static int id_cliente;
+    private static int id_grupo;
     private static int id_depesas;
     private static int id_receita;
     private static int id_transferencia;
@@ -17,6 +18,15 @@ public class Static
     private static int id_outros;
     private static int id_conta;
     private static int login;
+    private static int id_perguntasfrequentes;
+    private static String nome_grupo1 = "Caixa e Bancos";
+    private static String nome_grupo2 = "Investimentos, outros";
+    private static String nome_grupo3 = "Dividas - Cartao de Credito";
+    private static String nome_grupo4 = "Outras dividas";
+    private static String nome_grupo5 = "Despesas Necessarias";
+    private static String nome_grupo6 = "Despesas Superfluas";
+    private static String nome_grupo7 = "Receitas";
+    private static String nome_grupo8 = "Bens";
 
 
     public static int getId_conta() {
@@ -105,5 +115,89 @@ public class Static
 
     public static void setLogin(int login) {
         Static.login = login;
+    }
+
+
+
+
+    public static int getId_perguntasfrequentes() {
+        return id_perguntasfrequentes;
+    }
+
+    public static void setId_perguntasfrequentes(int id_perguntasfrequentes) {
+        Static.id_perguntasfrequentes = id_perguntasfrequentes;
+    }
+
+
+    public static String getNome_grupo1() {
+        return nome_grupo1;
+    }
+
+    public static void setNome_grupo1(String nome_grupo1) {
+        Static.nome_grupo1 = nome_grupo1;
+    }
+
+    public static String getNome_grupo2() {
+        return nome_grupo2;
+    }
+
+    public static void setNome_grupo2(String nome_grupo2) {
+        Static.nome_grupo2 = nome_grupo2;
+    }
+
+    public static String getNome_grupo3() {
+        return nome_grupo3;
+    }
+
+    public static void setNome_grupo3(String nome_grupo3) {
+        Static.nome_grupo3 = nome_grupo3;
+    }
+
+    public static String getNome_grupo4() {
+        return nome_grupo4;
+    }
+
+    public static void setNome_grupo4(String nome_grupo4) {
+        Static.nome_grupo4 = nome_grupo4;
+    }
+
+    public static String getNome_grupo5() {
+        return nome_grupo5;
+    }
+
+    public static void setNome_grupo5(String nome_grupo5) {
+        Static.nome_grupo5 = nome_grupo5;
+    }
+
+    public static String getNome_grupo6() {
+        return nome_grupo6;
+    }
+
+    public static void setNome_grupo6(String nome_grupo6) {
+        Static.nome_grupo6 = nome_grupo6;
+    }
+
+    public static String getNome_grupo7() {
+        return nome_grupo7;
+    }
+
+    public static void setNome_grupo7(String nome_grupo7) {
+        Static.nome_grupo7 = nome_grupo7;
+    }
+
+    public static String getNome_grupo8() {
+        return nome_grupo8;
+    }
+
+    public static void setNome_grupo8(String nome_grupo8) {
+        Static.nome_grupo8 = nome_grupo8;
+    }
+
+    public static int getId_grupo() {
+        return id_grupo;
+    }
+
+    public static void setId_grupo(int id_grupo) {
+        Static.id_grupo = id_grupo;
     }
 }

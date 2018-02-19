@@ -3,6 +3,7 @@ package com.f22labs.instalikefragmenttransaction.fragments;
 import android.app.ProgressDialog;
 import android.os.AsyncTask;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -38,21 +39,23 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.io.BufferedReader;
 import java.io.IOException;
+import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.List;
 
 import butterknife.ButterKnife;
 
-
 public class AlterarDepositoNakasone extends BaseFragment implements Spinner.OnItemSelectedListener
 {
-
     EditText alterardescricaodeposito,alterarondefoideposito,alterarvalordeposito,alterardeondeveiodeposito,alterardatadeposito;
 
-    Button alterarsalvardeposito;
+    Button alterarsalvardeposito, alterarexcluirdeposito;
 
     ProgressDialog loading;
+
+    String resposta;
 
     //region Spinner Variaveis
     private Spinner spinner;
@@ -62,6 +65,90 @@ public class AlterarDepositoNakasone extends BaseFragment implements Spinner.OnI
     private JSONArray result;
     static String id_spinner;
     //endregion
+
+    public void insert(){
+
+        String  id_deposito = String.valueOf(Static.getId_consorcio());
+        insertToDatabase(id_deposito);
+
+    }
+
+    private void insertToDatabase(String id_deposito){
+        class SendPostReqAsyncTask extends AsyncTask<String, Void, String> {
+            @Override
+            protected String doInBackground(String... params) {
+                String paramid_deposito = params[0];
+
+                //InputStream is = null;
+
+                String  id_deposito = String.valueOf(Static.getId_deposito());
+
+                List<NameValuePair> nameValuePairs = new ArrayList<NameValuePair>();
+                nameValuePairs.add(new BasicNameValuePair("id_deposito", id_deposito));
+
+
+                try {
+                    HttpClient httpClient = new DefaultHttpClient();
+                    HttpPost httpPost = new HttpPost(
+                            "http://premiumcontrol.com.br/NakasoneSoftapp/delete/delete_deposito.php");
+                    httpPost.setEntity(new UrlEncodedFormEntity(nameValuePairs));
+
+                    HttpResponse response = httpClient.execute(httpPost);
+
+                    HttpEntity entity = response.getEntity();
+
+                    BufferedReader in = new BufferedReader(new InputStreamReader(response.getEntity().getContent()));
+
+                    StringBuffer sb = new StringBuffer("");
+                    String line="";
+
+                    while ((line = in.readLine()) != null) {
+                        sb.append(line);
+                        break;
+                    }
+                    in.close();
+                    resposta = sb.toString();
+
+                    Log.d("TAG", resposta);
+                    return sb.toString();
+
+                    //is = entity.getContent();
+
+                } catch (ClientProtocolException e) {
+
+                } catch (IOException e) {
+
+                }
+                return "success";
+            }
+
+            @Override
+            protected void onPostExecute(String result) {
+                super.onPostExecute(result);
+
+                Toast.makeText(getActivity(), result, Toast.LENGTH_LONG).show();
+
+                if(Integer.parseInt(resposta) == 1)
+                {
+                    mFragmentNavigation.pushFragment(new AltExcLancamentoNakasone());
+                    Toast.makeText(getActivity(), "Conta apagada com sucesso", Toast.LENGTH_LONG).show();
+                }
+                else
+                {
+                    Toast.makeText(getActivity(), "Falha ao apagar conta", Toast.LENGTH_LONG).show();
+                }
+
+
+
+
+            }
+
+
+
+        }
+        SendPostReqAsyncTask sendPostReqAsyncTask = new SendPostReqAsyncTask();
+        sendPostReqAsyncTask.execute(id_deposito);
+    }
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -80,6 +167,7 @@ public class AlterarDepositoNakasone extends BaseFragment implements Spinner.OnI
         alterardeondeveiodeposito = (EditText) view.findViewById(R.id.alterardeondeveiodeposito);
         alterardatadeposito = (EditText) view.findViewById(R.id.alterardatadeposito);
         alterarsalvardeposito = (Button) view.findViewById(R.id.alterarsalvardeposito);
+        alterarexcluirdeposito = (Button) view.findViewById(R.id.alterarexcluirdeposito);
 
         students = new ArrayList<String>();
         ids = new ArrayList<String>();
@@ -102,6 +190,14 @@ public class AlterarDepositoNakasone extends BaseFragment implements Spinner.OnI
                 UpdateEvento();
             }
         });
+
+        alterarexcluirdeposito.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                insert();
+            }
+        });
+
         //endregion
         //region Outros
         ButterKnife.bind(this, view);
@@ -321,5 +417,4 @@ public class AlterarDepositoNakasone extends BaseFragment implements Spinner.OnI
         ids.get(spinner.getSelectedItemPosition());
     }
     //endregion
-
 }

@@ -39,7 +39,9 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.io.BufferedReader;
 import java.io.IOException;
+import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -49,9 +51,11 @@ public class AlterarOutrosNakasone extends BaseFragment
 {
     EditText alterardescricaoOutros,alterarcontadoOutros,alterarvalorOutros,alterarcontaOutros2,alterardataOutros;
 
-    Button alterarsalvarOutros;
+    Button alterarsalvarOutros, alterarexcluirOutros;
 
     ProgressDialog loading;
+
+    String resposta;
 
     //region Spinner Variaveis
     private Spinner spinner;
@@ -71,6 +75,92 @@ public class AlterarOutrosNakasone extends BaseFragment
     static String id_spinner2;
     //endregion
 
+
+    public void insert(){
+
+        String  id_outros = String.valueOf(Static.getId_outros());
+        insertToDatabase(id_outros);
+
+    }
+
+
+    private void insertToDatabase(String id_outros){
+        class SendPostReqAsyncTask extends AsyncTask<String, Void, String> {
+            @Override
+            protected String doInBackground(String... params) {
+                String paramid_outros = params[0];
+
+                //InputStream is = null;
+
+                String  id_outros = String.valueOf(Static.getId_outros());
+
+                List<NameValuePair> nameValuePairs = new ArrayList<NameValuePair>();
+                nameValuePairs.add(new BasicNameValuePair("id_outros", id_outros));
+
+
+                try {
+                    HttpClient httpClient = new DefaultHttpClient();
+                    HttpPost httpPost = new HttpPost(
+                            "http://premiumcontrol.com.br/NakasoneSoftapp/delete/delete_outros.php");
+                    httpPost.setEntity(new UrlEncodedFormEntity(nameValuePairs));
+
+                    HttpResponse response = httpClient.execute(httpPost);
+
+                    HttpEntity entity = response.getEntity();
+
+                    BufferedReader in = new BufferedReader(new InputStreamReader(response.getEntity().getContent()));
+
+                    StringBuffer sb = new StringBuffer("");
+                    String line="";
+
+                    while ((line = in.readLine()) != null) {
+                        sb.append(line);
+                        break;
+                    }
+                    in.close();
+                    resposta = sb.toString();
+
+                    Log.d("TAG", resposta);
+                    return sb.toString();
+
+                    //is = entity.getContent();
+
+                } catch (ClientProtocolException e) {
+
+                } catch (IOException e) {
+
+                }
+                return "success";
+            }
+
+            @Override
+            protected void onPostExecute(String result) {
+                super.onPostExecute(result);
+
+                Toast.makeText(getActivity(), result, Toast.LENGTH_LONG).show();
+
+                if(Integer.parseInt(resposta) == 1)
+                {
+                    mFragmentNavigation.pushFragment(new AltExcLancamentoNakasone());
+                    Toast.makeText(getActivity(), "Conta apagada com sucesso", Toast.LENGTH_LONG).show();
+                }
+                else
+                {
+                    Toast.makeText(getActivity(), "Falha ao apagar conta", Toast.LENGTH_LONG).show();
+                }
+
+
+
+
+            }
+
+
+
+        }
+        SendPostReqAsyncTask sendPostReqAsyncTask = new SendPostReqAsyncTask();
+        sendPostReqAsyncTask.execute(id_outros);
+    }
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -88,12 +178,15 @@ public class AlterarOutrosNakasone extends BaseFragment
         alterarcontaOutros2 = (EditText) view.findViewById(R.id.alterarcontaOutros2);
         alterardataOutros = (EditText) view.findViewById(R.id.alterardataOutros);
         alterarsalvarOutros = (Button) view.findViewById(R.id.alterarsalvarOutros);
+        alterarexcluirOutros = (Button) view.findViewById(R.id.alterarexcluirOutros);
+
         //endregion
 
         students = new ArrayList<String>();
         ids = new ArrayList<String>();
         spinner = (Spinner) view.findViewById(R.id.spinner_alterar_outros1);
-        spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+        spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener()
+        {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
 
@@ -130,6 +223,8 @@ public class AlterarOutrosNakasone extends BaseFragment
         alterarvalorOutros.addTextChangedListener(new MoneyTextWatcher(alterarvalorOutros));
         alterardataOutros.addTextChangedListener(MaskEditUtil.mask(alterardataOutros, MaskEditUtil.FORMAT_DATE));
         //endregion
+
+
         //region Clique do botão
         alterarsalvarOutros.setOnClickListener(new View.OnClickListener()
         {
@@ -140,7 +235,18 @@ public class AlterarOutrosNakasone extends BaseFragment
                 UpdateEvento();
             }
         });
+
+        alterarexcluirOutros.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                insert();
+            }
+        });
+
+
+
         //endregion
+
         //region Outros
         ButterKnife.bind(this, view);
 
@@ -152,6 +258,18 @@ public class AlterarOutrosNakasone extends BaseFragment
         Log.d("ID",String.valueOf(Static.getId_outros()));
         return view;
     }
+
+
+
+
+
+
+
+
+
+
+
+
 
     //region Editar Dados
     public void UpdateEvento()

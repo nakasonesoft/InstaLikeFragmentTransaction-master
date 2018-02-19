@@ -145,6 +145,8 @@ public class CadastroContasNakasone extends BaseFragment implements Spinner.OnIt
         txtSaldoInicialConta = (EditText) view.findViewById(R.id.txtSaldoInicialConta);
         datafechamentoConta = (EditText) view.findViewById(R.id.datafechamentoConta);
         SalvarConta = (Button) view.findViewById(R.id.SalvarConta);
+
+
         students = new ArrayList<String>();
         spinner = (Spinner) view.findViewById(R.id.spinner2);
         spinner.setOnItemSelectedListener(this);

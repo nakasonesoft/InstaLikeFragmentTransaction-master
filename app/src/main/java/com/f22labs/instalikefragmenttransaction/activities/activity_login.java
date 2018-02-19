@@ -60,9 +60,14 @@ public class activity_login extends AppCompatActivity {
         }
         else
         {
-            startActivity(new Intent(getApplicationContext(), MainActivity.class));
-            finish();
-
+            if(Static.getId_cliente() == 1){
+                startActivity(new Intent(getApplicationContext(), AdminActivity.class));
+                finish();
+            }
+            else{
+                startActivity(new Intent(getApplicationContext(), MainActivity.class));
+                finish();
+            }
         }
 
         email = (EditText)findViewById(R.id.email);
@@ -185,9 +190,14 @@ public class activity_login extends AppCompatActivity {
                     //ID.setId(Integer.parseInt(result));
                     Static.setId_cliente(Integer.parseInt(resposta));
 
-                    startActivity(new Intent(getApplicationContext(), MainActivity.class));
-                    finish();
-
+                    if(Static.getId_cliente() == 1){
+                        startActivity(new Intent(getApplicationContext(), AdminActivity.class));
+                        finish();
+                    }
+                    else{
+                        startActivity(new Intent(getApplicationContext(), MainActivity.class));
+                        finish();
+                    }
 
 
 

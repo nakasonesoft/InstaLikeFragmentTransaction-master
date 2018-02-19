@@ -79,12 +79,12 @@
                     <Spinner
                         android:id="@+id/spinner_alterar_transferencia"
                         android:layout_width="340dp"
-                        android:layout_height="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_below="@+id/txtMixtureTitle"
                         android:layout_marginLeft="10dp"
                         android:layout_marginRight="10dp"
                         android:layout_marginTop="5dp"
                         android:layout_weight="1"
-                        android:layout_below="@+id/txtMixtureTitle"
                         android:background="@drawable/spinner_back" />
 
                     <EditText
@@ -184,13 +184,29 @@
                 </LinearLayout>
             </LinearLayout>
 
-            <Button
-                android:id="@+id/alterarsalvartransferencia"
+            <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="80dp"
-                android:background="@color/colorNakasoneGreenBackgroundNavBar"
-                android:text="Salvar" />
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/alterarsalvartransferencia"
+                    android:layout_width="50dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="80dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/buttonsalvar"
+                    android:text="Salvar" />
+
+                <Button
+                    android:id="@+id/alterarexcluirtransferencia"
+                    android:layout_width="50dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="80dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/buttonexcluir"
+                    android:text="excluir" />
+            </LinearLayout>
         </LinearLayout>
     </ScrollView>
 

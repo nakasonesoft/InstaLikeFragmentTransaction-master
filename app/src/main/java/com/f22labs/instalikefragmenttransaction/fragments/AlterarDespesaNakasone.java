@@ -3,6 +3,7 @@ package com.f22labs.instalikefragmenttransaction.fragments;
 import android.app.ProgressDialog;
 import android.os.AsyncTask;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -40,19 +41,22 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.io.BufferedReader;
 import java.io.IOException;
+import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.List;
 
 import butterknife.ButterKnife;
-
 
 public class AlterarDespesaNakasone extends BaseFragment implements Spinner.OnItemSelectedListener
 {
     private ProgressDialog loading;
     EditText alterardescricaodespesa,alterarvalordespesa,alterarcontadespesa,alterardatadespesa,alterarcomofoipagadespesa;
 
-    Button alterarsalvardespesa;
+    Button alterarsalvardespesa, alterarexcluirdespesa;
+
+    String resposta;
 
     //region Spinner Variaveis
     private Spinner spinner;
@@ -62,6 +66,90 @@ public class AlterarDespesaNakasone extends BaseFragment implements Spinner.OnIt
     private JSONArray result;
     static String id_spinner;
     //endregion
+
+    public void insert(){
+
+        String  id_despesas = String.valueOf(Static.getId_depesas());
+        insertToDatabase(id_despesas);
+
+    }
+
+    private void insertToDatabase(String id_despesas){
+        class SendPostReqAsyncTask extends AsyncTask<String, Void, String> {
+            @Override
+            protected String doInBackground(String... params) {
+                String paramid_despesas = params[0];
+
+                //InputStream is = null;
+
+                String  id_despesas = String.valueOf(Static.getId_depesas());
+
+                List<NameValuePair> nameValuePairs = new ArrayList<NameValuePair>();
+                nameValuePairs.add(new BasicNameValuePair("id_despesas", id_despesas));
+
+
+                try {
+                    HttpClient httpClient = new DefaultHttpClient();
+                    HttpPost httpPost = new HttpPost(
+                            "http://premiumcontrol.com.br/NakasoneSoftapp/delete/delete_despesa.php");
+                    httpPost.setEntity(new UrlEncodedFormEntity(nameValuePairs));
+
+                    HttpResponse response = httpClient.execute(httpPost);
+
+                    HttpEntity entity = response.getEntity();
+
+                    BufferedReader in = new BufferedReader(new InputStreamReader(response.getEntity().getContent()));
+
+                    StringBuffer sb = new StringBuffer("");
+                    String line="";
+
+                    while ((line = in.readLine()) != null) {
+                        sb.append(line);
+                        break;
+                    }
+                    in.close();
+                    resposta = sb.toString();
+
+                    Log.d("TAG", resposta);
+                    return sb.toString();
+
+                    //is = entity.getContent();
+
+                } catch (ClientProtocolException e) {
+
+                } catch (IOException e) {
+
+                }
+                return "success";
+            }
+
+            @Override
+            protected void onPostExecute(String result) {
+                super.onPostExecute(result);
+
+                Toast.makeText(getActivity(), result, Toast.LENGTH_LONG).show();
+
+                if(Integer.parseInt(resposta) == 1)
+                {
+                    mFragmentNavigation.pushFragment(new AltExcLancamentoNakasone());
+                    Toast.makeText(getActivity(), "Conta apagada com sucesso", Toast.LENGTH_LONG).show();
+                }
+                else
+                {
+                    Toast.makeText(getActivity(), "Falha ao apagar conta", Toast.LENGTH_LONG).show();
+                }
+
+
+
+
+            }
+
+
+
+        }
+        SendPostReqAsyncTask sendPostReqAsyncTask = new SendPostReqAsyncTask();
+        sendPostReqAsyncTask.execute(id_despesas);
+    }
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -80,6 +168,7 @@ public class AlterarDespesaNakasone extends BaseFragment implements Spinner.OnIt
         alterardatadespesa = (EditText) view.findViewById(R.id.alterardatadespesa);
         alterarcomofoipagadespesa = (EditText) view.findViewById(R.id.alterarcomofoipagadespesa);
         alterarsalvardespesa = (Button) view.findViewById(R.id.alterarsalvardespesa);
+        alterarexcluirdespesa = (Button) view.findViewById(R.id.alterarexcluirdespesa);
 
 
         students = new ArrayList<String>();
@@ -102,6 +191,14 @@ public class AlterarDespesaNakasone extends BaseFragment implements Spinner.OnIt
 
             }
         });
+
+
+        alterarexcluirdespesa.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                insert();
+            }
+        });
         //endregion
 
         //region Outros
@@ -114,7 +211,6 @@ public class AlterarDespesaNakasone extends BaseFragment implements Spinner.OnIt
         getData1();
         return view;
     }
-
 
     //region Editar Dados
     public void UpdateEvento()
@@ -191,8 +287,6 @@ public class AlterarDespesaNakasone extends BaseFragment implements Spinner.OnIt
 
     //endregion
 
-
-
     //region Pesquisa para mostrar nos campos
     private void getData1()
     {
@@ -267,8 +361,6 @@ public class AlterarDespesaNakasone extends BaseFragment implements Spinner.OnIt
     }
     //endregion
 
-
-
     //region Spinner
     private void getData(){
         StringRequest stringRequest = new StringRequest("http://premiumcontrol.com.br/NakasoneSoftapp/teste.php",
@@ -331,5 +423,4 @@ public class AlterarDespesaNakasone extends BaseFragment implements Spinner.OnIt
         ids.get(spinner.getSelectedItemPosition());
     }
     //endregion
-
 }

@@ -27,6 +27,7 @@ public class RecyclerViewAdapterConta extends RecyclerView.Adapter<RecyclerViewA
 
     List<GetDataAdapter> getDataAdapter;
     ImageLoader imageLoader1;
+    String grupo;
 
     Object mContext;
     public RecyclerViewAdapterConta(List<GetDataAdapter> getDataAdapter, Activity context){
@@ -55,9 +56,37 @@ public class RecyclerViewAdapterConta extends RecyclerView.Adapter<RecyclerViewA
         final GetDataAdapter getDataAdapter1 =  getDataAdapter.get(position);
         final String distancia ;
 
+        switch(Integer.parseInt(getDataAdapter1.getId_grupo_conta())){
+            case 1:
+                grupo = Static.getNome_grupo1();
+                    break;
+            case 2:
+                grupo = Static.getNome_grupo2();
+                break;
+            case 3:
+                grupo = Static.getNome_grupo3();
+                break;
+            case 4:
+                grupo = Static.getNome_grupo4();
+                break;
+            case 5:
+                grupo = Static.getNome_grupo5();
+                break;
+            case 6:
+                grupo = Static.getNome_grupo6();
+                break;
+            case 7:
+                grupo = Static.getNome_grupo7();
+                break;
+            case 8:
+                grupo = Static.getNome_grupo8();
+                break;
+        }
+
+
         Viewholder.id_contas_conta.setText(getDataAdapter1.getId_conta_conta());
         Viewholder.txtsaldoinicial_conta.setText(getDataAdapter1.getSaldoinicial_conta());
-        Viewholder.txtid_grupo.setText(getDataAdapter1.getId_grupo_conta());
+        Viewholder.txtid_grupo.setText(grupo);
         Viewholder.txtDatafechamento_conta.setText(getDataAdapter1.getDatafechamento_conta());
         Viewholder.txtNome_conta.setText(getDataAdapter1.getNome_conta());
 
