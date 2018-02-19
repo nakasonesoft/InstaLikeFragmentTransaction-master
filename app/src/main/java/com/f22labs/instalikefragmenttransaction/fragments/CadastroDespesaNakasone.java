@@ -158,6 +158,7 @@ public class CadastroDespesaNakasone extends BaseFragment implements Spinner.OnI
         ids = new ArrayList<String>();
         spinner = (Spinner) view.findViewById(R.id.spinner4);
         spinner.setOnItemSelectedListener(this);
+
         //endregion
         //region Máscaras
         datadespesa.addTextChangedListener(MaskEditUtil.mask(datadespesa, MaskEditUtil.FORMAT_DATE));
@@ -211,7 +212,7 @@ public class CadastroDespesaNakasone extends BaseFragment implements Spinner.OnI
     }
 
     private void getStudents(JSONArray j){
-        students.add("");
+       // students.add("");
         for(int i=0;i<j.length();i++)
         {
             try
@@ -234,10 +235,14 @@ public class CadastroDespesaNakasone extends BaseFragment implements Spinner.OnI
     @Override
     public void onItemSelected(AdapterView<?> parent, View view, int position, long id)
     {
+        try
+        {
+            id_spinner = ids.get(position);
+        }
+        catch (Exception e)
+        {
 
-       id_spinner = ids.get(position);
-
-
+        }
     }
 
     @Override

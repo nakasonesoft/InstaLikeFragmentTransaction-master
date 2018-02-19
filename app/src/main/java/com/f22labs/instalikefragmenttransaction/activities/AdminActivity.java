@@ -1,7 +1,9 @@
 package com.f22labs.instalikefragmenttransaction.activities;
 
 import android.app.ProgressDialog;
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.AsyncTask;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -35,11 +37,14 @@ import java.util.List;
 
 import butterknife.ButterKnife;
 
+import static com.f22labs.instalikefragmenttransaction.activities.activity_login.PREFS_NAME;
+
 public class AdminActivity extends AppCompatActivity {
 
     ProgressDialog loading;
     TextView usuarios, facebook, instagram, redes, google, email, indicacao, outros;
     String resposta1,resposta2,resposta3,resposta4,resposta5,resposta6,resposta7,resposta8;
+    Button sairadmin;
 
 
     @Override
@@ -55,6 +60,27 @@ public class AdminActivity extends AppCompatActivity {
             email = (TextView)findViewById(R.id.email);
             indicacao = (TextView)findViewById(R.id.indicacao);
             outros = (TextView)findViewById(R.id.outros);
+            sairadmin = (Button)findViewById(R.id.sairadmin);
+
+
+        //region SAIR
+        sairadmin.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                SharedPreferences settings = AdminActivity.this.getSharedPreferences(PREFS_NAME, Context.MODE_PRIVATE);
+                SharedPreferences.Editor editor = settings.edit();
+                editor.putString("0", "");
+
+                //Confirma a gravação dos dados
+                editor.commit();
+                Static.setId_cliente(0);
+                startActivity(new Intent(AdminActivity.this, activity_login.class));
+                Toast.makeText(AdminActivity.this, "Volte em breve!", Toast.LENGTH_LONG).show();
+            }
+        });
+//endregion
+
+
 
             LogpesToDatabase();
             LogpesToDatabase1();

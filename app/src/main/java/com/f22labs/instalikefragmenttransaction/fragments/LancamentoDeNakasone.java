@@ -34,11 +34,12 @@ public class LancamentoDeNakasone extends BaseFragment{
         imgtranslancamento = (ImageView) view.findViewById(R.id.imgtranslancamento);
         imgsaquelancamento = (ImageView) view.findViewById(R.id.imgsaquelancamento);
         imgdepositolancamento = (ImageView) view.findViewById(R.id.imgdepositolancamento);
-        imgcartaolancamento = (ImageView) view.findViewById(R.id.imgcartaolancamento);
+        imgcartaolancamento = (ImageView) view.findViewById(R.id.imgcartaolancamento1);
         imgcarneslancamento = (ImageView) view.findViewById(R.id.imgcarneslancamento);
         imgimoveislancamento = (ImageView) view.findViewById(R.id.imgimoveislancamento);
         imgconsorciolancamento = (ImageView) view.findViewById(R.id.imgconsorciolancamento);
         imgoutroslancamento = (ImageView) view.findViewById(R.id.imgoutroslancamento);
+
 
 
 
@@ -101,7 +102,7 @@ public class LancamentoDeNakasone extends BaseFragment{
             @Override
             public void onClick(View v)
             {
-
+                mFragmentNavigation.pushFragment(new FaturaCartao());
 
             }
         });

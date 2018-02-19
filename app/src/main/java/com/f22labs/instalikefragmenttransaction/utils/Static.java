@@ -19,6 +19,7 @@ public class Static
     private static int id_conta;
     private static int login;
     private static int id_perguntasfrequentes;
+    private static int mes;
     private static String nome_grupo1 = "Caixa e Bancos";
     private static String nome_grupo2 = "Investimentos, outros";
     private static String nome_grupo3 = "Dividas - Cartao de Credito";
@@ -199,5 +200,13 @@ public class Static
 
     public static void setId_grupo(int id_grupo) {
         Static.id_grupo = id_grupo;
+    }
+
+    public static int getMes() {
+        return mes;
+    }
+
+    public static void setMes(int mes) {
+        Static.mes = mes;
     }
 }

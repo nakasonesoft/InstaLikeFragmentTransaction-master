@@ -21,7 +21,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@drawable/rounded1"
-            android:orientation="vertical">
+            android:orientation="vertical"
+            android:paddingTop="5dp">
 
             <TextView
                 android:id="@+id/quemsomos"
@@ -87,7 +88,9 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
             android:background="@drawable/rounded1"
-            android:orientation="vertical">
+            android:orientation="vertical"
+            android:paddingEnd="5dp"
+            android:paddingTop="5dp">
 
             <TextView
                 android:id="@+id/objetivos"
