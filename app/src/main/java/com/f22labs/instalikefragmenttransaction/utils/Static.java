@@ -20,6 +20,9 @@ public class Static
     private static int login;
     private static int id_perguntasfrequentes;
     private static int mes;
+    private static int diario;
+    private static int ficha;
+    private static int mes_ficha;
     private static String nome_grupo1 = "Caixa e Bancos";
     private static String nome_grupo2 = "Investimentos, outros";
     private static String nome_grupo3 = "Dividas - Cartao de Credito";
@@ -208,5 +211,29 @@ public class Static
 
     public static void setMes(int mes) {
         Static.mes = mes;
+    }
+
+    public static int getDiario() {
+        return diario;
+    }
+
+    public static void setDiario(int diario) {
+        Static.diario = diario;
+    }
+
+    public static int getFicha() {
+        return ficha;
+    }
+
+    public static void setFicha(int ficha) {
+        Static.ficha = ficha;
+    }
+
+    public static int getMes_ficha() {
+        return mes_ficha;
+    }
+
+    public static void setMes_ficha(int mes_ficha) {
+        Static.mes_ficha = mes_ficha;
     }
 }

@@ -12,18 +12,25 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".activities.MainActivity" />
-        <activity android:name=".activities.AdminActivity" />
-        <activity android:name=".activities.activity_cadastro" />
-        <activity android:name=".activities.activity_login">
+        <activity android:name=".activities.MainActivity"
+            android:screenOrientation="portrait" />
+        <activity android:name=".activities.AdminActivity"
+            android:screenOrientation="portrait" />
+        <activity android:name=".activities.activity_cadastro"
+            android:screenOrientation="portrait" />
+        <activity android:name=".activities.activity_login"
+            android:screenOrientation="portrait" >
             <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
+                <action android:name="android.intent.action.MAIN"
+                    android:screenOrientation="portrait" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".activities.activity_senha" />
-        <activity android:name=".activities.pesquisa_rapida"></activity>
+        <activity android:name=".activities.activity_senha"
+            android:screenOrientation="portrait" />
+        <activity android:name=".activities.pesquisa_rapida"
+            android:screenOrientation="portrait" ></activity>
     </application>
 
 </manifest>

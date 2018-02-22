@@ -104,6 +104,7 @@ public class HomeNakasone extends BaseFragment {
         settotal = (TextView) view.findViewById(R.id.settotal);
 
 
+
         //ImgView
         imgreceita_visao = (ImageView) view.findViewById(R.id.imgreceita_visao);
         imgdespesa_visao = (ImageView) view.findViewById(R.id.imgdespesa_visao);
@@ -169,6 +170,12 @@ public class HomeNakasone extends BaseFragment {
     public void onDestroyView() {
         super.onDestroyView();
     }
+
+
+
+
+
+
 
 
 

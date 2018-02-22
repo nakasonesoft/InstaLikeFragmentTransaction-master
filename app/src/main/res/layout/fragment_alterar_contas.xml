@@ -19,7 +19,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_marginTop="50dp"
-                android:background="@color/colorNakasoneGreenBackgroundText"
+                android:background="@drawable/boxverde"
                 android:orientation="vertical">
 
                 <TextView
@@ -40,7 +40,7 @@
                     android:layout_marginLeft="10dp"
                     android:layout_marginRight="10dp"
                     android:layout_marginTop="5dp"
-                    android:background="#fff"
+                    android:background="@drawable/rounded1"
                     android:ems="10"
                     android:inputType="textPersonName" />
 
@@ -75,6 +75,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="43dp"
                     android:orientation="horizontal">
+
                     <Spinner
                         android:id="@+id/spinner_conta"
                         android:layout_width="340dp"
@@ -85,6 +86,7 @@
                         android:layout_marginTop="5dp"
                         android:layout_weight="1"
                         android:background="@drawable/rounded1" />
+
                     <EditText
                         android:id="@+id/txtGrupoContaAlterar"
                         android:layout_width="340dp"
@@ -96,8 +98,8 @@
                         android:background="#fff"
                         android:digits="0123456789qwertzuiopasdfghjklyxcvbnm"
                         android:ems="10"
-                        android:visibility="gone"
-                        android:inputType="textPersonName" />
+                        android:inputType="textPersonName"
+                        android:visibility="gone" />
 
                     <EditText
                         android:id="@+id/txtSaldoInicialContaAlterar"
@@ -107,7 +109,7 @@
                         android:layout_marginRight="10dp"
                         android:layout_marginTop="5dp"
                         android:layout_weight="1"
-                        android:background="#fff"
+                        android:background="@drawable/rounded1"
                         android:ems="10"
                         android:inputType="numberDecimal" />
                 </LinearLayout>
@@ -118,7 +120,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="80dp"
                 android:layout_marginTop="50dp"
-                android:background="@color/colorNakasoneBoxBeje"
+                android:background="@drawable/rounded2"
                 android:orientation="vertical">
 
                 <LinearLayout
@@ -152,7 +154,7 @@
                         android:layout_marginRight="10dp"
                         android:layout_marginTop="5dp"
                         android:layout_weight="1"
-                        android:background="#fff"
+                        android:background="@drawable/rounded1"
                         android:ems="10"
                         android:inputType="date" />
 

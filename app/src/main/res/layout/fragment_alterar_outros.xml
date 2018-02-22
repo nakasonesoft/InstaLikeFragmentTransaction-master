@@ -40,7 +40,7 @@
                     android:layout_marginLeft="10dp"
                     android:layout_marginRight="10dp"
                     android:layout_marginTop="5dp"
-                    android:background="#fff"
+                    android:background="@drawable/rounded1"
                     android:ems="10"
                     android:inputType="textPersonName" />
 
@@ -79,16 +79,16 @@
                     <Spinner
                         android:id="@+id/spinner_alterar_outros1"
                         android:layout_width="340dp"
-                        android:layout_height="match_parent"
+                        android:layout_height="25dp"
                         android:layout_below="@+id/txtMixtureTitle"
                         android:layout_marginLeft="10dp"
                         android:layout_marginRight="10dp"
                         android:layout_marginTop="5dp"
                         android:layout_weight="1"
-                        android:background="@drawable/spinner_back" />
+                        android:background="@drawable/rounded1" />
+
                     <EditText
                         android:id="@+id/alterarcontadoOutros"
-                        android:visibility="gone"
                         android:layout_width="340dp"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="10dp"
@@ -98,7 +98,8 @@
                         android:background="#fff"
                         android:digits="0123456789qwertzuiopasdfghjklyxcvbnm"
                         android:ems="10"
-                        android:inputType="textPersonName" />
+                        android:inputType="textPersonName"
+                        android:visibility="gone" />
 
                     <EditText
                         android:id="@+id/alterarvalorOutros"
@@ -108,7 +109,7 @@
                         android:layout_marginRight="10dp"
                         android:layout_marginTop="5dp"
                         android:layout_weight="1"
-                        android:background="#fff"
+                        android:background="@drawable/rounded1"
                         android:ems="10"
                         android:inputType="numberDecimal" />
                 </LinearLayout>
@@ -119,7 +120,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="80dp"
                 android:layout_marginTop="50dp"
-                android:background="@color/colorNakasoneBoxBeje"
+                android:background="@drawable/rounded2"
                 android:orientation="vertical">
 
                 <LinearLayout
@@ -158,13 +159,14 @@
                     <Spinner
                         android:id="@+id/spinner_alterar_outros2"
                         android:layout_width="340dp"
-                        android:layout_height="match_parent"
+                        android:layout_height="25dp"
                         android:layout_below="@+id/txtMixtureTitle"
                         android:layout_marginLeft="10dp"
                         android:layout_marginRight="10dp"
                         android:layout_marginTop="5dp"
                         android:layout_weight="1"
-                        android:background="@drawable/spinner_back" />
+                        android:background="@drawable/rounded1" />
+
                     <EditText
                         android:id="@+id/alterarcontaOutros2"
                         android:layout_width="340dp"
@@ -173,11 +175,11 @@
                         android:layout_marginRight="10dp"
                         android:layout_marginTop="5dp"
                         android:layout_weight="1"
-                        android:visibility="gone"
                         android:background="#fff"
                         android:digits="0123456789qwertzuiopasdfghjklyxcvbnm"
                         android:ems="10"
-                        android:inputType="textPersonName" />
+                        android:inputType="textPersonName"
+                        android:visibility="gone" />
 
                     <EditText
                         android:id="@+id/alterardataOutros"
@@ -187,7 +189,7 @@
                         android:layout_marginRight="10dp"
                         android:layout_marginTop="5dp"
                         android:layout_weight="1"
-                        android:background="#fff"
+                        android:background="@drawable/rounded1"
                         android:ems="10"
                         android:inputType="date" />
 

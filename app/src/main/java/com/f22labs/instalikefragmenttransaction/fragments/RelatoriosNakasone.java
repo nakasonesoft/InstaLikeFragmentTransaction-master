@@ -38,6 +38,21 @@ public class RelatoriosNakasone extends BaseFragment{
         imgacompanhamento = (ImageView) view.findViewById(R.id.imgacompanhamento);
 
 
+        imgdiario.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                mFragmentNavigation.pushFragment(new Diario());
+            }
+        });
+
+        imgfichaindividual.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                mFragmentNavigation.pushFragment(new FichaIndividual());
+            }
+        });
+
+
         ButterKnife.bind(this, view);
 
         ( (MainActivity)getActivity()).updateToolbarTitle("Relatórios");
