@@ -41,21 +41,28 @@ import java.util.List;
 
 import butterknife.ButterKnife;
 
-
-public class CadastroReceitaNakasone extends BaseFragment implements Spinner.OnItemSelectedListener
+public class CadastroReceitaNakasone extends BaseFragment
 {
-
     EditText descricaoreceita,contareceita,valorreceita,paraondefoireceita,datareceita;
 
     Button salvarreceita;
 
-    //region Spinner Variaveis
+    //region spinner variaveis
     private Spinner spinner;
     private ArrayList<String> students;
 
-    ArrayList<String> ids;
+    private ArrayList<String> ids;
     private JSONArray result;
     static String id_spinner;
+//endregion
+
+    //region spinner variaveis 2
+    private Spinner spinner2;
+    private ArrayList<String> students2;
+
+    private ArrayList<String> ids2;
+    private JSONArray result2;
+    static String id_spinner2;
     //endregion
 
     @Override
@@ -63,24 +70,17 @@ public class CadastroReceitaNakasone extends BaseFragment implements Spinner.OnI
         super.onCreate(savedInstanceState);
     }
 
-
-
-
-
     public void insert() {
 
         String  descricao_receita = descricaoreceita.getText().toString();
         String  id_conta = id_spinner.toString();
         String  valor_receita = valorreceita.getText().toString();
-        String  praondefoi_receita = paraondefoireceita.getText().toString();
+        String  praondefoi_receita = id_spinner2.toString();
         String  data_receita = datareceita.getText().toString();
 
         insertToDatabase(descricao_receita, id_conta, valor_receita, praondefoi_receita, data_receita);
 
     }
-
-
-
 
     private void insertToDatabase(String descricao_receita, String id_conta,String valor_receita,String praondefoi_receita, String data_receita){
         class SendPostReqAsyncTask extends AsyncTask<String, Void, String> {
@@ -98,7 +98,7 @@ public class CadastroReceitaNakasone extends BaseFragment implements Spinner.OnI
                 String  descricao_receita = descricaoreceita.getText().toString();
                 String  id_conta = id_spinner.toString();
                 String  valor_receita = valorreceita.getText().toString();
-                String  praondefoi_receita = paraondefoireceita.getText().toString();
+                String  praondefoi_receita = id_spinner2.toString();
                 String  data_receita = datareceita.getText().toString();
 
                 List<NameValuePair> nameValuePairs = new ArrayList<NameValuePair>();
@@ -145,12 +145,8 @@ public class CadastroReceitaNakasone extends BaseFragment implements Spinner.OnI
         sendPostReqAsyncTask.execute(descricao_receita, id_conta, valor_receita, praondefoi_receita, data_receita);
     }
 
-
-
-
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,Bundle savedInstanceState)
-    {
+    public View onCreateView(LayoutInflater inflater, ViewGroup container,Bundle savedInstanceState){
         View view = inflater.inflate(R.layout.fragment_cadastro_receita, container, false);
 
         //region FindViews
@@ -160,15 +156,51 @@ public class CadastroReceitaNakasone extends BaseFragment implements Spinner.OnI
         paraondefoireceita = (EditText) view.findViewById(R.id.paraondefoireceita);
         datareceita = (EditText) view.findViewById(R.id.datareceita);
         salvarreceita = (Button) view.findViewById(R.id.salvarreceita);
+        //endregion
+
+        //region declarar variaveis spinner
         students = new ArrayList<String>();
         ids = new ArrayList<String>();
         spinner = (Spinner) view.findViewById(R.id.spinner_receita);
-        spinner.setOnItemSelectedListener(this);
+        spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+
+                id_spinner = ids.get(position);
+
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+                ids.get(spinner.getSelectedItemPosition());
+
+            }
+        });
         //endregion
+
+        //region variaveis spinner 2
+        students2 = new ArrayList<String>();
+        ids2 = new ArrayList<String>();
+        spinner2 = (Spinner) view.findViewById(R.id.spinner_receita1);
+        spinner2.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener(){
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id)
+            {
+                id_spinner2 = ids2.get(position);
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+                ids2.get(spinner2.getSelectedItemPosition());
+            }
+        });
+        //endregion
+
         //region Máscaras
         valorreceita.addTextChangedListener(new MoneyTextWatcher(valorreceita));
         datareceita.addTextChangedListener(MaskEditUtil.mask(datareceita, MaskEditUtil.FORMAT_DATE));
         //endregion
+
         //region Clique do Botão
         salvarreceita.setOnClickListener(new View.OnClickListener()
         {
@@ -180,20 +212,22 @@ public class CadastroReceitaNakasone extends BaseFragment implements Spinner.OnI
             }
         });
         //endregion
+
         //region Outros
 
         ButterKnife.bind(this, view);
 
         ( (MainActivity)getActivity()).updateToolbarTitle("Lançamento de Receita");
         //endregion
+
+        getData2();
         getData();
         return view;
     }
 
-
     //region Spinner
     private void getData(){
-        StringRequest stringRequest = new StringRequest("http://premiumcontrol.com.br/NakasoneSoftapp/teste.php",
+        StringRequest stringRequest = new StringRequest("http://premiumcontrol.com.br/NakasoneSoftapp/select/select_grupos.php",
                 new Response.Listener<String>() {
                     @Override
                     public void onResponse(String response) {
@@ -219,13 +253,55 @@ public class CadastroReceitaNakasone extends BaseFragment implements Spinner.OnI
 
     private void getStudents(JSONArray j){
         students.add("");
+        for(int i=0;i<j.length();i++){
+            try {
+                JSONObject json = j.getJSONObject(i);
+                students.add(json.getString("nome_grupo"));
+                ids.add(json.getString("id_grupo"));
+            } catch (JSONException e) {
+                e.printStackTrace();
+            }
+        }
+        spinner.setAdapter(new ArrayAdapter<String>(getActivity(), android.R.layout.simple_spinner_dropdown_item, students));
+    }
+
+    //endregion
+
+    //region Spinner2
+    private void getData2(){
+        StringRequest stringRequest = new StringRequest("http://premiumcontrol.com.br/NakasoneSoftapp/teste.php",
+                new Response.Listener<String>() {
+                    @Override
+                    public void onResponse(String response) {
+                        JSONObject j = null;
+                        try {
+                            j = new JSONObject(response);
+                            result2 = j.getJSONArray("result");
+                            getStudents2(result2);
+                        } catch (JSONException e) {
+                            e.printStackTrace();
+                        }
+                    }
+                },
+                new Response.ErrorListener() {
+                    @Override
+                    public void onErrorResponse(VolleyError error) {
+
+                    }
+                });
+        RequestQueue requestQueue = Volley.newRequestQueue(getActivity());
+        requestQueue.add(stringRequest);
+    }
+
+    private void getStudents2(JSONArray j){
+        students2.add("");
         for(int i=0;i<j.length();i++)
         {
             try
             {
                 JSONObject json = j.getJSONObject(i);
-                students.add(json.getString("nome_conta"));
-                ids.add(json.getString("id_conta"));
+                students2.add(json.getString("nome_conta"));
+                ids2.add(json.getString("id_conta"));
             }
             catch (JSONException e)
             {
@@ -233,27 +309,10 @@ public class CadastroReceitaNakasone extends BaseFragment implements Spinner.OnI
             }
         }
 
-        spinner.setAdapter(new ArrayAdapter<String>(getActivity(), android.R.layout.simple_spinner_dropdown_item, students));
+        spinner2.setAdapter(new ArrayAdapter<String>(getActivity(), android.R.layout.simple_spinner_dropdown_item, students2));
 
     }
 
 
-    @Override
-    public void onItemSelected(AdapterView<?> parent, View view, int position, long id)
-    {
-
-        id_spinner = ids.get(position);
-
-
-    }
-
-    @Override
-    public void onNothingSelected(AdapterView<?> parent)
-    {
-        ids.get(spinner.getSelectedItemPosition());
-    }
     //endregion
-
-
-
 }

@@ -173,7 +173,7 @@ public class CadastroContasNakasone extends BaseFragment implements Spinner.OnIt
 
     //region Spinner
     private void getData(){
-        StringRequest stringRequest = new StringRequest("http://premiumcontrol.com.br/NakasoneSoftapp/select/testebusca.php",
+        StringRequest stringRequest = new StringRequest("http://premiumcontrol.com.br/NakasoneSoftapp/select/select_grupos.php",
                 new Response.Listener<String>() {
                     @Override
                     public void onResponse(String response) {

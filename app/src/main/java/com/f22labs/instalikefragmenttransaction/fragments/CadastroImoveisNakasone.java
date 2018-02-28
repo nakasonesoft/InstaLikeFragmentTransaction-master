@@ -44,20 +44,29 @@ import butterknife.ButterKnife;
 
 
 
-public class CadastroImoveisNakasone extends BaseFragment implements Spinner.OnItemSelectedListener
+public class CadastroImoveisNakasone extends BaseFragment
 {
 
     EditText descricaoimovel,contadoimovel,valorimovel,pagamentoimovel,dataimovel;
 
     Button salvarimovel;
 
-    //region Spinner Variaveis
+    //region spinner variaveis
     private Spinner spinner;
     private ArrayList<String> students;
 
-    ArrayList<String> ids;
+    private ArrayList<String> ids;
     private JSONArray result;
     static String id_spinner;
+//endregion
+
+    //region spinner variaveis 2
+    private Spinner spinner2;
+    private ArrayList<String> students2;
+
+    private ArrayList<String> ids2;
+    private JSONArray result2;
+    static String id_spinner2;
     //endregion
 
     @Override
@@ -70,9 +79,8 @@ public class CadastroImoveisNakasone extends BaseFragment implements Spinner.OnI
         String  descricao_prestImovel = descricaoimovel.getText().toString();
         String  valor_prestImovel = valorimovel.getText().toString();
         String  conta_prestImovel = id_spinner.toString();
-        String  comofoipago_prestImovel = pagamentoimovel.getText().toString();
+        String  comofoipago_prestImovel = id_spinner2.toString();
         String  data_prestImovel = dataimovel.getText().toString();
-
 
 
         insertToDatabase(descricao_prestImovel, valor_prestImovel, conta_prestImovel, comofoipago_prestImovel, data_prestImovel);
@@ -95,7 +103,7 @@ public class CadastroImoveisNakasone extends BaseFragment implements Spinner.OnI
                 String  descricao_prestImovel = descricaoimovel.getText().toString();
                 String  valor_prestImovel = valorimovel.getText().toString();
                 String  conta_prestImovel = id_spinner.toString();
-                String  comofoipago_prestImovel = pagamentoimovel.getText().toString();
+                String  comofoipago_prestImovel = id_spinner2.toString();
                 String  data_prestImovel = dataimovel.getText().toString();
 
                 List<NameValuePair> nameValuePairs = new ArrayList<NameValuePair>();
@@ -146,6 +154,7 @@ public class CadastroImoveisNakasone extends BaseFragment implements Spinner.OnI
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
     {
         View view = inflater.inflate(R.layout.fragment_cadastro_imoveis, container, false);
+
         //region FindViews
         descricaoimovel = (EditText) view.findViewById(R.id.descricaoimovel);
         contadoimovel = (EditText) view.findViewById(R.id.contadoimovel);
@@ -153,16 +162,55 @@ public class CadastroImoveisNakasone extends BaseFragment implements Spinner.OnI
         pagamentoimovel = (EditText) view.findViewById(R.id.pagamentoimovel);
         dataimovel = (EditText) view.findViewById(R.id.dataimovel);
         salvarimovel = (Button) view.findViewById(R.id.salvarimovel);
-        students = new ArrayList<String>();
-        ids = new ArrayList<String>();
-        spinner = (Spinner) view.findViewById(R.id.spinner_imovel);
-        spinner.setOnItemSelectedListener(this);
+
+
+
 
         //endregion
+
         //region Máscaras
         dataimovel.addTextChangedListener(MaskEditUtil.mask(dataimovel, MaskEditUtil.FORMAT_DATE));
         valorimovel.addTextChangedListener(new MoneyTextWatcher(valorimovel));
         //endregion
+
+        //region declarar variaveis spinner
+        students = new ArrayList<String>();
+        ids = new ArrayList<String>();
+        spinner = (Spinner) view.findViewById(R.id.spinner_imovel);
+        spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+
+                id_spinner = ids.get(position);
+
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+                ids.get(spinner.getSelectedItemPosition());
+
+            }
+        });
+        //endregion
+
+        //region variaveis spinner 2
+        students2 = new ArrayList<String>();
+        ids2 = new ArrayList<String>();
+        spinner2 = (Spinner) view.findViewById(R.id.spinner_imovel1);
+        spinner2.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener(){
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id)
+            {
+                id_spinner2 = ids2.get(position);
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+                ids2.get(spinner2.getSelectedItemPosition());
+            }
+        });
+        //endregion
+
         //region Clique do Botão
 
         salvarimovel.setOnClickListener(new View.OnClickListener()
@@ -176,19 +224,21 @@ public class CadastroImoveisNakasone extends BaseFragment implements Spinner.OnI
         });
 
         //endregion
+
         //region Outros
         ButterKnife.bind(this, view);
 
         ( (MainActivity)getActivity()).updateToolbarTitle("Lançamento de Imóveis");
         //endregion
+
         getData();
+        getData2();
         return view;
     }
 
-
     //region Spinner
     private void getData(){
-        StringRequest stringRequest = new StringRequest("http://premiumcontrol.com.br/NakasoneSoftapp/teste.php",
+        StringRequest stringRequest = new StringRequest("http://premiumcontrol.com.br/NakasoneSoftapp/select/select_grupos.php",
                 new Response.Listener<String>() {
                     @Override
                     public void onResponse(String response) {
@@ -214,13 +264,55 @@ public class CadastroImoveisNakasone extends BaseFragment implements Spinner.OnI
 
     private void getStudents(JSONArray j){
         students.add("");
+        for(int i=0;i<j.length();i++){
+            try {
+                JSONObject json = j.getJSONObject(i);
+                students.add(json.getString("nome_grupo"));
+                ids.add(json.getString("id_grupo"));
+            } catch (JSONException e) {
+                e.printStackTrace();
+            }
+        }
+        spinner.setAdapter(new ArrayAdapter<String>(getActivity(), android.R.layout.simple_spinner_dropdown_item, students));
+    }
+
+    //endregion
+
+    //region Spinner2
+    private void getData2(){
+        StringRequest stringRequest = new StringRequest("http://premiumcontrol.com.br/NakasoneSoftapp/teste.php",
+                new Response.Listener<String>() {
+                    @Override
+                    public void onResponse(String response) {
+                        JSONObject j = null;
+                        try {
+                            j = new JSONObject(response);
+                            result2 = j.getJSONArray("result");
+                            getStudents2(result2);
+                        } catch (JSONException e) {
+                            e.printStackTrace();
+                        }
+                    }
+                },
+                new Response.ErrorListener() {
+                    @Override
+                    public void onErrorResponse(VolleyError error) {
+
+                    }
+                });
+        RequestQueue requestQueue = Volley.newRequestQueue(getActivity());
+        requestQueue.add(stringRequest);
+    }
+
+    private void getStudents2(JSONArray j){
+        students2.add("");
         for(int i=0;i<j.length();i++)
         {
             try
             {
                 JSONObject json = j.getJSONObject(i);
-                students.add(json.getString("nome_conta"));
-                ids.add(json.getString("id_conta"));
+                students2.add(json.getString("nome_conta"));
+                ids2.add(json.getString("id_conta"));
             }
             catch (JSONException e)
             {
@@ -228,26 +320,10 @@ public class CadastroImoveisNakasone extends BaseFragment implements Spinner.OnI
             }
         }
 
-        spinner.setAdapter(new ArrayAdapter<String>(getActivity(), android.R.layout.simple_spinner_dropdown_item, students));
+        spinner2.setAdapter(new ArrayAdapter<String>(getActivity(), android.R.layout.simple_spinner_dropdown_item, students2));
 
     }
 
 
-    @Override
-    public void onItemSelected(AdapterView<?> parent, View view, int position, long id)
-    {
-
-        id_spinner = ids.get(position);
-
-
-    }
-
-    @Override
-    public void onNothingSelected(AdapterView<?> parent)
-    {
-        ids.get(spinner.getSelectedItemPosition());
-    }
     //endregion
-
-
 }

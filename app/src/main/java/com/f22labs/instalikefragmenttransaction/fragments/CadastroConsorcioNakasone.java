@@ -106,7 +106,6 @@ public class CadastroConsorcioNakasone extends BaseFragment
                 String paramcomofoipago_consorcio = params[3];
                 String paramdata_consorcio = params[4];
 
-
                 //InputStream is = null;
 
                 String  descricao_consorcio = descricaoconsorcio.getText().toString();
@@ -114,6 +113,7 @@ public class CadastroConsorcioNakasone extends BaseFragment
                 String  conta_consorcio = id_spinner2.toString();
                 String  comofoipago_consorcio = id_spinner.toString();
                 String  data_consorcio = dataconsorcio.getText().toString();
+
 
                 List<NameValuePair> nameValuePairs = new ArrayList<NameValuePair>();
                 nameValuePairs.add(new BasicNameValuePair("descricao_consorcio", descricao_consorcio));
