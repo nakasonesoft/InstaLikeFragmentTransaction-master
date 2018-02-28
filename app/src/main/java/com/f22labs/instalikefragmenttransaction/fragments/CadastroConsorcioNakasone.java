@@ -54,18 +54,29 @@ import java.util.List;
 import butterknife.ButterKnife;
 
 
-public class CadastroConsorcioNakasone extends BaseFragment implements Spinner.OnItemSelectedListener
+public class CadastroConsorcioNakasone extends BaseFragment
 {
-
     EditText descricaoconsorcio,contadoconsorcio,valorconsorcio,pagamentoconsorcio,dataconsorcio;
 
     Button salvarconsorcio;
 
-    private String current = "";
+    //region spinner variaveis
     private Spinner spinner;
     private ArrayList<String> students;
+
     private ArrayList<String> ids;
     private JSONArray result;
+    static String id_spinner;
+//endregion
+
+    //region spinner variaveis 2
+    private Spinner spinner2;
+    private ArrayList<String> students2;
+
+    private ArrayList<String> ids2;
+    private JSONArray result2;
+    static String id_spinner2;
+    //endregion
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -76,14 +87,13 @@ public class CadastroConsorcioNakasone extends BaseFragment implements Spinner.O
 
         String  descricao_consorcio = descricaoconsorcio.getText().toString();
         String  valor_consorcio = valorconsorcio.getText().toString();
-        String  conta_consorcio = contadoconsorcio.getText().toString();
-        String  comofoipago_consorcio = pagamentoconsorcio.getText().toString();
+        String  conta_consorcio = id_spinner2.toString();
+        String  comofoipago_consorcio = id_spinner.toString();
         String  data_consorcio = dataconsorcio.getText().toString();
 
 
 
         insertToDatabase(descricao_consorcio, valor_consorcio, conta_consorcio, comofoipago_consorcio, data_consorcio);
-
     }
 
     private void insertToDatabase(String descricao_consorcio, String valor_consorcio,String conta_consorcio,String comofoipago_consorcio, String data_consorcio){
@@ -101,8 +111,8 @@ public class CadastroConsorcioNakasone extends BaseFragment implements Spinner.O
 
                 String  descricao_consorcio = descricaoconsorcio.getText().toString();
                 String  valor_consorcio = valorconsorcio.getText().toString();
-                String  conta_consorcio = contadoconsorcio.getText().toString();
-                String  comofoipago_consorcio = pagamentoconsorcio.getText().toString();
+                String  conta_consorcio = id_spinner2.toString();
+                String  comofoipago_consorcio = id_spinner.toString();
                 String  data_consorcio = dataconsorcio.getText().toString();
 
                 List<NameValuePair> nameValuePairs = new ArrayList<NameValuePair>();
@@ -142,8 +152,6 @@ public class CadastroConsorcioNakasone extends BaseFragment implements Spinner.O
                 // textViewResult.setText("Inserted");
             }
 
-
-
         }
         SendPostReqAsyncTask sendPostReqAsyncTask = new SendPostReqAsyncTask();
         sendPostReqAsyncTask.execute(descricao_consorcio, valor_consorcio, conta_consorcio, comofoipago_consorcio, data_consorcio);
@@ -153,6 +161,7 @@ public class CadastroConsorcioNakasone extends BaseFragment implements Spinner.O
     public View onCreateView(LayoutInflater inflater, ViewGroup container,Bundle savedInstanceState)
     {
         View view = inflater.inflate(R.layout.fragment_cadastro_consorcio, container, false);
+
         //region FindViews
         descricaoconsorcio = (EditText) view.findViewById(R.id.descricaoconsorcio);
         contadoconsorcio = (EditText) view.findViewById(R.id.contadoconsorcio);
@@ -160,16 +169,51 @@ public class CadastroConsorcioNakasone extends BaseFragment implements Spinner.O
         pagamentoconsorcio = (EditText) view.findViewById(R.id.pagamentoconsorcio);
         dataconsorcio = (EditText) view.findViewById(R.id.dataconsorcio);
         salvarconsorcio = (Button) view.findViewById(R.id.rsalvarconsorcio);
+        //endregion
+
+        //region declarar variaveis spinner
         students = new ArrayList<String>();
         ids = new ArrayList<String>();
-        spinner = (Spinner) view.findViewById(R.id.spinner1);
-        spinner.setOnItemSelectedListener(this);
+        spinner = (Spinner) view.findViewById(R.id.spinner_consorcio1);
+        spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+
+                id_spinner = ids.get(position);
+
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+                ids.get(spinner.getSelectedItemPosition());
+
+            }
+        });
         //endregion
+
+        //region variaveis spinner 2
+        students2 = new ArrayList<String>();
+        ids2 = new ArrayList<String>();
+        spinner2 = (Spinner) view.findViewById(R.id.spinner_consorcio2);
+        spinner2.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener(){
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id)
+            {
+                id_spinner2 = ids2.get(position);
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+                ids2.get(spinner2.getSelectedItemPosition());
+            }
+        });
+        //endregion
+
         //region Máscaras
         dataconsorcio.addTextChangedListener(MaskEditUtil.mask(dataconsorcio, MaskEditUtil.FORMAT_DATE));
-
         valorconsorcio.addTextChangedListener(new MoneyTextWatcher(valorconsorcio));
         //endregion
+
         //region Clique do Botão
         salvarconsorcio.setOnClickListener(new View.OnClickListener()
         {
@@ -182,28 +226,24 @@ public class CadastroConsorcioNakasone extends BaseFragment implements Spinner.O
             }
         });
         //endregion
-        //region Outros
+
+        //region Toolbar
         ButterKnife.bind(this, view);
 
         ( (MainActivity)getActivity()).updateToolbarTitle("Lançamento de consórcio");
         //endregion
-        getData();
 
+        //region CHAMAR MÉTODOS
+        getData();
+        getData2();
+        //endregion
 
         return view;
     }
 
-
-
-
-
-
-
-
-
     //region Spinner
     private void getData(){
-        StringRequest stringRequest = new StringRequest("http://premiumcontrol.com.br/NakasoneSoftapp/select/testebusca.php",
+        StringRequest stringRequest = new StringRequest("http://premiumcontrol.com.br/NakasoneSoftapp/select/select_grupos.php",
                 new Response.Listener<String>() {
                     @Override
                     public void onResponse(String response) {
@@ -233,6 +273,7 @@ public class CadastroConsorcioNakasone extends BaseFragment implements Spinner.O
             try {
                 JSONObject json = j.getJSONObject(i);
                 students.add(json.getString("nome_grupo"));
+                ids.add(json.getString("id_grupo"));
             } catch (JSONException e) {
                 e.printStackTrace();
             }
@@ -240,16 +281,55 @@ public class CadastroConsorcioNakasone extends BaseFragment implements Spinner.O
         spinner.setAdapter(new ArrayAdapter<String>(getActivity(), android.R.layout.simple_spinner_dropdown_item, students));
     }
 
+    //endregion
 
-    @Override
-    public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+    //region Spinner2
+    private void getData2(){
+        StringRequest stringRequest = new StringRequest("http://premiumcontrol.com.br/NakasoneSoftapp/teste.php",
+                new Response.Listener<String>() {
+                    @Override
+                    public void onResponse(String response) {
+                        JSONObject j = null;
+                        try {
+                            j = new JSONObject(response);
+                            result2 = j.getJSONArray("result");
+                            getStudents2(result2);
+                        } catch (JSONException e) {
+                            e.printStackTrace();
+                        }
+                    }
+                },
+                new Response.ErrorListener() {
+                    @Override
+                    public void onErrorResponse(VolleyError error) {
+
+                    }
+                });
+        RequestQueue requestQueue = Volley.newRequestQueue(getActivity());
+        requestQueue.add(stringRequest);
+    }
+
+    private void getStudents2(JSONArray j){
+        students2.add("");
+        for(int i=0;i<j.length();i++)
+        {
+            try
+            {
+                JSONObject json = j.getJSONObject(i);
+                students2.add(json.getString("nome_conta"));
+                ids2.add(json.getString("id_conta"));
+            }
+            catch (JSONException e)
+            {
+                e.printStackTrace();
+            }
+        }
+
+        spinner2.setAdapter(new ArrayAdapter<String>(getActivity(), android.R.layout.simple_spinner_dropdown_item, students2));
 
     }
 
-    @Override
-    public void onNothingSelected(AdapterView<?> parent) {
 
-    }
     //endregion
 
 }

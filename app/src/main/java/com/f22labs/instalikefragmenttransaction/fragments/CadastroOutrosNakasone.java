@@ -58,6 +58,7 @@ public class CadastroOutrosNakasone extends BaseFragment
     static String id_spinner;
     //endregion
 
+
     //region Spinner Variaveis2
     private Spinner spinner2;
     private ArrayList<String> students2;
@@ -86,9 +87,9 @@ public class CadastroOutrosNakasone extends BaseFragment
 
     }
 
-
     private void insertToDatabase(String descricao_outros, String id_grupo,String id_grupo2,String valor_outros, String data_outros){
         class SendPostReqAsyncTask extends AsyncTask<String, Void, String> {
+
             @Override
             protected String doInBackground(String... params) {
                 String paramdescricao_outros = params[0];
@@ -143,14 +144,10 @@ public class CadastroOutrosNakasone extends BaseFragment
                 // textViewResult.setText("Inserted");
             }
 
-
-
         }
         SendPostReqAsyncTask sendPostReqAsyncTask = new SendPostReqAsyncTask();
         sendPostReqAsyncTask.execute(descricao_outros, id_grupo, id_grupo2, valor_outros, data_outros);
     }
-
-
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,Bundle savedInstanceState)
@@ -201,10 +198,16 @@ public class CadastroOutrosNakasone extends BaseFragment
         });
 
         //endregion
+
+
+
         //region Máscaras
         valorOutros.addTextChangedListener(new MoneyTextWatcher(valorOutros));
         dataOutros.addTextChangedListener(MaskEditUtil.mask(dataOutros, MaskEditUtil.FORMAT_DATE));
         //endregion
+
+
+
         //region Clique do botão
         salvarOutros.setOnClickListener(new View.OnClickListener()
         {
@@ -216,16 +219,20 @@ public class CadastroOutrosNakasone extends BaseFragment
             }
         });
         //endregion
+
+
+
         //region Outros
         ButterKnife.bind(this, view);
 
         ( (MainActivity)getActivity()).updateToolbarTitle("Lançamento de Outros");
      //endregion
+
+
         getData();
         getData2();
         return view;
     }
-
 
     //region Spinner
     private void getData(){
@@ -277,7 +284,6 @@ public class CadastroOutrosNakasone extends BaseFragment
 
     //endregion
 
-
     //region Spinner2
     private void getData2(){
         StringRequest stringRequest = new StringRequest("http://premiumcontrol.com.br/NakasoneSoftapp/teste.php",
@@ -326,5 +332,4 @@ public class CadastroOutrosNakasone extends BaseFragment
 
 
     //endregion
-
 }
