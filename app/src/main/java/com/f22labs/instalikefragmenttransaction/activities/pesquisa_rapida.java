@@ -140,7 +140,6 @@ public class pesquisa_rapida extends AppCompatActivity implements View.OnClickLi
             protected void onPostExecute(String result) {
                 super.onPostExecute(result);
 
-                Toast.makeText(pesquisa_rapida.this, result, Toast.LENGTH_LONG).show();
                 Intent intent = new Intent(getApplicationContext(), activity_login.class );
                 startActivity(intent);
                 //TextView textViewResult = (TextView) findViewById(R.id.textViewResult);

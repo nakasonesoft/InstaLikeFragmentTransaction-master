@@ -1,5 +1,6 @@
 package com.f22labs.instalikefragmenttransaction.fragments;
 
+import android.app.Activity;
 import android.os.Bundle;
 import android.support.v4.app.FragmentTabHost;
 import android.support.v4.widget.SwipeRefreshLayout;
@@ -18,12 +19,8 @@ import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonArrayRequest;
 import com.android.volley.toolbox.Volley;
 import com.f22labs.instalikefragmenttransaction.R;
-import com.f22labs.instalikefragmenttransaction.activities.MainActivity;
-import com.f22labs.instalikefragmenttransaction.adapters.GetDataAdapter;
-import com.f22labs.instalikefragmenttransaction.adapters.GetDataAdapterMinidicionario;
-import com.f22labs.instalikefragmenttransaction.adapters.RecyclerViewAdapter;
-import com.f22labs.instalikefragmenttransaction.adapters.RecyclerViewAdapterMinidicionario;
-import com.f22labs.instalikefragmenttransaction.adapters.RecyclerViewAdapterReceita;
+import com.f22labs.instalikefragmenttransaction.adapters.GetDataAdapterDesativarContas;
+import com.f22labs.instalikefragmenttransaction.adapters.RecyclerViewAdapterDesativarContas;
 import com.f22labs.instalikefragmenttransaction.interfaces.RecyclerViewOnClickListenerHack;
 
 import org.json.JSONArray;
@@ -33,10 +30,8 @@ import org.json.JSONObject;
 import java.util.ArrayList;
 import java.util.List;
 
-import butterknife.ButterKnife;
 
-
-public class RecyclerAltExcReceita extends BaseFragment implements RecyclerViewOnClickListenerHack
+public class RecyclerDesativarContas extends BaseFragment implements RecyclerViewOnClickListenerHack
 {
     private FragmentTabHost mTabHost;
     private OnItemClickListener mListener;
@@ -57,54 +52,53 @@ public class RecyclerAltExcReceita extends BaseFragment implements RecyclerViewO
 
     }
     //endregion
-    RecyclerViewAdapter mAdapter ;
+    RecyclerDesativarContas mAdapter ;
 
     GestureDetector mGestureDetector;
 
     SwipeRefreshLayout mSwipeRefreshLayout;
-    List<GetDataAdapter> GetDataAdapter1;
+    List<GetDataAdapterDesativarContas> GetDataAdapter1;
 
     RecyclerView recyclerView;
 
-    RecyclerView.LayoutManager recyclerViewlayoutManager;
-
+    RecyclerView.LayoutManager recyclerViewlayoutManager = new LinearLayoutManager(getActivity());
     RecyclerView.Adapter recyclerViewadapter;
 
-    String GET_JSON_DATA_HTTP_URL = "http://premiumcontrol.com.br/NakasoneSoftapp/select/select_receita.php";
-    String JSON_id_receita = "id_receita";
-    String JSON_descricao_receita = "descricao_receita";
-    String JSON_id_conta = "id_conta";
-    String JSON_valor_receita = "valor_receita";
-    String JSON_praondefoi_receita = "praondefoi_receita";
-    String JSON_data_receita = "data_receita";
+    String GET_JSON_DATA_HTTP_URL = "http://premiumcontrol.com.br/NakasoneSoftapp/select/select_conta.php";
+
+    String JSON_id_despesas_relatorio3 = "id_despesas";
+    String JSON_descricao_despesas_relatorio3 = "descricao_despesas";
+    String JSON_conta_despesas_relatorio3 = "conta_despesas";
+    String JSON_valor_despesas_relatorio3 = "valor_despesas";
+    String JSON_comofoipago_despesas_relatorio3 = "comofoipago_despesas";
+    String JSON_data_despesas_relatorio3 = "data_despesas";
+    String JSON_id_conta_relatorio3 = "id_conta";
+    String JSON_id_grupo_relatorio3 = "id_grupo";
+    String JSON_nome_conta_relatorio3 = "nome_conta";
+    String JSON_saldoinicial_conta_relatorio3 = "saldoinicial_conta";
+    String JSON_datafechamento_conta_relatorio3 = "datafechamento_conta";
+    String JSON_status_relatorio3 = "status";
 
     private final String KEY_RECYCLER_STATE = "recycler_state";
 
     private static Bundle mBundleRecyclerViewState;
     private static int dyb;
 
+    private Toolbar mToolbar;
+    TextView txtTitle, txtSubtitle;
     JsonArrayRequest jsonArrayRequest ;
 
     RequestQueue requestQueue ;
 
-
     @Override
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-    }
-
-    @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,Bundle savedInstanceState)
+    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
     {
-
-        View view = inflater.inflate(R.layout.fragment_recycler_alt_exc_receita, container, false);
-
-        mSwipeRefreshLayout = (SwipeRefreshLayout)view.findViewById(R.id.swifeRefreshaltexcreceita);
-        //mListener = listener;
+        View view = inflater.inflate(R.layout.fragment_recycler_contas_desativar, container, false);
+        mSwipeRefreshLayout = (SwipeRefreshLayout)view.findViewById(R.id.swifeRefreshcontasdesativar);
 
         GetDataAdapter1 = new ArrayList<>();
 
-        recyclerView = (RecyclerView) view.findViewById(R.id.recyclerviewaltexcreceita);
+        recyclerView = (RecyclerView) view.findViewById(R.id.recyclerviewcontasdesativar);
 
         recyclerView.setHasFixedSize(true);
 
@@ -131,13 +125,23 @@ public class RecyclerAltExcReceita extends BaseFragment implements RecyclerViewO
 
             }
         });//region
-        ButterKnife.bind(this, view);
-        ((MainActivity)getActivity()).updateToolbarTitle("Receitas");
+
+
 
         //endregion
-
         return view;
     }
+    @Override
+    public void onCreate(Bundle savedInstanceState)
+    {
+        super.onCreate(savedInstanceState);
+
+
+    }
+
+
+
+
     //region Chamada no Host
     public void JSON_DATA_WEB_CALL(){
 
@@ -170,19 +174,16 @@ public class RecyclerAltExcReceita extends BaseFragment implements RecyclerViewO
 
         for(int i = 0; i<array.length(); i++) {
 
-            final GetDataAdapter GetDataAdapter2 = new GetDataAdapter();
+            final GetDataAdapterDesativarContas GetDataAdapter2 = new GetDataAdapterDesativarContas();
 
             JSONObject json = null;
             try {
 
                 json = array.getJSONObject(i);
 
-                GetDataAdapter2.setId_receita(json.getString(JSON_id_receita));
-                GetDataAdapter2.setDescricao_receita(json.getString(JSON_descricao_receita));
-                GetDataAdapter2.setId_conta(json.getString(JSON_id_conta));
-                GetDataAdapter2.setValor_receita(json.getString(JSON_valor_receita));
-                GetDataAdapter2.setPraondefoi_receita(json.getString(JSON_praondefoi_receita));
-                GetDataAdapter2.setData_receita(json.getString(JSON_data_receita));
+                GetDataAdapter2.setNome_conta(json.getString("nome_conta"));
+                GetDataAdapter2.setStatus(json.getString("status"));
+                GetDataAdapter2.setId_conta(json.getString("id_conta"));
                 mSwipeRefreshLayout.setRefreshing(false);
 
             }
@@ -194,11 +195,15 @@ public class RecyclerAltExcReceita extends BaseFragment implements RecyclerViewO
             GetDataAdapter1.add(GetDataAdapter2);
         }
 
-        recyclerViewadapter = new RecyclerViewAdapterReceita(GetDataAdapter1, getActivity());
+        recyclerViewadapter = new RecyclerViewAdapterDesativarContas(GetDataAdapter1, getActivity());
 
         recyclerView.setAdapter(recyclerViewadapter);
 
 
 
     }
+
+//endregion
+
+
 }

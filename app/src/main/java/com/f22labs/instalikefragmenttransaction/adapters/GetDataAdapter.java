@@ -79,6 +79,7 @@ public class GetDataAdapter
     private String nome_conta;
     private String saldoinicial_conta;
     private String datafechamento_conta;
+    private String status;
 
 
 
@@ -529,6 +530,14 @@ public class GetDataAdapter
 
     public void setDatafechamento_conta(String datafechamento_conta) {
         this.datafechamento_conta = datafechamento_conta;
+    }
+
+    public String getStatus() {
+        return status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
     }
     //endregion
 

@@ -35,8 +35,6 @@ public class RecyclerViewAdapterConta extends RecyclerView.Adapter<RecyclerViewA
         super();
         this.getDataAdapter = getDataAdapter;
         this.context = context;
-
-
     }
 
     @Override
@@ -120,7 +118,6 @@ public class RecyclerViewAdapterConta extends RecyclerView.Adapter<RecyclerViewA
         return getDataAdapter.size();
     }
 
-
     class ViewHolder extends RecyclerView.ViewHolder
     {
 
@@ -156,6 +153,4 @@ public class RecyclerViewAdapterConta extends RecyclerView.Adapter<RecyclerViewA
 
 
     }
-
-
 }

@@ -193,6 +193,14 @@ public class CadastroConsorcioNakasone extends BaseFragment implements Spinner.O
         return view;
     }
 
+
+
+
+
+
+
+
+
     //region Spinner
     private void getData(){
         StringRequest stringRequest = new StringRequest("http://premiumcontrol.com.br/NakasoneSoftapp/select/testebusca.php",

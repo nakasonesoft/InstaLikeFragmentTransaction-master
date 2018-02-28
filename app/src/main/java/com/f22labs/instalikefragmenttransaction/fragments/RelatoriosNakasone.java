@@ -37,6 +37,12 @@ public class RelatoriosNakasone extends BaseFragment{
         imgprevisao = (ImageView) view.findViewById(R.id.imgprevisao);
         imgacompanhamento = (ImageView) view.findViewById(R.id.imgacompanhamento);
 
+        imgmensal.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                mFragmentNavigation.pushFragment(new Mensal_anual());
+            }
+        });
 
         imgdiario.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -52,6 +58,12 @@ public class RelatoriosNakasone extends BaseFragment{
             }
         });
 
+        imgdividasrelatorio.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                mFragmentNavigation.pushFragment(new RecyclerDividasCartaoCredito());
+            }
+        });
 
         ButterKnife.bind(this, view);
 

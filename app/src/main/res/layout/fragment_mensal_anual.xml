@@ -1,0 +1,240 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    android:orientation="vertical">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:background="@drawable/barverde"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/textView4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="10dp"
+                    android:layout_weight="1"
+                    android:gravity="center_vertical"
+                    android:text="Receita"
+                    android:textAllCaps="false"
+                    android:textAppearance="@style/TextAppearance.AppCompat"
+                    android:textSize="18sp"
+                    android:textStyle="bold|italic" />
+
+                <ImageView
+                    android:id="@+id/breceita"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginRight="20dp"
+
+                    app:srcCompat="@drawable/ic_arrow_drop_down_black_24dp" />
+
+                <ImageView
+                    android:id="@+id/breceita1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginRight="20dp"
+                    android:visibility="gone"
+                    app:srcCompat="@drawable/ic_arrow_drop_up_black_24dp" />
+            </LinearLayout>
+
+            <GridView
+                android:id="@+id/gvreceita"
+                android:layout_width="match_parent"
+                android:layout_height="700dp"
+                android:numColumns="2"
+                android:visibility="gone" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:background="@drawable/barvermelho"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/textView6"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="10dp"
+                    android:layout_weight="1"
+                    android:gravity="left|center_vertical"
+                    android:text="Despesas Necessárias"
+                    android:textAppearance="@style/TextAppearance.AppCompat"
+                    android:textColor="#000"
+                    android:textSize="18sp"
+                    android:textStyle="bold|italic" />
+
+                <ImageView
+                    android:id="@+id/bdespesa"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginRight="20dp"
+
+                    app:srcCompat="@drawable/ic_arrow_drop_down_black_24dp" />
+
+                <ImageView
+                    android:id="@+id/bdespesa1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginRight="20dp"
+                    android:visibility="gone"
+                    app:srcCompat="@drawable/ic_arrow_drop_up_black_24dp" />
+            </LinearLayout>
+
+            <GridView
+                android:id="@+id/gv"
+                android:layout_width="match_parent"
+                android:layout_height="700dp"
+                android:numColumns="2"
+                android:visibility="gone" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:background="@drawable/barmarronzinho"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/textView9"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="10dp"
+                    android:layout_weight="1"
+                    android:gravity="center_vertical"
+                    android:text="Resultado Parcial"
+                    android:textAppearance="@style/TextAppearance.AppCompat"
+                    android:textColor="#000"
+                    android:textSize="18sp"
+                    android:textStyle="bold|italic" />
+
+                <ImageView
+                    android:id="@+id/bparcial"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginRight="20dp"
+                    app:srcCompat="@drawable/ic_arrow_drop_down_black_24dp" />
+
+                <ImageView
+                    android:id="@+id/bparcial1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginRight="20dp"
+                    android:visibility="gone"
+                    app:srcCompat="@drawable/ic_arrow_drop_up_black_24dp" />
+
+            </LinearLayout>
+
+            <GridView
+                android:id="@+id/gv33"
+                android:layout_width="match_parent"
+                android:layout_height="700dp"
+                android:numColumns="2"
+                android:visibility="gone" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:background="@drawable/barbeje"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/textView19"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="10dp"
+                    android:layout_weight="1"
+                    android:gravity="center_vertical"
+                    android:text="Despesas Supérfluas"
+                    android:textAppearance="@style/TextAppearance.AppCompat"
+                    android:textSize="18sp"
+                    android:textStyle="bold|italic" />
+
+                <ImageView
+                    android:id="@+id/bsuper"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginRight="20dp"
+                    app:srcCompat="@drawable/ic_arrow_drop_down_black_24dp" />
+
+                <ImageView
+                    android:id="@+id/bsuper1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginRight="20dp"
+                    android:visibility="gone"
+                    app:srcCompat="@drawable/ic_arrow_drop_up_black_24dp" />
+            </LinearLayout>
+
+            <GridView
+                android:id="@+id/gvSuperfluas"
+                android:layout_width="match_parent"
+                android:layout_height="700dp"
+                android:numColumns="2"
+                android:visibility="gone" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:background="@drawable/barazul"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/textView119"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="10dp"
+                    android:layout_weight="1"
+                    android:gravity="center_vertical"
+                    android:text="Total Geral"
+                    android:textAppearance="@style/TextAppearance.AppCompat"
+                    android:textSize="18sp"
+                    android:textStyle="bold|italic" />
+
+                <ImageView
+                    android:id="@+id/btotal"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginRight="20dp"
+                    app:srcCompat="@drawable/ic_arrow_drop_down_black_24dp" />
+
+                <ImageView
+                    android:id="@+id/btotal1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginRight="20dp"
+                    android:visibility="gone"
+                    app:srcCompat="@drawable/ic_arrow_drop_up_black_24dp" />
+            </LinearLayout>
+
+            <GridView
+                android:id="@+id/gvTotalGeral"
+                android:layout_width="match_parent"
+                android:layout_height="700dp"
+                android:numColumns="2"
+                android:visibility="gone" />
+
+
+
+
+
+
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

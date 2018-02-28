@@ -287,6 +287,12 @@ public class AlterarDespesaNakasone extends BaseFragment implements Spinner.OnIt
 
     //endregion
 
+
+
+
+
+
+
     //region Pesquisa para mostrar nos campos
     private void getData1()
     {
@@ -360,6 +366,11 @@ public class AlterarDespesaNakasone extends BaseFragment implements Spinner.OnIt
 
     }
     //endregion
+
+
+
+
+
 
     //region Spinner
     private void getData(){

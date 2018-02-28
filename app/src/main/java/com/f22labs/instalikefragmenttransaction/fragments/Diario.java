@@ -25,7 +25,7 @@ public class Diario extends BaseFragment
     List<String> perg   ;
     ArrayAdapter<String> adaptador;
 
-    int i = 1   ;
+    int i = 1;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {

@@ -1,5 +1,6 @@
 package com.f22labs.instalikefragmenttransaction.fragments;
 
+import android.net.http.AndroidHttpClient;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.util.Log;
@@ -8,6 +9,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.AutoCompleteTextView;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
@@ -28,8 +30,11 @@ import org.apache.http.HttpResponse;
 import org.apache.http.NameValuePair;
 import org.apache.http.client.ClientProtocolException;
 import org.apache.http.client.HttpClient;
+import org.apache.http.client.ResponseHandler;
 import org.apache.http.client.entity.UrlEncodedFormEntity;
+import org.apache.http.client.methods.HttpGet;
 import org.apache.http.client.methods.HttpPost;
+import org.apache.http.impl.client.BasicResponseHandler;
 import org.apache.http.impl.client.DefaultHttpClient;
 import org.apache.http.message.BasicNameValuePair;
 import org.json.JSONArray;
@@ -49,7 +54,8 @@ public class CadastroDespesaNakasone extends BaseFragment implements Spinner.OnI
     EditText descricaodespesa,valordespesa,contadespesa,datadespesa,comofoipagadespesa;
 
     Button salvardespesa;
-
+    AutoCompleteTextView auto1;
+    List<String> responseList;
 
     //region Spinner Variaveis
     private Spinner spinner;
@@ -67,7 +73,7 @@ public class CadastroDespesaNakasone extends BaseFragment implements Spinner.OnI
 
     public void insert(){
 
-        String  descricao_despesas = descricaodespesa.getText().toString();
+        String  descricao_despesas = auto1.getText().toString();
         String  conta_despesas = id_spinner.toString();
         String  valor_despesas = valordespesa.getText().toString();
         String  comofoipago_despesas = comofoipagadespesa.getText().toString();
@@ -92,7 +98,7 @@ public class CadastroDespesaNakasone extends BaseFragment implements Spinner.OnI
 
                 //InputStream is = null;
 
-                String  descricao_despesas = descricaodespesa.getText().toString();
+                String  descricao_despesas = auto1.getText().toString();
                 String  conta_despesas = id_spinner.toString();
                 String  valor_despesas = valordespesa.getText().toString();
                 String  comofoipago_despesas = comofoipagadespesa.getText().toString();
@@ -146,6 +152,15 @@ public class CadastroDespesaNakasone extends BaseFragment implements Spinner.OnI
     public View onCreateView(LayoutInflater inflater, ViewGroup container,Bundle savedInstanceState)
     {
         View view = inflater.inflate(R.layout.fragment_cadastro_despesa, container, false);
+
+
+        auto1 = (AutoCompleteTextView)view.findViewById(R.id.autoCompleteTextView1);
+
+        new HttpGetTask().execute();
+
+
+
+
 
         //region FindViews
         descricaodespesa = (EditText) view.findViewById(R.id.descricaodespesa);
@@ -251,5 +266,114 @@ public class CadastroDespesaNakasone extends BaseFragment implements Spinner.OnI
         ids.get(spinner.getSelectedItemPosition());
     }
     //endregion
+
+
+    private class HttpGetTask extends AsyncTask<Void, Void, String> {
+
+        String URL = "http://premiumcontrol.com.br/NakasoneSoftapp/select/select_minidicionario.php";
+        AndroidHttpClient mClient = AndroidHttpClient.newInstance("");
+
+        @Override
+        protected String doInBackground(Void... params) {
+            HttpGet request = new HttpGet(URL);
+            ResponseHandler<String> responseHandler = new BasicResponseHandler();
+            try {
+                return mClient.execute(request, responseHandler);
+            } catch (ClientProtocolException exception) {
+                exception.printStackTrace();
+            } catch (IOException exception) {
+                exception.printStackTrace();
+            }
+            return null;
+        }
+
+        @Override
+        protected void onPostExecute(String result) {
+            try {
+                JSONArray json = new JSONArray(result);
+                Log.v("ResponseCity", result);
+
+                responseList = new ArrayList<String>();
+                List<String> responseList = new ArrayList<String>();
+
+                for (int i = 0; i < json.length(); i++)
+                {
+                    final JSONObject e = json.getJSONObject(i);
+                    String name = e.getString("descricao_item");
+                    String desc = e.getString("id_grupo");
+                    String Categoria;
+                    switch (desc)
+                    {
+                        case "1":  Categoria= "ALIMENTAÇÃO E DESPESAS DO LAR"; break;
+                        case "2":  Categoria= "MÓVEIS, APARELHOS E UTENSÍLIOS"; break;
+                        case "3":  Categoria= "DESPESAS COM VEÍCULO";break;
+                        case "4":  Categoria= "VESTUÁRIO E ACESSÓRIOS";break;
+                        case "5":  Categoria= "SAÚDE"; break;
+                        case "6":  Categoria= "DESPESAS SUPÉRFLUAS";break;
+                        case "7":  Categoria= "CUIDADO PESSOAL";break;
+                        case "8":  Categoria= "OUTROS BENS"; break;
+                        case "9":  Categoria= "23 FINANCEIRAS"; break;
+                        case "10": Categoria= "JUROS, ETC, CARTÃO DE CRÉDITO";break;
+                        case "11": Categoria= "EDUCAÇÃO"; break;
+                        case "12": Categoria= "DESPESAS DIVERSAS";break;
+                        case "13": Categoria= "EMPREGADO (A)"; break;
+                        case "14": Categoria= "ÁGUA"; break;
+                        case "15": Categoria= "DESPESAS COM ANIMAL DOMÉSTICO"; break;
+                        case "16": Categoria= "ALUGUEL - DESPESA"; break;
+                        case "17": Categoria= "CASA";break;
+                        case "18": Categoria= "DESPESAS COM TELEFONE E CELULAR\n";break;
+                        case "19": Categoria= "VEÍCULO";break;
+                        case "20": Categoria= "CONDUÇÃO";break;
+                        case "21": Categoria= "FERRAMENTAS"; break;
+                        case "22": Categoria= "OUTRAS DESPESAS";break;
+                        case "23": Categoria= "EQUIPAMENTOS DE INFORMÁTICA"; break;
+                        case "24": Categoria= "CONDOMÍNIO";break;
+                        case "25": Categoria= "CONSÓRCIO DE IMÓVEL";break;
+                        case "26": Categoria= "CONSÓRCIO DE 20"; break;
+                        case "27": Categoria= "LUZ E GÁS ENCANADO";break;
+                        case "28": Categoria= "SALÁRIO - RECEITA"; break;
+                        case "29": Categoria= "DESPESAS COM 5";break;
+                        case "30": Categoria= "CAIXA";break;
+                        case "31": Categoria= "JUROS E IOF CHEQUE ESPECIAL";break;
+                        case "32": Categoria= "JUROS E IOF CARTÃO DE CRÉDITO";break;
+                        case "33": Categoria= "MESADA - DESPESA";break;
+                        case "34": Categoria= "ALIMENTAÇÃO, HIGIENE E UTENSÍLIOS";break;
+                        case "35": Categoria= "TERRENO"; break;
+                        case "36": Categoria= "Selecione o banco em que foi feito o credito";break;
+                        case "37": Categoria= "Grupo Investimento (criar conta)"; break;
+                        case "38": Categoria= "Selecione a conta para onde foi o dinheiro";break;
+                        case "39": Categoria= "Ver grupo RECEITAS"; break;
+                        case "40": Categoria= "OUTRAS RECEITAS";break;
+                        case "41": Categoria= "ALUGUEL - RECEITA"; break;
+                        case "42": Categoria= "APOSENTADORIA";break;
+                        case "43": Categoria= "GORJETA E GRATIFICAÇÃO RECEBIDA";break;
+                        case "44": Categoria= "SERVIÇOS PRESTADOS";break;
+                        case "45": Categoria= "SEGURO DESEMPREGO";break;
+                        case "46": Categoria= "MESADA - RECEITA";break;
+                        default:Categoria= "Outros";break;
+                    }
+                    responseList.add(name + " - " + Categoria);
+                }
+                ArrayAdapter<String> adapter;
+                adapter = new ArrayAdapter<String>(getActivity(),android.R.layout.simple_dropdown_item_1line, responseList);
+
+                auto1.setAdapter(adapter);
+
+            } catch (JSONException e) {
+                // TODO Auto-generated catch block
+                e.printStackTrace();
+            }
+            if (null != mClient)
+                mClient.close();
+
+
+
+
+
+        }
+    }
+
+
+
 
 }

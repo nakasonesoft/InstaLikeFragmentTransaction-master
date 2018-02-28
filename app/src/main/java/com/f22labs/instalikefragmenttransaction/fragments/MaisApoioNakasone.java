@@ -8,6 +8,7 @@ import android.widget.ImageView;
 
 import com.f22labs.instalikefragmenttransaction.R;
 import com.f22labs.instalikefragmenttransaction.activities.MainActivity;
+import com.f22labs.instalikefragmenttransaction.adapters.RecyclerViewAdapterDesativarContas;
 
 import butterknife.ButterKnife;
 
@@ -34,6 +35,12 @@ public class MaisApoioNakasone extends BaseFragment{
         imgdicaseconomia = (ImageView) view.findViewById(R.id.imgdicaseconomia);
         imgfaleconosco = (ImageView) view.findViewById(R.id.imgfaleconosco);
 
+        imgpasso.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                mFragmentNavigation.pushFragment(new RecyclerDesativarContas());
+            }
+        });
 
         imgdicaseconomia.setOnClickListener(new View.OnClickListener() {
             @Override

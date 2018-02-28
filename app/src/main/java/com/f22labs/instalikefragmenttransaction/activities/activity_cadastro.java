@@ -1,10 +1,14 @@
 package com.f22labs.instalikefragmenttransaction.activities;
 
+import android.app.ProgressDialog;
+import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
+import android.content.SharedPreferences;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -20,6 +24,7 @@ import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 import com.f22labs.instalikefragmenttransaction.R;
 import com.f22labs.instalikefragmenttransaction.utils.Static;
+import com.f22labs.instalikefragmenttransaction.utils.staticd;
 
 import org.apache.http.HttpEntity;
 import org.apache.http.HttpResponse;
@@ -52,6 +57,8 @@ public class activity_cadastro extends AppCompatActivity {
     private JSONArray result2;
     static String id_spinner_cidade;
     //endregion
+    String resposta;
+    public static final String PREFS_NAME = "0";
 
     //region Spinner Variaveis
     private Spinner spinner;
@@ -334,7 +341,8 @@ public class activity_cadastro extends AppCompatActivity {
                 else
                 {
                     Toast.makeText(getApplicationContext(), "Cadastrado com sucesso", Toast.LENGTH_LONG).show();
-                    Intent intent = new Intent(getApplicationContext(), pesquisa_rapida.class );
+                    Logpes();
+                    Intent intent = new Intent(getApplicationContext(), pesquisa_rapida.class);
                     startActivity(intent);
                 }
 
@@ -349,7 +357,119 @@ public class activity_cadastro extends AppCompatActivity {
 
 
 
+    //region Login Normal
+    public void Logpes()
+    {
+        String login = email.getText().toString();
+        String senhas = senha.getText().toString();
 
+        LogpesToDatabase(login, senhas);
+    }
+
+    private void LogpesToDatabase(String login, String senhas){
+        class SendPostReqAsyncTask extends AsyncTask<String, Void, String> {
+
+            @Override
+            protected String doInBackground(String... params) {
+                String paramUsername = params[0];
+                String paramAddress = params[1];
+
+
+                //InputStream is = null;
+
+                String login = email.getText().toString();
+                String senhas = senha.getText().toString();
+
+                List<NameValuePair> nameValuePairs = new ArrayList<NameValuePair>();
+                nameValuePairs.add(new BasicNameValuePair("email_cliente", login));
+                nameValuePairs.add(new BasicNameValuePair("senha_cliente", senhas));
+
+
+                try {
+                    HttpClient httpClient = new DefaultHttpClient();
+                    HttpPost httpPost = new HttpPost(
+                            "http://premiumcontrol.com.br/NakasoneSoftapp/Testando123.php");
+                    httpPost.setEntity(new UrlEncodedFormEntity(nameValuePairs));
+
+                    HttpResponse response = httpClient.execute(httpPost);
+
+                    HttpEntity entity = response.getEntity();
+                    BufferedReader in = new BufferedReader(new InputStreamReader(response.getEntity().getContent()));
+
+                    StringBuffer sb = new StringBuffer("");
+                    String line="";
+
+                    while ((line = in.readLine()) != null) {
+                        sb.append(line);
+                        break;
+                    }
+                    in.close();
+                    resposta = sb.toString();
+                    Log.d("TAG", resposta);
+                    return sb.toString();
+
+                    //is = entity.getContent();
+
+
+                } catch (ClientProtocolException e) {
+
+                } catch (IOException e) {
+
+                }
+                return "success";
+
+
+            }
+
+            @Override
+            protected void onPostExecute(String result)
+            {
+                super.onPostExecute(result);
+
+
+                final ProgressDialog dialog =
+                        new ProgressDialog(activity_cadastro.this);
+                dialog.setMessage("Enviando dados... aguarde");
+                dialog.setIndeterminate(false);
+                dialog.setCanceledOnTouchOutside(true);
+                dialog.setCancelable(true);
+                dialog.show();
+
+                if(Integer.parseInt(result) != 0)
+                {
+
+
+                    Toast.makeText(getApplicationContext(), "Logado com sucesso", Toast.LENGTH_LONG).show();
+                    dialog.dismiss();
+
+                    Static.setId_cliente(Integer.parseInt(resposta));
+
+                    SharedPreferences settings = getApplicationContext().getSharedPreferences(PREFS_NAME, Context.MODE_PRIVATE);
+                    SharedPreferences.Editor editor = settings.edit();
+                    editor.putString("0", resposta);
+
+                    //Confirma a gravação dos dados
+
+                    editor.commit();
+                    staticd.setVirjao(1);
+
+                }
+                else {Toast.makeText(getApplicationContext(), "LoginA e/ou senha incorretos", Toast.LENGTH_LONG).show();dialog.cancel();}
+
+
+
+
+
+
+            }
+
+
+        }
+        SendPostReqAsyncTask sendPostReqAsyncTask = new SendPostReqAsyncTask();
+        sendPostReqAsyncTask.execute(login, senhas);
+
+    }
+    //endregion
 
 
 }

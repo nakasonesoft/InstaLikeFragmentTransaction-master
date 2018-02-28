@@ -20,6 +20,8 @@ public class Static
     private static int login;
     private static int id_perguntasfrequentes;
     private static int mes;
+    private static double prest_consorcio;
+    private static double prest_imovel;
     private static int diario;
     private static int ficha;
     private static int mes_ficha;
@@ -235,5 +237,21 @@ public class Static
 
     public static void setMes_ficha(int mes_ficha) {
         Static.mes_ficha = mes_ficha;
+    }
+
+    public static double getPrest_consorcio() {
+        return prest_consorcio;
+    }
+
+    public static void setPrest_consorcio(double prest_consorcio) {
+        Static.prest_consorcio = prest_consorcio;
+    }
+
+    public static double getPrest_imovel() {
+        return prest_imovel;
+    }
+
+    public static void setPrest_imovel(double prest_imovel) {
+        Static.prest_imovel = prest_imovel;
     }
 }

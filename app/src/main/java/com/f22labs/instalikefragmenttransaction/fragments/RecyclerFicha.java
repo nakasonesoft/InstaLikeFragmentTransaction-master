@@ -1,15 +1,19 @@
 package com.f22labs.instalikefragmenttransaction.fragments;
 
 import android.app.ProgressDialog;
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v4.app.FragmentTabHost;
 import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.GestureDetector;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
+import android.widget.Toast;
 
 import com.android.volley.RequestQueue;
 import com.android.volley.Response;
@@ -24,10 +28,19 @@ import com.f22labs.instalikefragmenttransaction.adapters.RecyclerViewAdapterDesp
 import com.f22labs.instalikefragmenttransaction.interfaces.RecyclerViewOnClickListenerHack;
 import com.f22labs.instalikefragmenttransaction.utils.Static;
 
+import org.apache.http.HttpEntity;
+import org.apache.http.HttpResponse;
+import org.apache.http.client.ClientProtocolException;
+import org.apache.http.client.HttpClient;
+import org.apache.http.client.methods.HttpPost;
+import org.apache.http.impl.client.DefaultHttpClient;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -37,11 +50,17 @@ public class RecyclerFicha extends BaseFragment implements RecyclerViewOnClickLi
 {
 
     ProgressDialog loading;
-    String url, resposta;
+    String url, resposta, gasto_url, resposta1;
+    TextView gasto, saldo;
 
     private FragmentTabHost mTabHost;
     private OnItemClickListener mListener;
     private static int opcao = Static.getFicha();
+
+
+
+
+
 
     //region ClickListener
     public interface OnItemClickListener
@@ -105,6 +124,9 @@ public class RecyclerFicha extends BaseFragment implements RecyclerViewOnClickLi
 
         View view = inflater.inflate(R.layout.fragment_recycler_ficha, container, false);
 
+        saldo = (TextView)view.findViewById(R.id.saldo);
+        gasto = (TextView)view.findViewById(R.id.gasto);
+
         //region Jsons
 
         switch (Static.getFicha())
@@ -126,6 +148,12 @@ public class RecyclerFicha extends BaseFragment implements RecyclerViewOnClickLi
 
                 break;
             case 4:  GET_JSON_DATA_HTTP_URL = "http://premiumcontrol.com.br/NakasoneSoftapp/select/diario_deposito.php";
+
+                ((MainActivity)getActivity()).updateToolbarTitle("Ficha individual de Depósito");
+
+                break;
+
+            case 5:  GET_JSON_DATA_HTTP_URL = "http://premiumcontrol.com.br/NakasoneSoftapp/select/diario_fatura.php";
 
                 ((MainActivity)getActivity()).updateToolbarTitle("Ficha individual de Depósito");
 
@@ -154,7 +182,6 @@ public class RecyclerFicha extends BaseFragment implements RecyclerViewOnClickLi
         }
         //endregion
 
-
         mSwipeRefreshLayout = (SwipeRefreshLayout)view.findViewById(R.id.swifeRefreshficha);
 
         //mListener = listener;
@@ -169,7 +196,42 @@ public class RecyclerFicha extends BaseFragment implements RecyclerViewOnClickLi
 
         recyclerView.setLayoutManager(recyclerViewlayoutManager);
 
+        switch (Static.getFicha()){
+            case 0:
+                gasto_url = "http://premiumcontrol.com.br/NakasoneSoftapp/select/sum_despesa.php";
+                break;
+            case 1:
+                gasto_url = "http://premiumcontrol.com.br/NakasoneSoftapp/select/sum_receita.php";
+                break;
+            case 2:
+                gasto_url = "http://premiumcontrol.com.br/NakasoneSoftapp/select/sum_transferencia.php";
+                break;
+            case 3:
+                gasto_url = "http://premiumcontrol.com.br/NakasoneSoftapp/select/sum_saque.php";
+                break;
+            case 4:
+                gasto_url = "http://premiumcontrol.com.br/NakasoneSoftapp/select/sum_deposito.php";
+                break;
+            case 5:
+                gasto_url = "http://premiumcontrol.com.br/NakasoneSoftapp/select/sum_fatura.php";
+                break;
+            case 6:
+                gasto_url = "http://premiumcontrol.com.br/NakasoneSoftapp/select/sum_carne.php";
+                break;
+            case 7:
+                gasto_url = "http://premiumcontrol.com.br/NakasoneSoftapp/select/sum_imoveis.php";
+                break;
+            case 8:
+                gasto_url = "http://premiumcontrol.com.br/NakasoneSoftapp/select/sum_consorcio.php";
+                break;
+            case 9:
+                gasto_url = "http://premiumcontrol.com.br/NakasoneSoftapp/select/sum_outros.php";
+                break;
+        }
+
         JSON_DATA_WEB_CALL();
+        LogpesToDatabase();
+        LogpesToDatabase1();
         mSwipeRefreshLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
 
             @Override
@@ -185,6 +247,9 @@ public class RecyclerFicha extends BaseFragment implements RecyclerViewOnClickLi
                 recyclerView.setLayoutManager(recyclerViewlayoutManager);
 
                 JSON_DATA_WEB_CALL();
+                LogpesToDatabase();
+                LogpesToDatabase1();
+
 
             }
         });//region
@@ -261,5 +326,188 @@ public class RecyclerFicha extends BaseFragment implements RecyclerViewOnClickLi
     }
 
 //endregion
+
+    private void LogpesToDatabase(){
+        class SendPostReqAsyncTask extends AsyncTask<String, Void, String> {
+
+
+            @Override
+            protected String doInBackground(String... params) {
+
+                try {
+
+                    HttpClient httpClient = new DefaultHttpClient();
+                    HttpPost httpPost = new HttpPost(
+                            "http://premiumcontrol.com.br/NakasoneSoftapp/visao_geral.php");
+
+
+                    HttpResponse response = httpClient.execute(httpPost);
+
+                    HttpEntity entity = response.getEntity();
+                    BufferedReader in = new BufferedReader(new InputStreamReader(response.getEntity().getContent()));
+
+                    StringBuffer sb = new StringBuffer("");
+                    String line="";
+                    while ((line = in.readLine()) != null) {
+                        sb.append(line + "\n");
+                        break;
+                    }
+                    in.close();
+                    resposta = sb.toString();
+                    Log.d("TAG", resposta);
+                    return sb.toString();
+
+                    //is = entity.getContent();
+
+
+                } catch (ClientProtocolException e) {
+
+                } catch (IOException e) {
+
+                }
+                return resposta;
+
+
+            }
+
+
+            protected String doInBackground1(String... params) {
+
+                try {
+
+                    HttpClient httpClient = new DefaultHttpClient();
+                    HttpPost httpPost = new HttpPost(gasto_url);
+
+
+                    HttpResponse response = httpClient.execute(httpPost);
+
+                    HttpEntity entity = response.getEntity();
+                    BufferedReader in = new BufferedReader(new InputStreamReader(response.getEntity().getContent()));
+
+                    StringBuffer sb = new StringBuffer("");
+                    String line="";
+                    while ((line = in.readLine()) != null) {
+                        sb.append(line + "\n");
+                        break;
+                    }
+                    in.close();
+                    resposta1 = sb.toString();
+                    Log.d("TAG", resposta1);
+                    return sb.toString();
+
+                    //is = entity.getContent();
+
+
+                } catch (ClientProtocolException e) {
+
+                } catch (IOException e) {
+
+                }
+                return resposta1;
+
+
+            }
+
+            @Override
+            protected void onPostExecute(String result)
+            {
+                super.onPostExecute(result);
+                try {
+
+                    String ronaldo = result.substring(0, result.indexOf("<br>"));
+                    String felipe = result.replace(ronaldo, "");
+                    String alexandre = felipe.replace("<br>", "");
+                    String Pablo = alexandre.substring(0, alexandre.indexOf("/"));
+                    String Vittar = result.replace(ronaldo, "");
+                    String Gabriel = Vittar.replace(Pablo, "");
+                    String Guilherme = Gabriel.replace("<br>/", "");
+                    String Reginaldo = resposta.substring(resposta.lastIndexOf("/") + 1);
+                    Log.d("FOI LEK", ronaldo);
+                    Log.d("FOI LEK", Pablo);
+                    Log.d("Resultado", Guilherme);
+                    Log.d("A", resposta.substring(resposta.lastIndexOf("/") + 1));
+
+                    saldo.setText("R$  " + Reginaldo);
+
+
+
+                    mSwipeRefreshLayout.setRefreshing(false);
+                }
+                catch (Exception e){
+                    Toast.makeText(getActivity(),"Por favor, recarregue a página para calcular seus dados", Toast.LENGTH_LONG);}
+
+            }
+
+
+        }
+        SendPostReqAsyncTask sendPostReqAsyncTask = new SendPostReqAsyncTask();
+        sendPostReqAsyncTask.execute();
+
+    }
+
+
+    private void LogpesToDatabase1(){
+        class SendPostReqAsyncTask extends AsyncTask<String, Void, String> {
+
+
+            @Override
+            protected String doInBackground(String... params) {
+
+                try {
+
+                    HttpClient httpClient = new DefaultHttpClient();
+                    HttpPost httpPost = new HttpPost(gasto_url);
+
+
+                    HttpResponse response = httpClient.execute(httpPost);
+
+                    HttpEntity entity = response.getEntity();
+                    BufferedReader in = new BufferedReader(new InputStreamReader(response.getEntity().getContent()));
+
+                    StringBuffer sb = new StringBuffer("");
+                    String line="";
+                    while ((line = in.readLine()) != null) {
+                        sb.append(line + "\n");
+                        break;
+                    }
+                    in.close();
+                    resposta1 = sb.toString();
+                    Log.d("TAG", resposta1);
+                    return sb.toString();
+
+                    //is = entity.getContent();
+
+
+                } catch (ClientProtocolException e) {
+
+                } catch (IOException e) {
+
+                }
+                return resposta1;
+
+
+            }
+
+            @Override
+            protected void onPostExecute(String result)
+            {
+                super.onPostExecute(result);
+                try {
+
+                        gasto.setText(" R$  " + result);
+
+                    mSwipeRefreshLayout.setRefreshing(false);
+                }
+                catch (Exception e){
+                    Toast.makeText(getActivity(),"Por favor, recarregue a página para calcular seus dados", Toast.LENGTH_LONG);}
+
+            }
+
+
+        }
+        SendPostReqAsyncTask sendPostReqAsyncTask = new SendPostReqAsyncTask();
+        sendPostReqAsyncTask.execute();
+
+    }
 
 }

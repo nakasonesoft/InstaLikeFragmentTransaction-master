@@ -9,6 +9,7 @@ import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
 import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.widget.LinearLayoutManager;
 import android.util.Log;
@@ -27,10 +28,12 @@ import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 import com.f22labs.instalikefragmenttransaction.R;
+import com.f22labs.instalikefragmenttransaction.activities.AdminActivity;
 import com.f22labs.instalikefragmenttransaction.activities.MainActivity;
 import com.f22labs.instalikefragmenttransaction.activities.activity_login;
 import com.f22labs.instalikefragmenttransaction.adapters.ConfigRetrieve;
 import com.f22labs.instalikefragmenttransaction.utils.Static;
+import com.f22labs.instalikefragmenttransaction.utils.staticd;
 
 import org.apache.http.HttpEntity;
 import org.apache.http.HttpResponse;
@@ -48,21 +51,29 @@ import org.json.JSONObject;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.Date;
 import java.util.List;
 
 import butterknife.ButterKnife;
 
-
 public class HomeNakasone extends BaseFragment {
+
+    //region variaveis
     int fragCount;
-    String resposta;
+    String resposta, resposta1, resposta2;
+    double resultado;
     TextView getreceita, getdespesa, getresultado, getsaldo, getcartao, getdividas, settotal;
     EditText setconsorcio, setprestacao;
     Button salvar_visao;
-    ImageView imgreceita_visao, imgdespesa_visao, imgsaldo_visao, imgcartao_visao, imgdividas_visao, imgtotal_visao;
+    ImageView imgreceita_visao, imgdespesa_visao, imgsaldo_visao, imgcartao_visao, imgdividas_visao, imgtotal_visao, imgsetconsorcio, imgsetimovel;
     ProgressDialog loading;
     SwipeRefreshLayout mSwipeRefreshLayout;
+//endregion
+   public static final String PREFS_PRIMEIRA = "0";
 
     public static HomeFragment newInstance(int instance) {
         Bundle args = new Bundle();
@@ -72,9 +83,162 @@ public class HomeNakasone extends BaseFragment {
         return fragment;
     }
 
-
     public HomeNakasone() {
         // Required empty public constructor
+    }
+
+    public void insert(){
+
+
+
+        Date date = Calendar.getInstance().getTime();
+
+        DateFormat formatter = new SimpleDateFormat("dd/MM/yyyy");
+        String today = formatter.format(date);
+        System.out.println("Today : " + today);
+
+
+        String  valor_prestImovel = setprestacao.getText().toString();
+        String  data_prestImovel = today;
+
+        insertToDatabase(valor_prestImovel, data_prestImovel);
+
+    }
+
+    private void insertToDatabase(String valor_prestImovel, String data_prestImovel){
+        class SendPostReqAsyncTask extends AsyncTask<String, Void, String> {
+            @Override
+            protected String doInBackground(String... params) {
+                String paramvalor_prestImovel = params[0];
+                String paramdata_prestImovel = params[1];
+
+                Date date = Calendar.getInstance().getTime();
+
+                DateFormat formatter = new SimpleDateFormat("dd/MM/yyyy");
+                String today = formatter.format(date);
+                System.out.println("Today : " + today);
+
+                //InputStream is = null;
+
+                String  valor_prestImovel = setprestacao.getText().toString();
+                String  data_prestImovel = today;
+
+                List<NameValuePair> nameValuePairs = new ArrayList<NameValuePair>();
+                nameValuePairs.add(new BasicNameValuePair("valor_prestImovel", valor_prestImovel));
+                nameValuePairs.add(new BasicNameValuePair("data_prestImovel", data_prestImovel));
+
+
+                try {
+                    HttpClient httpClient = new DefaultHttpClient();
+                    HttpPost httpPost = new HttpPost(
+                            "http://premiumcontrol.com.br/NakasoneSoftapp/cadastro_imoveis_nakasone.php");
+                    httpPost.setEntity(new UrlEncodedFormEntity(nameValuePairs));
+
+                    HttpResponse response = httpClient.execute(httpPost);
+
+                    HttpEntity entity = response.getEntity();
+
+                    //is = entity.getContent();
+
+                } catch (ClientProtocolException e) {
+
+                } catch (IOException e) {
+
+                }
+                return "success";
+            }
+
+            @Override
+            protected void onPostExecute(String result) {
+                super.onPostExecute(result);
+
+                Toast.makeText(getActivity(), result, Toast.LENGTH_LONG).show();
+                //TextView textViewResult = (TextView) findViewById(R.id.textViewResult);
+                // textViewResult.setText("Inserted");
+            }
+
+
+
+        }
+        SendPostReqAsyncTask sendPostReqAsyncTask = new SendPostReqAsyncTask();
+        sendPostReqAsyncTask.execute( valor_prestImovel, data_prestImovel);
+    }
+
+    public void insert1(){
+
+
+
+        Date date = Calendar.getInstance().getTime();
+
+        DateFormat formatter = new SimpleDateFormat("dd/MM/yyyy");
+        String today = formatter.format(date);
+        System.out.println("Today : " + today);
+
+
+        String  valor_consorcio = setconsorcio.getText().toString();
+        String  data_consorcio = today;
+
+        insertToDatabase1(valor_consorcio, data_consorcio);
+
+    }
+
+    private void insertToDatabase1(String valor_consorcio, String data_consorcio){
+        class SendPostReqAsyncTask extends AsyncTask<String, Void, String> {
+            @Override
+            protected String doInBackground(String... params) {
+                String paramvalor_consorcio = params[0];
+                String paramdata_consorcio = params[1];
+
+                Date date = Calendar.getInstance().getTime();
+
+                DateFormat formatter = new SimpleDateFormat("dd/MM/yyyy");
+                String today = formatter.format(date);
+                System.out.println("Today : " + today);
+
+                //InputStream is = null;
+
+                String  valor_consorcio = setconsorcio.getText().toString();
+                String  data_consorcio = today;
+
+                List<NameValuePair> nameValuePairs = new ArrayList<NameValuePair>();
+                nameValuePairs.add(new BasicNameValuePair("valor_consorcio", valor_consorcio));
+                nameValuePairs.add(new BasicNameValuePair("data_consorcio", data_consorcio));
+
+
+                try {
+                    HttpClient httpClient = new DefaultHttpClient();
+                    HttpPost httpPost = new HttpPost(
+                            "http://premiumcontrol.com.br/NakasoneSoftapp/cadastro_consorcio_nakasone.php");
+                    httpPost.setEntity(new UrlEncodedFormEntity(nameValuePairs));
+
+                    HttpResponse response = httpClient.execute(httpPost);
+
+                    HttpEntity entity = response.getEntity();
+
+                    //is = entity.getContent();
+
+                } catch (ClientProtocolException e) {
+
+                } catch (IOException e) {
+
+                }
+                return "success";
+            }
+
+            @Override
+            protected void onPostExecute(String result) {
+                super.onPostExecute(result);
+
+                Toast.makeText(getActivity(), result, Toast.LENGTH_LONG).show();
+                //TextView textViewResult = (TextView) findViewById(R.id.textViewResult);
+                // textViewResult.setText("Inserted");
+            }
+
+
+
+        }
+        SendPostReqAsyncTask sendPostReqAsyncTask = new SendPostReqAsyncTask();
+        sendPostReqAsyncTask.execute(valor_consorcio, data_consorcio);
     }
 
     @Override
@@ -91,6 +255,23 @@ public class HomeNakasone extends BaseFragment {
 
         View view = inflater.inflate(R.layout.fragment_home_nakasone, container, false);
 
+        //---------------------------------------------------------------------------------------------------
+            if(staticd.getVirjao() == 1)
+            {
+                Log.d("Static Virjao",String.valueOf(staticd.getVirjao()));
+                try
+                {
+                    mFragmentNavigation.pushFragment(new RecyclerDesativarContas());
+                }
+                catch (Exception e)
+                {
+
+                }
+                staticd.setVirjao(2);
+            }
+
+
+        //---------------------------------------------------------------------------------------------------
 
         mSwipeRefreshLayout = (SwipeRefreshLayout)view.findViewById(R.id.swifeRefreshaltexcconsorcio);
 
@@ -103,8 +284,6 @@ public class HomeNakasone extends BaseFragment {
         getdividas = (TextView) view.findViewById(R.id.getdividas);
         settotal = (TextView) view.findViewById(R.id.settotal);
 
-
-
         //ImgView
         imgreceita_visao = (ImageView) view.findViewById(R.id.imgreceita_visao);
         imgdespesa_visao = (ImageView) view.findViewById(R.id.imgdespesa_visao);
@@ -112,16 +291,65 @@ public class HomeNakasone extends BaseFragment {
         imgcartao_visao = (ImageView) view.findViewById(R.id.imgcartao_visao);
         imgdividas_visao = (ImageView) view.findViewById(R.id.imgdividas_visao);
         imgtotal_visao = (ImageView) view.findViewById(R.id.imgtotal_visao);
+        imgsetconsorcio = (ImageView) view.findViewById(R.id.imgsetconsorcio);
+        imgsetimovel = (ImageView) view.findViewById(R.id.imgsetimovel);
+
         //EditText
         setconsorcio = (EditText) view.findViewById(R.id.setconsorcio);
         setprestacao = (EditText) view.findViewById(R.id.setprestacao);
+
         //Button
         salvar_visao = (Button) view.findViewById(R.id.salvar_visao);
+
+        if(Static.getPrest_consorcio() != 0){setconsorcio.setText(String.valueOf(Static.getPrest_consorcio()));}
+        if(Static.getPrest_imovel() != 0){setprestacao.setText(String.valueOf(Static.getPrest_imovel()));}
+
+
+        imgsetconsorcio.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+             Static.setPrest_consorcio(Double.parseDouble(setconsorcio.getText().toString()));
+                LogpesToDatabase();
+                LogpesToDatabase1();
+
+
+
+                if(Static.getPrest_consorcio() != 0){setconsorcio.setText(String.valueOf(Static.getPrest_consorcio()));}
+                if(Static.getPrest_imovel() != 0){setprestacao.setText(String.valueOf(Static.getPrest_imovel()));}
+                if(setprestacao.getText().toString() != "0.00" || setconsorcio.getText().toString() != "0.00")
+                {
+                    resultado = Double.parseDouble(getcartao.getText().toString())+ Double.parseDouble(getdividas.getText().toString()) + Double.parseDouble(setconsorcio.getText().toString()) + Double.parseDouble(setprestacao.getText().toString());
+                    settotal.setText(String.valueOf(resultado));
+                }
+
+            }
+        });
+
+        imgsetimovel.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Static.setPrest_imovel(Double.parseDouble(setprestacao.getText().toString()));
+                LogpesToDatabase();
+                LogpesToDatabase1();
+
+                if(Static.getPrest_consorcio() != 0){setconsorcio.setText(String.valueOf(Static.getPrest_consorcio()));}
+                if(Static.getPrest_imovel() != 0){setprestacao.setText(String.valueOf(Static.getPrest_imovel()));}
+                if(setprestacao.getText().toString() != "0.00" || setconsorcio.getText().toString() != "0.00")
+                {
+                     resultado = Double.parseDouble(getcartao.getText().toString())+ Double.parseDouble(getdividas.getText().toString()) + Double.parseDouble(setconsorcio.getText().toString()) + Double.parseDouble(setprestacao.getText().toString());
+                     settotal.setText(String.valueOf(resultado));
+                }
+
+
+            }
+        });
+
 
         imgreceita_visao.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 mFragmentNavigation.pushFragment(new RecyclerAltExcReceita());
+
             }
         });
 
@@ -138,6 +366,11 @@ public class HomeNakasone extends BaseFragment {
             @Override
             public void onRefresh() {
                 LogpesToDatabase();
+                LogpesToDatabase1();
+                if(Static.getPrest_consorcio() != 0){setconsorcio.setText(String.valueOf(Static.getPrest_consorcio()));}
+                if(Static.getPrest_imovel() != 0){setprestacao.setText(String.valueOf(Static.getPrest_imovel()));}
+                Log.d("Static 1", String.valueOf(Static.getPrest_consorcio()));
+                Log.d("Static 2", String.valueOf(Static.getPrest_imovel()));
 
             }
         });
@@ -150,6 +383,11 @@ public class HomeNakasone extends BaseFragment {
         }
 
         LogpesToDatabase();
+        LogpesToDatabase1();
+        LogpesToDatabase2();
+
+
+
         return view;
     }
 
@@ -157,11 +395,6 @@ public class HomeNakasone extends BaseFragment {
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState)
     {
         super.onViewCreated(view, savedInstanceState);
-
-
-
-
-
         ( (MainActivity)getActivity()).updateToolbarTitle("Visão Geral");
 
     }
@@ -171,16 +404,7 @@ public class HomeNakasone extends BaseFragment {
         super.onDestroyView();
     }
 
-
-
-
-
-
-
-
-
-
-    //region Login Normal
+    //region SetCampos  Receitas e Despesas deste mês
 
 
     private void LogpesToDatabase(){
@@ -258,5 +482,157 @@ public class HomeNakasone extends BaseFragment {
     }
     //endregion
 
+    //region SetCampos  Dívidas a vencer até o final do mês ---- Crédito/Outros
 
+
+    private void LogpesToDatabase1(){
+        class SendPostReqAsyncTask extends AsyncTask<String, Void, String> {
+            @Override
+            protected String doInBackground(String... params) {
+
+                try {
+                    HttpClient httpClient = new DefaultHttpClient();
+                    HttpPost httpPost = new HttpPost(
+                            "http://premiumcontrol.com.br/NakasoneSoftapp/select/credito_outros.php");
+
+
+                    HttpResponse response = httpClient.execute(httpPost);
+
+                    HttpEntity entity = response.getEntity();
+                    BufferedReader in = new BufferedReader(new InputStreamReader(response.getEntity().getContent()));
+
+                    StringBuffer sb = new StringBuffer("");
+                    String line="";
+
+                    while ((line = in.readLine()) != null) {
+                        sb.append(line + "");
+                        break;
+                    }
+                    in.close();
+                    resposta1 = sb.toString();
+                    Log.d("TAG", resposta1);
+                    return sb.toString();
+
+                    //is = entity.getContent();
+
+
+                } catch (ClientProtocolException e) {
+
+                } catch (IOException e) {
+
+                }
+                return resposta1;
+
+
+            }
+
+            @Override
+            protected void onPostExecute(String result)
+            {
+                super.onPostExecute(result);
+                try {
+                    String Pablo = result.substring(0, result.indexOf("<br>"));
+                    String Vittar = result.replace(Pablo, "");
+                    String Gabriel = Vittar.replace(Pablo, "");
+                    String Guilherme = Gabriel.replace("<br>/", "");
+                    String Reginaldo = resposta1.substring(resposta1.lastIndexOf("/") + 1);
+                    Log.d("FOI LEK", Pablo);
+                    Log.d("FOI LEK", Pablo);
+                    Log.d("Resultado", Guilherme);
+                    Log.d("A", resposta1.substring(resposta1.lastIndexOf("/") + 1));
+                    getcartao.setText(Pablo);
+                    getdividas.setText(Guilherme);
+                    mSwipeRefreshLayout.setRefreshing(false);
+                }
+                catch (Exception e){Toast.makeText(getActivity(),"Por favor, recarregue a página para calcular seus dados", Toast.LENGTH_LONG);}
+
+            }
+        }
+        SendPostReqAsyncTask sendPostReqAsyncTask = new SendPostReqAsyncTask();
+        sendPostReqAsyncTask.execute();
+
+    }
+    //endregion
+
+    //region Set Saldo Caixa e Bancos
+    private void LogpesToDatabase2(){
+        class SendPostReqAsyncTask extends AsyncTask<String, Void, String> {
+            @Override
+            protected String doInBackground(String... params) {
+
+                try {
+                    HttpClient httpClient = new DefaultHttpClient();
+                    HttpPost httpPost = new HttpPost(
+                            "http://premiumcontrol.com.br/NakasoneSoftapp/select/saldo_caixa_bancos.php");
+
+
+                    HttpResponse response = httpClient.execute(httpPost);
+
+                    HttpEntity entity = response.getEntity();
+                    BufferedReader in = new BufferedReader(new InputStreamReader(response.getEntity().getContent()));
+
+                    StringBuffer sb = new StringBuffer("");
+                    String line="";
+
+                    while ((line = in.readLine()) != null) {
+                        sb.append(line + "");
+                        break;
+                    }
+                    in.close();
+                    resposta2 = sb.toString();
+                    Log.d("AQUI PORRA DE SALDO", resposta2);
+                    return sb.toString();
+
+                    //is = entity.getContent();
+
+
+                } catch (ClientProtocolException e) {
+
+                } catch (IOException e) {
+
+                }
+                return resposta2;
+
+
+            }
+
+            @Override
+            protected void onPostExecute(String result)
+            {
+                super.onPostExecute(result);
+                try
+                {
+                    resultado = Double.parseDouble(getcartao.getText().toString())+ Double.parseDouble(getdividas.getText().toString());
+                    settotal.setText(String.valueOf(resultado));
+                       switch (Integer.parseInt(result))
+                        {
+                             case 0:
+                             getsaldo.setText("R$  0,00");
+
+                                 Log.d("OQ TEM AQUI?: ", String.valueOf(resultado));
+                             break;
+                             default:
+                                 getsaldo.setText("R$  " + result);
+                                 Log.d("AQUI PORRA", resposta2);
+                                 //resultado = Double.parseDouble(getcartao.getText().toString())+ Double.parseDouble(getdividas.getText().toString()) + Double.parseDouble(setconsorcio.getText().toString()) + Double.parseDouble(setprestacao.getText().toString());
+                                 break;
+
+                        }
+
+
+
+                     settotal.setText(String.valueOf(resultado));
+
+
+                    mSwipeRefreshLayout.setRefreshing(false);
+                }
+                catch (Exception e){Toast.makeText(getActivity(),"Por favor, recarregue a página para calcular seus dados", Toast.LENGTH_LONG);}
+
+            }
+        }
+        SendPostReqAsyncTask sendPostReqAsyncTask = new SendPostReqAsyncTask();
+        sendPostReqAsyncTask.execute();
+
+    }
+    //endregion
 }
