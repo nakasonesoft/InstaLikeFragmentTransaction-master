@@ -42,7 +42,13 @@ public class LancamentoDeNakasone extends BaseFragment{
 
 
 
-
+        //--------------------------------
+        imgcarneslancamento.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                mFragmentNavigation.pushFragment(new CadastroCarneNakasone());
+            }
+        });
         //--------------------------------
         imgdespesalancamento.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -108,15 +114,7 @@ public class LancamentoDeNakasone extends BaseFragment{
         });
         //endregion
 
-        //region Clique do botão imgcarneslancamento ------------ FALTA
-        imgcarneslancamento.setOnClickListener(new View.OnClickListener()
-        {
-            @Override
-            public void onClick(View v) {
 
-            }
-        });
-        //endregion
 
         //region Clique do botão imgimoveislancamento
         imgimoveislancamento.setOnClickListener(new View.OnClickListener()
