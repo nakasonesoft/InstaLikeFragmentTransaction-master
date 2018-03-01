@@ -16,6 +16,7 @@ public class Static
     private static int id_prestImovel;
     private static int id_consorcio;
     private static int id_outros;
+    private static int id_carne;
     private static int id_conta;
     private static int login;
     private static int id_perguntasfrequentes;
@@ -253,5 +254,13 @@ public class Static
 
     public static void setPrest_imovel(double prest_imovel) {
         Static.prest_imovel = prest_imovel;
+    }
+
+    public static int getId_carne() {
+        return id_carne;
+    }
+
+    public static void setId_carne(int id_carne) {
+        Static.id_carne = id_carne;
     }
 }

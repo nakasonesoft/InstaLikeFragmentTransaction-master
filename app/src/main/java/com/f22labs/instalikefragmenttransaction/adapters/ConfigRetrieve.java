@@ -68,6 +68,14 @@ public class ConfigRetrieve {
     public static final String DATA_CONSORCIO = "data_consorcio";
     //endregion
 
+    //region CONSÓRCIO
+    public static final String DATA_URL_CARNE = "http://premiumcontrol.com.br/NakasoneSoftapp/select/select_carne_id.php?id_carne=";
+    public static final String DESCRICAO_CARNE = "descricao_carne";
+    public static final String VALOR_CARNE = "valor_carne";
+    public static final String DATAFINAL_CARNE = "datafinal_carne";
+    public static final String QNTD_CARNE = "qntd_carne";
+    //endregion
+
     //region OUTROS
     public static final String DATA_URL_OUTROS = "http://premiumcontrol.com.br/NakasoneSoftapp/select/select_outros_id.php?id_outros=";
     public static final String DESCRICAO_OUTROS = "descricao_outros";

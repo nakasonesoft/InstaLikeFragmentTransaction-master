@@ -15,7 +15,7 @@ import butterknife.ButterKnife;
 public class AltExcLancamentoNakasone extends BaseFragment
 {
 
-    ImageView imgAltExcCartao, imgAltExcDespesa,imgAltExcReceita,imgAltExcTransferencia,imgAltExcSaque,imgAltExcDeposito,imgAltExcImovel,imgAltExcConsorcio,imgAltExcOutros;
+    ImageView imgAltExcCartao, imgAltExcCarne, imgAltExcDespesa,imgAltExcReceita,imgAltExcTransferencia,imgAltExcSaque,imgAltExcDeposito,imgAltExcImovel,imgAltExcConsorcio,imgAltExcOutros;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -32,6 +32,7 @@ public class AltExcLancamentoNakasone extends BaseFragment
         // Linkagem dos IDs (Layout/Código)
         imgAltExcCartao = (ImageView) view.findViewById(R.id.imgAltExcCartao);
         imgAltExcDespesa = (ImageView) view.findViewById(R.id.imgAltExcDespesa);
+        imgAltExcCarne = (ImageView) view.findViewById(R.id.imgAltExcCarne);
         imgAltExcReceita = (ImageView) view.findViewById(R.id.imgAltExcReceita);
         imgAltExcTransferencia = (ImageView) view.findViewById(R.id.imgAltExcTransferencia);
         imgAltExcSaque = (ImageView) view.findViewById(R.id.imgAltExcSaque);
@@ -44,6 +45,13 @@ public class AltExcLancamentoNakasone extends BaseFragment
             @Override
             public void onClick(View v) {
                 mFragmentNavigation.pushFragment(new RecyclerAltExcFatura());
+            }
+        });
+
+        imgAltExcCarne.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                mFragmentNavigation.pushFragment(new RecyclerAltExcCarne());
             }
         });
 

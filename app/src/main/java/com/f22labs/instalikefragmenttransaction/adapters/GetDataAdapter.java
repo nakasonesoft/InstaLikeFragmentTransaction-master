@@ -5,9 +5,12 @@ public class GetDataAdapter
     //Geral-----------------------------------------------------------------------------------------
     private String id_cliente;
 
-
-
-
+    //Carnê--------------------------------------------------------------------------------------
+    private String id_carne;
+    private String descricao_carne;
+    private String valor_carne;
+    private String datafinal_carne;
+    private String qntd_carne;
 
     //Despesas--------------------------------------------------------------------------------------
     private String id_despesas;
@@ -538,6 +541,46 @@ public class GetDataAdapter
 
     public void setStatus(String status) {
         this.status = status;
+    }
+
+    public String getId_carne() {
+        return id_carne;
+    }
+
+    public void setId_carne(String id_carne) {
+        this.id_carne = id_carne;
+    }
+
+    public String getDescricao_carne() {
+        return descricao_carne;
+    }
+
+    public void setDescricao_carne(String descricao_carne) {
+        this.descricao_carne = descricao_carne;
+    }
+
+    public String getValor_carne() {
+        return valor_carne;
+    }
+
+    public void setValor_carne(String valor_carne) {
+        this.valor_carne = valor_carne;
+    }
+
+    public String getDatafinal_carne() {
+        return datafinal_carne;
+    }
+
+    public void setDatafinal_carne(String datafinal_carne) {
+        this.datafinal_carne = datafinal_carne;
+    }
+
+    public String getQntd_carne() {
+        return qntd_carne;
+    }
+
+    public void setQntd_carne(String qntd_carne) {
+        this.qntd_carne = qntd_carne;
     }
     //endregion
 
