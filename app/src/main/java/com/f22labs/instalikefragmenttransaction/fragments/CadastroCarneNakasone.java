@@ -41,7 +41,9 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.io.BufferedReader;
 import java.io.IOException;
+import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -54,7 +56,7 @@ public class CadastroCarneNakasone extends BaseFragment
     EditText descricaocarne,valorcarne,datacarne,parcelas;
     Button salvarcarne;
 
-
+    String resposta;
     AutoCompleteTextView auto1;
     List<String> responseList;
 
@@ -119,12 +121,13 @@ public class CadastroCarneNakasone extends BaseFragment
             }
 
             @Override
-            protected void onPostExecute(String result) {
+            protected void onPostExecute(String result)
+            {
                 super.onPostExecute(result);
 
                 Toast.makeText(getActivity(), result, Toast.LENGTH_LONG).show();
-                //TextView textViewResult = (TextView) findViewById(R.id.textViewResult);
-                // textViewResult.setText("Inserted");
+                UltimoID();
+
             }
         }
         SendPostReqAsyncTask sendPostReqAsyncTask = new SendPostReqAsyncTask();
@@ -158,6 +161,7 @@ public class CadastroCarneNakasone extends BaseFragment
             {
 
                 insert();
+
             }
         });
         //endregion
@@ -171,5 +175,163 @@ public class CadastroCarneNakasone extends BaseFragment
 
         return view;
     }
+
+
+
+
+
+
+    //region Necessário para o Diário.
+
+    private void UltimoID(){
+        class SendPostReqAsyncTask extends AsyncTask<String, Void, String> {
+            @Override
+            protected String doInBackground(String... params) {
+
+                try {
+                    HttpClient httpClient = new DefaultHttpClient();
+                    HttpPost httpPost = new HttpPost(
+                            "http://premiumcontrol.com.br/NakasoneSoftapp/select/select_ultimo_carne.php");
+
+
+                    HttpResponse response = httpClient.execute(httpPost);
+
+                    HttpEntity entity = response.getEntity();
+                    BufferedReader in = new BufferedReader(new InputStreamReader(response.getEntity().getContent()));
+
+                    StringBuffer sb = new StringBuffer("");
+                    String line="";
+
+                    while ((line = in.readLine()) != null) {
+                        sb.append(line);
+                        break;
+                    }
+                    in.close();
+                    resposta = sb.toString();
+                    Log.d("TAG", resposta);
+                    return sb.toString();
+
+                    //is = entity.getContent();
+
+
+                } catch (ClientProtocolException e) {
+
+                } catch (IOException e) {
+
+                }
+                return resposta;
+
+
+            }
+
+            @Override
+            protected void onPostExecute(String result)
+            {
+                super.onPostExecute(result);
+                try
+                {
+                    insertDiario();
+                }
+                catch (Exception e){Toast.makeText(getActivity(),"Por favor, recarregue a página para calcular seus dados", Toast.LENGTH_LONG);}
+
+            }
+
+
+        }
+        SendPostReqAsyncTask sendPostReqAsyncTask = new SendPostReqAsyncTask();
+        sendPostReqAsyncTask.execute();
+
+    }
+
+
+    public void insertDiario()
+    {
+        String  origem_diario = "";
+        String  destino_diario = "";
+        String  descricao_diario = descricaocarne.getText().toString();
+        String  valor_diario = valorcarne.getText().toString();
+        String  data_diario = datacarne.getText().toString();
+        String  tipo_diario = "Carne";
+        String  idtipo_diario = resposta;
+        String  id_cliente = "1";
+
+        insertToDatabaseDiario(origem_diario,destino_diario,descricao_diario,valor_diario,data_diario,tipo_diario,idtipo_diario,id_cliente);
+    }
+
+    private void insertToDatabaseDiario(String origem_diario, String destino_diario,String descricao_diario,String valor_diario,String data_diario,String tipo_diario,String idtipo_diario,String id_cliente)
+    {
+        class SendPostReqAsyncTask extends AsyncTask<String, Void, String>
+        {
+            @Override
+            protected String doInBackground(String... params)
+            {
+                String paramorigem_diario = params[0];
+                String paramdestino_diario = params[1];
+                String paramdescricao_diario = params[2];
+                String paramvalor_diario = params[3];
+                String paramdata_diario = params[4];
+                String paramtipo_diario = params[5];
+                String paramidtipo_diario = params[6];
+                String paramid_cliente = params[7];
+
+                String  origem_diario = "";
+                String  destino_diario = "";
+                String  descricao_diario = descricaocarne.getText().toString();
+                String  valor_diario = valorcarne.getText().toString();
+                String  data_diario = datacarne.getText().toString();
+                String  tipo_diario = "Carne";
+                String  idtipo_diario = resposta;
+                String  id_cliente = "1";
+
+                List<NameValuePair> nameValuePairs = new ArrayList<NameValuePair>();
+                nameValuePairs.add(new BasicNameValuePair("origem_diario", origem_diario));
+                nameValuePairs.add(new BasicNameValuePair("destino_diario", destino_diario));
+                nameValuePairs.add(new BasicNameValuePair("descricao_diario", descricao_diario));
+                nameValuePairs.add(new BasicNameValuePair("valor_diario", valor_diario));
+                nameValuePairs.add(new BasicNameValuePair("data_diario", data_diario));
+                nameValuePairs.add(new BasicNameValuePair("tipo_diario", tipo_diario));
+                nameValuePairs.add(new BasicNameValuePair("idtipo_diario", idtipo_diario));
+                nameValuePairs.add(new BasicNameValuePair("id_cliente", id_cliente));
+
+                try
+                {
+                    HttpClient httpClient = new DefaultHttpClient();
+                    HttpPost httpPost = new HttpPost(
+                            "http://premiumcontrol.com.br/NakasoneSoftapp/Cadastrar_Diario_Final.php");
+                    httpPost.setEntity(new UrlEncodedFormEntity(nameValuePairs));
+
+                    HttpResponse response = httpClient.execute(httpPost);
+
+                    HttpEntity entity = response.getEntity();
+
+                    //is = entity.getContent();
+
+                }
+                catch (ClientProtocolException e)
+                {
+
+                }
+                catch (IOException e)
+                {
+
+                }
+                return "success";
+            }
+
+            @Override
+            protected void onPostExecute(String result)
+            {
+                super.onPostExecute(result);
+                Toast.makeText(getActivity(), result, Toast.LENGTH_LONG).show();
+
+            }
+        }
+        SendPostReqAsyncTask sendPostReqAsyncTask = new SendPostReqAsyncTask();
+        sendPostReqAsyncTask.execute(origem_diario,destino_diario,descricao_diario,valor_diario,data_diario,tipo_diario,idtipo_diario,id_cliente);
+    }
+
+
+    //endregion
+
 
 }

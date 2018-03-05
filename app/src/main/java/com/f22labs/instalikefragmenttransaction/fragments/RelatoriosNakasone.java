@@ -37,6 +37,14 @@ public class RelatoriosNakasone extends BaseFragment{
         imgprevisao = (ImageView) view.findViewById(R.id.imgprevisao);
         imgacompanhamento = (ImageView) view.findViewById(R.id.imgacompanhamento);
 
+        imgdesempenho.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                mFragmentNavigation.pushFragment(new FragmentGrid2());
+            }
+        });
+
+
         imgmensal.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -47,7 +55,7 @@ public class RelatoriosNakasone extends BaseFragment{
         imgdiario.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                mFragmentNavigation.pushFragment(new Diario());
+                mFragmentNavigation.pushFragment(new RecyclerDiario2());
             }
         });
 

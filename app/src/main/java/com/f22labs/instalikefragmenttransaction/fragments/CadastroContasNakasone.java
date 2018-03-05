@@ -51,6 +51,7 @@ public class CadastroContasNakasone extends BaseFragment implements Spinner.OnIt
     //region Spinner Variaveis
     private Spinner spinner;
     private ArrayList<String> students;
+    private ArrayList<String> ids;
     private JSONArray result;
     static String id_spinner = "1";
     //endregion
@@ -146,10 +147,25 @@ public class CadastroContasNakasone extends BaseFragment implements Spinner.OnIt
         datafechamentoConta = (EditText) view.findViewById(R.id.datafechamentoConta);
         SalvarConta = (Button) view.findViewById(R.id.SalvarConta);
 
-
+//region declarar variaveis spinner
         students = new ArrayList<String>();
+        ids = new ArrayList<String>();
         spinner = (Spinner) view.findViewById(R.id.spinner2);
-        spinner.setOnItemSelectedListener(this);
+        spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+
+                id_spinner = ids.get(position);
+
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+                ids.get(spinner.getSelectedItemPosition());
+
+            }
+        });
+        //endregion
         //endregion
         //region Outros
         ButterKnife.bind(this, view);
@@ -173,7 +189,7 @@ public class CadastroContasNakasone extends BaseFragment implements Spinner.OnIt
 
     //region Spinner
     private void getData(){
-        StringRequest stringRequest = new StringRequest("http://premiumcontrol.com.br/NakasoneSoftapp/select/select_grupos.php",
+        StringRequest stringRequest = new StringRequest("http://premiumcontrol.com.br/NakasoneSoftapp/teste1.php",
                 new Response.Listener<String>() {
                     @Override
                     public void onResponse(String response) {
@@ -201,8 +217,8 @@ public class CadastroContasNakasone extends BaseFragment implements Spinner.OnIt
         for(int i=0;i<j.length();i++){
             try {
                 JSONObject json = j.getJSONObject(i);
-                students.add(json.getString("nome_grupo"));
-
+                students.add(json.getString("nome_conta"));
+                ids.add(json.getString("id_conta"));
             } catch (JSONException e) {
                 e.printStackTrace();
             }
