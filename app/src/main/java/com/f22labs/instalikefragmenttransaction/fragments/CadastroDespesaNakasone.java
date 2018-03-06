@@ -111,9 +111,9 @@ public class CadastroDespesaNakasone extends BaseFragment
                 //InputStream is = null;
 
                 String  descricao_despesas = auto1.getText().toString();
-                String  conta_despesas = id_spinner.toString();
+                String  conta_despesas = String.valueOf(Integer.parseInt(id_spinner.toString()) - 1);
                 String  valor_despesas = valordespesa.getText().toString();
-                String  comofoipago_despesas = id_spinner2.toString();
+                String  comofoipago_despesas =  String.valueOf(Integer.parseInt(id_spinner2.toString())-1);
                 String  data_despesas = datadespesa.getText().toString();
 
 

@@ -31,6 +31,7 @@ public class FragmentGrid2 extends BaseFragment
 
     ImageView total_patrimonio,total_dividas,patrimonio_liq,desempenho,desempenho_ac;
     ImageView total_patrimonio1,total_dividas1,patrimonio_liq1,desempenho1,desempenho_ac1;
+    Button total,dividas;
 
     GridView mGridView;
 
@@ -63,6 +64,8 @@ public class FragmentGrid2 extends BaseFragment
         patrimonio_liq = (ImageView)view.findViewById(R.id.patrimonio_liq);
         desempenho = (ImageView)view.findViewById(R.id.desempenho);
         desempenho_ac = (ImageView)view.findViewById(R.id.desempenho_ac);
+        total = (Button)view.findViewById(R.id.total);
+        dividas = (Button)view.findViewById(R.id.dividas);
 
         total_patrimonio1 = (ImageView)view.findViewById(R.id.total_patrimonio1);
         total_dividas1 = (ImageView)view.findViewById(R.id.total_dividas1);
@@ -80,6 +83,19 @@ public class FragmentGrid2 extends BaseFragment
 //endregion
 
         //region Cliques do Botão
+
+        total.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                mFragmentNavigation.pushFragment(new TiposPatrimonio());
+            }
+        });
+        dividas.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                mFragmentNavigation.pushFragment(new OpcoesDividas());
+            }
+        });
 
 
         total_patrimonio.setOnClickListener(new View.OnClickListener() {

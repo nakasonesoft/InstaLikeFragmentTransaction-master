@@ -24,6 +24,8 @@ public class Static
     private static double prest_consorcio;
     private static double prest_imovel;
     private static int diario;
+    private static int tipo_patrimonio;
+
     private static int ficha;
     private static int mes_ficha;
     private static String nome_grupo1 = "Caixa e Bancos";
@@ -262,5 +264,13 @@ public class Static
 
     public static void setId_carne(int id_carne) {
         Static.id_carne = id_carne;
+    }
+
+    public static int getTipo_patrimonio() {
+        return tipo_patrimonio;
+    }
+
+    public static void setTipo_patrimonio(int tipo_patrimonio) {
+        Static.tipo_patrimonio = tipo_patrimonio;
     }
 }
