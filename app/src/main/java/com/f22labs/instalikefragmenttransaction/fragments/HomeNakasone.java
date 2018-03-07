@@ -29,6 +29,7 @@ import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 import com.f22labs.instalikefragmenttransaction.R;
 import com.f22labs.instalikefragmenttransaction.activities.AdminActivity;
+import com.f22labs.instalikefragmenttransaction.activities.ListViewTeste;
 import com.f22labs.instalikefragmenttransaction.activities.MainActivity;
 import com.f22labs.instalikefragmenttransaction.activities.activity_login;
 import com.f22labs.instalikefragmenttransaction.adapters.ConfigRetrieve;
@@ -261,7 +262,8 @@ public class HomeNakasone extends BaseFragment {
                 Log.d("Static Virjao",String.valueOf(staticd.getVirjao()));
                 try
                 {
-                    mFragmentNavigation.pushFragment(new RecyclerDesativarContas());
+                    //mFragmentNavigation.pushFragment(new RecyclerDesativarContas());
+                    startActivity(new Intent(getActivity(), ListViewTeste.class));
                 }
                 catch (Exception e)
                 {

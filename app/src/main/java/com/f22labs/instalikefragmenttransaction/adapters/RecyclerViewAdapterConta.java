@@ -1,6 +1,8 @@
 package com.f22labs.instalikefragmenttransaction.adapters;
 
 import android.app.Activity;
+import android.os.Bundle;
+import android.os.Parcelable;
 import android.support.v7.widget.CardView;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -30,6 +32,9 @@ public class RecyclerViewAdapterConta extends RecyclerView.Adapter<RecyclerViewA
     String grupo;
 
     Object mContext;
+
+
+
     public RecyclerViewAdapterConta(List<GetDataAdapter> getDataAdapter, Activity context){
 
         super();
@@ -153,4 +158,5 @@ public class RecyclerViewAdapterConta extends RecyclerView.Adapter<RecyclerViewA
 
 
     }
+
 }

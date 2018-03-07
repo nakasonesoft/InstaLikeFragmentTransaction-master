@@ -276,8 +276,7 @@ Exemplo:
 </string>
 
 
-
-    <string formatted="false" name="resp20">Sim, pois nem que você queira, você não vai conseguir lançar todas as despesas exatamente nas respectivas contas. Por exemplo, você faz uma viagem de lazer e o que você gastar com o seu veículo – combustível, pedágio, lavagem – logicamente você vai lançar em Despesas Supérfluas, porém, não há necessidade, por exemplo, de se calcular o desgaste dos pneus do veículo ocorrida nessa viagem para se lançar também em Despesas Supérfluas. Isso seria perfeccionismo e nós não queremos perfeccionismo. O que não queremos é ficar longe da realidade, então procuramos lançar o que se puder na sua devida conta. Pois é bem melhor ter um controle financeiro com 95% de exatidão do que não se ter nenhum controle.
+    <string name="resp20" formatted="false">Sim, pois nem que você queira, você não vai conseguir lançar todas as despesas exatamente nas respectivas contas. Por exemplo, você faz uma viagem de lazer e o que você gastar com o seu veículo – combustível, pedágio, lavagem – logicamente você vai lançar em Despesas Supérfluas, porém, não há necessidade, por exemplo, de se calcular o desgaste dos pneus do veículo ocorrida nessa viagem para se lançar também em Despesas Supérfluas. Isso seria perfeccionismo e nós não queremos perfeccionismo. O que não queremos é ficar longe da realidade, então procuramos lançar o que se puder na sua devida conta. Pois é bem melhor ter um controle financeiro com 95% de exatidão do que não se ter nenhum controle.
 E, para você ficar mais tranquilo, saiba que, no mundo inteiro, não existe nenhum controle financeiro com lançamentos de despesas 100% exato e nem nas empresas.</string>
 
     <string name="mes1">Janeiro</string>
