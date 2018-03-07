@@ -67,11 +67,12 @@ public class RecyclerViewAdapterDesativarContas extends RecyclerView.Adapter<Rec
     public void onBindViewHolder(final ViewHolder Viewholder, final int position)
     {
         final GetDataAdapterDesativarContas getDataAdapter1 =  getDataAdapter.get(position);
+
         final String distancia;
 
         Viewholder.descricao_item.setText(getDataAdapter1.getNome_conta());
 
-        if(getDataAdapter1.getStatus().equals("1")) {Viewholder.simpleSwitch2.setChecked(true);}
+        if(getDataAdapter1.getStatus().equals(1)) {Viewholder.simpleSwitch2.setChecked(true);}
 
         else{Viewholder.simpleSwitch2.setChecked(false);}
 
@@ -87,7 +88,10 @@ public class RecyclerViewAdapterDesativarContas extends RecyclerView.Adapter<Rec
                 }
                 else
                 {
-                    UpdateToDatabaseDesativar(getDataAdapter1.getId_conta());
+                    if(isChecked == false)
+                    {
+                        UpdateToDatabaseDesativar(getDataAdapter1.getId_conta());
+                    }
 
                 }
             }
@@ -113,7 +117,7 @@ public class RecyclerViewAdapterDesativarContas extends RecyclerView.Adapter<Rec
     {
 
         public TextView id_item, descricao_item, id_grupo, valor_despesas,comofoipago_despesas,data_despesas,nome_conta,datafechamento_conta,descricao_despesas;
-        public Switch simpleSwitch2;
+        public  Switch simpleSwitch2;
         public ProgressBar bar;
 
         CardView cad;
