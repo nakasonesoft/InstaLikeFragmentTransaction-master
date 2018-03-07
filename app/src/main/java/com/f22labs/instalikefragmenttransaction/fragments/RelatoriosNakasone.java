@@ -37,6 +37,18 @@ public class RelatoriosNakasone extends BaseFragment{
         imgprevisao = (ImageView) view.findViewById(R.id.imgprevisao);
         imgacompanhamento = (ImageView) view.findViewById(R.id.imgacompanhamento);
 
+
+
+
+        imgprevisao.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                mFragmentNavigation.pushFragment(new PrevisaoFinanceiraGrid());
+            }
+        });
+
+
+
         imgdesempenho.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

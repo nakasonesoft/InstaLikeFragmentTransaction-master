@@ -136,6 +136,8 @@ public class pesquisa_rapida extends AppCompatActivity implements View.OnClickLi
                 return "success";
             }
 
+
+
             @Override
             protected void onPostExecute(String result) {
                 super.onPostExecute(result);
