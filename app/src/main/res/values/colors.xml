@@ -11,6 +11,9 @@
     <color name="colorNakasoneGreenText">#114F14</color>
     <color name="colorNakasoneGreenBackgroundText">#B7E2B7</color>
 
+
+    <color name="link">#2393d0</color>
+
     <color name="colorNakasoneRedText">#7D1F19</color>
     <color name="colorNakasoneRedBackgroundText">#B63A3C</color>
 

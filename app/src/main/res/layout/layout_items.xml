@@ -7,17 +7,17 @@
         android:id="@+id/textView1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textColor="#000"
-        android:textSize="15dp"
+        android:layout_weight="1"
+        android:padding="10dp"
         android:text="Items"
-        android:padding="10dp" />
+        android:textColor="#000"
+        android:textSize="15dp" />
 
     <Switch
         android:id="@+id/switch122"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginLeft="7dp"
-        android:layout_weight="1"
-        android:text="Status:" />
+        android:text="Status: " />
 
 </LinearLayout>

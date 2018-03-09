@@ -1,5 +1,6 @@
 package com.f22labs.instalikefragmenttransaction.fragments;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -7,6 +8,7 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 
 import com.f22labs.instalikefragmenttransaction.R;
+import com.f22labs.instalikefragmenttransaction.activities.ListViewTeste;
 import com.f22labs.instalikefragmenttransaction.activities.MainActivity;
 import com.f22labs.instalikefragmenttransaction.adapters.RecyclerViewAdapterDesativarContas;
 
@@ -35,6 +37,7 @@ public class MaisApoioNakasone extends BaseFragment{
         imgdicaseconomia = (ImageView) view.findViewById(R.id.imgdicaseconomia);
         imgfaleconosco = (ImageView) view.findViewById(R.id.imgfaleconosco);
 
+
         imgpasso.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -61,6 +64,15 @@ public class MaisApoioNakasone extends BaseFragment{
             public void onClick(View v)
             {
                 mFragmentNavigation.pushFragment(new PerguntasFrequentes());
+            }
+        });
+
+        imgimplantacao.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v)
+            {
+                Intent intent = new Intent(getActivity(), ListViewTeste.class);
+                startActivity(intent);
             }
         });
         ButterKnife.bind(this, view);

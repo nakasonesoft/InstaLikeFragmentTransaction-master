@@ -22,6 +22,7 @@ import com.f22labs.instalikefragmenttransaction.R;
 import com.f22labs.instalikefragmenttransaction.activities.MainActivity;
 import com.f22labs.instalikefragmenttransaction.utils.MaskEditUtil;
 import com.f22labs.instalikefragmenttransaction.utils.MoneyTextWatcher;
+import com.f22labs.instalikefragmenttransaction.utils.Static;
 
 import org.apache.http.HttpEntity;
 import org.apache.http.HttpResponse;
@@ -81,12 +82,13 @@ public class CadastroReceitaNakasone extends BaseFragment
         String  valor_receita = valorreceita.getText().toString();
         String  praondefoi_receita = id_spinner2.toString();
         String  data_receita = datareceita.getText().toString();
+        String  id_cliente = String.valueOf(Static.getId_cliente());
 
-        insertToDatabase(descricao_receita, id_conta, valor_receita, praondefoi_receita, data_receita);
+        insertToDatabase(descricao_receita, id_conta, valor_receita, praondefoi_receita, data_receita,id_cliente);
 
     }
 
-    private void insertToDatabase(String descricao_receita, String id_conta,String valor_receita,String praondefoi_receita, String data_receita){
+    private void insertToDatabase(String descricao_receita, String id_conta,String valor_receita,String praondefoi_receita, String data_receita, String id_cliente){
         class SendPostReqAsyncTask extends AsyncTask<String, Void, String> {
             @Override
             protected String doInBackground(String... params) {
@@ -95,6 +97,7 @@ public class CadastroReceitaNakasone extends BaseFragment
                 String paramvalor_receita = params[2];
                 String parampraondefoi_receita = params[3];
                 String paramdata_receita = params[4];
+                String paramid_cliente = params[5];
 
 
                 //InputStream is = null;
@@ -104,6 +107,7 @@ public class CadastroReceitaNakasone extends BaseFragment
                 String  valor_receita = valorreceita.getText().toString();
                 String  praondefoi_receita = id_spinner2.toString();
                 String  data_receita = datareceita.getText().toString();
+                String  id_cliente = String.valueOf(Static.getId_cliente());
 
                 List<NameValuePair> nameValuePairs = new ArrayList<NameValuePair>();
                 nameValuePairs.add(new BasicNameValuePair("descricao_receita", descricao_receita));
@@ -111,6 +115,7 @@ public class CadastroReceitaNakasone extends BaseFragment
                 nameValuePairs.add(new BasicNameValuePair("valor_receita", valor_receita));
                 nameValuePairs.add(new BasicNameValuePair("praondefoi_receita", praondefoi_receita));
                 nameValuePairs.add(new BasicNameValuePair("data_receita", data_receita));
+                nameValuePairs.add(new BasicNameValuePair("id_cliente", id_cliente));
 
 
                 try {
@@ -147,7 +152,7 @@ public class CadastroReceitaNakasone extends BaseFragment
 
         }
         SendPostReqAsyncTask sendPostReqAsyncTask = new SendPostReqAsyncTask();
-        sendPostReqAsyncTask.execute(descricao_receita, id_conta, valor_receita, praondefoi_receita, data_receita);
+        sendPostReqAsyncTask.execute(descricao_receita, id_conta, valor_receita, praondefoi_receita, data_receita,id_cliente);
     }
 
     @Override
@@ -395,7 +400,7 @@ public class CadastroReceitaNakasone extends BaseFragment
         String  data_diario = datareceita.getText().toString();
         String  tipo_diario = "Consorcio";
         String  idtipo_diario = resposta;
-        String  id_cliente = "1";
+        String  id_cliente = String.valueOf(Static.getId_cliente());
 
         insertToDatabaseDiario(origem_diario,destino_diario,descricao_diario,valor_diario,data_diario,tipo_diario,idtipo_diario,id_cliente);
     }
@@ -423,7 +428,7 @@ public class CadastroReceitaNakasone extends BaseFragment
                 String  data_diario = datareceita.getText().toString();
                 String  tipo_diario = "Consorcio";
                 String  idtipo_diario = resposta;
-                String  id_cliente = "1";
+                String  id_cliente = String.valueOf(Static.getId_cliente());
 
 
                 List<NameValuePair> nameValuePairs = new ArrayList<NameValuePair>();

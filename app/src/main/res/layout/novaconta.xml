@@ -36,20 +36,38 @@
         android:layout_height="wrap_content"
         android:layout_marginLeft="10dp"
         android:ems="10"
-        android:text="Coloque seu saldo inicial da conta:"
+        android:text="Nova conta:"
         android:textColor="@color/black" />
 
     <EditText
-        android:id="@+id/btnSaldoPasso2"
+        android:id="@+id/nome_conta"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="10dp"
         android:ems="10"
-        android:hint="Saldo Inicial"
+        android:hint="Nome da conta"
         android:inputType="textPersonName" />
 
+    <TextView
+        android:id="@+id/grupo_conta"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="OI" />
+
+
+    <TextView
+        android:id="@+id/id_grupo_conta"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="TextView"
+        android:visibility="gone" />
+
     <Button
-        android:id="@+id/dialogButtonOK"
+        android:id="@+id/cadastrar_nova_conta"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/image"

@@ -27,6 +27,7 @@ import com.f22labs.instalikefragmenttransaction.R;
 import com.f22labs.instalikefragmenttransaction.activities.MainActivity;
 import com.f22labs.instalikefragmenttransaction.utils.MaskEditUtil;
 import com.f22labs.instalikefragmenttransaction.utils.MoneyTextWatcher;
+import com.f22labs.instalikefragmenttransaction.utils.Static;
 
 import org.apache.http.HttpEntity;
 import org.apache.http.HttpResponse;
@@ -92,13 +93,14 @@ public class CadastroConsorcioNakasone extends BaseFragment
         String  conta_consorcio = id_spinner2.toString();
         String  comofoipago_consorcio = id_spinner.toString();
         String  data_consorcio = dataconsorcio.getText().toString();
+        String  id_cliente = String.valueOf(Static.getId_cliente());
 
 
 
-        insertToDatabase(descricao_consorcio, valor_consorcio, conta_consorcio, comofoipago_consorcio, data_consorcio);
+        insertToDatabase(descricao_consorcio, valor_consorcio, conta_consorcio, comofoipago_consorcio, data_consorcio, id_cliente);
     }
 
-    private void insertToDatabase(String descricao_consorcio, String valor_consorcio,String conta_consorcio,String comofoipago_consorcio, String data_consorcio){
+    private void insertToDatabase(String descricao_consorcio, String valor_consorcio,String conta_consorcio,String comofoipago_consorcio, String data_consorcio, String id_cliente){
         class SendPostReqAsyncTask extends AsyncTask<String, Void, String> {
             @Override
             protected String doInBackground(String... params) {
@@ -107,6 +109,7 @@ public class CadastroConsorcioNakasone extends BaseFragment
                 String paramconta_consorcio = params[2];
                 String paramcomofoipago_consorcio = params[3];
                 String paramdata_consorcio = params[4];
+                String paramid_cliente = params[5];
 
                 //InputStream is = null;
 
@@ -115,6 +118,7 @@ public class CadastroConsorcioNakasone extends BaseFragment
                 String  conta_consorcio = id_spinner2.toString();
                 String  comofoipago_consorcio = id_spinner.toString();
                 String  data_consorcio = dataconsorcio.getText().toString();
+                String  id_cliente = String.valueOf(Static.getId_cliente());
 
 
                 List<NameValuePair> nameValuePairs = new ArrayList<NameValuePair>();
@@ -123,6 +127,7 @@ public class CadastroConsorcioNakasone extends BaseFragment
                 nameValuePairs.add(new BasicNameValuePair("conta_consorcio", conta_consorcio));
                 nameValuePairs.add(new BasicNameValuePair("comofoipago_consorcio", comofoipago_consorcio));
                 nameValuePairs.add(new BasicNameValuePair("data_consorcio", data_consorcio));
+                nameValuePairs.add(new BasicNameValuePair("id_cliente", id_cliente));
 
 
                 try {
@@ -157,7 +162,7 @@ public class CadastroConsorcioNakasone extends BaseFragment
 
         }
         SendPostReqAsyncTask sendPostReqAsyncTask = new SendPostReqAsyncTask();
-        sendPostReqAsyncTask.execute(descricao_consorcio, valor_consorcio, conta_consorcio, comofoipago_consorcio, data_consorcio);
+        sendPostReqAsyncTask.execute(descricao_consorcio, valor_consorcio, conta_consorcio, comofoipago_consorcio, data_consorcio, id_cliente);
     }
 
     @Override
@@ -410,7 +415,7 @@ public class CadastroConsorcioNakasone extends BaseFragment
         String  data_diario = dataconsorcio.getText().toString();
         String  tipo_diario = "Consorcio";
         String  idtipo_diario = resposta;
-        String  id_cliente = "1";
+        String  id_cliente = String.valueOf(Static.getId_cliente());
 
         insertToDatabaseDiario(origem_diario,destino_diario,descricao_diario,valor_diario,data_diario,tipo_diario,idtipo_diario,id_cliente);
     }
@@ -438,7 +443,7 @@ public class CadastroConsorcioNakasone extends BaseFragment
                 String  data_diario = dataconsorcio.getText().toString();
                 String  tipo_diario = "Consorcio";
                 String  idtipo_diario = resposta;
-                String  id_cliente = "1";
+                String  id_cliente = String.valueOf(Static.getId_cliente());
 
                 List<NameValuePair> nameValuePairs = new ArrayList<NameValuePair>();
                 nameValuePairs.add(new BasicNameValuePair("origem_diario", origem_diario));

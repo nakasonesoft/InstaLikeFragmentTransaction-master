@@ -24,6 +24,7 @@ import com.f22labs.instalikefragmenttransaction.R;
 import com.f22labs.instalikefragmenttransaction.activities.MainActivity;
 import com.f22labs.instalikefragmenttransaction.utils.MaskEditUtil;
 import com.f22labs.instalikefragmenttransaction.utils.MoneyTextWatcher;
+import com.f22labs.instalikefragmenttransaction.utils.Static;
 
 import org.apache.http.HttpEntity;
 import org.apache.http.HttpResponse;
@@ -90,14 +91,15 @@ public class CadastroDespesaNakasone extends BaseFragment
         String  valor_despesas = valordespesa.getText().toString();
         String  comofoipago_despesas = id_spinner2.toString();
         String  data_despesas = datadespesa.getText().toString();
+        String  id_cliente = String.valueOf(Static.getId_cliente());
 
 
 
-        insertToDatabase(descricao_despesas, conta_despesas, valor_despesas, comofoipago_despesas, data_despesas);
+        insertToDatabase(descricao_despesas, conta_despesas, valor_despesas, comofoipago_despesas, data_despesas,id_cliente);
 
     }
 
-    private void insertToDatabase(String descricao_despesas, String conta_despesas,String valor_despesas,String comofoipago_despesas, String data_despesas){
+    private void insertToDatabase(String descricao_despesas, String conta_despesas,String valor_despesas,String comofoipago_despesas, String data_despesas, String id_cliente){
         class SendPostReqAsyncTask extends AsyncTask<String, Void, String> {
             @Override
             protected String doInBackground(String... params) {
@@ -106,6 +108,7 @@ public class CadastroDespesaNakasone extends BaseFragment
                 String paramvalor_despesas = params[2];
                 String paramcomofoipago_despesas = params[3];
                 String paramdata_despesas = params[4];
+                String paramid_cliente= params[5];
 
 
                 //InputStream is = null;
@@ -115,6 +118,7 @@ public class CadastroDespesaNakasone extends BaseFragment
                 String  valor_despesas = valordespesa.getText().toString();
                 String  comofoipago_despesas =  String.valueOf(Integer.parseInt(id_spinner2.toString())-1);
                 String  data_despesas = datadespesa.getText().toString();
+                String  id_cliente = String.valueOf(Static.getId_cliente());
 
 
                 List<NameValuePair> nameValuePairs = new ArrayList<NameValuePair>();
@@ -123,6 +127,7 @@ public class CadastroDespesaNakasone extends BaseFragment
                 nameValuePairs.add(new BasicNameValuePair("valor_despesas", valor_despesas));
                 nameValuePairs.add(new BasicNameValuePair("comofoipago_despesas", comofoipago_despesas));
                 nameValuePairs.add(new BasicNameValuePair("data_despesas", data_despesas));
+                nameValuePairs.add(new BasicNameValuePair("id_cliente", id_cliente));
 
 
                 try {
@@ -156,7 +161,7 @@ public class CadastroDespesaNakasone extends BaseFragment
             }
         }
         SendPostReqAsyncTask sendPostReqAsyncTask = new SendPostReqAsyncTask();
-        sendPostReqAsyncTask.execute(descricao_despesas, conta_despesas, valor_despesas, comofoipago_despesas, data_despesas);
+        sendPostReqAsyncTask.execute(descricao_despesas, conta_despesas, valor_despesas, comofoipago_despesas, data_despesas,id_cliente);
     }
 
     @Override
@@ -182,9 +187,11 @@ public class CadastroDespesaNakasone extends BaseFragment
         students = new ArrayList<String>();
         ids = new ArrayList<String>();
         spinner = (Spinner) view.findViewById(R.id.spinner_despesa);
-        spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+        spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener()
+        {
             @Override
-            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id)
+            {
 
                 id_spinner = ids.get(position);
 
@@ -275,7 +282,7 @@ public class CadastroDespesaNakasone extends BaseFragment
     }
 
     private void getStudents(JSONArray j){
-        students.add("");
+
         for(int i=0;i<j.length();i++){
             try {
                 JSONObject json = j.getJSONObject(i);
@@ -292,7 +299,7 @@ public class CadastroDespesaNakasone extends BaseFragment
 
     //region Spinner2
     private void getData2(){
-        StringRequest stringRequest = new StringRequest("http://premiumcontrol.com.br/NakasoneSoftapp/teste.php",
+        StringRequest stringRequest = new StringRequest("http://premiumcontrol.com.br/NakasoneSoftapp/teste.php?id_cliente="+Static.getId_cliente()+"",
                 new Response.Listener<String>() {
                     @Override
                     public void onResponse(String response) {
@@ -317,7 +324,7 @@ public class CadastroDespesaNakasone extends BaseFragment
     }
 
     private void getStudents2(JSONArray j){
-        students2.add("");
+
         for(int i=0;i<j.length();i++)
         {
             try
@@ -516,7 +523,7 @@ public class CadastroDespesaNakasone extends BaseFragment
         String  data_diario = datadespesa.getText().toString();
         String  tipo_diario = "Despesa";
         String  idtipo_diario = resposta;
-        String  id_cliente = "1";
+        String  id_cliente = String.valueOf(Static.getId_cliente());
 
         insertToDatabaseDiario(origem_diario,destino_diario,descricao_diario,valor_diario,data_diario,tipo_diario,idtipo_diario,id_cliente);
     }
@@ -544,7 +551,7 @@ public class CadastroDespesaNakasone extends BaseFragment
                 String  data_diario = datadespesa.getText().toString();
                 String  tipo_diario = "Despesa";
                 String  idtipo_diario = resposta;
-                String  id_cliente = "1";
+                String  id_cliente = String.valueOf(Static.getId_cliente());
 
                 List<NameValuePair> nameValuePairs = new ArrayList<NameValuePair>();
                 nameValuePairs.add(new BasicNameValuePair("origem_diario", origem_diario));

@@ -111,7 +111,7 @@ public class RecyclerFaturaDespesaJan extends BaseFragment implements RecyclerVi
     RecyclerView.Adapter recyclerViewadapter;
 
 
-    String GET_JSON_DATA_HTTP_URL = "http://premiumcontrol.com.br/NakasoneSoftapp/select/credito_jan.php";
+    String GET_JSON_DATA_HTTP_URL = "http://premiumcontrol.com.br/NakasoneSoftapp/select/credito_jan.php?id_cliente="+Static.getId_cliente()+"";
 
     String JSON_id_despesas = "id_despesas";
     String JSON_descricao_despesas = "descricao_despesas";

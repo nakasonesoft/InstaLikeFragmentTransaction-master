@@ -1,10 +1,12 @@
 package com.f22labs.instalikefragmenttransaction.activities;
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.AsyncTask;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ListView;
 import android.widget.ProgressBar;
 import android.widget.Toast;
@@ -24,6 +26,7 @@ import java.util.List;
 public class ListViewTeste extends AppCompatActivity {
 
     ListView SubjectListView;
+    Button btnSalvar;
     ProgressBar progressBarSubject;
     String ServerURL = "http://premiumcontrol.com.br/NakasoneSoftapp/select/select_conta.php";
 
@@ -39,6 +42,19 @@ public class ListViewTeste extends AppCompatActivity {
         progressBarSubject = (ProgressBar)findViewById(R.id.progressBar);
 
         new GetHttpResponse(ListViewTeste.this).execute();
+
+        btnSalvar = (Button)findViewById(R.id.pesquisa_rapida);
+
+        btnSalvar.setOnClickListener(new View.OnClickListener()
+        {
+            @Override
+            public void onClick(View v)
+            {
+                Intent intent = new Intent(getApplicationContext(), ListViewTeste2.class);
+                startActivity(intent);
+            }
+        });
+
     }
 
     private class GetHttpResponse extends AsyncTask<Void, Void, Void>

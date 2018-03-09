@@ -32,6 +32,7 @@ import com.f22labs.instalikefragmenttransaction.activities.AdminActivity;
 import com.f22labs.instalikefragmenttransaction.activities.ListViewTeste;
 import com.f22labs.instalikefragmenttransaction.activities.MainActivity;
 import com.f22labs.instalikefragmenttransaction.activities.activity_login;
+import com.f22labs.instalikefragmenttransaction.activities.implantacaoErotina;
 import com.f22labs.instalikefragmenttransaction.adapters.ConfigRetrieve;
 import com.f22labs.instalikefragmenttransaction.utils.Static;
 import com.f22labs.instalikefragmenttransaction.utils.staticd;
@@ -263,7 +264,7 @@ public class HomeNakasone extends BaseFragment {
                 try
                 {
                     //mFragmentNavigation.pushFragment(new RecyclerDesativarContas());
-                    startActivity(new Intent(getActivity(), ListViewTeste.class));
+                    startActivity(new Intent(getActivity(), implantacaoErotina.class));
                 }
                 catch (Exception e)
                 {

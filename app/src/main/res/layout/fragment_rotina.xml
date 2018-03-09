@@ -1,0 +1,450 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center">
+
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:id="@+id/imageView3"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    app:srcCompat="@drawable/nakasone" />
+
+                <TextView
+                    android:id="@+id/textView47"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="PremiumControl"
+                    android:textColor="@color/black"
+                    android:textStyle="bold|italic" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="15dp"
+                android:orientation="vertical">
+
+
+                <LinearLayout
+                    android:id="@+id/a"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="10dp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/textView50"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:text="a)"
+                        android:textColor="@color/black"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/textView63"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text=" Diariamente, fazer os"
+                        android:textColor="@color/black" />
+
+                    <TextView
+                        android:id="@+id/textView64"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text=" lançamentos"
+                        android:textColor="@color/black"
+                        android:textStyle="bold|italic" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/b"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/textView56"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="b)"
+                        android:textColor="@color/black"
+                        android:textStyle="bold" />
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/textView65"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text=" Periodicamente, examinar os"
+                            android:textColor="@color/black" />
+
+                        <TextView
+                            android:id="@+id/textVisdfew65"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="anual"
+                            android:textColor="@color/black"
+                            android:textStyle="bold|italic" />
+
+
+                    </LinearLayout>
+
+                    <TextView
+                        android:id="@+id/textView66"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text=" Resultados Mensal e"
+                        android:textColor="@color/black"
+                        android:textStyle="bold|italic" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/c"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="10dp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/textView59"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="c)"
+                        android:textColor="@color/black"
+                        android:textStyle="bold" />
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/textView67"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text=" Periodicamente, examinar o"
+                            android:textColor="@color/black" />
+
+                        <TextView
+                            android:id="@+id/textView69"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Desempenho"
+                            android:textColor="@color/black"
+                            android:textStyle="bold|italic" />
+                    </LinearLayout>
+
+                    <TextView
+                        android:id="@+id/textView68"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text=" Patrimônio e "
+                        android:textColor="@color/black"
+                        android:textStyle="bold|italic" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/d"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="10dp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/textView60"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="d)"
+                        android:textColor="@color/black"
+                        android:textStyle="bold" />
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/textView70"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text=" Periodicamente, examinar o quadro "
+                            android:textColor="@color/black" />
+
+                        <TextView
+                            android:id="@+id/textView71"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Acompanhamento de meta"
+                            android:textColor="@color/black"
+                            android:textStyle="bold" />
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/e"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="10dp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/textView61"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="e)"
+                        android:textColor="@color/black"
+                        android:textStyle="bold" />
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/textView72"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text=" No final do mês, reajustar a "
+                            android:textColor="@color/black" />
+
+                        <TextView
+                            android:id="@+id/textView74"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="para o próximo período"
+                            android:textColor="@color/black" />
+                    </LinearLayout>
+
+                    <TextView
+                        android:id="@+id/textView73"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Previsão Financeira"
+                        android:textColor="@color/black"
+                        android:textStyle="bold|italic" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/f"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="10dp"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/textView62"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="f)"
+                            android:textColor="@color/black"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/textView75"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text=" Mensalmente, "
+                            android:textColor="@color/black" />
+
+                        <TextView
+                            android:id="@+id/textView76"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="conciliar e acertar os saldos"
+                            android:textColor="@color/black"
+                            android:textStyle="bold|italic" />
+
+                        <TextView
+                            android:id="@+id/textView77"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text=" das"
+                            android:textColor="@color/black" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/textView79"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="contas de Caixa, Bancos e Dívidas. E para conciliar"
+                            android:textColor="@color/black" />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:orientation="horizontal"></LinearLayout>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/textView80"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="as contas bancárias, busque ajuda do nosso"
+                            android:textColor="@color/black" />
+
+                        <TextView
+                            android:id="@+id/textView81"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text=" Passo"
+                            android:textColor="@color/black"
+                            android:textStyle="bold|italic" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/textView82"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="a Passo - Como Conciliar Conta Bancária."
+                            android:textColor="@color/black"
+                            android:textStyle="bold|italic" />
+
+                        <TextView
+                            android:id="@+id/textView83"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text=" E para"
+                            android:textColor="@color/black" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/textView84"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="fazer o acerto dos saldos das contas, busque ajuda "
+                            android:textColor="@color/black" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/textView85"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="do nosso"
+                            android:textColor="@color/black" />
+
+                        <TextView
+                            android:id="@+id/textView86"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text=" Perguntas Frequentes"
+                            android:textColor="@color/black"
+                            android:textStyle="bold|italic" />
+
+                        <TextView
+                            android:id="@+id/textView87"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text=", no item"
+                            android:textColor="@color/black" />
+
+                        <TextView
+                            android:id="@+id/textView88"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text=" Diferença"
+                            android:textColor="@color/black"
+                            android:textStyle="bold|italic" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/textView90"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="entre a Conta Individual e o Extrato Bancário - Como Corrigir	"
+                            android:textColor="@color/black"
+                            android:textStyle="bold|italic" />
+                    </LinearLayout>
+
+                </LinearLayout>
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="15dp"
+                android:orientation="vertical">
+
+                <Button
+                    android:id="@+id/comecar"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/colorNakasoneGreenBackgroundNavBar"
+                    android:text="Começar"
+                    android:textColor="#fff" />
+            </LinearLayout>
+
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

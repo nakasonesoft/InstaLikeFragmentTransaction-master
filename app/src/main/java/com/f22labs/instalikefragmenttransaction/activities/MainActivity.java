@@ -313,4 +313,17 @@ public class MainActivity extends BaseActivity implements BaseFragment.FragmentN
         getSupportActionBar().setTitle(title);
 
     }
+
+
+    public void updateToolbarTitle222() {
+
+
+        getSupportActionBar().setHideOnContentScrollEnabled(true);
+
+    }
+
+
+
+
+
 }

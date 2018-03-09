@@ -23,6 +23,7 @@ import com.f22labs.instalikefragmenttransaction.R;
 import com.f22labs.instalikefragmenttransaction.activities.MainActivity;
 import com.f22labs.instalikefragmenttransaction.utils.MaskEditUtil;
 import com.f22labs.instalikefragmenttransaction.utils.MoneyTextWatcher;
+import com.f22labs.instalikefragmenttransaction.utils.Static;
 
 import org.apache.http.HttpEntity;
 import org.apache.http.HttpResponse;
@@ -82,15 +83,16 @@ public class CadastroTransferenciaNakasone extends BaseFragment{
         String  praondefoi_transferencia = id_spinner.toString();
         String  contaondeveio_transferencia = id_spinner2.toString();
         String  data_transferencia = datatransferencia.getText().toString();
+        String  id_cliente = String.valueOf(Static.getId_cliente());
 
 
 
-        insertToDatabase(descricao_transferencia, valor_transferencia, praondefoi_transferencia, contaondeveio_transferencia, data_transferencia);
+        insertToDatabase(descricao_transferencia, valor_transferencia, praondefoi_transferencia, contaondeveio_transferencia, data_transferencia, id_cliente);
 
     }
 
 
-    private void insertToDatabase(String descricao_transferencia, String valor_transferencia,String praondefoi_transferencia,String contaondeveio_transferencia, String data_transferencia){
+    private void insertToDatabase(String descricao_transferencia, String valor_transferencia,String praondefoi_transferencia,String contaondeveio_transferencia, String data_transferencia, String id_cliente){
         class SendPostReqAsyncTask extends AsyncTask<String, Void, String> {
             @Override
             protected String doInBackground(String... params) {
@@ -99,6 +101,7 @@ public class CadastroTransferenciaNakasone extends BaseFragment{
                 String parampraondefoi_transferencia = params[2];
                 String paramcontaondeveio_transferencia = params[3];
                 String paramdata_transferencia = params[4];
+                String paramid_cliente= params[5];
 
 
                 //InputStream is = null;
@@ -108,6 +111,7 @@ public class CadastroTransferenciaNakasone extends BaseFragment{
                 String  praondefoi_transferencia = id_spinner.toString();
                 String  contaondeveio_transferencia = id_spinner2.toString();
                 String  data_transferencia = datatransferencia.getText().toString();
+                String  id_cliente = String.valueOf(Static.getId_cliente());
 
                 List<NameValuePair> nameValuePairs = new ArrayList<NameValuePair>();
                 nameValuePairs.add(new BasicNameValuePair("descricao_transferencia", descricao_transferencia));
@@ -115,6 +119,7 @@ public class CadastroTransferenciaNakasone extends BaseFragment{
                 nameValuePairs.add(new BasicNameValuePair("praondefoi_transferencia", praondefoi_transferencia));
                 nameValuePairs.add(new BasicNameValuePair("contaondeveio_transferencia", contaondeveio_transferencia));
                 nameValuePairs.add(new BasicNameValuePair("data_transferencia", data_transferencia));
+                nameValuePairs.add(new BasicNameValuePair("id_cliente", id_cliente));
 
 
                 try {
@@ -151,7 +156,7 @@ public class CadastroTransferenciaNakasone extends BaseFragment{
 
         }
         SendPostReqAsyncTask sendPostReqAsyncTask = new SendPostReqAsyncTask();
-        sendPostReqAsyncTask.execute(descricao_transferencia, valor_transferencia, praondefoi_transferencia, contaondeveio_transferencia, data_transferencia);
+        sendPostReqAsyncTask.execute(descricao_transferencia, valor_transferencia, praondefoi_transferencia, contaondeveio_transferencia, data_transferencia,id_cliente);
     }
 
 
@@ -393,7 +398,7 @@ public void onNothingSelected(AdapterView<?> parent) {
         String  data_diario = datatransferencia.getText().toString();
         String  tipo_diario = "Consorcio";
         String  idtipo_diario = resposta;
-        String  id_cliente = "1";
+        String  id_cliente = String.valueOf(Static.getId_cliente());
 
         insertToDatabaseDiario(origem_diario,destino_diario,descricao_diario,valor_diario,data_diario,tipo_diario,idtipo_diario,id_cliente);
     }
@@ -421,7 +426,7 @@ public void onNothingSelected(AdapterView<?> parent) {
                 String  data_diario = datatransferencia.getText().toString();
                 String  tipo_diario = "Consorcio";
                 String  idtipo_diario = resposta;
-                String  id_cliente = "1";
+                String  id_cliente = String.valueOf(Static.getId_cliente());
 
                 List<NameValuePair> nameValuePairs = new ArrayList<NameValuePair>();
                 nameValuePairs.add(new BasicNameValuePair("origem_diario", origem_diario));

@@ -1,0 +1,445 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center">
+
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:id="@+id/imageView3"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    app:srcCompat="@drawable/nakasone" />
+
+                <TextView
+                    android:id="@+id/textView47"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="PremiumControl"
+                    android:textColor="@color/black"
+                    android:textStyle="bold|italic" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="15dp"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/textView35"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Muito obrigado por se cadastrar em nosso site. "
+                        android:textColor="@color/black"
+                        android:textSize="15sp" />
+
+                    <TextView
+                        android:id="@+id/textView44"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="5dp"
+                        android:text="Seja bem-vindo!"
+                        android:textColor="@color/black"
+                        android:textSize="15sp" />
+
+                    <TextView
+                        android:id="@+id/textView46"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="5dp"
+                        android:text="Mas antes de começar a fazer os lançamentos, providencie rapidamente a implantação, conforme seguem:	"
+                        android:textColor="@color/black"
+                        android:textSize="15sp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/PrimeiroPasso"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/textView48"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="1° Passo - "
+                        android:textColor="@color/black"
+                        android:textStyle="bold" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/textView49"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Na Lista de Contas Ativas, desative as contas que você não vai utilizar"
+                            android:textColor="@color/black" />
+
+                        <TextView
+                            android:id="@+id/ativar_desativar_contas"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="(acessar a Lista de Contas Ativas)	"
+                            android:textColor="@color/link"
+                            android:textStyle="italic" />
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/SegundoPasso"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginTop="5dp"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/textView51"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="2° Passo -"
+                            android:textColor="@color/black"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/textView52"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text=" Cadastre algumas contas e coloque os saldos, conforme a seguir:	"
+                            android:textColor="@color/black" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="65dp"
+                        android:layout_marginTop="5dp"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/textView53"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:text="a)"
+                            android:textColor="@color/black"
+                            android:textStyle="bold" />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:id="@+id/textView55"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:text=" No grupo de Caixa e Bancos, cadastre as contas dos bancos com quem você trabalha e informe seu saldo atual.	"
+                                android:textColor="@color/black" />
+
+                            <TextView
+                                android:id="@+id/cadastrar"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:text="(acessar Cadastrar Contas - grupo Caixa e Bancos)"
+                                android:textColor="@color/link"
+                                android:textStyle="italic" />
+                        </LinearLayout>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="65dp"
+                        android:layout_marginTop="5dp"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:text="b)"
+                            android:textColor="@color/black"
+                            android:textStyle="bold" />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:text=" No grupo de Investimentos, Outros, cadastre as contas dos bancos nos quais você possui investimentos como, por exemplo, caderneta de poupança e informe o saldo atual."
+                                android:textColor="@color/black" />
+
+                            <TextView
+                                android:id="@+id/cadastrar1"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:text="(acessar Cadastrar Contas - grupo Investimentos, Outros)"
+                                android:textColor="@color/link"
+                                android:textStyle="italic" />
+                        </LinearLayout>
+                    </LinearLayout>
+
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="65dp"
+                        android:layout_marginTop="5dp"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:text="c)"
+                            android:textColor="@color/black"
+                            android:textStyle="bold" />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:text=" No grupo de Dívidas - Cartão de Crédito, cadastre as suas empresas de cartão de crédito, colocando o saldo inicial de acordo com a última Fatura, somando os gastos que você fez após o fechamento dessa última Fatura até a data de hoje. E informe também as contas parcelas que ainda faltam pagar (quantidade de parcelas e o valor de cada parcela)."
+                                android:textColor="@color/black" />
+
+                            <TextView
+                                android:id="@+id/cadastrar2"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:text="(acessar Cadastrar Contas - grupo Cartão de Crédito)"
+                                android:textColor="@color/link"
+                                android:textStyle="italic" />
+                        </LinearLayout>
+                    </LinearLayout>
+
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="65dp"
+                        android:layout_marginTop="5dp"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:text="d)"
+                            android:textColor="@color/black"
+                            android:textStyle="bold" />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:text=" No grupo de Outras Dívidas, cadastre as contas das lojas em que você comprou pelo carnê, como também os empréstimos bancários e os financiamentos de Veículo, Móveis, etc."
+                                android:textColor="@color/black" />
+
+                            <TextView
+                                android:id="@+id/cadastrar3"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:text="(acessar Cadastrar Contas- grupo Outras Dívidas)	"
+                                android:textColor="@color/link"
+                                android:textStyle="italic" />
+                        </LinearLayout>
+                    </LinearLayout>
+
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="65dp"
+                        android:layout_marginTop="5dp"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:text="e)"
+                            android:textColor="@color/black"
+                            android:textStyle="bold" />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:text=" Na 1ª página - Visão Geral - no quadro de Dívidas a Vencer Até o Final do Mês, aparecer a mensagem: se você tiver, lance o valor das prestações de consórcio e de financiamento de imóvel a vencer neste mês e que ainda não foram pagos"
+                                android:textColor="@color/black" />
+
+                        </LinearLayout>
+                    </LinearLayout>
+
+
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:id="@+id/TerceiroPasso"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/textVsadfiew48"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="3° Passo - "
+                        android:textColor="@color/black"
+                        android:textStyle="bold" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/textVdsadiew49"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text=" Coloque o saldo nas contas do grupo de Bens."
+                            android:textColor="@color/black" />
+
+                        <TextView
+                            android:id="@+id/cadastrar_passo3"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="(acessar Colocar/Alterar Saldo Inicial)"
+                            android:textColor="@color/link"
+                            android:textStyle="italic" />
+
+                        <TextView
+                            android:id="@+id/textView57"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Mas se não tiver esse valor agora, pode colocar um valor aproximado. E se você tiver imóvel financiado (Apartamento, Casa, Terreno) e Consórcio, lance na conta correspondente o total	dos valores pagos até hoje (entrada + parcelas + prestações, etc.), mas se você não conseguir levantar esses valores agora, coloque por enquanto um valor aproximado. 			"
+                            android:textColor="@color/black" />
+                    </LinearLayout>
+
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:id="@+id/QuartoPasso"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/textView48"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="4° Passo - "
+                        android:textColor="@color/black"
+                        android:textStyle="bold" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/textView49"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Finalizando, se você assinou o Plano Completo, no final do mês, preencha o mapa de Previsão Financeira. E, se precisar, utilize-se do Passo a Passo - Previsão Financeira."
+                            android:textColor="@color/black" />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="10dp"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/textView58"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="E é só! Ufa! Agora você já pode começar a fazer os lançamentos. E uma boa sorte !"
+                        android:textColor="@color/black" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:orientation="vertical">
+
+                    <Button
+                        android:id="@+id/rotina"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/rounded"
+                        android:text="Rotina Diária, Semanal e Mensal (ver)"
+                        android:textColor="@color/black" />
+                </LinearLayout>
+
+
+            </LinearLayout>
+
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

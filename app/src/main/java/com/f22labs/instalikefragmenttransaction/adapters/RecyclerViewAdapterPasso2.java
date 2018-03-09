@@ -80,6 +80,7 @@ public class RecyclerViewAdapterPasso2 extends RecyclerView.Adapter<RecyclerView
 
             }
         });
+
         Viewholder.buttonPasso2.setOnClickListener(new View.OnClickListener()
         {
             @Override

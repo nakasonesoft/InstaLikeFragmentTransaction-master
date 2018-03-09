@@ -24,6 +24,7 @@ import com.f22labs.instalikefragmenttransaction.R;
 import com.f22labs.instalikefragmenttransaction.activities.MainActivity;
 import com.f22labs.instalikefragmenttransaction.utils.MaskEditUtil;
 import com.f22labs.instalikefragmenttransaction.utils.MoneyTextWatcher;
+import com.f22labs.instalikefragmenttransaction.utils.Static;
 
 import org.apache.http.HttpEntity;
 import org.apache.http.HttpResponse;
@@ -72,14 +73,15 @@ public class CadastroCarneNakasone extends BaseFragment
         String  valor_carne = valorcarne.getText().toString();
         String  datafinal_carne = datacarne.getText().toString();
         String  qntd_carne = parcelas.getText().toString();
+        String  id_cliente = String.valueOf(Static.getId_cliente());
 
 
 
-        insertToDatabase(descricao_carne,valor_carne,datafinal_carne,qntd_carne);
+        insertToDatabase(descricao_carne,valor_carne,datafinal_carne,qntd_carne,id_cliente);
 
     }
 
-    private void insertToDatabase(String descricao_carne, String valor_carne,String datafinal_carne,String qntd_carne){
+    private void insertToDatabase(String descricao_carne, String valor_carne,String datafinal_carne,String qntd_carne, String id_cliente){
         class SendPostReqAsyncTask extends AsyncTask<String, Void, String> {
             @Override
             protected String doInBackground(String... params) {
@@ -87,18 +89,21 @@ public class CadastroCarneNakasone extends BaseFragment
                 String paramvalor_carne = params[1];
                 String paramdatafinal_carne = params[2];
                 String paramqntd_carne = params[3];
+                String paramid_cliente = params[4];
 
                 //InputStream is = null;
                 String  descricao_carne = descricaocarne.getText().toString();
                 String  valor_carne = valorcarne.getText().toString();
                 String  datafinal_carne = datacarne.getText().toString();
                 String  qntd_carne = parcelas.getText().toString();
+                String  id_cliente = String.valueOf(Static.getId_cliente());
 
                 List<NameValuePair> nameValuePairs = new ArrayList<NameValuePair>();
                 nameValuePairs.add(new BasicNameValuePair("descricao_carne", descricao_carne));
                 nameValuePairs.add(new BasicNameValuePair("valor_carne", valor_carne));
                 nameValuePairs.add(new BasicNameValuePair("datafinal_carne", datafinal_carne));
                 nameValuePairs.add(new BasicNameValuePair("qntd_carne", qntd_carne));
+                nameValuePairs.add(new BasicNameValuePair("id_cliente", id_cliente));
 
                 try {
                     HttpClient httpClient = new DefaultHttpClient();
@@ -131,7 +136,7 @@ public class CadastroCarneNakasone extends BaseFragment
             }
         }
         SendPostReqAsyncTask sendPostReqAsyncTask = new SendPostReqAsyncTask();
-        sendPostReqAsyncTask.execute(descricao_carne,valor_carne,datafinal_carne,qntd_carne);
+        sendPostReqAsyncTask.execute(descricao_carne,valor_carne,datafinal_carne,qntd_carne, id_cliente);
     }
 
     @Override
@@ -253,7 +258,7 @@ public class CadastroCarneNakasone extends BaseFragment
         String  data_diario = datacarne.getText().toString();
         String  tipo_diario = "Carne";
         String  idtipo_diario = resposta;
-        String  id_cliente = "1";
+        String  id_cliente = String.valueOf(Static.getId_cliente());
 
         insertToDatabaseDiario(origem_diario,destino_diario,descricao_diario,valor_diario,data_diario,tipo_diario,idtipo_diario,id_cliente);
     }
@@ -281,7 +286,7 @@ public class CadastroCarneNakasone extends BaseFragment
                 String  data_diario = datacarne.getText().toString();
                 String  tipo_diario = "Carne";
                 String  idtipo_diario = resposta;
-                String  id_cliente = "1";
+                String  id_cliente = String.valueOf(Static.getId_cliente());
 
                 List<NameValuePair> nameValuePairs = new ArrayList<NameValuePair>();
                 nameValuePairs.add(new BasicNameValuePair("origem_diario", origem_diario));

@@ -32,7 +32,7 @@ public class ContaDividasMensal extends BaseFragment
 
     GridView mGridView;
 
-    String urlAddress  = "http://premiumcontrol.com.br/NakasoneSoftapp/select/mov_contas_patrimonio_id_conta.php?id_conta=";
+    String urlAddress  = "http://premiumcontrol.com.br/NakasoneSoftapp/select/mov_contas_patrimonio_id_conta.php?id_cliente="+Static.getId_cliente()+"&id_conta=";
 
     public static GridView gvPrimeiroTotal = null;
     final ArrayList<String> items = new ArrayList<String>();

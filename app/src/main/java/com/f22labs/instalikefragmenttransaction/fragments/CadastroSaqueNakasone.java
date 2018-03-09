@@ -22,6 +22,7 @@ import com.f22labs.instalikefragmenttransaction.R;
 import com.f22labs.instalikefragmenttransaction.activities.MainActivity;
 import com.f22labs.instalikefragmenttransaction.utils.MaskEditUtil;
 import com.f22labs.instalikefragmenttransaction.utils.MoneyTextWatcher;
+import com.f22labs.instalikefragmenttransaction.utils.Static;
 
 import org.apache.http.HttpEntity;
 import org.apache.http.HttpResponse;
@@ -84,12 +85,13 @@ public class CadastroSaqueNakasone extends BaseFragment
         String  praondefoi_saque = id_spinner2.toString();
         String  contaondeveio_saque = id_spinner.toString();
         String  data_saque = datasaque.getText().toString();
+        String  id_cliente = String.valueOf(Static.getId_cliente());
 
-        insertToDatabase(descricao_saque, valor_saque, praondefoi_saque, contaondeveio_saque, data_saque);
+        insertToDatabase(descricao_saque, valor_saque, praondefoi_saque, contaondeveio_saque, data_saque,id_cliente);
     }
 
 
-    private void insertToDatabase(String descricao_saque, String valor_saque,String praondefoi_saque,String contaondeveio_saque, String data_saque){
+    private void insertToDatabase(String descricao_saque, String valor_saque,String praondefoi_saque,String contaondeveio_saque, String data_saque, String id_cliente){
         class SendPostReqAsyncTask extends AsyncTask<String, Void, String> {
             @Override
             protected String doInBackground(String... params) {
@@ -98,6 +100,7 @@ public class CadastroSaqueNakasone extends BaseFragment
                 String parampraondefoi_saque = params[2];
                 String paramcontaondeveio_saque = params[3];
                 String paramdata_saque = params[4];
+                String paramid_cliente = params[5];
 
 
                 //InputStream is = null;
@@ -107,6 +110,7 @@ public class CadastroSaqueNakasone extends BaseFragment
                 String  praondefoi_saque = id_spinner2.toString();
                 String  contaondeveio_saque = id_spinner.toString();
                 String  data_saque = datasaque.getText().toString();
+                String  id_cliente = String.valueOf(Static.getId_cliente());
 
                 List<NameValuePair> nameValuePairs = new ArrayList<NameValuePair>();
                 nameValuePairs.add(new BasicNameValuePair("descricao_saque", descricao_saque));
@@ -114,6 +118,7 @@ public class CadastroSaqueNakasone extends BaseFragment
                 nameValuePairs.add(new BasicNameValuePair("praondefoi_saque", praondefoi_saque));
                 nameValuePairs.add(new BasicNameValuePair("contaondeveio_saque", contaondeveio_saque));
                 nameValuePairs.add(new BasicNameValuePair("data_saque", data_saque));
+                nameValuePairs.add(new BasicNameValuePair("id_cliente", id_cliente));
 
 
                 try {
@@ -148,7 +153,7 @@ public class CadastroSaqueNakasone extends BaseFragment
         }
 
         SendPostReqAsyncTask sendPostReqAsyncTask = new SendPostReqAsyncTask();
-        sendPostReqAsyncTask.execute(descricao_saque, valor_saque, praondefoi_saque, contaondeveio_saque, data_saque);
+        sendPostReqAsyncTask.execute(descricao_saque, valor_saque, praondefoi_saque, contaondeveio_saque, data_saque,id_cliente);
 
     }
 
@@ -400,7 +405,7 @@ public class CadastroSaqueNakasone extends BaseFragment
         String  data_diario = datasaque.getText().toString();
         String  tipo_diario = "Saque";
         String  idtipo_diario = resposta;
-        String  id_cliente = "1";
+        String  id_cliente = String.valueOf(Static.getId_cliente());
 
         insertToDatabaseDiario(origem_diario,destino_diario,descricao_diario,valor_diario,data_diario,tipo_diario,idtipo_diario,id_cliente);
     }
@@ -428,7 +433,7 @@ public class CadastroSaqueNakasone extends BaseFragment
                 String  data_diario = datasaque.getText().toString();
                 String  tipo_diario = "Saque";
                 String  idtipo_diario = resposta;
-                String  id_cliente = "1";
+                String  id_cliente = String.valueOf(Static.getId_cliente());
 
                 List<NameValuePair> nameValuePairs = new ArrayList<NameValuePair>();
                 nameValuePairs.add(new BasicNameValuePair("origem_diario", origem_diario));

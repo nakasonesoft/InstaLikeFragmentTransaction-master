@@ -76,23 +76,28 @@ public class ListAdapterClass extends BaseAdapter {
             if (valueList.get(position).getStatus().equals("1"))
             {
                 viewItem.SwitchViewSubjectName.setChecked(true);
+                viewItem.SwitchViewSubjectName.setText("Ativada");
                 Log.d("Caiu no if", "Bom menino kkkk");
             }
             else
             {
                 viewItem.SwitchViewSubjectName.setChecked(false);
+                viewItem.SwitchViewSubjectName.setText("Desativada");
                 Log.d("Caiu no else", "Se fodeu kkkk");
             }
 
             viewItem.SwitchViewSubjectName.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
                 @Override
                 public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-                    if (isChecked) {
+                    if (isChecked)
+                    {
                         UpdateToDatabase(valueList.get(position).getId_conta());
-
+                        buttonView.setText("Ativada");
                     } else {
-                        if (isChecked == false) {
+                        if (isChecked == false)
+                        {
                             UpdateToDatabaseDesativar(valueList.get(position).getId_conta());
+                            buttonView.setText("Desativada");
                         }
 
                     }
@@ -189,7 +194,7 @@ public class ListAdapterClass extends BaseAdapter {
     class ViewItem
     {
         TextView TextViewSubjectName;
-        Switch SwitchViewSubjectName;
+         Switch SwitchViewSubjectName;
 
     }
 }

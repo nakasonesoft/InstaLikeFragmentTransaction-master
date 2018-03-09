@@ -22,6 +22,7 @@ import com.f22labs.instalikefragmenttransaction.R;
 import com.f22labs.instalikefragmenttransaction.activities.MainActivity;
 import com.f22labs.instalikefragmenttransaction.utils.MaskEditUtil;
 import com.f22labs.instalikefragmenttransaction.utils.MoneyTextWatcher;
+import com.f22labs.instalikefragmenttransaction.utils.Static;
 
 import org.apache.http.HttpEntity;
 import org.apache.http.HttpResponse;
@@ -85,14 +86,15 @@ public class CadastroOutrosNakasone extends BaseFragment
         String  id_grupo2 = id_spinner2.toString();
         String  valor_outros = valorOutros.getText().toString();
         String  data_outros = dataOutros.getText().toString();
+        String  id_cliente = String.valueOf(Static.getId_cliente());
 
 
 
-        insertToDatabase(descricao_outros, id_grupo, id_grupo2, valor_outros, data_outros);
+        insertToDatabase(descricao_outros, id_grupo, id_grupo2, valor_outros, data_outros,id_cliente);
 
     }
 
-    private void insertToDatabase(String descricao_outros, String id_grupo,String id_grupo2,String valor_outros, String data_outros){
+    private void insertToDatabase(String descricao_outros, String id_grupo,String id_grupo2,String valor_outros, String data_outros,String id_cliente){
         class SendPostReqAsyncTask extends AsyncTask<String, Void, String> {
 
             @Override
@@ -102,6 +104,7 @@ public class CadastroOutrosNakasone extends BaseFragment
                 String paramid_grupo2 = params[2];
                 String paramvalor_outros = params[3];
                 String paramdata_outros = params[4];
+                String paramid_cliente = params[5];
 
 
                 //InputStream is = null;
@@ -111,6 +114,7 @@ public class CadastroOutrosNakasone extends BaseFragment
                 String  id_grupo2 = id_spinner2.toString();
                 String  valor_outros = valorOutros.getText().toString();
                 String  data_outros = dataOutros.getText().toString();
+                String  id_cliente = String.valueOf(Static.getId_cliente());
 
                 List<NameValuePair> nameValuePairs = new ArrayList<NameValuePair>();
                 nameValuePairs.add(new BasicNameValuePair("descricao_outros", descricao_outros));
@@ -118,6 +122,7 @@ public class CadastroOutrosNakasone extends BaseFragment
                 nameValuePairs.add(new BasicNameValuePair("id_grupo2", id_grupo2));
                 nameValuePairs.add(new BasicNameValuePair("valor_outros", valor_outros));
                 nameValuePairs.add(new BasicNameValuePair("data_outros", data_outros));
+                nameValuePairs.add(new BasicNameValuePair("id_cliente", id_cliente));
 
 
                 try {
@@ -152,7 +157,7 @@ public class CadastroOutrosNakasone extends BaseFragment
 
         }
         SendPostReqAsyncTask sendPostReqAsyncTask = new SendPostReqAsyncTask();
-        sendPostReqAsyncTask.execute(descricao_outros, id_grupo, id_grupo2, valor_outros, data_outros);
+        sendPostReqAsyncTask.execute(descricao_outros, id_grupo, id_grupo2, valor_outros, data_outros,id_cliente);
     }
 
     @Override
@@ -413,7 +418,7 @@ public class CadastroOutrosNakasone extends BaseFragment
         String  data_diario = dataOutros.getText().toString();
         String  tipo_diario = "Outros";
         String  idtipo_diario = resposta;
-        String  id_cliente = "1";
+        String  id_cliente = String.valueOf(Static.getId_cliente());
 
         insertToDatabaseDiario(origem_diario,destino_diario,descricao_diario,valor_diario,data_diario,tipo_diario,idtipo_diario,id_cliente);
     }
@@ -441,7 +446,7 @@ public class CadastroOutrosNakasone extends BaseFragment
                 String  data_diario = dataOutros.getText().toString();
                 String  tipo_diario = "Outros";
                 String  idtipo_diario = resposta;
-                String  id_cliente = "1";
+                String  id_cliente = String.valueOf(Static.getId_cliente());
 
                 List<NameValuePair> nameValuePairs = new ArrayList<NameValuePair>();
                 nameValuePairs.add(new BasicNameValuePair("origem_diario", origem_diario));

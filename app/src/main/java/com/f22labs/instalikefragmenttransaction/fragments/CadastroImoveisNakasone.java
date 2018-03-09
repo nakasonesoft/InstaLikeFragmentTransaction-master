@@ -22,6 +22,7 @@ import com.f22labs.instalikefragmenttransaction.R;
 import com.f22labs.instalikefragmenttransaction.activities.MainActivity;
 import com.f22labs.instalikefragmenttransaction.utils.MaskEditUtil;
 import com.f22labs.instalikefragmenttransaction.utils.MoneyTextWatcher;
+import com.f22labs.instalikefragmenttransaction.utils.Static;
 
 import org.apache.http.HttpEntity;
 import org.apache.http.HttpResponse;
@@ -86,13 +87,14 @@ public class CadastroImoveisNakasone extends BaseFragment
         String  conta_prestImovel = id_spinner.toString();
         String  comofoipago_prestImovel = id_spinner2.toString();
         String  data_prestImovel = dataimovel.getText().toString();
+        String  id_cliente = String.valueOf(Static.getId_cliente());
 
 
-        insertToDatabase(descricao_prestImovel, valor_prestImovel, conta_prestImovel, comofoipago_prestImovel, data_prestImovel);
+        insertToDatabase(descricao_prestImovel, valor_prestImovel, conta_prestImovel, comofoipago_prestImovel, data_prestImovel, id_cliente);
 
     }
 
-    private void insertToDatabase(String descricao_prestImovel, String valor_prestImovel,String conta_prestImovel,String comofoipago_prestImovel, String data_prestImovel){
+    private void insertToDatabase(String descricao_prestImovel, String valor_prestImovel,String conta_prestImovel,String comofoipago_prestImovel, String data_prestImovel, String id_cliente){
         class SendPostReqAsyncTask extends AsyncTask<String, Void, String> {
             @Override
             protected String doInBackground(String... params) {
@@ -101,6 +103,7 @@ public class CadastroImoveisNakasone extends BaseFragment
                 String paramconta_prestImovel = params[2];
                 String paramcomofoipago_prestImovel = params[3];
                 String paramdata_prestImovel = params[4];
+                String paramid_cliente= params[5];
 
 
                 //InputStream is = null;
@@ -110,6 +113,7 @@ public class CadastroImoveisNakasone extends BaseFragment
                 String  conta_prestImovel = id_spinner.toString();
                 String  comofoipago_prestImovel = id_spinner2.toString();
                 String  data_prestImovel = dataimovel.getText().toString();
+                String  id_cliente = String.valueOf(Static.getId_cliente());
 
                 List<NameValuePair> nameValuePairs = new ArrayList<NameValuePair>();
                 nameValuePairs.add(new BasicNameValuePair("descricao_prestImovel", descricao_prestImovel));
@@ -117,6 +121,7 @@ public class CadastroImoveisNakasone extends BaseFragment
                 nameValuePairs.add(new BasicNameValuePair("conta_prestImovel", conta_prestImovel));
                 nameValuePairs.add(new BasicNameValuePair("comofoipago_prestImovel", comofoipago_prestImovel));
                 nameValuePairs.add(new BasicNameValuePair("data_prestImovel", data_prestImovel));
+                nameValuePairs.add(new BasicNameValuePair("id_cliente", id_cliente));
 
 
                 try {
@@ -153,7 +158,7 @@ public class CadastroImoveisNakasone extends BaseFragment
 
         }
         SendPostReqAsyncTask sendPostReqAsyncTask = new SendPostReqAsyncTask();
-        sendPostReqAsyncTask.execute(descricao_prestImovel, valor_prestImovel, conta_prestImovel, comofoipago_prestImovel, data_prestImovel);
+        sendPostReqAsyncTask.execute(descricao_prestImovel, valor_prestImovel, conta_prestImovel, comofoipago_prestImovel, data_prestImovel,id_cliente);
     }
 
     @Override
@@ -406,7 +411,7 @@ public class CadastroImoveisNakasone extends BaseFragment
         String  data_diario = dataimovel.getText().toString();
         String  tipo_diario = "Imovel";
         String  idtipo_diario = resposta;
-        String  id_cliente = "1";
+        String  id_cliente = String.valueOf(Static.getId_cliente());
 
         insertToDatabaseDiario(origem_diario,destino_diario,descricao_diario,valor_diario,data_diario,tipo_diario,idtipo_diario,id_cliente);
     }
@@ -435,7 +440,7 @@ public class CadastroImoveisNakasone extends BaseFragment
                 String  data_diario = dataimovel.getText().toString();
                 String  tipo_diario = "Imovel";
                 String  idtipo_diario = resposta;
-                String  id_cliente = "1";
+                String  id_cliente = String.valueOf(Static.getId_cliente());
 
                 List<NameValuePair> nameValuePairs = new ArrayList<NameValuePair>();
                 nameValuePairs.add(new BasicNameValuePair("origem_diario", origem_diario));

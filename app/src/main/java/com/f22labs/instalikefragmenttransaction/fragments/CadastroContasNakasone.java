@@ -19,6 +19,7 @@ import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 import com.f22labs.instalikefragmenttransaction.R;
 import com.f22labs.instalikefragmenttransaction.activities.MainActivity;
+import com.f22labs.instalikefragmenttransaction.utils.Static;
 
 import org.apache.http.HttpEntity;
 import org.apache.http.HttpResponse;
@@ -62,14 +63,15 @@ public class CadastroContasNakasone extends BaseFragment implements Spinner.OnIt
         String  nome_conta = txtDescricaoConta.getText().toString();
         String  saldoinicial_conta = txtSaldoInicialConta.getText().toString();
         String  datafechamento_conta = datafechamentoConta.getText().toString();
+        String  id_cliente = String.valueOf(Static.getId_cliente());
 
 
 
-        insertToDatabase(id_grupo, nome_conta, saldoinicial_conta, datafechamento_conta);
+        insertToDatabase(id_grupo, nome_conta, saldoinicial_conta, datafechamento_conta,id_cliente);
 
     }
 
-    private void insertToDatabase(String id_grupo, String nome_conta,String saldoinicial_conta, String datafechamento_conta){
+    private void insertToDatabase(String id_grupo, String nome_conta,String saldoinicial_conta, String datafechamento_conta, String id_cliente){
         class SendPostReqAsyncTask extends AsyncTask<String, Void, String>
         {
             @Override
@@ -79,17 +81,20 @@ public class CadastroContasNakasone extends BaseFragment implements Spinner.OnIt
                 String paramnome_conta = params[1];
                 String paramsaldoinicial_conta = params[2];
                 String paramdatafechamento_conta = params[3];
+                String paramid_cliente = params[4];
 
                 String  id_grupo = id_spinner.toString();
                 String  nome_conta = txtDescricaoConta.getText().toString();
                 String  saldoinicial_conta = txtSaldoInicialConta.getText().toString();
                 String  datafechamento_conta = datafechamentoConta.getText().toString();
+                String  id_cliente = String.valueOf(Static.getId_cliente());
 
                 List<NameValuePair> nameValuePairs = new ArrayList<NameValuePair>();
                 nameValuePairs.add(new BasicNameValuePair("id_grupo", id_grupo));
                 nameValuePairs.add(new BasicNameValuePair("nome_conta", nome_conta));
                 nameValuePairs.add(new BasicNameValuePair("saldoinicial_conta", saldoinicial_conta));
                 nameValuePairs.add(new BasicNameValuePair("datafechamento_conta", datafechamento_conta));
+                nameValuePairs.add(new BasicNameValuePair("id_cliente", id_cliente));
 
 
 
@@ -129,7 +134,7 @@ public class CadastroContasNakasone extends BaseFragment implements Spinner.OnIt
 
         }
         SendPostReqAsyncTask sendPostReqAsyncTask = new SendPostReqAsyncTask();
-        sendPostReqAsyncTask.execute(id_grupo, nome_conta, saldoinicial_conta, datafechamento_conta);
+        sendPostReqAsyncTask.execute(id_grupo, nome_conta, saldoinicial_conta, datafechamento_conta,id_cliente);
     }
 
     @Override
