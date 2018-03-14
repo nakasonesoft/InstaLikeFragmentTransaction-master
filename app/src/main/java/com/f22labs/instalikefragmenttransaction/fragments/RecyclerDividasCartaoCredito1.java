@@ -68,7 +68,7 @@ public class RecyclerDividasCartaoCredito1 extends BaseFragment implements Recyc
 
     RecyclerView.Adapter recyclerViewadapter;
 
-    String GET_JSON_DATA_HTTP_URL = "http://premiumcontrol.com.br/NakasoneSoftapp/select/select_conta_cartao_credito.php";
+    String GET_JSON_DATA_HTTP_URL = "http://premiumcontrol.com.br/NakasoneSoftapp/select/select_conta_cartao_credito.php?id_cliente="+ Static.getId_cliente()+"";
 
     String JSON_id_conta = "id_conta";
     String JSON_id_despesas = "id_despesas";

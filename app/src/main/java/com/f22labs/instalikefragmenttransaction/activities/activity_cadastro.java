@@ -23,6 +23,7 @@ import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 import com.f22labs.instalikefragmenttransaction.R;
+import com.f22labs.instalikefragmenttransaction.utils.MaskEditUtil;
 import com.f22labs.instalikefragmenttransaction.utils.Static;
 import com.f22labs.instalikefragmenttransaction.utils.staticd;
 
@@ -46,6 +47,8 @@ import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 public class activity_cadastro extends AppCompatActivity {
 
@@ -173,7 +176,8 @@ public class activity_cadastro extends AppCompatActivity {
     //endregion
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    protected void onCreate(Bundle savedInstanceState)
+    {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login_cadastro);
         cadastrar = (Button) findViewById(R.id.cadastrar);
@@ -183,6 +187,7 @@ public class activity_cadastro extends AppCompatActivity {
         data = (EditText)findViewById(R.id.data);
         spinner = (Spinner)findViewById(R.id.spinner_estado);
         spinner2 = (Spinner)findViewById(R.id.spinner_cidade);
+        data.addTextChangedListener(MaskEditUtil.mask(data, MaskEditUtil.FORMAT_DATE));
         students = new ArrayList<String>();
         ids = new ArrayList<String>();
         students2 = new ArrayList<String>();
@@ -227,15 +232,23 @@ public class activity_cadastro extends AppCompatActivity {
 
         cadastrar.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v) {
-                insert();
+            public void onClick(View v)
+            {
+                if(nome.getText().toString().equals("") || email.getText().toString().equals("")|| senha.getText().toString().equals("") || data.getText().toString().equals(""))
+                {
+                    Toast.makeText(getApplicationContext(),"Preencha todos os campos!",Toast.LENGTH_LONG).show();
+                }
+                else
+                {
+                    checkLogin(v);
+
+                }
+
 
             }
         });
 
     }
-
-
 
     public void insert(){
 
@@ -251,11 +264,6 @@ public class activity_cadastro extends AppCompatActivity {
         insertToDatabase(nome_cliente, email_cliente, senha_cliente, data_cliente, cidade_cliente, estado_cliente);
 
     }
-
-
-
-
-
 
     private void insertToDatabase(String nome_cliente, String email_cliente,String senha_cliente,String data_cliente, String cidade_cliente, String estado_cliente){
         class SendPostReqAsyncTask extends AsyncTask<String, Void, String> {
@@ -307,6 +315,7 @@ public class activity_cadastro extends AppCompatActivity {
                             System.out.println(inputLine);
 
                             recebido = inputLine;
+                            Log.d("recebido",recebido);
 
                             Static.setLogin(Integer.parseInt(inputLine.trim().toString()));
 
@@ -354,8 +363,6 @@ public class activity_cadastro extends AppCompatActivity {
         SendPostReqAsyncTask sendPostReqAsyncTask = new SendPostReqAsyncTask();
         sendPostReqAsyncTask.execute(nome_cliente, email_cliente, senha_cliente, data_cliente, cidade_cliente, estado_cliente);
     }
-
-
 
     //region Login Normal
     public void Logpes()
@@ -471,5 +478,53 @@ public class activity_cadastro extends AppCompatActivity {
     }
     //endregion
 
+    //region Cuidados com o E-mail e Senha
+    public void checkLogin(View arg0)
+    {
+
+        final String email2 = email.getText().toString();
+        if (!isValidEmail(email2))
+        {
+            //Set error message for email field
+            //Toast.makeText(getApplicationContext(),"email field",Toast.LENGTH_LONG).show();
+            email.setError("Email inválido");
+        }
+
+        final String pass = senha.getText().toString();
+        if (!isValidPassword(pass)) {
+            //Set error message for password field
+            //Toast.makeText(getApplicationContext(),"",Toast.LENGTH_LONG).show();
+            senha.setError("A senha deve conter no mínimo 6 caracteres");
+        }
+
+        if(isValidEmail(email2) && isValidPassword(pass))
+        {
+            insert();
+        }
+
+    }
+
+    // validating email id
+    private boolean isValidEmail(String email)
+    {
+        String EMAIL_PATTERN = "^[_A-Za-z0-9-\\+]+(\\.[_A-Za-z0-9-]+)*@"
+                + "[A-Za-z0-9-]+(\\.[A-Za-z0-9]+)*(\\.[A-Za-z]{2,})$";
+
+        Pattern pattern;
+        pattern = Pattern.compile(EMAIL_PATTERN);
+        Matcher matcher = pattern.matcher(email);
+        return matcher.matches();
+    }
+
+    // validating password
+    private boolean isValidPassword(String pass)
+    {
+        if (pass != null && pass.length() >= 6) {
+            return true;
+        }
+        return false;
+    }
+
+    //endregion
 
 }

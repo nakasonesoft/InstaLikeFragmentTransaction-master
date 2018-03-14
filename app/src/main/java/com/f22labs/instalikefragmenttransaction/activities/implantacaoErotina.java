@@ -256,12 +256,13 @@ public class implantacaoErotina extends AppCompatActivity {
 
         String  id_grupo = id_grupo_conta2;
         String  nome_conta = nome_conta2;
+        String  id_cliente = String.valueOf(Static.getId_cliente());
 
-        insertToDatabase(id_grupo, nome_conta);
+        insertToDatabase(id_grupo, nome_conta,id_cliente);
 
     }
 
-    private void insertToDatabase(String id_grupo, String nome_conta){
+    private void insertToDatabase(String id_grupo, String nome_conta,String id_cliente){
         class SendPostReqAsyncTask extends AsyncTask<String, Void, String>
         {
             @Override
@@ -269,15 +270,17 @@ public class implantacaoErotina extends AppCompatActivity {
             {
                 String paramid_grupo = params[0];
                 String paramnome_conta = params[1];
+                String paramid_cliente = params[2];
 
 
                 String  id_grupo = id_grupo_conta2;
                 String  nome_conta = nome_conta2;
-
+                String  id_cliente = String.valueOf(Static.getId_cliente());
 
                 List<NameValuePair> nameValuePairs = new ArrayList<NameValuePair>();
                 nameValuePairs.add(new BasicNameValuePair("id_grupo", id_grupo));
                 nameValuePairs.add(new BasicNameValuePair("nome_conta", nome_conta));
+                nameValuePairs.add(new BasicNameValuePair("id_cliente", id_cliente));
 
                 try
                 {
@@ -315,6 +318,6 @@ public class implantacaoErotina extends AppCompatActivity {
 
         }
         SendPostReqAsyncTask sendPostReqAsyncTask = new SendPostReqAsyncTask();
-        sendPostReqAsyncTask.execute(id_grupo, nome_conta);
+        sendPostReqAsyncTask.execute(id_grupo, nome_conta,id_cliente);
     }
 }

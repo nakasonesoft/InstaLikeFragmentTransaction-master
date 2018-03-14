@@ -22,6 +22,7 @@ import com.f22labs.instalikefragmenttransaction.adapters.RecyclerViewAdapter;
 import com.f22labs.instalikefragmenttransaction.adapters.RecyclerViewAdapterDespesa;
 import com.f22labs.instalikefragmenttransaction.adapters.RecyclerViewAdapterDividasCartaoCredito;
 import com.f22labs.instalikefragmenttransaction.interfaces.RecyclerViewOnClickListenerHack;
+import com.f22labs.instalikefragmenttransaction.utils.Static;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -67,7 +68,7 @@ public class RecyclerDividasCartaoCredito extends BaseFragment implements Recycl
 
     RecyclerView.Adapter recyclerViewadapter;
 
-    String GET_JSON_DATA_HTTP_URL = "http://premiumcontrol.com.br/NakasoneSoftapp/select/select_conta_cartao_credito.php";
+    String GET_JSON_DATA_HTTP_URL = "http://premiumcontrol.com.br/NakasoneSoftapp/select/select_conta_cartao_credito.php?id_cliente="+ Static.getId_cliente()+"";
 
     String JSON_id_conta = "id_conta";
     String JSON_id_grupo = "id_grupo";

@@ -173,6 +173,12 @@ public class CadastroTransferenciaNakasone extends BaseFragment{
         valortransferencia.addTextChangedListener(new MoneyTextWatcher(valortransferencia));
         //endregion
 
+        //region Máscaras
+        datatransferencia.addTextChangedListener(MaskEditUtil.mask(datatransferencia, MaskEditUtil.FORMAT_DATE));
+
+        valortransferencia.addTextChangedListener(new MoneyTextWatcher(valortransferencia));
+        //endregion
+
         //region declarar variaveis spinner
         students = new ArrayList<String>();
         ids = new ArrayList<String>();

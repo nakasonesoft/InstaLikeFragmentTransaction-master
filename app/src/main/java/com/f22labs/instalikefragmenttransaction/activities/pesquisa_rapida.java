@@ -9,6 +9,7 @@ import android.widget.Button;
 import android.widget.Toast;
 
 import com.f22labs.instalikefragmenttransaction.R;
+import com.f22labs.instalikefragmenttransaction.utils.Static;
 
 import org.apache.http.HttpEntity;
 import org.apache.http.HttpResponse;
@@ -139,9 +140,10 @@ public class pesquisa_rapida extends AppCompatActivity implements View.OnClickLi
 
 
             @Override
-            protected void onPostExecute(String result) {
+            protected void onPostExecute(String result)
+            {
                 super.onPostExecute(result);
-
+                insertContaPadrao();
                 Intent intent = new Intent(getApplicationContext(), activity_login.class );
                 startActivity(intent);
                 //TextView textViewResult = (TextView) findViewById(R.id.textViewResult);
@@ -156,5 +158,57 @@ public class pesquisa_rapida extends AppCompatActivity implements View.OnClickLi
     }
 
 
+    //region Insert de conta padrão.
+    public void insertContaPadrao() {
 
+        String  meio = valor.toString();
+
+        insertToDatabaseContaPadrao();
+
+    }
+
+
+    private void insertToDatabaseContaPadrao()
+    {
+        class SendPostReqAsyncTask extends AsyncTask<String, Void, String>
+        {
+            @Override
+            protected String doInBackground(String... params)
+            {
+
+
+                try
+                {
+                    HttpClient httpClient = new DefaultHttpClient();
+
+                    HttpPost httpPost = new HttpPost("http://premiumcontrol.com.br/NakasoneSoftapp/cadastrar_padrao.php?id_cliente="+ Static.getId_cliente()+"");
+
+                    //httpPost.setEntity(new UrlEncodedFormEntity(nameValuePairs));
+
+                    HttpResponse response = httpClient.execute(httpPost);
+
+                    HttpEntity entity = response.getEntity();
+
+                    //is = entity.getContent();
+
+                }
+
+                catch (ClientProtocolException e) {}
+
+                catch (IOException e) {}
+                return "success";
+            }
+
+            @Override
+            protected void onPostExecute(String result) {super.onPostExecute(result);}
+
+        }
+
+        SendPostReqAsyncTask sendPostReqAsyncTask = new SendPostReqAsyncTask();
+
+        sendPostReqAsyncTask.execute();
+    }
+
+
+    //endregion
 }

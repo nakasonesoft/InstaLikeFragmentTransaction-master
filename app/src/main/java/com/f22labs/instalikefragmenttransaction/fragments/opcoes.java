@@ -213,6 +213,7 @@ public class opcoes extends BaseFragment{
             @Override
             public void onClick(View v) {
                 mFragmentNavigation.pushFragment(new politica());
+
             }
         });
 

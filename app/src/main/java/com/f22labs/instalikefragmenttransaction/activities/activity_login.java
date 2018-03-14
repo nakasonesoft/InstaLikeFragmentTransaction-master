@@ -190,7 +190,9 @@ public class activity_login extends AppCompatActivity {
                     //ID.setId(Integer.parseInt(result));
                     Static.setId_cliente(Integer.parseInt(resposta));
 
-                    if(Static.getId_cliente() == 1){
+                    if(Static.getId_cliente() == 1)
+                    {
+                        //startActivity(new Intent(getApplicationContext(), AdminActivity.class));
                         startActivity(new Intent(getApplicationContext(), AdminActivity.class));
                         finish();
                     }

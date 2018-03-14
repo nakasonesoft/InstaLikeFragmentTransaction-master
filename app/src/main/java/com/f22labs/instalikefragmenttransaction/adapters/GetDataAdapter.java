@@ -5,6 +5,12 @@ public class GetDataAdapter
     //Geral-----------------------------------------------------------------------------------------
     private String id_cliente;
 
+    //pagseguro-------------------------------------------------------------------------------------
+    private String status_pagseguro;
+
+
+
+
     //Carnê--------------------------------------------------------------------------------------
     private String id_carne;
     private String descricao_carne;
@@ -581,6 +587,14 @@ public class GetDataAdapter
 
     public void setQntd_carne(String qntd_carne) {
         this.qntd_carne = qntd_carne;
+    }
+
+    public String getStatus_pagseguro() {
+        return status_pagseguro;
+    }
+
+    public void setStatus_pagseguro(String status_pagseguro) {
+        this.status_pagseguro = status_pagseguro;
     }
     //endregion
 

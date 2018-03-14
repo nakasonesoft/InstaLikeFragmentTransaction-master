@@ -144,8 +144,8 @@ public class RecyclerFaturaDespesaJan extends BaseFragment implements RecyclerVi
         //region Jsons
         switch (Static.getMes())
         {
-            case 0:  GET_JSON_DATA_HTTP_URL = "http://premiumcontrol.com.br/NakasoneSoftapp/select/credito_jan.php";
-                url = "http://premiumcontrol.com.br/NakasoneSoftapp/select/credito_jan_total.php";
+            case 0:  GET_JSON_DATA_HTTP_URL = "http://premiumcontrol.com.br/NakasoneSoftapp/select/credito_jan.php?id_cliente="+ Static.getId_cliente()+"";
+                url = "http://premiumcontrol.com.br/NakasoneSoftapp/select/credito_jan_total.php?id_cliente="+ Static.getId_cliente()+"";
                 ((MainActivity)getActivity()).updateToolbarTitle("Fatura de Janeiro");
                 //region Jan
                 SharedPreferences settings = getActivity().getSharedPreferences(PREFS_JAN, getActivity().MODE_PRIVATE);
@@ -161,8 +161,8 @@ public class RecyclerFaturaDespesaJan extends BaseFragment implements RecyclerVi
                 //endregion
             break;
 
-            case 1:  GET_JSON_DATA_HTTP_URL = "http://premiumcontrol.com.br/NakasoneSoftapp/select/credito_fev.php";
-                url = "http://premiumcontrol.com.br/NakasoneSoftapp/select/credito_fev_total.php";
+            case 1:  GET_JSON_DATA_HTTP_URL = "http://premiumcontrol.com.br/NakasoneSoftapp/select/credito_fev.php?id_cliente="+ Static.getId_cliente()+"";
+                url = "http://premiumcontrol.com.br/NakasoneSoftapp/select/credito_fev_total.php?id_cliente="+ Static.getId_cliente()+"";
                 ((MainActivity)getActivity()).updateToolbarTitle("Fatura de Fevereiro");
 
                 //region Fev
@@ -180,8 +180,8 @@ public class RecyclerFaturaDespesaJan extends BaseFragment implements RecyclerVi
                 //endregion
                 break;
 
-            case 2:  GET_JSON_DATA_HTTP_URL = "http://premiumcontrol.com.br/NakasoneSoftapp/select/credito_mar.php";
-                url = "http://premiumcontrol.com.br/NakasoneSoftapp/select/credito_mar_total.php";
+            case 2:  GET_JSON_DATA_HTTP_URL = "http://premiumcontrol.com.br/NakasoneSoftapp/select/credito_mar.php?id_cliente="+ Static.getId_cliente()+"";
+                url = "http://premiumcontrol.com.br/NakasoneSoftapp/select/credito_mar_total.php?id_cliente="+ Static.getId_cliente()+"";
                 ((MainActivity)getActivity()).updateToolbarTitle("Fatura de Março");
 
                 //region MAR
@@ -199,8 +199,8 @@ public class RecyclerFaturaDespesaJan extends BaseFragment implements RecyclerVi
                 //endregion
             break;
 
-            case 3:  GET_JSON_DATA_HTTP_URL = "http://premiumcontrol.com.br/NakasoneSoftapp/select/credito_abr.php";
-                url = "http://premiumcontrol.com.br/NakasoneSoftapp/select/credito_abr_total.php";
+            case 3:  GET_JSON_DATA_HTTP_URL = "http://premiumcontrol.com.br/NakasoneSoftapp/select/credito_abr.php?id_cliente="+ Static.getId_cliente()+"";
+                url = "http://premiumcontrol.com.br/NakasoneSoftapp/select/credito_abr_total.php?id_cliente="+ Static.getId_cliente()+"";
                 ((MainActivity)getActivity()).updateToolbarTitle("Fatura de Abril");
                 //region ABR
                 SharedPreferences settingsabr = getActivity().getSharedPreferences(PREFS_ABR, getActivity().MODE_PRIVATE);
@@ -217,8 +217,8 @@ public class RecyclerFaturaDespesaJan extends BaseFragment implements RecyclerVi
                 //endregion
             break;
 
-            case 4:  GET_JSON_DATA_HTTP_URL = "http://premiumcontrol.com.br/NakasoneSoftapp/select/credito_mai.php";
-                url = "http://premiumcontrol.com.br/NakasoneSoftapp/select/credito_mai_total.php";
+            case 4:  GET_JSON_DATA_HTTP_URL = "http://premiumcontrol.com.br/NakasoneSoftapp/select/credito_mai.php?id_cliente="+ Static.getId_cliente()+"";
+                url = "http://premiumcontrol.com.br/NakasoneSoftapp/select/credito_mai_total.php?id_cliente="+ Static.getId_cliente()+"";
                 ((MainActivity)getActivity()).updateToolbarTitle("Fatura de Maio");
                 //region MAio
                 SharedPreferences settingsmai = getActivity().getSharedPreferences(PREFS_MAI, getActivity().MODE_PRIVATE);
@@ -235,8 +235,8 @@ public class RecyclerFaturaDespesaJan extends BaseFragment implements RecyclerVi
                 //endregion
                 break;
 
-            case 5:  GET_JSON_DATA_HTTP_URL = "http://premiumcontrol.com.br/NakasoneSoftapp/select/credito_jun.php";
-                url = "http://premiumcontrol.com.br/NakasoneSoftapp/select/credito_jun_total.php";
+            case 5:  GET_JSON_DATA_HTTP_URL = "http://premiumcontrol.com.br/NakasoneSoftapp/select/credito_jun.php?id_cliente="+ Static.getId_cliente()+"";
+                url = "http://premiumcontrol.com.br/NakasoneSoftapp/select/credito_jun_total.php?id_cliente="+ Static.getId_cliente()+"";
                 ((MainActivity)getActivity()).updateToolbarTitle("Fatura de Junho");
                 //region Jun
                 SharedPreferences settingsjun = getActivity().getSharedPreferences(PREFS_JUN, getActivity().MODE_PRIVATE);
@@ -253,8 +253,8 @@ public class RecyclerFaturaDespesaJan extends BaseFragment implements RecyclerVi
                 //endregion
                 break;
 
-            case 6:  GET_JSON_DATA_HTTP_URL = "http://premiumcontrol.com.br/NakasoneSoftapp/select/credito_jul.php";
-                url = "http://premiumcontrol.com.br/NakasoneSoftapp/select/credito_jul_total.php";
+            case 6:  GET_JSON_DATA_HTTP_URL = "http://premiumcontrol.com.br/NakasoneSoftapp/select/credito_jul.php?id_cliente="+ Static.getId_cliente()+"";
+                url = "http://premiumcontrol.com.br/NakasoneSoftapp/select/credito_jul_total.php?id_cliente="+ Static.getId_cliente()+"";
                 ((MainActivity)getActivity()).updateToolbarTitle("Fatura de Julho");
                 //region Jul
                 SharedPreferences settingsjul = getActivity().getSharedPreferences(PREFS_JUL, getActivity().MODE_PRIVATE);
@@ -271,8 +271,8 @@ public class RecyclerFaturaDespesaJan extends BaseFragment implements RecyclerVi
                 //endregion
                 break;
 
-            case 7:  GET_JSON_DATA_HTTP_URL = "http://premiumcontrol.com.br/NakasoneSoftapp/select/credito_ago.php";
-                url = "http://premiumcontrol.com.br/NakasoneSoftapp/select/credito_ago_total.php";
+            case 7:  GET_JSON_DATA_HTTP_URL = "http://premiumcontrol.com.br/NakasoneSoftapp/select/credito_ago.php?id_cliente="+ Static.getId_cliente()+"";
+                url = "http://premiumcontrol.com.br/NakasoneSoftapp/select/credito_ago_total.php?id_cliente="+ Static.getId_cliente()+"";
                 ((MainActivity)getActivity()).updateToolbarTitle("Fatura de Agosto");
                 //region Ago
                 SharedPreferences settingsago = getActivity().getSharedPreferences(PREFS_AGO, getActivity().MODE_PRIVATE);
@@ -289,8 +289,8 @@ public class RecyclerFaturaDespesaJan extends BaseFragment implements RecyclerVi
                 //endregion
             break;
 
-            case 8:  GET_JSON_DATA_HTTP_URL = "http://premiumcontrol.com.br/NakasoneSoftapp/select/credito_set.php";
-                url = "http://premiumcontrol.com.br/NakasoneSoftapp/select/credito_set_total.php";
+            case 8:  GET_JSON_DATA_HTTP_URL = "http://premiumcontrol.com.br/NakasoneSoftapp/select/credito_set.php?id_cliente="+ Static.getId_cliente()+"";
+                url = "http://premiumcontrol.com.br/NakasoneSoftapp/select/credito_set_total.php?id_cliente="+ Static.getId_cliente()+"";
                 ((MainActivity)getActivity()).updateToolbarTitle("Fatura de Setembro");
                 //region SET
                 SharedPreferences settingsset = getActivity().getSharedPreferences(PREFS_SET, getActivity().MODE_PRIVATE);
@@ -307,8 +307,8 @@ public class RecyclerFaturaDespesaJan extends BaseFragment implements RecyclerVi
                 //endregion
             break;
 
-            case 9:  GET_JSON_DATA_HTTP_URL = "http://premiumcontrol.com.br/NakasoneSoftapp/select/credito_out.php";
-                url = "http://premiumcontrol.com.br/NakasoneSoftapp/select/credito_out_total.php";
+            case 9:  GET_JSON_DATA_HTTP_URL = "http://premiumcontrol.com.br/NakasoneSoftapp/select/credito_out.php?id_cliente="+ Static.getId_cliente()+"";
+                url = "http://premiumcontrol.com.br/NakasoneSoftapp/select/credito_out_total.php?id_cliente="+ Static.getId_cliente()+"";
                 ((MainActivity)getActivity()).updateToolbarTitle("Fatura de Outubro");
                 //region Out
                 SharedPreferences settingsout = getActivity().getSharedPreferences(PREFS_OUT, getActivity().MODE_PRIVATE);
@@ -325,8 +325,8 @@ public class RecyclerFaturaDespesaJan extends BaseFragment implements RecyclerVi
                 //endregion
             break;
 
-            case 10:  GET_JSON_DATA_HTTP_URL = "http://premiumcontrol.com.br/NakasoneSoftapp/select/credito_nov.php";
-                url = "http://premiumcontrol.com.br/NakasoneSoftapp/select/credito_nov_total.php";
+            case 10:  GET_JSON_DATA_HTTP_URL = "http://premiumcontrol.com.br/NakasoneSoftapp/select/credito_nov.php?id_cliente="+ Static.getId_cliente()+"";
+                url = "http://premiumcontrol.com.br/NakasoneSoftapp/select/credito_nov_total.php?id_cliente="+ Static.getId_cliente()+"";
                 ((MainActivity)getActivity()).updateToolbarTitle("Fatura de Novembro");
                 //region Nov
                 SharedPreferences settingsnov = getActivity().getSharedPreferences(PREFS_NOV, getActivity().MODE_PRIVATE);
@@ -343,8 +343,8 @@ public class RecyclerFaturaDespesaJan extends BaseFragment implements RecyclerVi
                 //endregion
                 break;
 
-            case 11:  GET_JSON_DATA_HTTP_URL = "http://premiumcontrol.com.br/NakasoneSoftapp/select/credito_dez.php";
-                url = "http://premiumcontrol.com.br/NakasoneSoftapp/select/credito_dez_total.php";
+            case 11:  GET_JSON_DATA_HTTP_URL = "http://premiumcontrol.com.br/NakasoneSoftapp/select/credito_dez.php?id_cliente="+ Static.getId_cliente()+"";
+                url = "http://premiumcontrol.com.br/NakasoneSoftapp/select/credito_dez_total.php?id_cliente="+ Static.getId_cliente()+"";
                 ((MainActivity)getActivity()).updateToolbarTitle("Fatura de Dezembro");
                 //region DEZ
                 SharedPreferences settingsdez = getActivity().getSharedPreferences(PREFS_DEZ, getActivity().MODE_PRIVATE);
@@ -420,14 +420,15 @@ public class RecyclerFaturaDespesaJan extends BaseFragment implements RecyclerVi
         String  conta_despesas = "Fatura";
         String  valor_despesas = credito_jan.getText().toString();
         String  comofoipago_despesas = "Fatura";
+        String  id_cliente = String.valueOf(Static.getId_cliente());
 
 
 
-        insertToDatabase(descricao_despesas, conta_despesas, valor_despesas, comofoipago_despesas);
+        insertToDatabase(descricao_despesas, conta_despesas, valor_despesas, comofoipago_despesas,id_cliente);
 
     }
 
-    private void insertToDatabase(String descricao_despesas, String conta_despesas,String valor_despesas,String comofoipago_despesas){
+    private void insertToDatabase(String descricao_despesas, String conta_despesas,String valor_despesas,String comofoipago_despesas, String id_cliente){
         class SendPostReqAsyncTask extends AsyncTask<String, Void, String> {
             @Override
             protected String doInBackground(String... params) {
@@ -435,6 +436,7 @@ public class RecyclerFaturaDespesaJan extends BaseFragment implements RecyclerVi
                 String paramconta_despesas = params[1];
                 String paramvalor_despesas = params[2];
                 String paramcomofoipago_despesas = params[3];
+                String paramid_cliente = params[4];
 
 
                 //InputStream is = null;
@@ -442,12 +444,14 @@ public class RecyclerFaturaDespesaJan extends BaseFragment implements RecyclerVi
                 String  conta_despesas = "Fatura";
                 String  valor_despesas = credito_jan.getText().toString();
                 String  comofoipago_despesas = "Fatura";
+                String  id_cliente = String.valueOf(Static.getId_cliente());
 
                 List<NameValuePair> nameValuePairs = new ArrayList<NameValuePair>();
                 nameValuePairs.add(new BasicNameValuePair("descricao_despesas", descricao_despesas));
                 nameValuePairs.add(new BasicNameValuePair("conta_despesas", conta_despesas));
                 nameValuePairs.add(new BasicNameValuePair("valor_despesas", valor_despesas));
                 nameValuePairs.add(new BasicNameValuePair("comofoipago_despesas", comofoipago_despesas));
+                nameValuePairs.add(new BasicNameValuePair("id_cliente", id_cliente));
 
                 try {
                     HttpClient httpClient = new DefaultHttpClient();

@@ -22,6 +22,7 @@ import com.f22labs.instalikefragmenttransaction.adapters.RecyclerViewAdapter;
 import com.f22labs.instalikefragmenttransaction.adapters.RecyclerViewAdapterDeposito;
 import com.f22labs.instalikefragmenttransaction.adapters.RecyclerViewAdapterReceita;
 import com.f22labs.instalikefragmenttransaction.interfaces.RecyclerViewOnClickListenerHack;
+import com.f22labs.instalikefragmenttransaction.utils.Static;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -67,7 +68,7 @@ public class RecyclerAltExcDeposito extends BaseFragment implements RecyclerView
 
     RecyclerView.Adapter recyclerViewadapter;
 
-    String GET_JSON_DATA_HTTP_URL = "http://premiumcontrol.com.br/NakasoneSoftapp/select/select_deposito.php";
+    String GET_JSON_DATA_HTTP_URL = "http://premiumcontrol.com.br/NakasoneSoftapp/select/select_deposito.php?id_cliente="+ Static.getId_cliente()+"";
 
     String JSON_id_deposito = "id_deposito";
     String JSON_descricao_deposito = "descricao_deposito";

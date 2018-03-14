@@ -95,7 +95,7 @@ public class RecyclerContasPatrimonio extends BaseFragment implements RecyclerVi
 
 
     String GET_JSON_DATA_HTTP_URL = "http://premiumcontrol.com.br/NakasoneSoftapp/select/select_conta_patrimonio.php";
-    String GET_JSON_DATA_HTTP_URL1 = "http://premiumcontrol.com.br/NakasoneSoftapp/select/set_total_patrimonio.php?id_grupo=8";
+    String GET_JSON_DATA_HTTP_URL1 = "http://premiumcontrol.com.br/NakasoneSoftapp/select/set_total_patrimonio.php?id_cliente="+Static.getId_cliente()+"&id_grupo=2";
 
     String JSON_id_conta = "id_conta";
     String JSON_nome_conta = "nome_conta";
@@ -125,22 +125,22 @@ public class RecyclerContasPatrimonio extends BaseFragment implements RecyclerVi
 
         switch (Static.getTipo_patrimonio()){
             case 2:
-                GET_JSON_DATA_HTTP_URL = "http://premiumcontrol.com.br/NakasoneSoftapp/select/select_conta_patrimonio.php?id_grupo=2";
-                GET_JSON_DATA_HTTP_URL1 = "http://premiumcontrol.com.br/NakasoneSoftapp/select/set_total_patrimonio.php?id_grupo=2";
+                GET_JSON_DATA_HTTP_URL = "http://premiumcontrol.com.br/NakasoneSoftapp/select/select_conta_patrimonio.php?id_cliente="+Static.getId_cliente()+"&id_grupo=2";
+                GET_JSON_DATA_HTTP_URL1 = "http://premiumcontrol.com.br/NakasoneSoftapp/select/set_total_patrimonio.php?id_grupo=2&id_cliente="+Static.getId_cliente()+"";
 
 
                 break;
             case 8:
-                GET_JSON_DATA_HTTP_URL = "http://premiumcontrol.com.br/NakasoneSoftapp/select/select_conta_patrimonio.php?id_grupo=8";
-                GET_JSON_DATA_HTTP_URL1 = "http://premiumcontrol.com.br/NakasoneSoftapp/select/set_total_patrimonio.php?id_grupo=8";
+                GET_JSON_DATA_HTTP_URL = "http://premiumcontrol.com.br/NakasoneSoftapp/select/select_conta_patrimonio.php?id_cliente="+Static.getId_cliente()+"&id_grupo=8";
+                GET_JSON_DATA_HTTP_URL1 = "http://premiumcontrol.com.br/NakasoneSoftapp/select/set_total_patrimonio.php?id_grupo=8&id_cliente="+Static.getId_cliente()+"";
                 break;
             case 9:
-                GET_JSON_DATA_HTTP_URL = "http://premiumcontrol.com.br/NakasoneSoftapp/select/select_conta_patrimonio.php?id_grupo=9";
-                GET_JSON_DATA_HTTP_URL1 = "http://premiumcontrol.com.br/NakasoneSoftapp/select/set_total_patrimonio.php?id_grupo=9";
+                GET_JSON_DATA_HTTP_URL = "http://premiumcontrol.com.br/NakasoneSoftapp/select/select_conta_patrimonio.php?id_cliente="+Static.getId_cliente()+"&id_grupo=9";
+                GET_JSON_DATA_HTTP_URL1 = "http://premiumcontrol.com.br/NakasoneSoftapp/select/set_total_patrimonio.php?id_grupo=9&id_cliente="+Static.getId_cliente()+"";
                 break;
             case 10:
-                GET_JSON_DATA_HTTP_URL = "http://premiumcontrol.com.br/NakasoneSoftapp/select/select_conta_patrimonio.php?id_grupo=10";
-                GET_JSON_DATA_HTTP_URL1 = "http://premiumcontrol.com.br/NakasoneSoftapp/select/set_total_patrimonio.php?id_grupo=10";
+                GET_JSON_DATA_HTTP_URL = "http://premiumcontrol.com.br/NakasoneSoftapp/select/select_conta_patrimonio.php?id_cliente="+Static.getId_cliente()+"&id_grupo=10";
+                GET_JSON_DATA_HTTP_URL1 = "http://premiumcontrol.com.br/NakasoneSoftapp/select/set_total_patrimonio.php?id_grupo=10&id_cliente="+Static.getId_cliente()+"";
                 break;
         }
 

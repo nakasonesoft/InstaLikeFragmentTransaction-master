@@ -22,6 +22,7 @@ import com.f22labs.instalikefragmenttransaction.adapters.RecyclerViewAdapter;
 import com.f22labs.instalikefragmenttransaction.adapters.RecyclerViewAdapterConsorcio;
 import com.f22labs.instalikefragmenttransaction.adapters.RecyclerViewAdapterImovel;
 import com.f22labs.instalikefragmenttransaction.interfaces.RecyclerViewOnClickListenerHack;
+import com.f22labs.instalikefragmenttransaction.utils.Static;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -67,7 +68,7 @@ public class RecyclerAltExcConsorcio extends BaseFragment implements RecyclerVie
 
     RecyclerView.Adapter recyclerViewadapter;
 
-    String GET_JSON_DATA_HTTP_URL = "http://premiumcontrol.com.br/NakasoneSoftapp/select/select_consorcio.php";
+    String GET_JSON_DATA_HTTP_URL = "http://premiumcontrol.com.br/NakasoneSoftapp/select/select_consorcio.php?id_cliente="+ Static.getId_cliente()+"";
     String JSON_id_consorcio = "id_consorcio";
     String JSON_descricao_consorcio = "descricao_consorcio";
     String JSON_valor_consorcio = "valor_consorcio";

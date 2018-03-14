@@ -77,13 +77,13 @@ public class ListAdapterClass extends BaseAdapter {
             {
                 viewItem.SwitchViewSubjectName.setChecked(true);
                 viewItem.SwitchViewSubjectName.setText("Ativada");
-                Log.d("Caiu no if", "Bom menino kkkk");
+
             }
             else
             {
                 viewItem.SwitchViewSubjectName.setChecked(false);
                 viewItem.SwitchViewSubjectName.setText("Desativada");
-                Log.d("Caiu no else", "Se fodeu kkkk");
+
             }
 
             viewItem.SwitchViewSubjectName.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
@@ -92,9 +92,10 @@ public class ListAdapterClass extends BaseAdapter {
                     if (isChecked)
                     {
                         UpdateToDatabase(valueList.get(position).getId_conta());
+
                         buttonView.setText("Ativada");
                     } else {
-                        if (isChecked == false)
+                        if (!isChecked)
                         {
                             UpdateToDatabaseDesativar(valueList.get(position).getId_conta());
                             buttonView.setText("Desativada");

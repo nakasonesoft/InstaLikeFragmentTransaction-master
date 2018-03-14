@@ -23,6 +23,7 @@ import com.f22labs.instalikefragmenttransaction.activities.MainActivity;
 import com.f22labs.instalikefragmenttransaction.adapters.GetDataAdapterDiario;
 import com.f22labs.instalikefragmenttransaction.adapters.RecyclerViewAdapterDiario2;
 import com.f22labs.instalikefragmenttransaction.interfaces.RecyclerViewOnClickListenerHack;
+import com.f22labs.instalikefragmenttransaction.utils.Static;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -67,7 +68,7 @@ public class RecyclerDiario2 extends BaseFragment implements RecyclerViewOnClick
     RecyclerView.LayoutManager recyclerViewlayoutManager = new LinearLayoutManager(getActivity());
     RecyclerView.Adapter recyclerViewadapter;
 
-    String GET_JSON_DATA_HTTP_URL = "http://premiumcontrol.com.br/NakasoneSoftapp/Select_Diario_Final.php";
+    String GET_JSON_DATA_HTTP_URL = "http://premiumcontrol.com.br/NakasoneSoftapp/Select_Diario_Final.php?id_cliente="+ Static.getId_cliente()+"";
 
     private final String KEY_RECYCLER_STATE = "recycler_state";
 

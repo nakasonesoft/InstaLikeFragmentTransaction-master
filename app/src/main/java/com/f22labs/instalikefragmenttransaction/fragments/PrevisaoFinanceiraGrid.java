@@ -16,6 +16,7 @@ import com.f22labs.instalikefragmenttransaction.R;
 import com.f22labs.instalikefragmenttransaction.activities.MainActivity;
 import com.f22labs.instalikefragmenttransaction.utils.Downloader;
 import com.f22labs.instalikefragmenttransaction.utils.Downloader2;
+import com.f22labs.instalikefragmenttransaction.utils.Static;
 
 import java.util.ArrayList;
 
@@ -37,7 +38,7 @@ public class PrevisaoFinanceiraGrid extends BaseFragment
 
     GridView mGridView;
 
-    final static String urlAddress  = "http://premiumcontrol.com.br/NakasoneSoftapp/select/select_previsao_financeira.php";
+    final static String urlAddress  = "http://premiumcontrol.com.br/NakasoneSoftapp/select/select_previsao_financeira.php?id_cliente="+ Static.getId_cliente()+"";
 
     public static GridView gvPrimeiroTotal = null;
     final ArrayList<String> items = new ArrayList<String>();

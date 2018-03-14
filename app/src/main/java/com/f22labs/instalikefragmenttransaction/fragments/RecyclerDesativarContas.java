@@ -22,6 +22,7 @@ import com.f22labs.instalikefragmenttransaction.R;
 import com.f22labs.instalikefragmenttransaction.adapters.GetDataAdapterDesativarContas;
 import com.f22labs.instalikefragmenttransaction.adapters.RecyclerViewAdapterDesativarContas;
 import com.f22labs.instalikefragmenttransaction.interfaces.RecyclerViewOnClickListenerHack;
+import com.f22labs.instalikefragmenttransaction.utils.Static;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -64,7 +65,7 @@ public class RecyclerDesativarContas extends BaseFragment implements RecyclerVie
     RecyclerView.LayoutManager recyclerViewlayoutManager = new LinearLayoutManager(getActivity());
     RecyclerView.Adapter recyclerViewadapter;
 
-    String GET_JSON_DATA_HTTP_URL = "http://premiumcontrol.com.br/NakasoneSoftapp/select/select_conta.php";
+    String GET_JSON_DATA_HTTP_URL = "http://premiumcontrol.com.br/NakasoneSoftapp/select/select_conta.php?id_cliente="+ Static.getId_cliente()+"";
 
     String JSON_id_despesas_relatorio3 = "id_despesas";
     String JSON_descricao_despesas_relatorio3 = "descricao_despesas";

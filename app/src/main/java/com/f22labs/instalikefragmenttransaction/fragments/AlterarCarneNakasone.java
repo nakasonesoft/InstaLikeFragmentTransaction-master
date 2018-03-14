@@ -205,7 +205,7 @@ public class AlterarCarneNakasone extends BaseFragment
     {
 
         String descricao_carne = alterardescricaocarne.getText().toString();
-        String valor_carne = alterarvalorcarne.getText().toString();
+        String valor_carne = alterarvalorcarne.getText().toString().replace(",",".");
         String datafinal_carne = alterardatacarne.getText().toString();
         String qntd_carne = alterarparcelas.getText().toString();
         String id_carne = String.valueOf(Static.getId_carne()).trim();
@@ -230,7 +230,7 @@ public class AlterarCarneNakasone extends BaseFragment
 
 
                 String descricao_carne = alterardescricaocarne.getText().toString();
-                String valor_carne = alterarvalorcarne.getText().toString();
+                String valor_carne = alterarvalorcarne.getText().toString().replace(",",".");
                 String datafinal_carne = alterardatacarne.getText().toString();
                 String qntd_carne = alterarparcelas.getText().toString();
                 String id_carne = String.valueOf(Static.getId_carne()).trim();
@@ -341,7 +341,7 @@ public class AlterarCarneNakasone extends BaseFragment
         //region COLOCANDO OS CAMPOS NA TELA
         alterardescricaocarne.setText(descricao_carne);
         alterarvalorcarne.setText(valor_carne);
-       alterardatacarne.setText(datafinal_carne);
+        alterardatacarne.setText(datafinal_carne);
         alterarparcelas.setText(qntd_carne);
 
         //endregion

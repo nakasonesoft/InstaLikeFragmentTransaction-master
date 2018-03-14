@@ -15,6 +15,7 @@ import android.widget.TextView;
 import com.f22labs.instalikefragmenttransaction.R;
 import com.f22labs.instalikefragmenttransaction.activities.MainActivity;
 import com.f22labs.instalikefragmenttransaction.utils.Downloader;
+import com.f22labs.instalikefragmenttransaction.utils.Static;
 
 import java.util.ArrayList;
 
@@ -31,11 +32,11 @@ public class Mensal_anual extends BaseFragment{
     ImageView breceita1, bdespesa1, bparcial1, bsuper1, btotal1;
 
 
-    final static String urlAddress  = "http://premiumcontrol.com.br/NakasoneSoftapp/select/receita/total_despesa_necessaria.php";
-    final static String urlAddress_receita  =   "http://premiumcontrol.com.br/NakasoneSoftapp/select/receita/total_receita.php";
-    final static String ResultadoParcial  =   "http://premiumcontrol.com.br/NakasoneSoftapp/select/receita/resultado_parcial.php";
-    final static String TotalDespesasSuperfluas  ="http://premiumcontrol.com.br/NakasoneSoftapp/select/receita/total_despesa_superfluas.php";
-    final static String TotalGeral = "http://premiumcontrol.com.br/NakasoneSoftapp/select/receita/resultado_total.php";
+    final static String urlAddress  = "http://premiumcontrol.com.br/NakasoneSoftapp/select/receita/total_despesa_necessaria.php?id_cliente="+ Static.getId_cliente()+"";
+    final static String urlAddress_receita  =   "http://premiumcontrol.com.br/NakasoneSoftapp/select/receita/total_receita.php?id_cliente="+ Static.getId_cliente()+"";
+    final static String ResultadoParcial  =   "http://premiumcontrol.com.br/NakasoneSoftapp/select/receita/resultado_parcial.php?id_cliente="+ Static.getId_cliente()+"";
+    final static String TotalDespesasSuperfluas  ="http://premiumcontrol.com.br/NakasoneSoftapp/select/receita/total_despesa_superfluas.php?id_cliente="+ Static.getId_cliente()+"";
+    final static String TotalGeral = "http://premiumcontrol.com.br/NakasoneSoftapp/select/receita/resultado_total.php?id_cliente="+ Static.getId_cliente()+"";
 
     public static GridView gvPrimeiroTotal = null;
     final ArrayList<String> items = new ArrayList<String>();

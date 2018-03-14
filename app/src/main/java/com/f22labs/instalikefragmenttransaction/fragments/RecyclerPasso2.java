@@ -23,6 +23,7 @@ import com.f22labs.instalikefragmenttransaction.activities.MainActivity;
 import com.f22labs.instalikefragmenttransaction.adapters.GetDataAdapterPasso2;
 import com.f22labs.instalikefragmenttransaction.adapters.RecyclerViewAdapterPasso2;
 import com.f22labs.instalikefragmenttransaction.interfaces.RecyclerViewOnClickListenerHack;
+import com.f22labs.instalikefragmenttransaction.utils.Static;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -72,8 +73,8 @@ public class RecyclerPasso2 extends BaseFragment implements RecyclerViewOnClickL
     RecyclerView.Adapter recyclerViewadapter;
     RecyclerView.Adapter recyclerViewadapter2;
 
-    String GET_JSON_DATA_HTTP_URL = "http://premiumcontrol.com.br/NakasoneSoftapp/select/ImplementacaoPasso2.php";
-    String GET_JSON_DATA_HTTP_URL2 = "http://premiumcontrol.com.br/NakasoneSoftapp/select/ImplementacaoPasso2_1.php";
+    String GET_JSON_DATA_HTTP_URL = "http://premiumcontrol.com.br/NakasoneSoftapp/select/ImplementacaoPasso2.php?id_cliente="+ Static.getId_cliente()+"";
+    String GET_JSON_DATA_HTTP_URL2 = "http://premiumcontrol.com.br/NakasoneSoftapp/select/ImplementacaoPasso2_1.php?id_cliente="+ Static.getId_cliente()+"";
 
 
     private final String KEY_RECYCLER_STATE = "recycler_state";

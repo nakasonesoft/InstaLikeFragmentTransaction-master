@@ -16,6 +16,7 @@ import android.widget.TextView;
 import com.f22labs.instalikefragmenttransaction.R;
 import com.f22labs.instalikefragmenttransaction.activities.MainActivity;
 import com.f22labs.instalikefragmenttransaction.utils.Downloader;
+import com.f22labs.instalikefragmenttransaction.utils.Static;
 
 import java.util.ArrayList;
 
@@ -35,11 +36,11 @@ public class FragmentGrid2 extends BaseFragment
 
     GridView mGridView;
 
-    final static String urlAddress  = "http://premiumcontrol.com.br/NakasoneSoftapp/select/patrimonio.php";
-    final static String urlAddress2  = "http://premiumcontrol.com.br/NakasoneSoftapp/select/total_dividas.php";
-    final static String urlAddress3  = "http://premiumcontrol.com.br/NakasoneSoftapp/select/patrimonio_liquido.php";
-    final static String urlAddress4  = "http://premiumcontrol.com.br/NakasoneSoftapp/select/desempenho.php";
-    final static String urlAddress5  = "http://premiumcontrol.com.br/NakasoneSoftapp/select/desempenho_acumulado.php";
+    final static String urlAddress  = "http://premiumcontrol.com.br/NakasoneSoftapp/select/patrimonio.php?id_cliente="+ Static.getId_cliente()+"";
+    final static String urlAddress2  = "http://premiumcontrol.com.br/NakasoneSoftapp/select/total_dividas.php?id_cliente="+ Static.getId_cliente()+"";
+    final static String urlAddress3  = "http://premiumcontrol.com.br/NakasoneSoftapp/select/patrimonio_liquido.php?id_cliente="+ Static.getId_cliente()+"";
+    final static String urlAddress4  = "http://premiumcontrol.com.br/NakasoneSoftapp/select/desempenho.php?id_cliente="+ Static.getId_cliente()+"";
+    final static String urlAddress5  = "http://premiumcontrol.com.br/NakasoneSoftapp/select/desempenho_acumulado.php?id_cliente="+ Static.getId_cliente()+"";
 
     public static GridView gvPrimeiroTotal = null;
     final ArrayList<String> items = new ArrayList<String>();

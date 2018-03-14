@@ -32,7 +32,7 @@ public class GridTotalPatrimonioMensal extends BaseFragment
 
     GridView mGridView;
 
-      String urlAddress  = "http://premiumcontrol.com.br/NakasoneSoftapp/select/total_total_patrimonio.php";
+      String urlAddress  = "http://premiumcontrol.com.br/NakasoneSoftapp/select/total_total_patrimonio.php?id_cliente="+ Static.getId_cliente()+"";
 
     public static GridView gvPrimeiroTotal = null;
     final ArrayList<String> items = new ArrayList<String>();

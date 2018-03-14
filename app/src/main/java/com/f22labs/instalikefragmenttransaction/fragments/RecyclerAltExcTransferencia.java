@@ -22,6 +22,7 @@ import com.f22labs.instalikefragmenttransaction.adapters.RecyclerViewAdapter;
 import com.f22labs.instalikefragmenttransaction.adapters.RecyclerViewAdapterReceita;
 import com.f22labs.instalikefragmenttransaction.adapters.RecyclerViewAdapterTransferencia;
 import com.f22labs.instalikefragmenttransaction.interfaces.RecyclerViewOnClickListenerHack;
+import com.f22labs.instalikefragmenttransaction.utils.Static;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -66,7 +67,7 @@ public class RecyclerAltExcTransferencia extends BaseFragment implements Recycle
     RecyclerView.LayoutManager recyclerViewlayoutManager;
 
     RecyclerView.Adapter recyclerViewadapter;
-    String GET_JSON_DATA_HTTP_URL = "http://premiumcontrol.com.br/NakasoneSoftapp/select/select_transferencia.php";
+    String GET_JSON_DATA_HTTP_URL = "http://premiumcontrol.com.br/NakasoneSoftapp/select/select_transferencia.php?id_cliente="+ Static.getId_cliente()+"";
     String JSON_id_transferencia = "id_transferencia";
     String JSON_descricao_transferencia = "descricao_transferencia";
     String JSON_valor_transferencia = "valor_transferencia";

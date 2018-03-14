@@ -25,6 +25,7 @@ import com.f22labs.instalikefragmenttransaction.adapters.RecyclerViewAdapter;
 import com.f22labs.instalikefragmenttransaction.adapters.RecyclerViewAdapterMinidicionario;
 import com.f22labs.instalikefragmenttransaction.adapters.RecyclerViewAdapterReceita;
 import com.f22labs.instalikefragmenttransaction.interfaces.RecyclerViewOnClickListenerHack;
+import com.f22labs.instalikefragmenttransaction.utils.Static;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -70,7 +71,7 @@ public class RecyclerAltExcReceita extends BaseFragment implements RecyclerViewO
 
     RecyclerView.Adapter recyclerViewadapter;
 
-    String GET_JSON_DATA_HTTP_URL = "http://premiumcontrol.com.br/NakasoneSoftapp/select/select_receita.php";
+    String GET_JSON_DATA_HTTP_URL = "http://premiumcontrol.com.br/NakasoneSoftapp/select/select_receita.php?id_cliente="+ Static.getId_cliente()+"";
     String JSON_id_receita = "id_receita";
     String JSON_descricao_receita = "descricao_receita";
     String JSON_id_conta = "id_conta";

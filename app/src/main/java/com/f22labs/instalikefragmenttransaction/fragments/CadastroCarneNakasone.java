@@ -70,7 +70,7 @@ public class CadastroCarneNakasone extends BaseFragment
     public void insert(){
 
         String  descricao_carne = descricaocarne.getText().toString();
-        String  valor_carne = valorcarne.getText().toString();
+        String  valor_carne = valorcarne.getText().toString().replace(",",".");
         String  datafinal_carne = datacarne.getText().toString();
         String  qntd_carne = parcelas.getText().toString();
         String  id_cliente = String.valueOf(Static.getId_cliente());
@@ -93,7 +93,7 @@ public class CadastroCarneNakasone extends BaseFragment
 
                 //InputStream is = null;
                 String  descricao_carne = descricaocarne.getText().toString();
-                String  valor_carne = valorcarne.getText().toString();
+                String  valor_carne = valorcarne.getText().toString().replace(",",".");
                 String  datafinal_carne = datacarne.getText().toString();
                 String  qntd_carne = parcelas.getText().toString();
                 String  id_cliente = String.valueOf(Static.getId_cliente());
@@ -156,7 +156,7 @@ public class CadastroCarneNakasone extends BaseFragment
         //region Máscaras
         datacarne.addTextChangedListener(MaskEditUtil.mask(datacarne, MaskEditUtil.FORMAT_DATE));
         valorcarne.addTextChangedListener(new MoneyTextWatcher(valorcarne));
-        //endregion]
+        //endregion
 
 
         //region Clique do Botão

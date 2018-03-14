@@ -64,6 +64,11 @@
 
     <color name="grey_trans">#c7c7c7</color>
 
-    <color name="green">#70c050</color>
+    <color name="green">#1caf5c</color>
+
+    <color name="textback">#f4f7f9</color>
+
+
+
 
 </resources>

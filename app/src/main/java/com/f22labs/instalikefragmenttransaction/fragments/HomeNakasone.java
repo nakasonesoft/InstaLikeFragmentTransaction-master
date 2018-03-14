@@ -34,6 +34,8 @@ import com.f22labs.instalikefragmenttransaction.activities.MainActivity;
 import com.f22labs.instalikefragmenttransaction.activities.activity_login;
 import com.f22labs.instalikefragmenttransaction.activities.implantacaoErotina;
 import com.f22labs.instalikefragmenttransaction.adapters.ConfigRetrieve;
+import com.f22labs.instalikefragmenttransaction.utils.MaskEditUtil;
+import com.f22labs.instalikefragmenttransaction.utils.MoneyTextWatcher;
 import com.f22labs.instalikefragmenttransaction.utils.Static;
 import com.f22labs.instalikefragmenttransaction.utils.staticd;
 
@@ -102,17 +104,19 @@ public class HomeNakasone extends BaseFragment {
 
         String  valor_prestImovel = setprestacao.getText().toString();
         String  data_prestImovel = today;
+        String id_cliente = String.valueOf(Static.getId_cliente());
 
-        insertToDatabase(valor_prestImovel, data_prestImovel);
+        insertToDatabase(valor_prestImovel, data_prestImovel,id_cliente);
 
     }
 
-    private void insertToDatabase(String valor_prestImovel, String data_prestImovel){
+    private void insertToDatabase(String valor_prestImovel, String data_prestImovel,String id_cliente){
         class SendPostReqAsyncTask extends AsyncTask<String, Void, String> {
             @Override
             protected String doInBackground(String... params) {
                 String paramvalor_prestImovel = params[0];
                 String paramdata_prestImovel = params[1];
+                String paramdata_cliente = params[2];
 
                 Date date = Calendar.getInstance().getTime();
 
@@ -124,10 +128,12 @@ public class HomeNakasone extends BaseFragment {
 
                 String  valor_prestImovel = setprestacao.getText().toString();
                 String  data_prestImovel = today;
+                String id_cliente = String.valueOf(Static.getId_cliente());
 
                 List<NameValuePair> nameValuePairs = new ArrayList<NameValuePair>();
                 nameValuePairs.add(new BasicNameValuePair("valor_prestImovel", valor_prestImovel));
                 nameValuePairs.add(new BasicNameValuePair("data_prestImovel", data_prestImovel));
+                nameValuePairs.add(new BasicNameValuePair("id_cliente", id_cliente));
 
 
                 try {
@@ -163,7 +169,7 @@ public class HomeNakasone extends BaseFragment {
 
         }
         SendPostReqAsyncTask sendPostReqAsyncTask = new SendPostReqAsyncTask();
-        sendPostReqAsyncTask.execute( valor_prestImovel, data_prestImovel);
+        sendPostReqAsyncTask.execute( valor_prestImovel, data_prestImovel,id_cliente);
     }
 
     public void insert1(){
@@ -179,17 +185,18 @@ public class HomeNakasone extends BaseFragment {
 
         String  valor_consorcio = setconsorcio.getText().toString();
         String  data_consorcio = today;
-
-        insertToDatabase1(valor_consorcio, data_consorcio);
+        String id_cliente = String.valueOf(Static.getId_cliente());
+        insertToDatabase1(valor_consorcio, data_consorcio,id_cliente);
 
     }
 
-    private void insertToDatabase1(String valor_consorcio, String data_consorcio){
+    private void insertToDatabase1(String valor_consorcio, String data_consorcio,String id_cliente){
         class SendPostReqAsyncTask extends AsyncTask<String, Void, String> {
             @Override
             protected String doInBackground(String... params) {
                 String paramvalor_consorcio = params[0];
                 String paramdata_consorcio = params[1];
+                String paramdata_cliente = params[2];
 
                 Date date = Calendar.getInstance().getTime();
 
@@ -201,11 +208,12 @@ public class HomeNakasone extends BaseFragment {
 
                 String  valor_consorcio = setconsorcio.getText().toString();
                 String  data_consorcio = today;
+                String id_cliente = String.valueOf(Static.getId_cliente());
 
                 List<NameValuePair> nameValuePairs = new ArrayList<NameValuePair>();
                 nameValuePairs.add(new BasicNameValuePair("valor_consorcio", valor_consorcio));
                 nameValuePairs.add(new BasicNameValuePair("data_consorcio", data_consorcio));
-
+                nameValuePairs.add(new BasicNameValuePair("id_cliente", id_cliente));
 
                 try {
                     HttpClient httpClient = new DefaultHttpClient();
@@ -240,7 +248,7 @@ public class HomeNakasone extends BaseFragment {
 
         }
         SendPostReqAsyncTask sendPostReqAsyncTask = new SendPostReqAsyncTask();
-        sendPostReqAsyncTask.execute(valor_consorcio, data_consorcio);
+        sendPostReqAsyncTask.execute(valor_consorcio, data_consorcio,id_cliente);
     }
 
     @Override
@@ -300,6 +308,13 @@ public class HomeNakasone extends BaseFragment {
         //EditText
         setconsorcio = (EditText) view.findViewById(R.id.setconsorcio);
         setprestacao = (EditText) view.findViewById(R.id.setprestacao);
+
+        //region Máscaras
+        setconsorcio.addTextChangedListener(new MoneyTextWatcher(setconsorcio));
+        setprestacao.addTextChangedListener(new MoneyTextWatcher(setprestacao));
+        //endregion
+
+
 
         //Button
         salvar_visao = (Button) view.findViewById(R.id.salvar_visao);
@@ -407,6 +422,14 @@ public class HomeNakasone extends BaseFragment {
         super.onDestroyView();
     }
 
+
+
+
+
+
+
+
+
     //region SetCampos  Receitas e Despesas deste mês
 
 
@@ -418,7 +441,7 @@ public class HomeNakasone extends BaseFragment {
                 try {
                     HttpClient httpClient = new DefaultHttpClient();
                     HttpPost httpPost = new HttpPost(
-                            "http://premiumcontrol.com.br/NakasoneSoftapp/visao_geral.php");
+                            "http://premiumcontrol.com.br/NakasoneSoftapp/visao_geral.php?id_cliente="+Static.getId_cliente()+"");
 
 
                     HttpResponse response = httpClient.execute(httpPost);
@@ -496,7 +519,7 @@ public class HomeNakasone extends BaseFragment {
                 try {
                     HttpClient httpClient = new DefaultHttpClient();
                     HttpPost httpPost = new HttpPost(
-                            "http://premiumcontrol.com.br/NakasoneSoftapp/select/credito_outros.php");
+                            "http://premiumcontrol.com.br/NakasoneSoftapp/select/credito_outros.php?id_cliente="+Static.getId_cliente()+"");
 
 
                     HttpResponse response = httpClient.execute(httpPost);
@@ -543,8 +566,19 @@ public class HomeNakasone extends BaseFragment {
                     Log.d("FOI LEK", Pablo);
                     Log.d("Resultado", Guilherme);
                     Log.d("A", resposta1.substring(resposta1.lastIndexOf("/") + 1));
-                    getcartao.setText(Pablo);
-                    getdividas.setText(Guilherme);
+                    if(Pablo.equals("")){
+                        getcartao.setText("0.00");
+                    }
+                    else{
+                        getcartao.setText(Pablo);
+                    }
+                    if(Guilherme.equals("")){
+                        getdividas.setText("0.00");
+                    }
+                    else{
+                        getdividas.setText(Guilherme);
+                    }
+
                     mSwipeRefreshLayout.setRefreshing(false);
                 }
                 catch (Exception e){Toast.makeText(getActivity(),"Por favor, recarregue a página para calcular seus dados", Toast.LENGTH_LONG);}
@@ -566,7 +600,7 @@ public class HomeNakasone extends BaseFragment {
                 try {
                     HttpClient httpClient = new DefaultHttpClient();
                     HttpPost httpPost = new HttpPost(
-                            "http://premiumcontrol.com.br/NakasoneSoftapp/select/saldo_caixa_bancos.php");
+                            "http://premiumcontrol.com.br/NakasoneSoftapp/select/saldo_caixa_bancos.php?id_cliente="+Static.getId_cliente()+"");
 
 
                     HttpResponse response = httpClient.execute(httpPost);
@@ -622,10 +656,7 @@ public class HomeNakasone extends BaseFragment {
 
                         }
 
-
-
                      settotal.setText(String.valueOf(resultado));
-
 
                     mSwipeRefreshLayout.setRefreshing(false);
                 }

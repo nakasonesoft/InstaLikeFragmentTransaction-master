@@ -31,6 +31,7 @@ import com.f22labs.instalikefragmenttransaction.adapters.RecyclerViewAdapterRece
 
 
 import com.f22labs.instalikefragmenttransaction.interfaces.RecyclerViewOnClickListenerHack;
+import com.f22labs.instalikefragmenttransaction.utils.Static;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -84,8 +85,8 @@ public class RecyclerLancamento extends BaseFragment implements RecyclerViewOnCl
 
     RecyclerView.Adapter recyclerViewadapter;
 
-    String GET_JSON_DATA_HTTP_URL = "http://premiumcontrol.com.br/NakasoneSoftapp/select/select_all.php";
-    String GET_JSON_DATA_HTTP_URL_Receita = "http://premiumcontrol.com.br/NakasoneSoftapp/select/select_receita.php";
+    String GET_JSON_DATA_HTTP_URL = "http://premiumcontrol.com.br/NakasoneSoftapp/select/select_all.php?id_cliente="+ Static.getId_cliente()+"";
+    String GET_JSON_DATA_HTTP_URL_Receita = "http://premiumcontrol.com.br/NakasoneSoftapp/select/select_receita.php?id_cliente="+ Static.getId_cliente()+"";
 
     String JSON_id_despesas = "id_despesas";
     String JSON_descricao_despesas = "descricao_despesas";

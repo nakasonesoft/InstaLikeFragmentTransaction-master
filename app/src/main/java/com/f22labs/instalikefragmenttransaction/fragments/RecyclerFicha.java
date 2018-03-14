@@ -95,7 +95,7 @@ public class RecyclerFicha extends BaseFragment implements RecyclerViewOnClickLi
     RecyclerView.Adapter recyclerViewadapter;
 
 
-    String GET_JSON_DATA_HTTP_URL = "http://premiumcontrol.com.br/NakasoneSoftapp/select/diario_despesa.php";
+    String GET_JSON_DATA_HTTP_URL = "http://premiumcontrol.com.br/NakasoneSoftapp/select/diario_despesa.php?id_cliente="+Static.getId_cliente()+"";
 
     String JSON_id_despesas = "id_despesas";
     String JSON_descricao_despesas = "descricao_despesas";
@@ -131,47 +131,47 @@ public class RecyclerFicha extends BaseFragment implements RecyclerViewOnClickLi
 
         switch (Static.getFicha())
         {
-            case 1:  GET_JSON_DATA_HTTP_URL = "http://premiumcontrol.com.br/NakasoneSoftapp/select/diario_receita.php";
+            case 1:  GET_JSON_DATA_HTTP_URL = "http://premiumcontrol.com.br/NakasoneSoftapp/select/diario_receita.php?id_cliente="+Static.getId_cliente()+"";
 
                 ((MainActivity)getActivity()).updateToolbarTitle("Ficha individual de Receita");
                 break;
 
-            case 2:  GET_JSON_DATA_HTTP_URL = "http://premiumcontrol.com.br/NakasoneSoftapp/select/diario_transferencia.php";
+            case 2:  GET_JSON_DATA_HTTP_URL = "http://premiumcontrol.com.br/NakasoneSoftapp/select/diario_transferencia.php?id_cliente="+Static.getId_cliente()+"";
 
                 ((MainActivity)getActivity()).updateToolbarTitle("Ficha individual de Transferência");
 
                 break;
 
-            case 3:  GET_JSON_DATA_HTTP_URL = "http://premiumcontrol.com.br/NakasoneSoftapp/select/diario_saque.php";
+            case 3:  GET_JSON_DATA_HTTP_URL = "http://premiumcontrol.com.br/NakasoneSoftapp/select/diario_saque.php?id_cliente="+Static.getId_cliente()+"";
 
                 ((MainActivity)getActivity()).updateToolbarTitle("Ficha individual de Saque");
 
                 break;
-            case 4:  GET_JSON_DATA_HTTP_URL = "http://premiumcontrol.com.br/NakasoneSoftapp/select/diario_deposito.php";
+            case 4:  GET_JSON_DATA_HTTP_URL = "http://premiumcontrol.com.br/NakasoneSoftapp/select/diario_deposito.php?id_cliente="+Static.getId_cliente()+"";
 
                 ((MainActivity)getActivity()).updateToolbarTitle("Ficha individual de Depósito");
 
                 break;
 
-            case 5:  GET_JSON_DATA_HTTP_URL = "http://premiumcontrol.com.br/NakasoneSoftapp/select/diario_fatura.php";
+            case 5:  GET_JSON_DATA_HTTP_URL = "http://premiumcontrol.com.br/NakasoneSoftapp/select/diario_fatura.php?id_cliente="+Static.getId_cliente()+"";
 
                 ((MainActivity)getActivity()).updateToolbarTitle("Ficha individual de Depósito");
 
                 break;
 
-            case 7:  GET_JSON_DATA_HTTP_URL = " http://premiumcontrol.com.br/NakasoneSoftapp/select/diario_imoveis.php";
+            case 7:  GET_JSON_DATA_HTTP_URL = " http://premiumcontrol.com.br/NakasoneSoftapp/select/diario_imoveis.php?id_cliente="+Static.getId_cliente()+"";
 
                 ((MainActivity)getActivity()).updateToolbarTitle("Ficha individual de Prestação de Imóveis");
 
                 break;
 
-            case 8:  GET_JSON_DATA_HTTP_URL = " http://premiumcontrol.com.br/NakasoneSoftapp/select/diario_consorcio.php";
+            case 8:  GET_JSON_DATA_HTTP_URL = " http://premiumcontrol.com.br/NakasoneSoftapp/select/diario_consorcio.php?id_cliente="+Static.getId_cliente()+"";
 
                 ((MainActivity)getActivity()).updateToolbarTitle("Ficha individual de Consórcio");
 
                 break;
 
-            case 9:  GET_JSON_DATA_HTTP_URL = " http://premiumcontrol.com.br/NakasoneSoftapp/select/diario_outros.php";
+            case 9:  GET_JSON_DATA_HTTP_URL = " http://premiumcontrol.com.br/NakasoneSoftapp/select/diario_outros.php?id_cliente="+Static.getId_cliente()+"";
 
                 ((MainActivity)getActivity()).updateToolbarTitle("Ficha individual Outros");
 
@@ -198,34 +198,34 @@ public class RecyclerFicha extends BaseFragment implements RecyclerViewOnClickLi
 
         switch (Static.getFicha()){
             case 0:
-                gasto_url = "http://premiumcontrol.com.br/NakasoneSoftapp/select/sum_despesa.php";
+                gasto_url = "http://premiumcontrol.com.br/NakasoneSoftapp/select/sum_despesa.php?id_cliente="+Static.getId_cliente()+"";
                 break;
             case 1:
-                gasto_url = "http://premiumcontrol.com.br/NakasoneSoftapp/select/sum_receita.php";
+                gasto_url = "http://premiumcontrol.com.br/NakasoneSoftapp/select/sum_receita.php?id_cliente="+Static.getId_cliente()+"";
                 break;
             case 2:
-                gasto_url = "http://premiumcontrol.com.br/NakasoneSoftapp/select/sum_transferencia.php";
+                gasto_url = "http://premiumcontrol.com.br/NakasoneSoftapp/select/sum_transferencia.php?id_cliente="+Static.getId_cliente()+"";
                 break;
             case 3:
-                gasto_url = "http://premiumcontrol.com.br/NakasoneSoftapp/select/sum_saque.php";
+                gasto_url = "http://premiumcontrol.com.br/NakasoneSoftapp/select/sum_saque.php?id_cliente="+Static.getId_cliente()+"";
                 break;
             case 4:
-                gasto_url = "http://premiumcontrol.com.br/NakasoneSoftapp/select/sum_deposito.php";
+                gasto_url = "http://premiumcontrol.com.br/NakasoneSoftapp/select/sum_deposito.php?id_cliente="+Static.getId_cliente()+"";
                 break;
             case 5:
-                gasto_url = "http://premiumcontrol.com.br/NakasoneSoftapp/select/sum_fatura.php";
+                gasto_url = "http://premiumcontrol.com.br/NakasoneSoftapp/select/sum_fatura.php?id_cliente="+Static.getId_cliente()+"";
                 break;
             case 6:
-                gasto_url = "http://premiumcontrol.com.br/NakasoneSoftapp/select/sum_carne.php";
+                gasto_url = "http://premiumcontrol.com.br/NakasoneSoftapp/select/sum_carne.php?id_cliente="+Static.getId_cliente()+"";
                 break;
             case 7:
-                gasto_url = "http://premiumcontrol.com.br/NakasoneSoftapp/select/sum_imoveis.php";
+                gasto_url = "http://premiumcontrol.com.br/NakasoneSoftapp/select/sum_imoveis.php?id_cliente="+Static.getId_cliente()+"";
                 break;
             case 8:
-                gasto_url = "http://premiumcontrol.com.br/NakasoneSoftapp/select/sum_consorcio.php";
+                gasto_url = "http://premiumcontrol.com.br/NakasoneSoftapp/select/sum_consorcio.php?id_cliente="+Static.getId_cliente()+"";
                 break;
             case 9:
-                gasto_url = "http://premiumcontrol.com.br/NakasoneSoftapp/select/sum_outros.php";
+                gasto_url = "http://premiumcontrol.com.br/NakasoneSoftapp/select/sum_outros.php?id_cliente="+Static.getId_cliente()+"";
                 break;
         }
 
@@ -338,7 +338,7 @@ public class RecyclerFicha extends BaseFragment implements RecyclerViewOnClickLi
 
                     HttpClient httpClient = new DefaultHttpClient();
                     HttpPost httpPost = new HttpPost(
-                            "http://premiumcontrol.com.br/NakasoneSoftapp/visao_geral.php");
+                            "http://premiumcontrol.com.br/NakasoneSoftapp/visao_geral.php?id_cliente="+Static.getId_cliente()+"");
 
 
                     HttpResponse response = httpClient.execute(httpPost);

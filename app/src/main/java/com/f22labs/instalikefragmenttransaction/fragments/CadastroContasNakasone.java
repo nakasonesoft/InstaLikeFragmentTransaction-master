@@ -19,6 +19,8 @@ import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 import com.f22labs.instalikefragmenttransaction.R;
 import com.f22labs.instalikefragmenttransaction.activities.MainActivity;
+import com.f22labs.instalikefragmenttransaction.utils.MaskEditUtil;
+import com.f22labs.instalikefragmenttransaction.utils.MoneyTextWatcher;
 import com.f22labs.instalikefragmenttransaction.utils.Static;
 
 import org.apache.http.HttpEntity;
@@ -151,6 +153,13 @@ public class CadastroContasNakasone extends BaseFragment implements Spinner.OnIt
         txtSaldoInicialConta = (EditText) view.findViewById(R.id.txtSaldoInicialConta);
         datafechamentoConta = (EditText) view.findViewById(R.id.datafechamentoConta);
         SalvarConta = (Button) view.findViewById(R.id.SalvarConta);
+
+        //region Máscaras
+        datafechamentoConta.addTextChangedListener(MaskEditUtil.mask(datafechamentoConta, MaskEditUtil.FORMAT_DATE));
+
+        txtSaldoInicialConta.addTextChangedListener(new MoneyTextWatcher(txtSaldoInicialConta));
+        //endregion
+
 
 //region declarar variaveis spinner
         students = new ArrayList<String>();

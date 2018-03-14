@@ -11,6 +11,8 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import com.f22labs.instalikefragmenttransaction.R;
+import com.f22labs.instalikefragmenttransaction.utils.MaskEditUtil;
+import com.f22labs.instalikefragmenttransaction.utils.MoneyTextWatcher;
 import com.f22labs.instalikefragmenttransaction.utils.Static;
 
 import org.apache.http.HttpEntity;
@@ -28,6 +30,8 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 public class activity_senha extends AppCompatActivity {
 
@@ -48,12 +52,27 @@ public class activity_senha extends AppCompatActivity {
         confirmar_senha2 = (EditText)findViewById(R.id.confirmar_senha);
         recuperar = (Button)findViewById(R.id.recuperar);
 
-        recuperar.setOnClickListener(new View.OnClickListener() {
+        recuperar.setOnClickListener(new View.OnClickListener()
+        {
             @Override
-            public void onClick(View v) {
-                UpdateEvento();
+            public void onClick(View v)
+            {
+                if(email_cliente2.getText().toString().equals("") || senha_cliente2.getText().toString().equals("")|| data_cliente2.getText().toString().equals("") || confirmar_senha2.getText().toString().equals(""))
+                {
+                    Toast.makeText(getApplicationContext(),"Preencha todos os campos!",Toast.LENGTH_LONG).show();
+                }
+                else
+                {
+                    checkLogin(v);
+                }
             }
         });
+
+        //region Máscaras
+        data_cliente2.addTextChangedListener(MaskEditUtil.mask(data_cliente2, MaskEditUtil.FORMAT_DATE));
+
+        //endregion
+
 
     }
 
@@ -138,7 +157,7 @@ public class activity_senha extends AppCompatActivity {
                     }
 
                     if (Integer.parseInt(result) == 3) {
-                        Toast.makeText(activity_senha.this, "Não existe esse nome/email", Toast.LENGTH_LONG).show();
+                        Toast.makeText(activity_senha.this, "Email/Data incorreta!", Toast.LENGTH_LONG).show();
                     }
                 }
             }
@@ -151,6 +170,54 @@ public class activity_senha extends AppCompatActivity {
 
     //endregion
 
+    //region Cuidados com o E-mail e Senha
+    public void checkLogin(View arg0)
+    {
+
+        final String email2 = email_cliente2.getText().toString();
+        if (!isValidEmail(email2))
+        {
+            //Set error message for email field
+            //Toast.makeText(getApplicationContext(),"email field",Toast.LENGTH_LONG).show();
+            email_cliente2.setError("Email inválido");
+        }
+
+        final String pass = senha_cliente2.getText().toString();
+        if (!isValidPassword(pass)) {
+            //Set error message for password field
+            //Toast.makeText(getApplicationContext(),"",Toast.LENGTH_LONG).show();
+            senha_cliente2.setError("A senha deve conter no mínimo 6 caracteres");
+        }
+
+        if(isValidEmail(email2) && isValidPassword(pass))
+        {
+           UpdateEvento();
+        }
+
+    }
+
+    // validating email id
+    private boolean isValidEmail(String email)
+    {
+        String EMAIL_PATTERN = "^[_A-Za-z0-9-\\+]+(\\.[_A-Za-z0-9-]+)*@"
+                + "[A-Za-z0-9-]+(\\.[A-Za-z0-9]+)*(\\.[A-Za-z]{2,})$";
+
+        Pattern pattern;
+        pattern = Pattern.compile(EMAIL_PATTERN);
+        Matcher matcher = pattern.matcher(email);
+        return matcher.matches();
+    }
+
+    // validating password
+    private boolean isValidPassword(String pass)
+    {
+        if (pass != null && pass.length() >= 6) {
+            return true;
+        }
+        return false;
+    }
+
+    //endregion
 
 
 
