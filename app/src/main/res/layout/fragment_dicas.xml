@@ -3,8 +3,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:gravity="center">
+    android:background="#fff"
+    android:gravity="center"
+    android:orientation="vertical">
 
 
     <ScrollView
@@ -14,7 +15,7 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical" >
+            android:orientation="vertical">
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -157,6 +158,7 @@
                     android:layout_marginLeft="5dp"
                     android:text="          Falando em viagem, tem um cidadão que, quando viaja com a família de carro, tem o costume de fazer as refeições nas cidades, evitando os restaurantes de beira de estrada. Mas, quando não aparece nenhuma cidade no trajeto, ele seleciona os restaurantes descartando, logo de início, os que tem só veículos de passeio e ônibus no estacionamento, dando preferência àqueles em que há caminhões estacionados, pois ele sabe que os caminhoneiros, melhor que ninguém, conhecem os restaurantes em que se come bem e barato. E, ainda, quando o restaurante não é self-service, mas aquele que fornece apenas prato feito (sortido) ou comercial, em que sempre acabam sobrando misturas, ele coloca essas misturas no meio de pães, formando-se belos sanduíches que servem para o lanche da tarde e, às vezes, até para o jantar. E isso ele faz sem nenhum constrangimento, pois ele sabe que tudo já está embutido na conta que irá pagar, quer dizer, ele não está surrupiando. Outra dica – evite comprar petiscos nos restaurantes e lanchonetes de beira de estrada. Abasteça-se antes de pegar estrada."
                     android:textColor="#778899" />
+
                 <TextView
                     android:id="@+id/textewrfView"
                     android:layout_width="match_parent"
@@ -173,6 +175,7 @@
                     android:layout_marginLeft="5dp"
                     android:text="          É discutível essa teoria de que dinheiro não traz felicidade, porém, é indiscutível de que a falta dele traz infelicidade e muita e, muitas vezes, até desunião. Muitas discussões entre casais, se analisarmos a fundo, verificar-se- á que sempre tem origem ou agravamento nas questões de ordem financeira. Recomendamos, pois, que a elaboração e o acompanhamento do Controle Financeiro não fiquem restrito ao (à) cabeça do casal. É muitíssimo importante que haja a participação de ambos, unindo forças em torno de um objetivo comum. Além de se evitar desavenças, solidificará mais ainda o casamento. Pois é sabido que para um casal se dar bem, não é necessário que ambos tenham os mesmos pensamentos, mas que pensem juntos."
                     android:textColor="#778899" />
+
                 <TextView
                     android:id="@+id/tessdedxtView"
                     android:layout_width="match_parent"
@@ -189,6 +192,7 @@
                     android:layout_marginLeft="5dp"
                     android:text="          Não só em casos de morte, separação ou doenças graves, mas também em situação de crise financeira, devemos envolver toda a família, inclusive as crianças. E na tomada de decisões, deve-se dar incumbência a cada membro da família para se enfrentar a crise, de acordo com a capacidade e idade de cada um, fazendo com que todos se sintam que vão contribuir com os resultados. Com isso, além da adesão das crianças, vai-se evitar que elas fiquem exigindo coisas que a situação não permita. Então, jamais subestime a cooperação e o espírito compreensivo das crianças. Você vai ter uma agradável surpresa. E o maior fruto disso tudo é que, ultrapassada a crise, as crianças vão estar mais amadurecidas com a experiência adquirida, mais fortes e preparadas para enfrentar outras crises e, principalmente, toda a família vai estar com um laço mais forte de união. Diferentemente seria se se ficar amaldiçoando a sorte, procurando culpados, acusando um ou outro e infernizando a vida do provável culpado que levou a família àquela situação. Procedendo-se erradamente assim, no final da crise, vão estar todos arrasados, estressados e, principalmente, desunidos, debilitados e despreparados para enfrentar uma nova crise, tendo perdido uma grande oportunidade para se amadurecerem - particularmente as crianças."
                     android:textColor="#778899" />
+
                 <TextView
                     android:id="@+id/tedsfxtView"
                     android:layout_width="match_parent"
@@ -205,6 +209,7 @@
                     android:layout_marginLeft="5dp"
                     android:text="          Às vezes, são as próprias crianças que exigem das mães que façam refeições, inclusive os lanches da tarde, “como da vovó”, que acabam ficando bem mais em conta e, principalmente, mais saudáveis. Pois coloque isso em prática. Quem não gosta de comida caseira, ou da roça, tais como, bolos de cascas de banana, de laranja, de abacaxi, bolo de fubá cremoso, ... E convide as crianças para participarem do preparo. Claro, só evite que elas manuseiem o fogão e outros aparelhos e utensílios perigosos. Tem ainda a receita daquela avó que faz um bife virar três bifes à milanesa. Como? Ela pega um bife de carne de segunda, corta em três pedaços, deita cada pedaço em cima da farinha de rosca e vai massageando e pressionando com as pontas  dos dedos até o tamanho se triplicar. E, depois, é só seguir a receita de se preparar um bife à milanesa. Note-se, então, que os meios para se economizar são incontáveis e cada um pode ir incrementando e aperfeiçoando as suas próprias receitas e criatividades."
                     android:textColor="#778899" />
+
                 <TextView
                     android:id="@+id/textsdfsdfView"
                     android:layout_width="match_parent"
@@ -221,6 +226,7 @@
                     android:layout_marginLeft="5dp"
                     android:text="          Ao ir ao supermercado, faça antes uma lista dos produtos essenciais que estão faltando e vá - sem fome e, desta vez, sem as crianças – restringindo-se aos produtos estritamente necessários, evitando-se ficar “paquerando” os produtos das prateleiras e em promoção que não estão na sua lista, cilada esta que sempre acaba te induzindo a comprar produtos desnecessários. Então, no supermercado, seja direto e objetivo e venha embora o quanto antes. E, se a condição financeira permitir, procure comprar em quantidade que torne o preço ao de atacado, tomando-se o cuidado de calcular se até o final da validade é possível o uso ou o consumo de toda a quantidade. E assim que puder, procure comprar tudo em dinheiro ou com cartão de débito. E enquanto estiver dependendo de cartões de crédito, vá, paulatinamente, diminuindo tanto o uso como a quantidade de cartões até se restringir a um único e que deverá ser mantido apenas para necessidade emergencial. Outra boa ideia é formar grupos de amigos para compartilhar promoções, como material escolar, roupas infantis, de bebês, etc."
                     android:textColor="#778899" />
+
                 <TextView
                     android:id="@+id/texdsfsdftView"
                     android:layout_width="match_parent"
@@ -244,8 +250,8 @@
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="10dp"
                     android:layout_marginTop="10dp"
-                    android:textColor="#000"
-                    android:text="SUPERMERCADO – PROMOÇÕES" />
+                    android:text="SUPERMERCADO – PROMOÇÕES"
+                    android:textColor="#000" />
 
                 <TextView
                     android:id="@+id/textViewagreg2"
@@ -254,14 +260,15 @@
                     android:layout_marginLeft="5dp"
                     android:text="          Tome muito cuidado com os produtos que os supermercados colocam em promoção, pois, muitas vezes, é a validade que está por vencer. Existem supermercados que cobrem as promoções de outros supermercados. Então, ao invés de você ficar correndo os supermercados para aproveitar as promoções, cujo tempo e condução podem acabar anulando as vantagens, leve os panfletos nesse supermercado e exija que equipare os preços às ofertas dos outros supermercados."
                     android:textColor="#778899" />
+
                 <TextView
                     android:id="@+id/textVregiewdf3"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="10dp"
                     android:layout_marginTop="10dp"
-                    android:textColor="#000"
-                    android:text="SEJA VOCÊ MESMO, SEM OSTENTAÇÃO" />
+                    android:text="SEJA VOCÊ MESMO, SEM OSTENTAÇÃO"
+                    android:textColor="#000" />
 
                 <TextView
                     android:id="@+id/textVisdfewa2"
@@ -288,6 +295,7 @@
                     android:layout_marginLeft="5dp"
                     android:text="          Tem pessoas que fazem empréstimo pessoal para adquirir veículo à vista, achando que vai ganhar no preço. Puro engano. O juro de empréstimo pessoal é bem maior  que os juros de financiamento do veículo, que não compensa o ganho obtido na compra à vista, se é que esse ganho possa realmente existir. Por isso, opte pelo financiamento, dando o veículo como garantia. E se necessitar de empréstimo para outra finalidade, para pagamento a longo prazo, uma das alternativas é fazer o refinanciamento do seu veículo, se o mesmo já estiver quitado."
                     android:textColor="#778899" />
+
                 <TextView
                     android:id="@+id/textsdfweeefView3"
                     android:layout_width="match_parent"
@@ -304,6 +312,7 @@
                     android:layout_marginLeft="5dp"
                     android:text="          Ao fazer seguro, não se prenda à seguradora do banco ou da concessionária. Mas procure também uma corretora credenciada, pois ela tem uma enorme carteira de seguradoras, que concorrem entre si, quando então você pode acabar conseguindo o melhor preço do mercado."
                     android:textColor="#778899" />
+
                 <TextView
                     android:id="@+id/textsdsdfffView3"
                     android:layout_width="match_parent"
@@ -320,6 +329,7 @@
                     android:layout_marginLeft="5dp"
                     android:text="          Uma vez, um funcionário muito tímido, após muito relutar, resolveu finalmente pedir aumento ao carrancudo patrão: “Senhor Bonifácio, o senhor me desculpe, mas estou ganhando muito pouco”. “Está desculpado, e volte para o seu serviço” - respondeu-lhe rispidamente o patrão. Na época atual, pedir aumento seria a última opção. A melhor recomendação é fazer serviços extras, fazer bico. Por exemplo, se você trabalha de dia, procure um serviço, por exemplo, num delivery para trabalhar à noite ou vice-versa ou, ainda, nos finais de semana e assim por diante. Teste também as suas habilidades, inclusive, para o artesanato, culinária, que podem resultar em uma boa renda extra. Por exemplo, há uma professora que leciona durante o dia e, à noite, elabora bolos e cup cakes e o marido, professor de jiu-jitsu à noite, trabalha de vendedor durante uma parte do dia."
                     android:textColor="#778899" />
+
                 <TextView
                     android:id="@+id/textswerewdfVeriew3"
                     android:layout_width="match_parent"
@@ -328,6 +338,7 @@
                     android:layout_marginTop="10dp"
                     android:text="NÃO FUJA DAS DÍVIDAS"
                     android:textColor="#000" />
+
                 <TextView
                     android:id="@+id/textsdegfViegwewa2"
                     android:layout_width="match_parent"
@@ -335,6 +346,7 @@
                     android:layout_marginLeft="5dp"
                     android:text="          Já se disse que nas 24:00 horas do dia, as pessoas passam 8:00 horas ganhando dinheiro, mais 8:00 horas gastando o dobro do que ganhou e as 8:00 horas restantes tentando descobrir por que não consegue dormir. Vamos contar um “causo”. Já altas horas da noite, um cidadão não parava de se mexer na cama, sem conseguir pegar no sono. Daí, a esposa lhe perguntou o que lhe afligia. Ele, então, disse que na próxima segunda-feira teria que pagar uma dívida ao senhor Salim, mas que não ia ter condições de pagá-lo. A esposa, então, pegou o telefone e discou para o senhor Salim: “senhor Salim, boa noite, estou telefonando só para te avisar que aquela dívida que o meu marido tem para te pagar na segunda-feira, ele não vai poder pagar não, tá ? Boa noite !”. Ela desligou o telefone, voltou-se ao marido e lhe disse: “Agora você pode dormir tranquilo, por que quem não vai conseguir mais dormir é o senhor Salim”. Não, não estamos te insinuando a dar calotes. Estamos apenas aconselhando a não fugir delas – de todas as soluções, fugir é a pior. Você não vai conseguir dormir, vai ficar com vergonha de até andar pelas ruas e talvez até acabe herdando uma úlcera. O melhor mesmo é encarar os credores. Confesse-lhes, sem rodeios, que não tem condições de pagá-los e, então, peça que expurguem todas as multas, juros e lucros embutidos no valor das mercadorias ou dos serviços. E faça isso sem nenhuma relutância, pois, assim como você quer pagá-los, eles também querem resolver as pendências. Então, não tenha vergonha de ser claro e aberto com eles. E se o valor que te propuserem você não tiver condições de pagar, peça-lhes que parcelem em quantas vezes que for necessário. Claro, antes de procurá-los, faça um planejamento em cima da Previsão Financeira, para não ter o perigo de você tapar um buraco abrindo outro. Como disse Joelmir Beting: “Não se mata a vaca só para se acabar com os carrapatos dela”. E se você tiver dívidas de impostos, irrecorríveis, faça parcelamento, que muitas vezes pode ser feito pela internet. Se for tributos federais (imposto de renda, por exemplo), acesse o site www.receita.fazenda.gov.br ou dirija-se diretamente à Receita Federal. Se for tributos estaduais (ICMS, IPVA), dirija-se ao Posto Fiscal Estadual. E, se for tributos municipais (IPTU, ISSQN, taxa de licença), dirija-se à Prefeitura Municipal da sua cidade. E faça o parcelamento em quantas parcelas lhe for conveniente, baseando-se sempre na Previsão Financeira."
                     android:textColor="#778899" />
+
                 <TextView
                     android:id="@+id/textssfwefdfView3"
                     android:layout_width="match_parent"
@@ -343,6 +355,7 @@
                     android:layout_marginTop="10dp"
                     android:text="DEVEDORES ANÔNIMOS E PROCON"
                     android:textColor="#000" />
+
                 <TextView
                     android:id="@+id/textsdfsdfViewa2"
                     android:layout_width="match_parent"
@@ -350,6 +363,7 @@
                     android:layout_marginLeft="5dp"
                     android:text="          Frise-se que Fácil Control é uma ferramenta eficaz para te auxiliar e monitorar os seus gastos e, através da sua própria análise e acompanhamento, para transpor uma situação financeira difícil. Entretanto, não se conseguindo a solução assim mesmo, principalmente em virtude de seu alto endividamento, procure ajuda de uma consultoria financeira. Pode-se, entre outras, procurar a Associação dos Devedores Anônimos da sua cidade. Geralmente essa associação é gratuita. Ou o Procon que também possui um programa para auxiliar as pessoas endividadas e esse órgão pode fazer também uma intermediação junto aos credores. E sempre vá munido da Previsão Financeira."
                     android:textColor="#778899" />
+
                 <TextView
                     android:id="@+id/textsdssfVihghew3"
                     android:layout_width="match_parent"
@@ -358,6 +372,7 @@
                     android:layout_marginTop="10dp"
                     android:text="CONTROLE FINANCEIRO É PARA SEMPRE"
                     android:textColor="#000" />
+
                 <TextView
                     android:id="@+id/textsdfVijhgjewa2"
                     android:layout_width="match_parent"
@@ -365,6 +380,7 @@
                     android:layout_marginLeft="5dp"
                     android:text="          Enganam-se aqueles que acham que o controle financeiro é só para quem está em dificuldade financeira. Não, puro engano. Mesmo que você financeiramente se equilibre, é importantíssimo continuar-se com o controle de suas finanças. Tem, por exemplo, pessoas que se dizem “controladas” e que afirmam seguramente que nunca precisará utilizar um controle financeiro. Puro engano, repetimos. Algumas dessas pessoas que, por curiosidade, passou a utilizar o controle financeiro, hoje estão em melhor situação financeira que antes, pois se antes mensalmente poupavam um certo valor, agora, com o controle financeiro, passaram a poupar bem mais. E outra coisa – conforme já afirmamos que economizar é como fazer regime, após você perder peso e não continuar vigilante, você corre sério risco de em pouco tempo voltar ao peso anterior ou até mais. “Despesas são como cabelos. Quando você menos espera, eles já cresceram”, alerta Diego Baez, executivo da DGB Consultores."
                     android:textColor="#778899" />
+
                 <TextView
                     android:id="@+id/textsdfVkghkiew3"
                     android:layout_width="match_parent"
@@ -373,6 +389,7 @@
                     android:layout_marginTop="10dp"
                     android:text="CONTROLE FINANCEIRO É PARA SEMPRE"
                     android:textColor="#000" />
+
                 <TextView
                     android:id="@+id/textsdfVidfgewa2"
                     android:layout_width="match_parent"
@@ -380,6 +397,7 @@
                     android:layout_marginLeft="5dp"
                     android:text="          Enganam-se aqueles que acham que o controle financeiro é só para quem está em dificuldade financeira. Não, puro engano. Mesmo que você financeiramente se equilibre, é importantíssimo continuar-se com o controle de suas finanças. Tem, por exemplo, pessoas que se dizem “controladas” e que afirmam seguramente que nunca precisará utilizar um controle financeiro. Puro engano, repetimos. Algumas dessas pessoas que, por curiosidade, passou a utilizar o controle financeiro, hoje estão em melhor situação financeira que antes, pois se antes mensalmente poupavam um certo valor, agora, com o controle financeiro, passaram a poupar bem mais. E outra coisa – conforme já afirmamos que economizar é como fazer regime, após você perder peso e não continuar vigilante, você corre sério risco de em pouco tempo voltar ao peso anterior ou até mais. “Despesas são como cabelos. Quando você menos espera, eles já cresceram”, alerta Diego Baez, executivo da DGB Consultores."
                     android:textColor="#778899" />
+
                 <TextView
                     android:id="@+id/textsdfVidfgew3"
                     android:layout_width="match_parent"
@@ -396,6 +414,7 @@
                     android:layout_marginLeft="5dp"
                     android:text="          Assim que a situação melhorar e começar a sobrar uns trocados, lembre-se que tanto quanto ganhar dinheiro é tão quão importante saber investir. Então, quando começar a pensar em investimento, siga os conselhos de um bem sucedido empresário americano:  “Quando alguém te oferecer algo por 10, na verdade ele quer 9, mas que este algo vale 8, então, ofereça 7 e pague 6”. Isso significa que você sempre tem que procurar comprar por um valor abaixo do mercado – pois, essa diferença vai se acrescentar aos seus ganhos."
                     android:textColor="#778899" />
+
                 <TextView
                     android:id="@+id/thgjextsdfView3"
                     android:layout_width="match_parent"

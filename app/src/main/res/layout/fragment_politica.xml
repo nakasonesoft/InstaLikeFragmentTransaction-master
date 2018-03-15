@@ -3,6 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#fff"
     android:orientation="vertical">
 
     <ScrollView
@@ -44,7 +45,7 @@
 
                 <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"
+                    android:layout_height="wrap_content"
                     android:layout_marginTop="15dp"
                     android:orientation="vertical">
 
@@ -80,6 +81,7 @@
                         android:layout_marginTop="15dp"
                         android:textAlignment="center"
                         tools:text="-Prejudicar os direitos e interesses de terceiros;\n -Inutilizar, alterar ou impedir, em todo ou em parte, qualquer área do site;\n -Tentar violar os meios técnicos de proteção ao conteúdo do site; \n-Utilizar o conteúdo do site com finalidade comercial de venda de serviços." />
+
                     <TextView
                         android:id="@+id/textView7"
                         android:layout_width="match_parent"
@@ -88,6 +90,7 @@
                         android:textAlignment="center"
                         android:textAppearance="@style/TextAppearance.AppCompat"
                         tools:text="Nas áreas onde existem trocas de informações, o usuário concorda que é proibido por lei difundir, disponibilizar ou transmitir conteúdo que:" />
+
                     <TextView
                         android:id="@+id/textView8"
                         android:layout_width="match_parent"
@@ -104,6 +107,7 @@
 - Esteja protegido pelo direito de autoria e propriedade e
 - Tenha qualquer tipo de vírus que prejudique o pleno funcionamento do site e/ou do equipamento de terceiros.
 " />
+
                     <TextView
                         android:id="@+id/textView17"
                         android:layout_width="match_parent"
@@ -119,7 +123,6 @@ A Nakasone Soft poderá, a qualquer tempo, sem aviso prévio aos usuários, modi
 As condições acima relacionadas se encontram amparadas através de normatizações brasileiras.
 Esta política de privacidade foi criada com base nas políticas de privacidade do site: http://governoeletronico.gov.br/
 " />
-
 
 
                 </LinearLayout>

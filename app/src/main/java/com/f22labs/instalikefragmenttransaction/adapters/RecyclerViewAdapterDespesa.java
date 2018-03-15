@@ -205,6 +205,8 @@ public class RecyclerViewAdapterDespesa extends RecyclerView.Adapter<RecyclerVie
 
         }
     }
+
+
     //region HostCall
     public void JSON_DATA_WEB_CALL()
     {

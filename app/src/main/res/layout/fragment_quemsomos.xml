@@ -10,6 +10,7 @@
         android:layout_height="match_parent">
 
         <LinearLayout
+            android:background="#fff"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical">
@@ -25,7 +26,8 @@
                     android:layout_height="wrap_content"
                     android:text="Quem somos"
                     android:textAlignment="center"
-                    android:textAppearance="@style/TextAppearance.AppCompat.Title" />
+                    android:textAppearance="@style/TextAppearance.AppCompat.Title"
+                    android:textStyle="bold|italic" />
             </LinearLayout>
 
             <LinearLayout
@@ -34,17 +36,13 @@
                 android:layout_marginTop="15dp"
                 android:orientation="vertical">
 
-                <LinearLayout
+                <TextView
+                    android:id="@+id/textView4"
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_marginTop="15dp"
-                    android:orientation="vertical">
-
-                    <TextView
-                        android:id="@+id/textView4"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="O controle financeiro nakasonesoft foi idealizado pelo Julio Nakasone, com o ousa do objetivo de popularizar o controle financeiro pessoal.
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginRight="20dp"
+                    android:text="      O controle financeiro nakasonesoft foi idealizado pelo Julio Nakasone, com o ousa do objetivo de popularizar o controle financeiro pessoal.
 Pois, até hoje, o controle financeiro pessoal se restringiu às classes afeitas à contabilidade, à administração e às finanças, ou seja, aos profissionais habituados aos números e às linguagens técnicas, fatos estes que tornavam o controle financeiro pessoal incompreensível e inacessível aos leigos.
 No nakasonesoft, então, procurou-se empregar sistemas extremamente fáceis, simples, autoexplicativos, com vídeos de treinamentos e passos a passo, todos detalhados e com muitos exemplos, finalizando com relatórios unificados e simplificados, tudo em linguagem destituída de terminologias técnicas, cujos muitos aspectos de aparente ingenuidade são propositais, sem menosprezar, entretanto, a objetividade e a seriedade da questão.
 Nesse propósito, também ineditamente e na premissa de que a correta análise dos resultados com o intuito de se detectar e solucionar problemas financeiros tem que se basear em dados fidedignos, tanto os valores como a apropriada classificação das categorias dos lançamentos e tendo tambéma finalidade, repita-se,de atingir igualmente os leigos, foi concebidoum mini dicionário, englobando os principais gastos e receitas habituais, com a indicação ou sugestão das respectivas contas, simplificando-se substancialmente os lançamentos.
@@ -52,29 +50,23 @@ Foi lançado mão também de um meio inédito de se fazer o acompanhamento da Ev
 Julio Nakasone é bacharel em ciências contábeis pela Universidade São Judas Tadeu (São Paulo, SP) e, entre outras, foi contador da Electrolux, gerente contábil da Calçados Brasileiros S.A. (grupo Samello), gerente administrativo e financeiro de uma das unidades do Frigorífico Bordon S.A. (atualmente pertencente à JBS/Friboi), auditor e analista de Organização &amp; Método da Ecopal S/C e é fundador e diretor executivo da Nakasone Contábil Eireli – ME.
 Ministrou também vários cursos e treinamentos nas áreas contábil, administrativa e financeira.
 "
-                        android:textAlignment="center" />
+                    android:textColor="@color/texttext" />
 
-                    <TextView
-                        android:id="@+id/textView3"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="15dp"
-                        android:text="Dados Cadastrais da Empresa:\n
+                <TextView
+                    android:id="@+id/textView3"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="15dp"
+                    android:text="Dados Cadastrais da Empresa:\n
 Razão social: Nakasone Soft Ltda - ME
 CNPJ nº 24.505.120/0001-09
 Endereço: avenida Andrômeda, nº 3.725 – 2º andar – Bosque dos Eucaliptos – São José dos Campos, SP – CEP 12.233-000
 Site: www.nakasonesoft.com.br
 E-mail: nakasonesoft@gmail.com
 "
-                        android:textAlignment="center"
-                        android:textAppearance="@style/TextAppearance.AppCompat" />
+                    android:textAlignment="center"
+                    android:textAppearance="@style/TextAppearance.AppCompat" />
 
-
-
-
-
-
-                </LinearLayout>
             </LinearLayout>
         </LinearLayout>
     </ScrollView>

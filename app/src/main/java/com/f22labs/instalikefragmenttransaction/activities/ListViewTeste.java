@@ -361,7 +361,6 @@ public class ListViewTeste extends AppCompatActivity {
             if(subjectsList != null)
             {
                 ListAdapterClass adapter = new ListAdapterClass(subjectsList, context);
-
                 SubjectListView3.setAdapter(adapter);
             }
         }

@@ -9,6 +9,8 @@ import android.view.GestureDetector;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
+import android.widget.TextView;
 
 import com.android.volley.RequestQueue;
 import com.android.volley.Response;
@@ -27,6 +29,7 @@ import com.f22labs.instalikefragmenttransaction.utils.Static;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
+import org.w3c.dom.Text;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -34,28 +37,29 @@ import java.util.List;
 import butterknife.ButterKnife;
 
 
-public class RecyclerContasAtivadas extends BaseFragment implements RecyclerViewOnClickListenerHack
-{
+public class RecyclerContasAtivadas extends BaseFragment implements RecyclerViewOnClickListenerHack {
     private FragmentTabHost mTabHost;
     private OnItemClickListener mListener;
-//region
-    public interface OnItemClickListener
-    {
+
+    //region
+    public interface OnItemClickListener {
         public void onItemClick(View view, int position);
     }
+
     @Override
-    public void onClickListener(View view, int position)
-    {
+    public void onClickListener(View view, int position) {
 
     }
 
     @Override
-    public void onLongPressClickListener(View view, int position)
-    {
+    public void onLongPressClickListener(View view, int position) {
 
     }
+
     //endregion
-    RecyclerViewAdapter mAdapter ;
+    RecyclerViewAdapter mAdapter;
+
+    ImageView desativar;
 
     GestureDetector mGestureDetector;
 
@@ -67,7 +71,7 @@ public class RecyclerContasAtivadas extends BaseFragment implements RecyclerView
     RecyclerView.LayoutManager recyclerViewlayoutManager;
 
     RecyclerView.Adapter recyclerViewadapter;
-    String GET_JSON_DATA_HTTP_URL = "http://premiumcontrol.com.br/NakasoneSoftapp/select/select_contas_ativas.php?id_cliente="+ Static.getId_cliente()+"";
+    String GET_JSON_DATA_HTTP_URL = "http://premiumcontrol.com.br/NakasoneSoftapp/select/select_contas_ativas.php?id_cliente=" + Static.getId_cliente() + "";
     String JSON_id_conta = "id_conta";
     String JSON_nome_conta = "nome_conta";
     String JSON_saldoinicial_conta = "saldoinicial_conta";
@@ -78,9 +82,9 @@ public class RecyclerContasAtivadas extends BaseFragment implements RecyclerView
     private static Bundle mBundleRecyclerViewState;
     private static int dyb;
 
-    JsonArrayRequest jsonArrayRequest ;
+    JsonArrayRequest jsonArrayRequest;
 
-    RequestQueue requestQueue ;
+    RequestQueue requestQueue;
 
 
     @Override
@@ -89,15 +93,16 @@ public class RecyclerContasAtivadas extends BaseFragment implements RecyclerView
     }
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,Bundle savedInstanceState)
-    {
+    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 
         View view = inflater.inflate(R.layout.fragment_recycler_contas_ativas, container, false);
 
-        mSwipeRefreshLayout = (SwipeRefreshLayout)view.findViewById(R.id.swifeRefreshaltexcativas);
+        mSwipeRefreshLayout = (SwipeRefreshLayout) view.findViewById(R.id.swifeRefreshaltexcativas);
         //mListener = listener;
 
         GetDataAdapter1 = new ArrayList<>();
+
+        desativar = (ImageView) view.findViewById(R.id.desativar);
 
         recyclerView = (RecyclerView) view.findViewById(R.id.recyclerviewaltexcativas);
 
@@ -108,6 +113,8 @@ public class RecyclerContasAtivadas extends BaseFragment implements RecyclerView
         recyclerView.setLayoutManager(recyclerViewlayoutManager);
 
         JSON_DATA_WEB_CALL();
+
+
         mSwipeRefreshLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
 
             @Override
@@ -127,14 +134,15 @@ public class RecyclerContasAtivadas extends BaseFragment implements RecyclerView
             }
         });//region
         ButterKnife.bind(this, view);
-        ((MainActivity)getActivity()).updateToolbarTitle("Contas Ativadas");
+        ((MainActivity) getActivity()).updateToolbarTitle("Contas Ativadas");
 
         //endregion
 
         return view;
     }
+
     //region Chamada no Host
-    public void JSON_DATA_WEB_CALL(){
+    public void JSON_DATA_WEB_CALL() {
 
         jsonArrayRequest = new JsonArrayRequest(GET_JSON_DATA_HTTP_URL,
 
@@ -158,12 +166,11 @@ public class RecyclerContasAtivadas extends BaseFragment implements RecyclerView
         mSwipeRefreshLayout.setRefreshing(true);
 
 
-
-
     }
-    public void JSON_PARSE_DATA_AFTER_WEBCALL(JSONArray array){
 
-        for(int i = 0; i<array.length(); i++) {
+    public void JSON_PARSE_DATA_AFTER_WEBCALL(JSONArray array) {
+
+        for (int i = 0; i < array.length(); i++) {
 
             final GetDataAdapter GetDataAdapter2 = new GetDataAdapter();
 
@@ -177,9 +184,7 @@ public class RecyclerContasAtivadas extends BaseFragment implements RecyclerView
                 GetDataAdapter2.setDatafechamento_conta(json.getString(JSON_datafechamento_conta));
                 mSwipeRefreshLayout.setRefreshing(false);
 
-            }
-            catch (JSONException e)
-            {
+            } catch (JSONException e) {
 
                 e.printStackTrace();
             }
@@ -189,7 +194,6 @@ public class RecyclerContasAtivadas extends BaseFragment implements RecyclerView
         recyclerViewadapter = new RecyclerViewAdapterContasAtivadas(GetDataAdapter1, getActivity());
 
         recyclerView.setAdapter(recyclerViewadapter);
-
 
 
     }

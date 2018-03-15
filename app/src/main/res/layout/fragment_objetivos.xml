@@ -3,6 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#fff"
     android:orientation="vertical">
 
     <ScrollView
@@ -39,20 +40,23 @@
                     android:layout_height="match_parent"
                     android:layout_marginTop="5dp"
                     android:orientation="vertical">
+
                     <TextView
                         android:id="@+id/textView2"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="Objetivos"
                         android:textAlignment="center"
-                        android:textAppearance="@style/TextAppearance.AppCompat"  />
+                        android:textAppearance="@style/TextAppearance.AppCompat" />
 
 
                     <TextView
                         android:id="@+id/textView4"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="De um modo geral, os sites de Controle Financeiro existentes no mercado apresentam sistemas de coleta de informações de uma maneira complexa e de difícil execução, principalmente para os leigos das áreas contábil, administrativa e financeira, ou de uma forma que acaba resultando em dados muito imprecisos, prejudicando-se a análise e a elaboração segura de um bom planejamento financeiro.
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginRight="20dp"
+                        android:text="    De um modo geral, os sites de Controle Financeiro existentes no mercado apresentam sistemas de coleta de informações de uma maneira complexa e de difícil execução, principalmente para os leigos das áreas contábil, administrativa e financeira, ou de uma forma que acaba resultando em dados muito imprecisos, prejudicando-se a análise e a elaboração segura de um bom planejamento financeiro.
 Embora esses sites apregoem serem “fáceis” de se executar, alguns até podem ser fáceis, porém, os relatórios (resultados dos lançamentos) – quando existem – as informações são inexatas e confusas, o que não conduzem e nem direcionam a lugar algum.
 Foi nessa preocupação que nasceu Fácil Control para, além de fornecer uma ferramenta eficaz, com extrema facilidade de se executar, inclusive por qualquer leigo e que forneça resultados que indiquem claramente em que direção se está seguindo e propiciar traçar um novo rumo em cima desses dados, norteando com segurança o futuro que se almeja alcançar.
 Para isso, então, um dos nossos cuidados, foiprocurar evitar ao máximo o uso de termos técnicos e métodos ortodoxosconvencionais.
@@ -60,7 +64,7 @@ Frise-se, portanto, que um dos nossos objetivos primordiais é o controle dos ga
 Outra grande novidade do nosso sistema é que não se atem a analisar as despesas e as receitas em si, mas, também, analisar o desempenho na sua vida econômica,cujo resultado mensal vai lhe ser um grande incentivador.
 Masfique tranquilo que esses cálculos são todos automáticos - realizados pelo próprio sistema – então, vocênão vai precisar “esquentar a cabeça” com calculadoras.
 "
-                        android:textAlignment="center" />
+                        android:textColor="@color/texttext" />
 
                     <TextView
                         android:id="@+id/textView3"
@@ -75,13 +79,13 @@ Masfique tranquilo que esses cálculos são todos automáticos - realizados pelo
                         android:id="@+id/textView54"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="Os dados dos nossos sistemas são totalmente criptografados.
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginRight="20dp"
+                        android:text="     Os dados dos nossos sistemas são totalmente criptografados.
 Além disso, para se cadastrar, você não precisa fornecer os seus dados pessoais, tais como, os númerosdos seus documentos, o seu endereço e nem mesmo o seu nome completo.
 Portanto, você se conserva completamente anônimo, livre de qualquer ação ilícita ou mesmo de órgãos governamentais.
 "
-                        android:textAlignment="center" />
-
-
+                        android:textColor="@color/texttext" />
 
 
                 </LinearLayout>
