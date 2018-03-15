@@ -95,6 +95,7 @@ public class RecyclerViewAdapterPasso2 extends RecyclerView.Adapter<RecyclerView
                 Button dialogButton = (Button) dialog.findViewById(R.id.dialogButtonOK);
                 final EditText Saldo = (EditText) dialog.findViewById(R.id.btnSaldoPasso2);
 
+
                 // Clique do OK do botão para fechar o Dialog/Segundo Layout.-----------------------
                 dialogButton.setOnClickListener(new View.OnClickListener()
                 {

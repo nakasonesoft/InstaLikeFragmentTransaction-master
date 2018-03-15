@@ -377,7 +377,7 @@ public class AlterarTransferenciaNakasone extends BaseFragment implements Spinne
 
     //region Spinner
     private void getData(){
-        StringRequest stringRequest = new StringRequest("http://premiumcontrol.com.br/NakasoneSoftapp/teste.php",
+        StringRequest stringRequest = new StringRequest("http://premiumcontrol.com.br/NakasoneSoftapp/teste.php?id_cliente="+Static.getId_cliente()+"",
                 new Response.Listener<String>() {
                     @Override
                     public void onResponse(String response) {

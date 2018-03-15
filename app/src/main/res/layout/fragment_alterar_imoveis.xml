@@ -156,6 +156,16 @@
                     android:layout_height="match_parent"
                     android:orientation="horizontal">
 
+                    <Spinner
+                        android:id="@+id/spinner_alterar_imoveis2"
+                        android:layout_width="340dp"
+                        android:layout_height="25dp"
+                        android:layout_below="@+id/txtMixtureTitle"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="10dp"
+                        android:layout_marginTop="5dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/rounded1" />
                     <EditText
                         android:id="@+id/alterarpagamentoimovel"
                         android:layout_width="340dp"
@@ -167,7 +177,8 @@
                         android:background="@drawable/rounded1"
                         android:digits="0123456789qwertzuiopasdfghjklyxcvbnm"
                         android:ems="10"
-                        android:inputType="textPersonName" />
+                        android:inputType="textPersonName"
+                        android:visibility="gone"/>
 
                     <EditText
                         android:id="@+id/alterardataimovel"

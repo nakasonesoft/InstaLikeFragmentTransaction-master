@@ -6,6 +6,8 @@ import android.content.SharedPreferences;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
+import android.text.Html;
+import android.text.method.LinkMovementMethod;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -19,6 +21,7 @@ import com.f22labs.instalikefragmenttransaction.activities.MainActivity;
 import com.f22labs.instalikefragmenttransaction.activities.activity_cadastro;
 import com.f22labs.instalikefragmenttransaction.activities.activity_login;
 import com.f22labs.instalikefragmenttransaction.activities.activity_senha;
+import com.f22labs.instalikefragmenttransaction.interfaces.MainActivityP;
 import com.f22labs.instalikefragmenttransaction.utils.Static;
 
 import org.apache.http.HttpEntity;
@@ -45,7 +48,7 @@ import static com.f22labs.instalikefragmenttransaction.activities.activity_login
 
 public class opcoes extends BaseFragment{
 
-    TextView licencas, politica, uso, quemsomos, objetivos;
+    TextView licencas, politica, uso, quemsomos, objetivos, cartilha, tabprecos;
     Button sair, apagar_conta;
     String resposta;
 
@@ -158,6 +161,8 @@ public class opcoes extends BaseFragment{
 
 
         licencas = (TextView)view.findViewById(R.id.licencas);
+        tabprecos = (TextView)view.findViewById(R.id.tabprecos);
+        cartilha = (TextView)view.findViewById(R.id.cartilha);
         politica = (TextView)view.findViewById(R.id.politica);
         uso = (TextView)view.findViewById(R.id.uso);
         objetivos = (TextView)view.findViewById(R.id.objetivos);
@@ -176,6 +181,19 @@ public class opcoes extends BaseFragment{
         });
 
 
+        tabprecos.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getActivity(), MainActivityP.class);
+                startActivity(intent);
+            }
+        });
+
+
+        cartilha.setText(
+                Html.fromHtml(
+                        "<a href=\"http://www.procon.al.gov.br/legislacao/cartilhadoconsumidor.pdf\">Cartilha do consumidor</a> "));
+        cartilha.setMovementMethod(LinkMovementMethod.getInstance());
 
         //endregion
 

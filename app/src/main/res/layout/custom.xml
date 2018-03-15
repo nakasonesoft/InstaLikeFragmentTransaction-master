@@ -45,8 +45,9 @@
         android:layout_height="wrap_content"
         android:layout_margin="10dp"
         android:ems="10"
+        android:inputType="numberDecimal"
         android:hint="Saldo Inicial"
-        android:inputType="textPersonName" />
+         />
 
     <Button
         android:id="@+id/dialogButtonOK"

@@ -10,12 +10,21 @@ import android.widget.ProgressBar;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
+import com.android.volley.RequestQueue;
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
 import com.android.volley.toolbox.ImageLoader;
+import com.android.volley.toolbox.JsonArrayRequest;
+import com.android.volley.toolbox.Volley;
 import com.f22labs.instalikefragmenttransaction.R;
 import com.f22labs.instalikefragmenttransaction.activities.MainActivity;
 import com.f22labs.instalikefragmenttransaction.fragments.AlterarContaNakasone;
 import com.f22labs.instalikefragmenttransaction.fragments.ContaDividasMensal;
 import com.f22labs.instalikefragmenttransaction.utils.Static;
+
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
 
 import java.util.List;
 
@@ -30,6 +39,16 @@ public class RecyclerViewAdapterContaDividas extends RecyclerView.Adapter<Recycl
     String grupo;
 
     Object mContext;
+
+
+    String GET_JSON_DATA_HTTP_URL = "http://premiumcontrol.com.br/NakasoneSoftapp/select/selectronaldo.php?id_conta=";
+
+    JsonArrayRequest jsonArrayRequest ;
+
+    RequestQueue requestQueue ;
+    String nome;
+
+
     public RecyclerViewAdapterContaDividas(List<GetDataAdapter> getDataAdapter, Activity context){
 
         super();
@@ -55,43 +74,49 @@ public class RecyclerViewAdapterContaDividas extends RecyclerView.Adapter<Recycl
 
         final String distancia ;
 
-        switch(Integer.parseInt(getDataAdapter1.getId_grupo_conta()))
-        {
-            case 1:
-                grupo = Static.getNome_grupo1();
-                    break;
-            case 2:
-                grupo = Static.getNome_grupo2();
-                break;
-            case 3:
-                grupo = Static.getNome_grupo3();
-                break;
-            case 4:
-                grupo = Static.getNome_grupo4();
-                break;
-            case 5:
-                grupo = Static.getNome_grupo5();
-                break;
-            case 6:
-                grupo = Static.getNome_grupo6();
-                break;
-            case 7:
-                grupo = Static.getNome_grupo7();
-                break;
-            case 8:
-                grupo = Static.getNome_grupo8();
-                break;
-        }
 
 
         Viewholder.id_contas_conta.setText(getDataAdapter1.getId_conta_conta());
         Viewholder.txtsaldoinicial_conta.setText(getDataAdapter1.getSaldoinicial_conta());
-        Viewholder.txtid_grupo.setText(grupo);
+        //Viewholder.txtid_grupo.setText(getDataAdapter1.getId_grupo_conta());
         Viewholder.txtDatafechamento_conta.setText(getDataAdapter1.getDatafechamento_conta());
         Viewholder.txtNome_conta.setText(getDataAdapter1.getNome_conta());
 
 
+        //region Método para buscar o nome dos produtos na tabela Produto.
+        jsonArrayRequest = new JsonArrayRequest("http://premiumcontrol.com.br/NakasoneSoftapp/select/selectgruporonaldo.php?id_grupo="+getDataAdapter1.getId_grupo_conta(),
 
+                new Response.Listener<JSONArray>() {
+                    @Override
+                    public void onResponse(JSONArray response)
+                    {
+
+                        JSONArray array = response;
+                        JSONObject json = null;
+                        try
+                        {
+
+                            json = array.getJSONObject(0);
+                            nome= json.getString("nome_grupo");
+                            Viewholder.txtid_grupo.setText(nome);
+                            // Viewholder.comofoipago_despesas.setText(getDataAdapter1.getComofoipago_despesas());
+
+
+                        }
+                        catch (JSONException e){e.printStackTrace();}
+                    }
+                },
+                new Response.ErrorListener() {
+                    @Override
+                    public void onErrorResponse(VolleyError error) {
+
+                    }
+                });
+
+        requestQueue = Volley.newRequestQueue(this.context);
+
+        requestQueue.add(jsonArrayRequest);
+        //endregion
 
 
 

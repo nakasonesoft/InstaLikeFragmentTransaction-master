@@ -43,6 +43,17 @@
                         android:text="Quem somos"
                         android:textColor="#000"
                         android:textSize="15sp" />
+
+                    <TextView
+                        android:id="@+id/tabprecos"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="5dp"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginTop="5dp"
+                        android:text="Tabela de preços"
+                        android:textColor="#000"
+                        android:textSize="15sp" />
                 </LinearLayout>
 
                 <LinearLayout
@@ -86,10 +97,20 @@
                         android:id="@+id/uso"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginBottom="10dp"
                         android:layout_marginLeft="10dp"
                         android:layout_marginTop="15dp"
                         android:text="Termos de uso"
+                        android:textColor="#000"
+                        android:textSize="15sp" />
+
+                    <TextView
+                        android:id="@+id/cartilha"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="10dp"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginTop="15dp"
+                        android:text="Cartilha do consumidor"
                         android:textColor="#000"
                         android:textSize="15sp" />
 
@@ -111,7 +132,7 @@
                         android:layout_marginBottom="10dp"
                         android:layout_marginLeft="10dp"
                         android:gravity="fill_horizontal"
-                        android:text="Objetivos"
+                        android:text="Objetivos e segurança"
                         android:textColor="#000"
                         android:textSize="15sp" />
                 </LinearLayout>

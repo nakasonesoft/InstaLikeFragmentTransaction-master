@@ -47,7 +47,7 @@ import java.util.List;
 
 import butterknife.ButterKnife;
 
-public class AlterarDepositoNakasone extends BaseFragment implements Spinner.OnItemSelectedListener
+public class AlterarDepositoNakasone extends BaseFragment
 {
     EditText alterardescricaodeposito,alterarondefoideposito,alterarvalordeposito,alterardeondeveiodeposito,alterardatadeposito;
 
@@ -58,12 +58,22 @@ public class AlterarDepositoNakasone extends BaseFragment implements Spinner.OnI
     String resposta;
 
     //region Spinner Variaveis
-    private Spinner spinner;
+    private Spinner spinner,spinner_alterar_pagamento;;
     private ArrayList<String> students;
 
     ArrayList<String> ids;
     private JSONArray result;
     static String id_spinner;
+    //endregion
+
+
+    //region Spinner Variaveis 2
+
+    private ArrayList<String> students2;
+
+    ArrayList<String> ids2;
+    private JSONArray result2;
+    static String id_spinner2;
     //endregion
 
     public void insert(){
@@ -168,12 +178,47 @@ public class AlterarDepositoNakasone extends BaseFragment implements Spinner.OnI
         alterardatadeposito = (EditText) view.findViewById(R.id.alterardatadeposito);
         alterarsalvardeposito = (Button) view.findViewById(R.id.alterarsalvardeposito);
         alterarexcluirdeposito = (Button) view.findViewById(R.id.alterarexcluirdeposito);
-
+        students2 = new ArrayList<String>();
+        ids2 = new ArrayList<String>();
         students = new ArrayList<String>();
         ids = new ArrayList<String>();
         spinner = (Spinner) view.findViewById(R.id.spinner_alterar_deposito);
-        spinner.setOnItemSelectedListener(this);
+        spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
 
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id)
+            {
+
+                id_spinner2= ids.get(position);
+
+
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent)
+            {
+                ids.get(spinner.getSelectedItemPosition());
+            }
+        });
+
+
+        spinner_alterar_pagamento = (Spinner) view.findViewById(R.id.spinner_alterar_deposito2);
+        spinner_alterar_pagamento.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id)
+            {
+
+                id_spinner2 = ids2.get(position);
+
+
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent)
+            {
+                ids2.get(spinner_alterar_pagamento.getSelectedItemPosition());
+            }
+        });
 
 
         //endregion
@@ -205,6 +250,7 @@ public class AlterarDepositoNakasone extends BaseFragment implements Spinner.OnI
         //endregion
         getData();
         getData1();
+        getData2();
         return view;
     }
 
@@ -357,7 +403,7 @@ public class AlterarDepositoNakasone extends BaseFragment implements Spinner.OnI
 
     //region Spinner
     private void getData(){
-        StringRequest stringRequest = new StringRequest("http://premiumcontrol.com.br/NakasoneSoftapp/teste.php",
+        StringRequest stringRequest = new StringRequest("http://premiumcontrol.com.br/NakasoneSoftapp/teste.php?id_cliente="+Static.getId_cliente()+"",
                 new Response.Listener<String>() {
                     @Override
                     public void onResponse(String response) {
@@ -402,19 +448,71 @@ public class AlterarDepositoNakasone extends BaseFragment implements Spinner.OnI
     }
 
 
-    @Override
-    public void onItemSelected(AdapterView<?> parent, View view, int position, long id)
-    {
 
-        id_spinner = ids.get(position);
-
-
-    }
-
-    @Override
-    public void onNothingSelected(AdapterView<?> parent)
-    {
-        ids.get(spinner.getSelectedItemPosition());
-    }
     //endregion
+
+
+    //region Spinner 2
+    private void getData2(){
+        StringRequest stringRequest = new StringRequest("http://premiumcontrol.com.br/NakasoneSoftapp/teste.php?id_cliente="+Static.getId_cliente()+"",
+                new Response.Listener<String>() {
+                    @Override
+                    public void onResponse(String response) {
+                        JSONObject j = null;
+                        try {
+                            j = new JSONObject(response);
+                            result2 = j.getJSONArray("result");
+                            getStudents2(result2);
+                        } catch (JSONException e) {
+                            e.printStackTrace();
+                        }
+                    }
+                },
+                new Response.ErrorListener() {
+                    @Override
+                    public void onErrorResponse(VolleyError error) {
+
+                    }
+                });
+        RequestQueue requestQueue = Volley.newRequestQueue(getActivity());
+        requestQueue.add(stringRequest);
+    }
+
+    private void getStudents2(JSONArray j){
+
+        for(int i=0;i<j.length();i++)
+        {
+            try
+            {
+                JSONObject json = j.getJSONObject(i);
+                students2.add(json.getString("nome_conta"));
+                ids2.add(json.getString("id_conta"));
+            }
+            catch (JSONException e)
+            {
+                e.printStackTrace();
+            }
+        }
+
+        spinner_alterar_pagamento.setAdapter(new ArrayAdapter<String>(getActivity(), android.R.layout.simple_spinner_dropdown_item, students2));
+
+    }
+
+
+
+    //endregion
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 }

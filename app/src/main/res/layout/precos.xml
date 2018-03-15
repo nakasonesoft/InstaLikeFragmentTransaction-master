@@ -43,7 +43,7 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="7,50"
+                        android:text="6,90"
                         android:textColor="@color/green"
                         android:textSize="100sp" />
                 </LinearLayout>
@@ -151,7 +151,7 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="18,90"
+                        android:text="17,40"
                         android:textColor="@color/green"
                         android:textSize="100sp" />
                 </LinearLayout>
@@ -205,7 +205,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginTop="5dp"
                         android:gravity="center"
-                        android:text="Custo mensal: 6,30"
+                        android:text="Custo mensal: 5,80"
                         android:textColor="@color/black"
                         android:textSize="10sp"
                         android:textStyle="bold" />
@@ -275,7 +275,7 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="30,60"
+                        android:text="28,20"
                         android:textColor="@color/green"
                         android:textSize="100sp" />
                 </LinearLayout>
@@ -329,7 +329,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginTop="5dp"
                         android:gravity="center"
-                        android:text="Custo mensal: 10,20"
+                        android:text="Custo mensal: 4,70"
                         android:textColor="@color/black"
                         android:textSize="10sp"
                         android:textStyle="bold" />
@@ -397,7 +397,7 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="46,80"
+                        android:text="39,60"
                         android:textColor="@color/green"
                         android:textSize="100sp" />
                 </LinearLayout>
@@ -451,7 +451,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginTop="5dp"
                         android:gravity="center"
-                        android:text="Custo mensal: 3,90"
+                        android:text="Custo mensal: 3,30"
                         android:textColor="@color/black"
                         android:textSize="10sp"
                         android:textStyle="bold" />

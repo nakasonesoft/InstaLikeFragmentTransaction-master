@@ -13,7 +13,9 @@ import android.widget.RelativeLayout;
 import android.widget.Switch;
 import android.widget.TextView;
 
+import com.android.volley.RequestQueue;
 import com.android.volley.toolbox.ImageLoader;
+import com.android.volley.toolbox.JsonArrayRequest;
 import com.f22labs.instalikefragmenttransaction.R;
 import com.f22labs.instalikefragmenttransaction.activities.MainActivity;
 import com.f22labs.instalikefragmenttransaction.fragments.AlterarCarneNakasone;
@@ -49,8 +51,12 @@ public class RecyclerViewAdapterDiario2 extends RecyclerView.Adapter<RecyclerVie
 
     List<GetDataAdapterDiario> getDataAdapter;
     ImageLoader imageLoader1;
-
     Object mContext;
+
+    String GET_JSON_DATA_HTTP_URL = "http://premiumcontrol.com.br/NakasoneSoftapp/select/selectronaldo.php?id_conta=";
+    JsonArrayRequest jsonArrayRequest;
+    RequestQueue requestQueue;
+    String nome;
 
     public RecyclerViewAdapterDiario2(List<GetDataAdapterDiario> getDataAdapter, Activity context){
 
@@ -86,7 +92,8 @@ public class RecyclerViewAdapterDiario2 extends RecyclerView.Adapter<RecyclerVie
         Viewholder.tipo_diario.setText(getDataAdapter1.getTipo_diario());
         Viewholder.idtipo_diario.setText(getDataAdapter1.getIdtipo_diario());
         Viewholder.id_cliente.setText(getDataAdapter1.getId_cliente());
-
+        /*
+            //region Clique
         Viewholder.itemView.setOnClickListener(new View.OnClickListener()
         {
             @Override
@@ -198,8 +205,8 @@ public class RecyclerViewAdapterDiario2 extends RecyclerView.Adapter<RecyclerVie
                 }
             }
         });
-
-
+        //endregion
+        */
     }
 
     @Override

@@ -41,7 +41,7 @@
                 android:text="descricao_diario"
                 android:textAppearance="?android:attr/textAppearanceLarge"
                 android:textColor="#3c4045"
-                android:textSize="12dp" />
+                android:textSize="18dp" />
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -57,6 +57,7 @@
                     android:layout_height="wrap_content"
                     android:layout_alignParentTop="true"
                     android:layout_marginLeft="7dp"
+                    android:visibility="gone"
                     android:layout_toEndOf="@+id/VollyNetworkImageView11"
                     android:layout_weight="1"
                     android:text="destino_diario"
@@ -67,12 +68,13 @@
                 <TextView
                     android:id="@+id/origem_diario"
                     android:layout_width="wrap_content"
+                    android:visibility="gone"
                     android:layout_height="wrap_content"
                     android:layout_alignParentTop="true"
                     android:layout_marginLeft="7dp"
                     android:layout_toEndOf="@+id/VollyNetworkImageView11"
                     android:layout_weight="1"
-                    android:text="Nome Evento"
+                    android:text="origem_diario"
                     android:textAppearance="?android:attr/textAppearanceLarge"
                     android:textColor="#3c4045"
                     android:textSize="10sp" />
@@ -88,7 +90,7 @@
                     android:text="valor_diario"
                     android:textAppearance="?android:attr/textAppearanceLarge"
                     android:textColor="#3c4045"
-                    android:textSize="10sp" />
+                    android:textSize="14sp" />
 
                 <TextView
                     android:id="@+id/data_diario"
@@ -101,7 +103,7 @@
                     android:text="data_diario"
                     android:textAppearance="?android:attr/textAppearanceLarge"
                     android:textColor="#3c4045"
-                    android:textSize="10sp" />
+                    android:textSize="14sp" />
 
                 <TextView
                     android:id="@+id/tipo_diario"
@@ -114,7 +116,7 @@
                     android:text="tipo_diario"
                     android:textAppearance="?android:attr/textAppearanceLarge"
                     android:textColor="#3c4045"
-                    android:textSize="10sp" />
+                    android:textSize="14sp" />
 
                 <TextView
                     android:id="@+id/idtipo_diario"
@@ -125,9 +127,10 @@
                     android:layout_toEndOf="@+id/VollyNetworkImageView11"
                     android:layout_weight="1"
                     android:text="idtipo_diario"
+                    android:visibility="gone"
                     android:textAppearance="?android:attr/textAppearanceLarge"
                     android:textColor="#3c4045"
-                    android:textSize="10sp" />
+                    android:textSize="14sp" />
 
                 <TextView
                     android:id="@+id/id_cliente"
@@ -138,6 +141,7 @@
                     android:layout_toEndOf="@+id/VollyNetworkImageView11"
                     android:layout_weight="1"
                     android:text="id_cliente"
+                    android:visibility="gone"
                     android:textAppearance="?android:attr/textAppearanceLarge"
                     android:textColor="#3c4045"
                     android:textSize="10sp" />

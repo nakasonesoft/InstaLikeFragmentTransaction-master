@@ -151,8 +151,7 @@ public class CadastroOutrosNakasone extends BaseFragment
 
                 Toast.makeText(getActivity(), result, Toast.LENGTH_LONG).show();
                 UltimoID();
-                //TextView textViewResult = (TextView) findViewById(R.id.textViewResult);
-                // textViewResult.setText("Inserted");
+
             }
 
         }
@@ -247,7 +246,7 @@ public class CadastroOutrosNakasone extends BaseFragment
 
     //region Spinner
     private void getData(){
-        StringRequest stringRequest = new StringRequest("http://premiumcontrol.com.br/NakasoneSoftapp/teste.php",
+        StringRequest stringRequest = new StringRequest("http://premiumcontrol.com.br/NakasoneSoftapp/teste.php?id_cliente="+Static.getId_cliente()+"",
                 new Response.Listener<String>() {
                     @Override
                     public void onResponse(String response) {
@@ -272,7 +271,7 @@ public class CadastroOutrosNakasone extends BaseFragment
     }
 
     private void getStudents(JSONArray j){
-        students.add("");
+
         for(int i=0;i<j.length();i++)
         {
             try
@@ -297,7 +296,7 @@ public class CadastroOutrosNakasone extends BaseFragment
 
     //region Spinner2
     private void getData2(){
-        StringRequest stringRequest = new StringRequest("http://premiumcontrol.com.br/NakasoneSoftapp/teste.php",
+        StringRequest stringRequest = new StringRequest("http://premiumcontrol.com.br/NakasoneSoftapp/teste.php?id_cliente="+Static.getId_cliente()+"",
                 new Response.Listener<String>() {
                     @Override
                     public void onResponse(String response) {
@@ -322,7 +321,7 @@ public class CadastroOutrosNakasone extends BaseFragment
     }
 
     private void getStudents2(JSONArray j){
-        students2.add("");
+
         for(int i=0;i<j.length();i++)
         {
             try

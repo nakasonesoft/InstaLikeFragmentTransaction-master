@@ -55,7 +55,7 @@ public class FaleConosco extends BaseFragment {
     BaseFragment.FragmentNavigation mFragmentNavigation;
 
     EditText titulo,mensagem;
-    String Sender = "Zuurc@hotmail.com";
+    String Sender = "app.nakasonesoft@gmail.com";
 
     Button enviar_mensagem;
 
@@ -94,13 +94,13 @@ public class FaleConosco extends BaseFragment {
                         try
                         {
 
-                            GMailSender sender = new GMailSender("qmguiziii@gmail.com",
-                                                                 "Lacoperfeito44");
+                            GMailSender sender = new GMailSender("app.nakasonesoft@gmail.com",
+                                                                 "appnaka2018");
                             sender.sendMail(
                                     titulo.getText().toString(),
                                     mensagem.getText().toString() +"\n"+ "\n"+"Email : " + Sender.toString()    ,
-                                    "qmguiziii@gmail.com",
-                                    "qmguiziii@gmail.com");
+                                    "app.nakasonesoft@gmail.com",
+                                    "app.nakasonesoft@gmail.com");
                                     loading.setMessage("Mensagem enviada!");
 
 

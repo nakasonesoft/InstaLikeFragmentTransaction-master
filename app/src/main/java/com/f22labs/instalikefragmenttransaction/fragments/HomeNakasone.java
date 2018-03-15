@@ -36,6 +36,8 @@ import com.f22labs.instalikefragmenttransaction.activities.implantacaoErotina;
 import com.f22labs.instalikefragmenttransaction.adapters.ConfigRetrieve;
 import com.f22labs.instalikefragmenttransaction.utils.MaskEditUtil;
 import com.f22labs.instalikefragmenttransaction.utils.MoneyTextWatcher;
+import com.f22labs.instalikefragmenttransaction.utils.MoneyTextWatcher2;
+import com.f22labs.instalikefragmenttransaction.utils.MoneyTextWatcher3;
 import com.f22labs.instalikefragmenttransaction.utils.Static;
 import com.f22labs.instalikefragmenttransaction.utils.staticd;
 
@@ -61,6 +63,7 @@ import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
+import java.util.Locale;
 
 import butterknife.ButterKnife;
 
@@ -259,8 +262,7 @@ public class HomeNakasone extends BaseFragment {
     }
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
+    public View onCreateView(LayoutInflater inflater, ViewGroup container,  Bundle savedInstanceState) {
         // Inflate the layout for this fragment
 
         View view = inflater.inflate(R.layout.fragment_home_nakasone, container, false);
@@ -286,7 +288,7 @@ public class HomeNakasone extends BaseFragment {
 
         mSwipeRefreshLayout = (SwipeRefreshLayout)view.findViewById(R.id.swifeRefreshaltexcconsorcio);
 
-        //TextView
+        //region TextView
         getreceita = (TextView) view.findViewById(R.id.getreceita);
         getdespesa = (TextView) view.findViewById(R.id.getdespesa);
         getresultado = (TextView) view.findViewById(R.id.getresultado);
@@ -294,8 +296,8 @@ public class HomeNakasone extends BaseFragment {
         getcartao = (TextView) view.findViewById(R.id.getcartao);
         getdividas = (TextView) view.findViewById(R.id.getdividas);
         settotal = (TextView) view.findViewById(R.id.settotal);
-
-        //ImgView
+//endregion
+        //region ImgView
         imgreceita_visao = (ImageView) view.findViewById(R.id.imgreceita_visao);
         imgdespesa_visao = (ImageView) view.findViewById(R.id.imgdespesa_visao);
         imgsaldo_visao = (ImageView) view.findViewById(R.id.imgsaldo_visao);
@@ -304,14 +306,26 @@ public class HomeNakasone extends BaseFragment {
         imgtotal_visao = (ImageView) view.findViewById(R.id.imgtotal_visao);
         imgsetconsorcio = (ImageView) view.findViewById(R.id.imgsetconsorcio);
         imgsetimovel = (ImageView) view.findViewById(R.id.imgsetimovel);
-
-        //EditText
+        //endregion
+        //region EditText
         setconsorcio = (EditText) view.findViewById(R.id.setconsorcio);
         setprestacao = (EditText) view.findViewById(R.id.setprestacao);
-
+        //endregion
         //region Máscaras
-        setconsorcio.addTextChangedListener(new MoneyTextWatcher(setconsorcio));
-        setprestacao.addTextChangedListener(new MoneyTextWatcher(setprestacao));
+        try
+        {
+            Locale mLocale = new Locale("pt", "BR");
+          //  setconsorcio.addTextChangedListener(new MoneyTextWatcher3(setconsorcio));
+
+
+            //setprestacao.addTextChangedListener(new MoneyTextWatcher3(setprestacao));
+            //setconsorcio.addTextChangedListener(new MoneyTextWatcher(setconsorcio));
+            //setprestacao.addTextChangedListener(new MoneyTextWatcher(setprestacao));
+        }
+        catch (Exception e)
+        {
+
+        }
         //endregion
 
 
@@ -319,8 +333,14 @@ public class HomeNakasone extends BaseFragment {
         //Button
         salvar_visao = (Button) view.findViewById(R.id.salvar_visao);
 
-        if(Static.getPrest_consorcio() != 0){setconsorcio.setText(String.valueOf(Static.getPrest_consorcio()));}
-        if(Static.getPrest_imovel() != 0){setprestacao.setText(String.valueOf(Static.getPrest_imovel()));}
+        if(Static.getPrest_consorcio() != 0)
+        {
+            setconsorcio.setText(String.valueOf(Static.getPrest_consorcio()));
+        }
+        if(Static.getPrest_imovel() != 0)
+        {
+            setprestacao.setText(String.valueOf(Static.getPrest_imovel()));
+        }
 
 
         imgsetconsorcio.setOnClickListener(new View.OnClickListener() {
@@ -332,11 +352,23 @@ public class HomeNakasone extends BaseFragment {
 
 
 
-                if(Static.getPrest_consorcio() != 0){setconsorcio.setText(String.valueOf(Static.getPrest_consorcio()));}
-                if(Static.getPrest_imovel() != 0){setprestacao.setText(String.valueOf(Static.getPrest_imovel()));}
+                if(Static.getPrest_consorcio() != 0)
+                {
+                    setconsorcio.setText(String.valueOf(Static.getPrest_consorcio()));
+                }
+                if(Static.getPrest_imovel() != 0)
+                {
+                    setprestacao.setText(String.valueOf(Static.getPrest_imovel()));
+                }
+
                 if(setprestacao.getText().toString() != "0.00" || setconsorcio.getText().toString() != "0.00")
                 {
-                    resultado = Double.parseDouble(getcartao.getText().toString())+ Double.parseDouble(getdividas.getText().toString()) + Double.parseDouble(setconsorcio.getText().toString()) + Double.parseDouble(setprestacao.getText().toString());
+                    double a,b,c,d;
+                    a = Double.parseDouble(String.valueOf(getcartao.getText().toString()));
+                    b = Double.parseDouble(String.valueOf(getdividas.getText().toString()));
+                    c = Double.parseDouble(String.valueOf(setconsorcio.getText().toString()));
+                    d = Double.parseDouble(String.valueOf(setprestacao.getText().toString()));
+                    resultado = a + b + c + d ;
                     settotal.setText(String.valueOf(resultado));
                 }
 
@@ -350,11 +382,20 @@ public class HomeNakasone extends BaseFragment {
                 LogpesToDatabase();
                 LogpesToDatabase1();
 
-                if(Static.getPrest_consorcio() != 0){setconsorcio.setText(String.valueOf(Static.getPrest_consorcio()));}
-                if(Static.getPrest_imovel() != 0){setprestacao.setText(String.valueOf(Static.getPrest_imovel()));}
+                if(Static.getPrest_consorcio() != 0)
+                {
+                    setconsorcio.setText(String.valueOf(Static.getPrest_consorcio()));
+                }
+
+                if(Static.getPrest_imovel() != 0)
+                {
+                    setprestacao.setText(String.valueOf(Static.getPrest_imovel()));
+                }
+
                 if(setprestacao.getText().toString() != "0.00" || setconsorcio.getText().toString() != "0.00")
                 {
                      resultado = Double.parseDouble(getcartao.getText().toString())+ Double.parseDouble(getdividas.getText().toString()) + Double.parseDouble(setconsorcio.getText().toString()) + Double.parseDouble(setprestacao.getText().toString());
+
                      settotal.setText(String.valueOf(resultado));
                 }
 
@@ -362,7 +403,7 @@ public class HomeNakasone extends BaseFragment {
             }
         });
 
-
+        //region
         imgreceita_visao.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -403,10 +444,11 @@ public class HomeNakasone extends BaseFragment {
         LogpesToDatabase();
         LogpesToDatabase1();
         LogpesToDatabase2();
-
+        LogpesToDatabase5();
 
 
         return view;
+        //endregion
     }
 
     @Override
@@ -422,13 +464,63 @@ public class HomeNakasone extends BaseFragment {
         super.onDestroyView();
     }
 
+    //region Verificar PAGSEGURO
 
 
+    private void LogpesToDatabase5(){
+        class SendPostReqAsyncTask extends AsyncTask<String, Void, String> {
+            @Override
+            protected String doInBackground(String... params) {
+
+                try {
+                    HttpClient httpClient = new DefaultHttpClient();
+                    HttpPost httpPost = new HttpPost(
+                            "http://premiumcontrol.com.br/NakasoneSoftapp/up_status_pagamento.php?id_cliente="+Static.getId_cliente()+"");
 
 
+                    HttpResponse response = httpClient.execute(httpPost);
+
+                    HttpEntity entity = response.getEntity();
+                    BufferedReader in = new BufferedReader(new InputStreamReader(response.getEntity().getContent()));
+
+                    StringBuffer sb = new StringBuffer("");
+                    String line="";
+
+                    while ((line = in.readLine()) != null) {
+                        sb.append(line + "\n");
+                        break;
+                    }
+                    in.close();
+                    resposta = sb.toString();
+                    Log.d("TAG", resposta);
+                    return sb.toString();
+
+                    //is = entity.getContent();
 
 
+                } catch (ClientProtocolException e) {
 
+                } catch (IOException e) {
+
+                }
+                return resposta;
+
+
+            }
+
+            @Override
+            protected void onPostExecute(String result)
+            {
+                super.onPostExecute(result);
+            }
+
+
+        }
+        SendPostReqAsyncTask sendPostReqAsyncTask = new SendPostReqAsyncTask();
+        sendPostReqAsyncTask.execute();
+
+    }
+    //endregion
 
     //region SetCampos  Receitas e Despesas deste mês
 
@@ -487,11 +579,17 @@ public class HomeNakasone extends BaseFragment {
                     String Gabriel = Vittar.replace(Pablo, "");
                     String Guilherme = Gabriel.replace("<br>/", "");
                     String Reginaldo = resposta.substring(resposta.lastIndexOf("/") + 1);
-                    Log.d("FOI LEK", ronaldo);
-                    Log.d("FOI LEK", Pablo);
-                    Log.d("Resultado", Guilherme);
+                    Log.d("Ronaldo", ronaldo);
+                    Log.d("FOI Pablo", Pablo);
+                    Log.d("Guilherme", Guilherme);
                     Log.d("A", resposta.substring(resposta.lastIndexOf("/") + 1));
-                    getreceita.setText("R$  " + Pablo);
+                    if(Pablo.equals("")){
+                        getreceita.setText("R$ 0");
+                    }
+                    else{
+                        getreceita.setText("R$  " + Pablo);
+                    }
+
                     getdespesa.setText("R$  " + ronaldo);
                     getresultado.setText("R$  " + Reginaldo);
                     mSwipeRefreshLayout.setRefreshing(false);
@@ -641,6 +739,10 @@ public class HomeNakasone extends BaseFragment {
                 {
                     resultado = Double.parseDouble(getcartao.getText().toString())+ Double.parseDouble(getdividas.getText().toString());
                     settotal.setText(String.valueOf(resultado));
+                    try
+                    {
+                     getsaldo.setText("R$" + resposta2);
+                    }catch (Exception e){}
                        switch (Integer.parseInt(result))
                         {
                              case 0:
@@ -649,7 +751,7 @@ public class HomeNakasone extends BaseFragment {
                                  Log.d("OQ TEM AQUI?: ", String.valueOf(resultado));
                              break;
                              default:
-                                 getsaldo.setText("R$  " + result);
+                                 getsaldo.setText("R$" + resposta2);
                                  Log.d("AQUI PORRA", resposta2);
                                  //resultado = Double.parseDouble(getcartao.getText().toString())+ Double.parseDouble(getdividas.getText().toString()) + Double.parseDouble(setconsorcio.getText().toString()) + Double.parseDouble(setprestacao.getText().toString());
                                  break;

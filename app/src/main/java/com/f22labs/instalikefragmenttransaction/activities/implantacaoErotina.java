@@ -24,6 +24,8 @@ import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 import com.f22labs.instalikefragmenttransaction.R;
+import com.f22labs.instalikefragmenttransaction.utils.MaskEditUtil;
+import com.f22labs.instalikefragmenttransaction.utils.MoneyTextWatcher;
 import com.f22labs.instalikefragmenttransaction.utils.Static;
 import com.f22labs.instalikefragmenttransaction.utils.staticd;
 
@@ -71,6 +73,7 @@ public class implantacaoErotina extends AppCompatActivity {
         rotina = (Button) findViewById(R.id.rotina);
 
 
+
         rotina.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -106,6 +109,7 @@ public class implantacaoErotina extends AppCompatActivity {
                 //SetText --------------------------------------------------------------------------
                 grupo_conta.setText("Caixa e Bancos");
                 id_grupo_conta.setText("1");
+
 
 
                 // Clique do OK do botão para fechar o Dialog/Segundo Layout.-----------------------
@@ -208,7 +212,8 @@ public class implantacaoErotina extends AppCompatActivity {
         //region Outras Dívidas
         cadastrar3.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v) {
+            public void onClick(View v)
+            {
                 // Puxando o xml da outra tela.-----------------------------------------------------
                 final Dialog dialog = new Dialog(implantacaoErotina.this);
                 dialog.setContentView(R.layout.novaconta);
@@ -247,7 +252,7 @@ public class implantacaoErotina extends AppCompatActivity {
         cadastrar_passo3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(getApplicationContext(), ListViewTeste.class));
+                startActivity(new Intent(getApplicationContext(), ListViewTeste2.class));
             }
         });
     }

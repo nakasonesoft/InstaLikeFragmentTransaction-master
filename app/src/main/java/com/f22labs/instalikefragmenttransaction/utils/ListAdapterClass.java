@@ -38,6 +38,22 @@ public class ListAdapterClass extends BaseAdapter {
     Context context;
     List<GetDataAdapterDesativarContas> valueList;
 
+
+    @Override
+
+    public int getViewTypeCount()
+    {
+
+        return getCount();
+    }
+
+    @Override
+    public int getItemViewType(int position)
+    {
+
+        return position;
+    }
+
     public ListAdapterClass(List<GetDataAdapterDesativarContas> listValue, Context context) {
         this.context = context;
         this.valueList = listValue;
@@ -59,55 +75,72 @@ public class ListAdapterClass extends BaseAdapter {
     }
 
     @Override
-    public View getView(final int position, View convertView, ViewGroup parent) {
+    public View getView(final int position, View convertView, ViewGroup parent)
+    {
         ViewItem viewItem = null;
 
-        if (convertView == null) {
+        if (convertView == null)
+        {
+            //region Layout
             viewItem = new ViewItem();
 
             LayoutInflater layoutInfiater = (LayoutInflater) this.context.getSystemService(Activity.LAYOUT_INFLATER_SERVICE);
 
             convertView = layoutInfiater.inflate(R.layout.layout_items, null);
+            //endregion
 
+            //region FindViews
             viewItem.TextViewSubjectName = (TextView) convertView.findViewById(R.id.textView1);
 
             viewItem.SwitchViewSubjectName = (Switch) convertView.findViewById(R.id.switch122);
+            //endregion
 
+            //region Verificação de ativado.
             if (valueList.get(position).getStatus().equals("1"))
             {
                 viewItem.SwitchViewSubjectName.setChecked(true);
-                viewItem.SwitchViewSubjectName.setText("Ativada");
+
+               // viewItem.SwitchViewSubjectName.setText("Ativada");
 
             }
             else
             {
                 viewItem.SwitchViewSubjectName.setChecked(false);
-                viewItem.SwitchViewSubjectName.setText("Desativada");
+
+                //viewItem.SwitchViewSubjectName.setText("Desativada");
 
             }
+            //endregion
 
-            viewItem.SwitchViewSubjectName.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            viewItem.SwitchViewSubjectName.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener()
+            {
                 @Override
-                public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                public void onCheckedChanged(CompoundButton buttonView, boolean isChecked)
+                {
                     if (isChecked)
                     {
+
                         UpdateToDatabase(valueList.get(position).getId_conta());
 
-                        buttonView.setText("Ativada");
-                    } else {
+                        //buttonView.setText("Ativada");
+                    }
+                    else
+                    {
                         if (!isChecked)
                         {
                             UpdateToDatabaseDesativar(valueList.get(position).getId_conta());
-                            buttonView.setText("Desativada");
-                        }
 
+                            //buttonView.setText("Desativada");
+                        }
                     }
 
                 }
             });
 
             convertView.setTag(viewItem);
-        } else {
+        }
+        else
+        {
             viewItem = (ViewItem) convertView.getTag();
         }
 
@@ -117,9 +150,11 @@ public class ListAdapterClass extends BaseAdapter {
     }
 
     private void UpdateToDatabase(final String id_conta) {
-        class SendPostReqAsyncTask extends AsyncTask<String, Void, String> {
+        class SendPostReqAsyncTask extends AsyncTask<String, Void, String>
+        {
             @Override
-            protected String doInBackground(String... params) {
+            protected String doInBackground(String... params)
+            {
                 String paramConta = params[0];
 
 
@@ -127,32 +162,36 @@ public class ListAdapterClass extends BaseAdapter {
                 nameValuePairs.add(new BasicNameValuePair("id_conta", id_conta));
 
 
-                try {
+                try
+                {
                     HttpClient httpClient = new DefaultHttpClient();
-                    HttpPost httpPost = new HttpPost("http://premiumcontrol.com.br/NakasoneSoftapp/select/conta_inicial_ativar.php?id_conta=" + id_conta + "");
+                    HttpPost httpPost = new HttpPost("http://premiumcontrol.com.br/NakasoneSoftapp/select/conta_inicial_ativar.php?id_cliente="+Static.getId_cliente()+"&id_conta="+id_conta+"");
                     httpPost.setEntity(new UrlEncodedFormEntity(nameValuePairs));
                     HttpResponse response = httpClient.execute(httpPost);
                     HttpEntity entity = response.getEntity();
-                } catch (ClientProtocolException e) {
+                }
+                catch (ClientProtocolException e)
+                {
 
-                } catch (IOException e) {
+                }
+                catch (IOException e)
+                {
 
                 }
                 return "success";
             }
 
             @Override
-            protected void onPostExecute(String result) {
+            protected void onPostExecute(String result)
+            {
                 super.onPostExecute(result);
-                //Toast.makeText(getActivity(), result, Toast.LENGTH_LONG).show();
             }
-
-
         }
+
         SendPostReqAsyncTask sendPostReqAsyncTask = new SendPostReqAsyncTask();
+
         sendPostReqAsyncTask.execute(id_conta);
     }
-
 
     private void UpdateToDatabaseDesativar(final String id_conta) {
         class SendPostReqAsyncTask extends AsyncTask<String, Void, String> {
@@ -167,7 +206,7 @@ public class ListAdapterClass extends BaseAdapter {
 
                 try {
                     HttpClient httpClient = new DefaultHttpClient();
-                    HttpPost httpPost = new HttpPost("http://premiumcontrol.com.br/NakasoneSoftapp/select/conta_inicial_desativar.php?id_conta=" + id_conta + "");
+                    HttpPost httpPost = new HttpPost("http://premiumcontrol.com.br/NakasoneSoftapp/select/conta_inicial_desativar.php?id_cliente="+Static.getId_cliente()+"&id_conta=" + id_conta + "");
                     httpPost.setEntity(new UrlEncodedFormEntity(nameValuePairs));
                     HttpResponse response = httpClient.execute(httpPost);
                     HttpEntity entity = response.getEntity();
@@ -191,11 +230,10 @@ public class ListAdapterClass extends BaseAdapter {
         sendPostReqAsyncTask.execute(id_conta);
     }
 
-
     class ViewItem
     {
         TextView TextViewSubjectName;
          Switch SwitchViewSubjectName;
-
     }
+
 }

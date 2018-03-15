@@ -10,6 +10,7 @@ import android.widget.ImageView;
 import com.f22labs.instalikefragmenttransaction.R;
 import com.f22labs.instalikefragmenttransaction.activities.ListViewTeste;
 import com.f22labs.instalikefragmenttransaction.activities.MainActivity;
+import com.f22labs.instalikefragmenttransaction.activities.implantacaoErotina;
 import com.f22labs.instalikefragmenttransaction.adapters.RecyclerViewAdapterDesativarContas;
 
 import butterknife.ButterKnife;
@@ -71,7 +72,7 @@ public class MaisApoioNakasone extends BaseFragment{
             @Override
             public void onClick(View v)
             {
-                Intent intent = new Intent(getActivity(), ListViewTeste.class);
+                Intent intent = new Intent(getActivity(), implantacaoErotina.class);
                 startActivity(intent);
             }
         });

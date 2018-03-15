@@ -79,7 +79,7 @@ public class MainActivityP extends ActionBarActivity {
                 // simulating an user buying an iphone 6
                 final PagSeguroFactory pagseguro = PagSeguroFactory.instance();
                 List<PagSeguroItem> shoppingCart = new ArrayList<>();
-                shoppingCart.add(pagseguro.item("123", "Plano Mensal", BigDecimal.valueOf(7.50), 1, 300));
+                shoppingCart.add(pagseguro.item("123", "Plano Mensal", BigDecimal.valueOf(6.90), 1, 300));
                 PagSeguroPhone buyerPhone = pagseguro.phone(PagSeguroAreaCode.DDD81, "998187427");
                 PagSeguroBuyer buyer = pagseguro.buyer("Ricardo Ferreira", "14/02/1978", "15061112000", "test@email.com.br", buyerPhone);
                 PagSeguroAddress buyerAddress = pagseguro.address("Av. Boa Viagem", "51", "Apt201", "Boa Viagem", "51030330", "Recife", PagSeguroBrazilianStates.PERNAMBUCO);
@@ -104,7 +104,7 @@ public class MainActivityP extends ActionBarActivity {
                 // simulating an user buying an iphone 6
                 final PagSeguroFactory pagseguro = PagSeguroFactory.instance();
                 List<PagSeguroItem> shoppingCart = new ArrayList<>();
-                shoppingCart.add(pagseguro.item("1234", "Plano Trimestral", BigDecimal.valueOf(18.90), 1, 300));
+                shoppingCart.add(pagseguro.item("1234", "Plano Trimestral", BigDecimal.valueOf(17.40), 1, 300));
                 PagSeguroPhone buyerPhone = pagseguro.phone(PagSeguroAreaCode.DDD81, "998187427");
                 PagSeguroBuyer buyer = pagseguro.buyer("Ricardo Ferreira", "14/02/1978", "15061112000", "test@email.com.br", buyerPhone);
                 PagSeguroAddress buyerAddress = pagseguro.address("Av. Boa Viagem", "51", "Apt201", "Boa Viagem", "51030330", "Recife", PagSeguroBrazilianStates.PERNAMBUCO);
@@ -129,7 +129,7 @@ public class MainActivityP extends ActionBarActivity {
                 // simulating an user buying an iphone 6
                 final PagSeguroFactory pagseguro = PagSeguroFactory.instance();
                 List<PagSeguroItem> shoppingCart = new ArrayList<>();
-                shoppingCart.add(pagseguro.item("12345", "Plano Semestral", BigDecimal.valueOf(30.60), 1, 300));
+                shoppingCart.add(pagseguro.item("12345", "Plano Semestral", BigDecimal.valueOf(28.20), 1, 300));
                 PagSeguroPhone buyerPhone = pagseguro.phone(PagSeguroAreaCode.DDD81, "998187427");
                 PagSeguroBuyer buyer = pagseguro.buyer("Ricardo Ferreira", "14/02/1978", "15061112000", "test@email.com.br", buyerPhone);
                 PagSeguroAddress buyerAddress = pagseguro.address("Av. Boa Viagem", "51", "Apt201", "Boa Viagem", "51030330", "Recife", PagSeguroBrazilianStates.PERNAMBUCO);
@@ -153,7 +153,7 @@ public class MainActivityP extends ActionBarActivity {
 // simulating an user buying an iphone 6
                 final PagSeguroFactory pagseguro = PagSeguroFactory.instance();
                 List<PagSeguroItem> shoppingCart = new ArrayList<>();
-                shoppingCart.add(pagseguro.item("1253", "Plano Anual", BigDecimal.valueOf(46.80), 1, 300));
+                shoppingCart.add(pagseguro.item("1253", "Plano Anual", BigDecimal.valueOf(39.60), 1, 300));
                 PagSeguroPhone buyerPhone = pagseguro.phone(PagSeguroAreaCode.DDD81, "998187427");
                 PagSeguroBuyer buyer = pagseguro.buyer("Ricardo Ferreira", "14/02/1978", "15061112000", "test@email.com.br", buyerPhone);
                 PagSeguroAddress buyerAddress = pagseguro.address("Av. Boa Viagem", "51", "Apt201", "Boa Viagem", "51030330", "Recife", PagSeguroBrazilianStates.PERNAMBUCO);

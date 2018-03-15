@@ -241,7 +241,7 @@ public void onNothingSelected(AdapterView<?> parent) {
 
     //region Spinner
     private void getData(){
-        StringRequest stringRequest = new StringRequest("http://premiumcontrol.com.br/NakasoneSoftapp/teste.php",
+        StringRequest stringRequest = new StringRequest("http://premiumcontrol.com.br/NakasoneSoftapp/teste.php?id_cliente="+Static.getId_cliente()+"",
                 new Response.Listener<String>() {
                     @Override
                     public void onResponse(String response) {
@@ -266,7 +266,7 @@ public void onNothingSelected(AdapterView<?> parent) {
     }
 
     private void getStudents(JSONArray j){
-        students.add("");
+
         for(int i=0;i<j.length();i++){
             try {
                 JSONObject json = j.getJSONObject(i);
@@ -283,7 +283,7 @@ public void onNothingSelected(AdapterView<?> parent) {
 
     //region Spinner2
     private void getData2(){
-        StringRequest stringRequest = new StringRequest("http://premiumcontrol.com.br/NakasoneSoftapp/teste.php",
+        StringRequest stringRequest = new StringRequest("http://premiumcontrol.com.br/NakasoneSoftapp/teste.php?id_cliente="+Static.getId_cliente()+"",
                 new Response.Listener<String>() {
                     @Override
                     public void onResponse(String response) {
@@ -308,7 +308,7 @@ public void onNothingSelected(AdapterView<?> parent) {
     }
 
     private void getStudents2(JSONArray j){
-        students2.add("");
+
         for(int i=0;i<j.length();i++)
         {
             try

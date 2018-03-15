@@ -274,7 +274,7 @@ public class CadastroImoveisNakasone extends BaseFragment
     }
 
     private void getStudents(JSONArray j){
-        students.add("");
+
         for(int i=0;i<j.length();i++){
             try {
                 JSONObject json = j.getJSONObject(i);
@@ -291,7 +291,7 @@ public class CadastroImoveisNakasone extends BaseFragment
 
     //region Spinner2
     private void getData2(){
-        StringRequest stringRequest = new StringRequest("http://premiumcontrol.com.br/NakasoneSoftapp/teste.php",
+        StringRequest stringRequest = new StringRequest("http://premiumcontrol.com.br/NakasoneSoftapp/teste.php?id_cliente="+Static.getId_cliente()+"",
                 new Response.Listener<String>() {
                     @Override
                     public void onResponse(String response) {
@@ -316,7 +316,7 @@ public class CadastroImoveisNakasone extends BaseFragment
     }
 
     private void getStudents2(JSONArray j){
-        students2.add("");
+
         for(int i=0;i<j.length();i++)
         {
             try

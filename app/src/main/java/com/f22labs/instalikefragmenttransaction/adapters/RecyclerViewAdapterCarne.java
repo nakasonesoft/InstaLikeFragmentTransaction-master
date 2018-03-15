@@ -27,8 +27,11 @@ public class RecyclerViewAdapterCarne extends RecyclerView.Adapter<RecyclerViewA
 
     List<GetDataAdapter> getDataAdapter;
     ImageLoader imageLoader1;
-
     Object mContext;
+
+
+
+
     public RecyclerViewAdapterCarne(List<GetDataAdapter> getDataAdapter, Activity context){
         super();
         this.getDataAdapter = getDataAdapter;

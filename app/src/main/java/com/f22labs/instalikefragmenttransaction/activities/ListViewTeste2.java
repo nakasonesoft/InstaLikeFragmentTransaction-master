@@ -23,6 +23,8 @@ import com.f22labs.instalikefragmenttransaction.adapters.GetDataAdapterPasso2;
 import com.f22labs.instalikefragmenttransaction.adapters.RecyclerViewAdapterPasso2;
 import com.f22labs.instalikefragmenttransaction.fragments.RecyclerPasso2;
 import com.f22labs.instalikefragmenttransaction.interfaces.RecyclerViewOnClickListenerHack;
+import com.f22labs.instalikefragmenttransaction.utils.MaskEditUtil;
+import com.f22labs.instalikefragmenttransaction.utils.MoneyTextWatcher;
 import com.f22labs.instalikefragmenttransaction.utils.Static;
 
 import org.json.JSONArray;
@@ -105,6 +107,8 @@ public class ListViewTeste2 extends AppCompatActivity implements RecyclerViewOnC
         recyclerView = (RecyclerView) findViewById(R.id.recyclerviewPasso2);
         recyclerView2 = (RecyclerView) findViewById(R.id.recyclerviewPasso2Second);
         Salvar_saldos_iniciais = (Button) findViewById(R.id.Salvar_saldos_iniciais);
+
+
         Salvar_saldos_iniciais.setOnClickListener(new View.OnClickListener()
         {
             @Override

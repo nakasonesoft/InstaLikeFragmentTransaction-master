@@ -25,6 +25,7 @@ import com.f22labs.instalikefragmenttransaction.activities.MainActivity;
 import com.f22labs.instalikefragmenttransaction.adapters.GetDataAdapter;
 import com.f22labs.instalikefragmenttransaction.adapters.RecyclerViewAdapter;
 import com.f22labs.instalikefragmenttransaction.adapters.RecyclerViewAdapterDespesa;
+import com.f22labs.instalikefragmenttransaction.adapters.RecyclerViewAdapterFicha;
 import com.f22labs.instalikefragmenttransaction.interfaces.RecyclerViewOnClickListenerHack;
 import com.f22labs.instalikefragmenttransaction.utils.Static;
 
@@ -317,7 +318,7 @@ public class RecyclerFicha extends BaseFragment implements RecyclerViewOnClickLi
             GetDataAdapter1.add(GetDataAdapter2);
         }
 
-        recyclerViewadapter = new RecyclerViewAdapterDespesa(GetDataAdapter1, getActivity());
+        recyclerViewadapter = new RecyclerViewAdapterFicha(GetDataAdapter1, getActivity());
 
         recyclerView.setAdapter(recyclerViewadapter);
 

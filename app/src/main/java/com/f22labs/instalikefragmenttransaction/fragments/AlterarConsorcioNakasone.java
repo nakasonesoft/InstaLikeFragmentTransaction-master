@@ -54,7 +54,7 @@ import butterknife.ButterKnife;
 import static com.f22labs.instalikefragmenttransaction.activities.activity_login.PREFS_NAME;
 
 
-public class AlterarConsorcioNakasone extends BaseFragment implements Spinner.OnItemSelectedListener
+public class AlterarConsorcioNakasone extends BaseFragment
 {
 
     EditText alterardescricaoconsorcio,alterarcontadoconsorcio,alterarvalorconsorcio,alterarpagamentoconsorcio,alterardataconsorcio;
@@ -66,13 +66,24 @@ public class AlterarConsorcioNakasone extends BaseFragment implements Spinner.On
     String resposta;
 
     //region Spinner Variaveis
-    private Spinner spinner;
+    private Spinner spinner,spinner_alterar_pagamento;
     private ArrayList<String> students;
 
     ArrayList<String> ids;
     private JSONArray result;
     static String id_spinner;
     //endregion
+
+
+    //region Spinner Variaveis 2
+
+    private ArrayList<String> students2;
+
+    ArrayList<String> ids2;
+    private JSONArray result2;
+    static String id_spinner2;
+    //endregion
+
 
     private String current = "";
 
@@ -182,8 +193,45 @@ public class AlterarConsorcioNakasone extends BaseFragment implements Spinner.On
 
         students = new ArrayList<String>();
         ids = new ArrayList<String>();
+
+        students2 = new ArrayList<String>();
+        ids2 = new ArrayList<String>();
+
         spinner = (Spinner) view.findViewById(R.id.spinner_alterar_consorcio);
-        spinner.setOnItemSelectedListener(this);
+        spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id)
+            {
+
+                id_spinner = ids.get(position);
+
+
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent)
+            {
+                ids.get(spinner.getSelectedItemPosition());
+            }
+        });
+
+        spinner_alterar_pagamento = (Spinner) view.findViewById(R.id.spinner_alterar_pagamento);
+        spinner_alterar_pagamento.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id)
+            {
+
+                id_spinner2 = ids2.get(position);
+
+
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent)
+            {
+                ids2.get(spinner_alterar_pagamento.getSelectedItemPosition());
+            }
+        });
 
 
         //endregion
@@ -218,6 +266,7 @@ public class AlterarConsorcioNakasone extends BaseFragment implements Spinner.On
         //endregion
         getData();
         getData1();
+        getData2();
         return view;
     }
 
@@ -380,7 +429,7 @@ public class AlterarConsorcioNakasone extends BaseFragment implements Spinner.On
 
     //region Spinner
     private void getData(){
-        StringRequest stringRequest = new StringRequest("http://premiumcontrol.com.br/NakasoneSoftapp/teste.php",
+        StringRequest stringRequest = new StringRequest("http://premiumcontrol.com.br/NakasoneSoftapp/teste.php?id_cliente="+Static.getId_cliente()+"",
                 new Response.Listener<String>() {
                     @Override
                     public void onResponse(String response) {
@@ -405,7 +454,7 @@ public class AlterarConsorcioNakasone extends BaseFragment implements Spinner.On
     }
 
     private void getStudents(JSONArray j){
-        students.add("");
+
         for(int i=0;i<j.length();i++)
         {
             try
@@ -425,19 +474,60 @@ public class AlterarConsorcioNakasone extends BaseFragment implements Spinner.On
     }
 
 
-    @Override
-    public void onItemSelected(AdapterView<?> parent, View view, int position, long id)
-    {
 
-        id_spinner = ids.get(position);
-
-
-    }
-
-    @Override
-    public void onNothingSelected(AdapterView<?> parent)
-    {
-        ids.get(spinner.getSelectedItemPosition());
-    }
     //endregion
+
+
+
+    //region Spinner 2
+    private void getData2(){
+        StringRequest stringRequest = new StringRequest("http://premiumcontrol.com.br/NakasoneSoftapp/teste.php?id_cliente="+Static.getId_cliente()+"",
+                new Response.Listener<String>() {
+                    @Override
+                    public void onResponse(String response) {
+                        JSONObject j = null;
+                        try {
+                            j = new JSONObject(response);
+                            result2 = j.getJSONArray("result");
+                            getStudents2(result2);
+                        } catch (JSONException e) {
+                            e.printStackTrace();
+                        }
+                    }
+                },
+                new Response.ErrorListener() {
+                    @Override
+                    public void onErrorResponse(VolleyError error) {
+
+                    }
+                });
+        RequestQueue requestQueue = Volley.newRequestQueue(getActivity());
+        requestQueue.add(stringRequest);
+    }
+
+    private void getStudents2(JSONArray j){
+
+        for(int i=0;i<j.length();i++)
+        {
+            try
+            {
+                JSONObject json = j.getJSONObject(i);
+                students2.add(json.getString("nome_conta"));
+                ids2.add(json.getString("id_conta"));
+            }
+            catch (JSONException e)
+            {
+                e.printStackTrace();
+            }
+        }
+
+        spinner_alterar_pagamento.setAdapter(new ArrayAdapter<String>(getActivity(), android.R.layout.simple_spinner_dropdown_item, students2));
+
+    }
+
+
+
+    //endregion
+
+
 }

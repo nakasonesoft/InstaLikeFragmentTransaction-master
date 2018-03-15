@@ -136,7 +136,7 @@ public class RecyclerDiario2 extends BaseFragment implements RecyclerViewOnClick
 
         ButterKnife.bind(this, view);
 
-        ( (MainActivity)getActivity()).updateToolbarTitle("Share");
+        ( (MainActivity)getActivity()).updateToolbarTitle("Diário");
 
 
         return view;
